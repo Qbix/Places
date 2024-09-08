@@ -1,0 +1,91 @@
+{
+    "LatLng": "( {{1}} lat, {{2}} lat)",
+    "nearby": {
+        "PostcodeLabel": "{{1}} ( {{2}} )",
+        "Title": "trong vòng {{1}}"
+    },
+    "units": {
+        "meter": "mét",
+        "meters": "mét",
+        "kilometer": "km",
+        "kilometers": "km",
+        "km": "km",
+        "mile": "dặm",
+        "miles": "dặm",
+        "mi": "mi",
+        "foot": "chân",
+        "feet": "bàn chân",
+        "inches": "inch"
+    },
+    "location": {
+        "interested": "Tôi quan tâm đến những thứ diễn ra trong vòng {{select}}",
+        "update": "Cập nhật vị trí của tôi",
+        "set": "Đặt vị trí của tôi",
+        "prompt": "{{ClickOrTap}} vào đây<br> thiết lập của bạn<br> vị trí",
+        "myCurrentLocation": "Vị trí hiện tại của tôi",
+        "enterAddress": "Nhập một địa chỉ",
+        "enterPostcode": "Vui lòng nhập mã bưu điện \/ zipcode của bạn",
+        "create": {
+            "action": "Thêm vị trí",
+            "title": "Vị trí mới",
+            "nameYourLocation": "Đặt tên cho vị trí của bạn"
+        },
+        "confirm": {
+            "title": "Lưu vị trí này?",
+            "message": "Bạn có kế hoạch sử dụng lại vị trí này trong tương lai không?",
+            "ok": "Đúng",
+            "cancel": "KHÔNG"
+        },
+        "add": {
+            "title": "Đặt tên cho địa điểm này",
+            "placeholder": "Nhà, Cơ quan, v.v.",
+            "ok": "Cứu"
+        },
+        "dialog": {
+            "title": "Chọn vị trí"
+        }
+    },
+    "areas": {
+        "filterPlaceholder": "Bất kỳ khu vực bên trong vị trí này?",
+        "newArea": "khu vực mới",
+        "promptTitle": "Nhập tên cho khu vực:",
+        "absent": "Vui lòng đặt khu vực",
+        "error": "Lỗi",
+        "exist": "Khu vực đã tồn tại",
+        "addNewArea": "Thêm khu vực mới",
+        "add": "Thêm vào"
+    },
+    "types": {
+        "Places\/locations": {
+            "description": "một bộ sưu tập các địa điểm",
+            "displayType": "Vị trí"
+        },
+        "Places\/location": {
+            "description": "Đại diện cho một tòa nhà, địa điểm, con tàu, công viên, v.v.",
+            "displayType": "Vị trí"
+        },
+        "Places\/area": {
+            "description": "Đại diện cho một khu vực trong một vị trí, chẳng hạn như phòng hoặc dãy phòng",
+            "displayType": "Khu vực"
+        },
+        "Places\/floor": {
+            "description": "Đại diện cho một tầng trong tòa nhà hoặc con tàu",
+            "displayType": "Sàn nhà"
+        },
+        "Places\/column": {
+            "description": "Đại diện cho một cột trong tòa nhà hoặc con tàu",
+            "displayType": "Cột"
+        },
+        "Places\/nearby": {
+            "description": "Danh mục cho những thứ trong một khoảng cách nhất định của geohash",
+            "displayType": "Những nơi gần đó"
+        },
+        "Places\/interest": {
+            "description": "Danh mục cho những thứ trong một khoảng cách nhất định của geohash, phù hợp với sở thích",
+            "displayType": "Địa điểm quan tâm"
+        }
+    },
+    "countries": {
+        "SelectCountry": "Chọn một quốc gia"
+    }
+}

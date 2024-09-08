@@ -1,0 +1,91 @@
+{
+    "LatLng": "( {{1}} lat, {{2}} lng)",
+    "nearby": {
+        "PostcodeLabel": "{{1}} ( {{2}} )",
+        "Title": "{{1}} barruan"
+    },
+    "units": {
+        "meter": "metroa",
+        "meters": "metroak",
+        "kilometer": "kilometroa",
+        "kilometers": "kiometroak",
+        "km": "km",
+        "mile": "kilometroa",
+        "miles": "kilometroak",
+        "mi": "mi",
+        "foot": "oina",
+        "feet": "oinak",
+        "inches": "zentimetroak"
+    },
+    "location": {
+        "interested": "{{select}} -en barruan gertatzen diren gauzak interesatzen zait",
+        "update": "Eguneratu Nire kokapena",
+        "set": "Ezarri Nire kokapena",
+        "prompt": "{{ClickOrTap}} honaino<br> ezarri zure<br> kokapena",
+        "myCurrentLocation": "Nire uneko kokapena",
+        "enterAddress": "Sartu helbide bat",
+        "enterPostcode": "Mesedez, idatzi zure posta-kodea \/ posta-kodea",
+        "create": {
+            "action": "Gehitu kokapena",
+            "title": "Kokapen berria",
+            "nameYourLocation": "Izena zure kokapena"
+        },
+        "confirm": {
+            "title": "Kokapen hau gorde nahi duzu?",
+            "message": "Kokapen hau berriro erabiltzeko asmoa duzu etorkizunean?",
+            "ok": "Bai",
+            "cancel": "Ez"
+        },
+        "add": {
+            "title": "Izena kokapen honi",
+            "placeholder": "Etxea, lana etab.",
+            "ok": "Gorde"
+        },
+        "dialog": {
+            "title": "Aukeratu Kokapena"
+        }
+    },
+    "areas": {
+        "filterPlaceholder": "Kokapen honen barruan dagoen eremurik?",
+        "newArea": "Eremu berria",
+        "promptTitle": "Sartu eremuaren izena:",
+        "absent": "Mesedez, ezarri eremua",
+        "error": "Errorea",
+        "exist": "Eremua dagoeneko existitzen da",
+        "addNewArea": "Gehitu eremu berria",
+        "add": "Gehitu"
+    },
+    "types": {
+        "Places\/locations": {
+            "description": "kokapenen bilduma",
+            "displayType": "Kokalekuak"
+        },
+        "Places\/location": {
+            "description": "Eraikin, lokal, itsasontzi, parke eta abar adierazten du.",
+            "displayType": "Kokapena"
+        },
+        "Places\/area": {
+            "description": "Kokapen bateko eremu bat adierazten du, hala nola gela edo suite bat",
+            "displayType": "Eremua"
+        },
+        "Places\/floor": {
+            "description": "Eraikin edo itsasontzi bateko solairu bat adierazten du",
+            "displayType": "Solairua"
+        },
+        "Places\/column": {
+            "description": "Eraikin edo itsasontzi bateko zutabe bat adierazten du",
+            "displayType": "Zutabea"
+        },
+        "Places\/nearby": {
+            "description": "Geohash batetik distantzia jakin bateko gauzen kategoria",
+            "displayType": "Lekuetatik gertu"
+        },
+        "Places\/interest": {
+            "description": "Geohash batetik distantzia jakin bateko gauzen kategoria, interes batekin bat datorrena",
+            "displayType": "Lekuen interesa"
+        }
+    },
+    "countries": {
+        "SelectCountry": "Hautatu herrialde bat"
+    }
+}

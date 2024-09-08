@@ -1,0 +1,91 @@
+{
+    "LatLng": "( {{1}} lati, {{2}} lng)",
+    "nearby": {
+        "PostcodeLabel": "{{1}} ( {{2}} )",
+        "Title": "{{1}} robežās"
+    },
+    "units": {
+        "meter": "metrs",
+        "meters": "metri",
+        "kilometer": "kilometrs",
+        "kilometers": "kilometri",
+        "km": "km",
+        "mile": "jūdze",
+        "miles": "jūdzes",
+        "mi": "mi",
+        "foot": "pēda",
+        "feet": "pēdas",
+        "inches": "collas"
+    },
+    "location": {
+        "interested": "Mani interesē lietas, kas notiek {{select}} gadu robežās",
+        "update": "Atjaunināt manu atrašanās vietu",
+        "set": "Iestatīt manu atrašanās vietu",
+        "prompt": "{{ClickOrTap}} šeit uz<br> iestatiet savu<br> atrašanās vieta",
+        "myCurrentLocation": "Mana pašreizējā atrašanās vieta",
+        "enterAddress": "Ievadiet adresi",
+        "enterPostcode": "Lūdzu, ievadiet savu pasta indeksu\/pasta indeksu",
+        "create": {
+            "action": "Pievienot atrašanās vietu",
+            "title": "Jauna vieta",
+            "nameYourLocation": "Nosauciet savu atrašanās vietu"
+        },
+        "confirm": {
+            "title": "Vai saglabāt šo atrašanās vietu?",
+            "message": "Vai plānojat izmantot šo vietu arī turpmāk?",
+            "ok": "Jā",
+            "cancel": "Nē"
+        },
+        "add": {
+            "title": "Nosauciet šo vietu",
+            "placeholder": "Mājas, darbs utt.",
+            "ok": "Saglabāt"
+        },
+        "dialog": {
+            "title": "Izvēlieties Atrašanās vieta"
+        }
+    },
+    "areas": {
+        "filterPlaceholder": "Vai šajā vietā ir kāda zona?",
+        "newArea": "Jauns rajons",
+        "promptTitle": "Ievadiet apgabala nosaukumu:",
+        "absent": "Lūdzu, iestatiet apgabalu",
+        "error": "Kļūda",
+        "exist": "Teritorija jau pastāv",
+        "addNewArea": "Pievienojiet jaunu apgabalu",
+        "add": "Pievienot"
+    },
+    "types": {
+        "Places\/locations": {
+            "description": "vietu kolekcija",
+            "displayType": "Atrašanās vietas"
+        },
+        "Places\/location": {
+            "description": "Apzīmē ēku, norises vietu, kuģi, parku utt.",
+            "displayType": "Atrašanās vieta"
+        },
+        "Places\/area": {
+            "description": "Apzīmē apgabalu atrašanās vietā, piemēram, istabu vai komplektu",
+            "displayType": "Apgabals"
+        },
+        "Places\/floor": {
+            "description": "Apzīmē stāvu ēkā vai kuģī",
+            "displayType": "Stāvs"
+        },
+        "Places\/column": {
+            "description": "Apzīmē kolonnu ēkā vai kuģī",
+            "displayType": "Kolonna"
+        },
+        "Places\/nearby": {
+            "description": "Kategorija lietām, kas atrodas noteiktā attālumā no ģeohašas",
+            "displayType": "Blakus vietām"
+        },
+        "Places\/interest": {
+            "description": "Kategorija lietām, kas atrodas noteiktā attālumā no ģeohašas, kas atbilst interesēm",
+            "displayType": "Interesējošās vietas"
+        }
+    },
+    "countries": {
+        "SelectCountry": "Izvēlieties valsti"
+    }
+}

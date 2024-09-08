@@ -1,0 +1,91 @@
+{
+    "LatLng": "( {{1}} lat, {{2}} lng)",
+    "nearby": {
+        "PostcodeLabel": "{{1}} ( {{2}} )",
+        "Title": "brenda {{1}}"
+    },
+    "units": {
+        "meter": "metër",
+        "meters": "metra",
+        "kilometer": "kilometër",
+        "kilometers": "kiometra",
+        "km": "km",
+        "mile": "milje",
+        "miles": "milje",
+        "mi": "mi",
+        "foot": "këmbë",
+        "feet": "këmbët",
+        "inches": "inç"
+    },
+    "location": {
+        "interested": "Unë jam i interesuar që gjërat të ndodhin brenda {{select}} ditësh",
+        "update": "Përditëso vendndodhjen time",
+        "set": "Cakto vendndodhjen time",
+        "prompt": "{{ClickOrTap}} këtu për të<br> vendosni tuajën<br> vendndodhjen",
+        "myCurrentLocation": "Vendndodhja ime aktuale",
+        "enterAddress": "Fut një adresë",
+        "enterPostcode": "Ju lutemi shkruani kodin postar \/ kodin postar",
+        "create": {
+            "action": "Shto vendndodhjen",
+            "title": "Vendndodhja e re",
+            "nameYourLocation": "Emërtoni vendndodhjen tuaj"
+        },
+        "confirm": {
+            "title": "Të ruhet ky vend?",
+            "message": "A planifikoni ta përdorni përsëri këtë vendndodhje në të ardhmen?",
+            "ok": "po",
+            "cancel": "Nr"
+        },
+        "add": {
+            "title": "Emërtojeni këtë vendndodhje",
+            "placeholder": "Shtëpia, Puna etj.",
+            "ok": "Ruaj"
+        },
+        "dialog": {
+            "title": "Zgjidhni Vendndodhjen"
+        }
+    },
+    "areas": {
+        "filterPlaceholder": "Ndonjë zonë brenda këtij lokacioni?",
+        "newArea": "Zonë e re",
+        "promptTitle": "Futni një emër për zonën:",
+        "absent": "Ju lutemi vendosni zonën",
+        "error": "Gabim",
+        "exist": "Zona tashmë ekziston",
+        "addNewArea": "Shto një zonë të re",
+        "add": "Shtoni"
+    },
+    "types": {
+        "Places\/locations": {
+            "description": "një koleksion vendesh",
+            "displayType": "Vendndodhjet"
+        },
+        "Places\/location": {
+            "description": "Përfaqëson një ndërtesë, vend, anije, park etj.",
+            "displayType": "Vendndodhja"
+        },
+        "Places\/area": {
+            "description": "Përfaqëson një zonë brenda një vendndodhjeje, të tillë si një dhomë ose suitë",
+            "displayType": "Zona"
+        },
+        "Places\/floor": {
+            "description": "Përfaqëson një kat në një ndërtesë ose anije",
+            "displayType": "Kati"
+        },
+        "Places\/column": {
+            "description": "Përfaqëson një kolonë në një ndërtesë ose anije",
+            "displayType": "Kolona"
+        },
+        "Places\/nearby": {
+            "description": "Kategoria për gjërat brenda një distance të caktuar nga një gjeohash",
+            "displayType": "Pranë nga vendet"
+        },
+        "Places\/interest": {
+            "description": "Kategoria për gjërat brenda një distance të caktuar nga një gjeohash, që përputhet me një interes",
+            "displayType": "Vende me interes"
+        }
+    },
+    "countries": {
+        "SelectCountry": "Zgjidhni një shtet"
+    }
+}

@@ -1,0 +1,91 @@
+{
+    "LatLng": "( {{1}} latai, {{2}} lng)",
+    "nearby": {
+        "PostcodeLabel": "{{1}} ( {{2}} )",
+        "Title": "per {{1}}"
+    },
+    "units": {
+        "meter": "metras",
+        "meters": "metrų",
+        "kilometer": "kilometro",
+        "kilometers": "kilometrų",
+        "km": "km",
+        "mile": "mylia",
+        "miles": "mylios",
+        "mi": "mi",
+        "foot": "pėda",
+        "feet": "pėdos",
+        "inches": "colių"
+    },
+    "location": {
+        "interested": "Mane domina dalykai, vykstantys per {{select}} m",
+        "update": "Atnaujinti Mano vietą",
+        "set": "Nustatyti Mano vietą",
+        "prompt": "{{ClickOrTap}} čia<br> nustatykite savo<br> vieta",
+        "myCurrentLocation": "Mano dabartinė vieta",
+        "enterAddress": "Įveskite adresą",
+        "enterPostcode": "Įveskite savo pašto kodą \/ pašto kodą",
+        "create": {
+            "action": "Pridėti vietą",
+            "title": "Nauja vieta",
+            "nameYourLocation": "Pavadinkite savo vietą"
+        },
+        "confirm": {
+            "title": "Išsaugoti šią vietą?",
+            "message": "Ar planuojate ateityje vėl naudoti šią vietą?",
+            "ok": "Taip",
+            "cancel": "Nr"
+        },
+        "add": {
+            "title": "Pavadinkite šią vietą",
+            "placeholder": "Namai, Darbas ir kt.",
+            "ok": "Sutaupyti"
+        },
+        "dialog": {
+            "title": "Pasirinkite Vieta"
+        }
+    },
+    "areas": {
+        "filterPlaceholder": "Ar yra kokia nors sritis šioje vietoje?",
+        "newArea": "Nauja sritis",
+        "promptTitle": "Įveskite srities pavadinimą:",
+        "absent": "Prašome nustatyti plotą",
+        "error": "Klaida",
+        "exist": "Teritorija jau egzistuoja",
+        "addNewArea": "Pridėti naują sritį",
+        "add": "Papildyti"
+    },
+    "types": {
+        "Places\/locations": {
+            "description": "vietų rinkinys",
+            "displayType": "Vietos"
+        },
+        "Places\/location": {
+            "description": "Atstovauja pastatui, vietai, laivui, parkui ir kt.",
+            "displayType": "Vieta"
+        },
+        "Places\/area": {
+            "description": "Atstovauja tam tikroje vietoje esančią sritį, pvz., kambarį ar apartamentą",
+            "displayType": "Plotas"
+        },
+        "Places\/floor": {
+            "description": "Reiškia aukštą pastate arba laive",
+            "displayType": "Grindys"
+        },
+        "Places\/column": {
+            "description": "Žymi koloną pastate ar laive",
+            "displayType": "Stulpelis"
+        },
+        "Places\/nearby": {
+            "description": "Kategorija daiktams, esantiems tam tikru atstumu nuo geohash",
+            "displayType": "Netoliese esančios vietos"
+        },
+        "Places\/interest": {
+            "description": "Kategorija daiktams, esantiems tam tikru atstumu nuo geohash, atitinkanti pomėgius",
+            "displayType": "Įdomios vietos"
+        }
+    },
+    "countries": {
+        "SelectCountry": "Pasirinkite šalį"
+    }
+}

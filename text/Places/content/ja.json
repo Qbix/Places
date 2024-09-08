@@ -1,0 +1,91 @@
+{
+    "LatLng": "(緯度{{1}} 、経度{{2}} )",
+    "nearby": {
+        "PostcodeLabel": "{{1}} ( {{2}} )",
+        "Title": "{{1}}以内"
+    },
+    "units": {
+        "meter": "メーター",
+        "meters": "メートル",
+        "kilometer": "キロメートル",
+        "kilometers": "キロメートル",
+        "km": "km",
+        "mile": "マイル",
+        "miles": "マイル",
+        "mi": "マイル",
+        "foot": "フット",
+        "feet": "フィート",
+        "inches": "インチ"
+    },
+    "location": {
+        "interested": "{{select}}年以内に起こっていることに興味があります",
+        "update": "現在地を更新",
+        "set": "現在地を設定",
+        "prompt": "{{ClickOrTap}}ここまで<br>あなたの設定<br>位置",
+        "myCurrentLocation": "現在地",
+        "enterAddress": "住所を入力してください",
+        "enterPostcode": "郵便番号を入力してください",
+        "create": {
+            "action": "場所を追加",
+            "title": "新しい場所",
+            "nameYourLocation": "あなたの場所に名前を付ける"
+        },
+        "confirm": {
+            "title": "この場所を保存しますか?",
+            "message": "今後、この場所を再び使用する予定はありますか?",
+            "ok": "はい",
+            "cancel": "いいえ"
+        },
+        "add": {
+            "title": "この場所に名前を付ける",
+            "placeholder": "自宅、職場など",
+            "ok": "保存"
+        },
+        "dialog": {
+            "title": "場所を選択"
+        }
+    },
+    "areas": {
+        "filterPlaceholder": "この場所の中にエリアはありますか?",
+        "newArea": "新エリア",
+        "promptTitle": "エリアの名前を入力してください:",
+        "absent": "エリアを設定してください",
+        "error": "エラー",
+        "exist": "エリアは既に存在します",
+        "addNewArea": "新しいエリアを追加",
+        "add": "追加"
+    },
+    "types": {
+        "Places\/locations": {
+            "description": "ロケーションのコレクション",
+            "displayType": "場所"
+        },
+        "Places\/location": {
+            "description": "建物、会場、船、公園などを表します。",
+            "displayType": "位置"
+        },
+        "Places\/area": {
+            "description": "部屋やスイートなど、場所内の領域を表します",
+            "displayType": "エリア"
+        },
+        "Places\/floor": {
+            "description": "建物や船のフロアを表す",
+            "displayType": "床"
+        },
+        "Places\/column": {
+            "description": "建物または船の柱を表します",
+            "displayType": "桁"
+        },
+        "Places\/nearby": {
+            "description": "ジオハッシュから一定の距離内にあるもののカテゴリ",
+            "displayType": "近くの場所"
+        },
+        "Places\/interest": {
+            "description": "関心に一致する、ジオハッシュから一定の距離内にあるもののカテゴリ",
+            "displayType": "興味のある場所"
+        }
+    },
+    "countries": {
+        "SelectCountry": "国を選択"
+    }
+}

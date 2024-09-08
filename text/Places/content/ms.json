@@ -1,0 +1,91 @@
+{
+    "LatLng": "( {{1}} lat, {{2}} lng)",
+    "nearby": {
+        "PostcodeLabel": "{{1}} ( {{2}} )",
+        "Title": "dalam {{1}}"
+    },
+    "units": {
+        "meter": "meter",
+        "meters": "meter",
+        "kilometer": "kilometer",
+        "kilometers": "kiometer",
+        "km": "km",
+        "mile": "Batu",
+        "miles": "batu",
+        "mi": "mi",
+        "foot": "kaki",
+        "feet": "kaki",
+        "inches": "inci"
+    },
+    "location": {
+        "interested": "Saya berminat dengan perkara yang berlaku dalam {{select}} daripada",
+        "update": "Kemas kini Lokasi Saya",
+        "set": "Tetapkan Lokasi Saya",
+        "prompt": "{{ClickOrTap}} di sini untuk<br> tetapkan anda<br> lokasi",
+        "myCurrentLocation": "Lokasi semasa saya",
+        "enterAddress": "Masukkan alamat",
+        "enterPostcode": "Sila masukkan poskod \/ poskod anda",
+        "create": {
+            "action": "Tambah lokasi",
+            "title": "Lokasi Baru",
+            "nameYourLocation": "Namakan lokasi anda"
+        },
+        "confirm": {
+            "title": "Simpan lokasi ini?",
+            "message": "Adakah anda merancang untuk menggunakan lokasi ini lagi pada masa hadapan?",
+            "ok": "ya",
+            "cancel": "Tidak"
+        },
+        "add": {
+            "title": "Namakan lokasi ini",
+            "placeholder": "Rumah, Kerja dll.",
+            "ok": "Jimat"
+        },
+        "dialog": {
+            "title": "Pilih Lokasi"
+        }
+    },
+    "areas": {
+        "filterPlaceholder": "Mana-mana kawasan di dalam lokasi ini?",
+        "newArea": "Kawasan baru",
+        "promptTitle": "Masukkan nama untuk kawasan:",
+        "absent": "Sila tetapkan kawasan",
+        "error": "ralat",
+        "exist": "Kawasan sudah wujud",
+        "addNewArea": "Tambah kawasan baharu",
+        "add": "Tambah"
+    },
+    "types": {
+        "Places\/locations": {
+            "description": "koleksi lokasi",
+            "displayType": "Lokasi"
+        },
+        "Places\/location": {
+            "description": "Mewakili bangunan, tempat, kapal, taman, dsb.",
+            "displayType": "Lokasi"
+        },
+        "Places\/area": {
+            "description": "Mewakili kawasan dalam lokasi, seperti bilik atau suite",
+            "displayType": "Kawasan"
+        },
+        "Places\/floor": {
+            "description": "Mewakili lantai dalam bangunan atau kapal",
+            "displayType": "Lantai"
+        },
+        "Places\/column": {
+            "description": "Mewakili lajur dalam bangunan atau kapal",
+            "displayType": "Kolum"
+        },
+        "Places\/nearby": {
+            "description": "Kategori untuk perkara dalam jarak tertentu geohash",
+            "displayType": "Berdekatan dengan tempat"
+        },
+        "Places\/interest": {
+            "description": "Kategori untuk perkara dalam jarak tertentu geohash, sepadan dengan minat",
+            "displayType": "Tempat menarik"
+        }
+    },
+    "countries": {
+        "SelectCountry": "Pilih negara"
+    }
+}

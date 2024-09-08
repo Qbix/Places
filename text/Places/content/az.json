@@ -1,0 +1,91 @@
+{
+    "LatLng": "( {{1}} lat, {{2}} lng)",
+    "nearby": {
+        "PostcodeLabel": "{{1}} ( {{2}} )",
+        "Title": "{{1}} daxilində"
+    },
+    "units": {
+        "meter": "metr",
+        "meters": "metr",
+        "kilometer": "kilometr",
+        "kilometers": "kilometr",
+        "km": "km",
+        "mile": "mil",
+        "miles": "mil",
+        "mi": "mi",
+        "foot": "ayaq",
+        "feet": "ayaq",
+        "inches": "düym"
+    },
+    "location": {
+        "interested": "{{select}} -cu ildə baş verənlərlə maraqlanıram",
+        "update": "Məkanımı Yeniləyin",
+        "set": "Yerimi təyin edin",
+        "prompt": "{{ClickOrTap}} burada<br> təyin edin<br> yer",
+        "myCurrentLocation": "Mənim cari yerim",
+        "enterAddress": "Ünvan daxil edin",
+        "enterPostcode": "Zəhmət olmasa poçt indeksinizi \/ poçt indeksinizi daxil edin",
+        "create": {
+            "action": "Məkan əlavə edin",
+            "title": "Yeni Məkan",
+            "nameYourLocation": "Yerinizi adlandırın"
+        },
+        "confirm": {
+            "title": "Bu məkan yadda saxlansın?",
+            "message": "Gələcəkdə bu məkandan yenidən istifadə etməyi planlaşdırırsınız?",
+            "ok": "Bəli",
+            "cancel": "Yox"
+        },
+        "add": {
+            "title": "Bu yeri adlandırın",
+            "placeholder": "Ev, İş və s.",
+            "ok": "Yadda saxla"
+        },
+        "dialog": {
+            "title": "Məkanı seçin"
+        }
+    },
+    "areas": {
+        "filterPlaceholder": "Bu məkanda hər hansı bir sahə varmı?",
+        "newArea": "Yeni ərazi",
+        "promptTitle": "Ərazi üçün ad daxil edin:",
+        "absent": "Zəhmət olmasa ərazini təyin edin",
+        "error": "Xəta",
+        "exist": "Ərazi artıq mövcuddur",
+        "addNewArea": "Yeni sahə əlavə edin",
+        "add": "əlavə et"
+    },
+    "types": {
+        "Places\/locations": {
+            "description": "yerlərin toplusu",
+            "displayType": "Məkanlar"
+        },
+        "Places\/location": {
+            "description": "Binanı, məkanı, gəmini, parkı və s.",
+            "displayType": "Məkan"
+        },
+        "Places\/area": {
+            "description": "Otaq və ya suite kimi məkan daxilində ərazini təmsil edir",
+            "displayType": "Ərazi"
+        },
+        "Places\/floor": {
+            "description": "Bina və ya gəmidəki mərtəbəni təmsil edir",
+            "displayType": "Mərtəbə"
+        },
+        "Places\/column": {
+            "description": "Bina və ya gəmidəki sütunu təmsil edir",
+            "displayType": "Sütun"
+        },
+        "Places\/nearby": {
+            "description": "Geohaşdan müəyyən məsafədə olan şeylər üçün kateqoriya",
+            "displayType": "Yerlərə yaxın"
+        },
+        "Places\/interest": {
+            "description": "Geohashdan müəyyən məsafədə olan, maraqlara uyğun olan şeylər üçün kateqoriya",
+            "displayType": "Maraqlı yerlər"
+        }
+    },
+    "countries": {
+        "SelectCountry": "Ölkə seçin"
+    }
+}

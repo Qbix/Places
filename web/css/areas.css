@@ -1,0 +1,27 @@
+.Places_areas_tool {
+	max-width: 210px;
+	border-radius: 5px;
+}
+.Places_areas_tool input.Q_filter_input {
+	padding-left: 2px;
+	padding-top: 2px;
+	padding-right: 2px;
+	padding-bottom: 2px;
+	height: 30px;
+	width: 190px;
+}
+.Places_areas_tool .Places_area_preview_tool .Streams_preview_icon {
+	display: none;
+}
+.Places_areas_tool .Streams_preview_tool.Places_area_preview_tool .Streams_preview_container {
+	height: 54px;
+	line-height: 54px;
+}
+.Places_areas_tool .Q_filter_notFullscreen .Q_filter_results {
+	overflow: hidden;
+}
+.Q_prompt.Places_area_title .Q_buttons button.Q_button,
+.Q_prompt.Places_area_title .Q_buttons input {
+	min-height: 40px;
+	box-sizing: border-box;
+}

@@ -1,0 +1,91 @@
+{
+    "LatLng": "( {{1}} lat, {{2}} lng)",
+    "nearby": {
+        "PostcodeLabel": "{{1}} ( {{2}} )",
+        "Title": "în termen de {{1}}"
+    },
+    "units": {
+        "meter": "metru",
+        "meters": "metri",
+        "kilometer": "kilometru",
+        "kilometers": "kiometre",
+        "km": "km",
+        "mile": "milă",
+        "miles": "mile",
+        "mi": "mi",
+        "foot": "picior",
+        "feet": "picioarele",
+        "inches": "inci"
+    },
+    "location": {
+        "interested": "Sunt interesat de lucrurile care au loc în {{select}} de",
+        "update": "Actualizați locația mea",
+        "set": "Setați locația mea",
+        "prompt": "{{ClickOrTap}} aici pentru<br> setează-ți<br> Locație",
+        "myCurrentLocation": "Locația mea actuală",
+        "enterAddress": "Introduceți o adresă",
+        "enterPostcode": "Vă rugăm să introduceți codul poștal\/codul poștal",
+        "create": {
+            "action": "Adaugă locație",
+            "title": "Locație nouă",
+            "nameYourLocation": "Denumiți-vă locația"
+        },
+        "confirm": {
+            "title": "Salvați această locație?",
+            "message": "Intenționați să utilizați din nou această locație în viitor?",
+            "ok": "da",
+            "cancel": "Nu"
+        },
+        "add": {
+            "title": "Denumiți această locație",
+            "placeholder": "Acasă, serviciu etc.",
+            "ok": "Salvați"
+        },
+        "dialog": {
+            "title": "Alegeți Locație"
+        }
+    },
+    "areas": {
+        "filterPlaceholder": "Vreo zonă în această locație?",
+        "newArea": "Zona noua",
+        "promptTitle": "Introduceți un nume pentru zonă:",
+        "absent": "Vă rugăm să setați zona",
+        "error": "Eroare",
+        "exist": "Zona exista deja",
+        "addNewArea": "Adăugați o zonă nouă",
+        "add": "Adăuga"
+    },
+    "types": {
+        "Places\/locations": {
+            "description": "o colecție de locații",
+            "displayType": "Locații"
+        },
+        "Places\/location": {
+            "description": "Reprezintă o clădire, un loc, o navă, un parc etc.",
+            "displayType": "Locație"
+        },
+        "Places\/area": {
+            "description": "Reprezintă o zonă dintr-o locație, cum ar fi o cameră sau o suită",
+            "displayType": "Zonă"
+        },
+        "Places\/floor": {
+            "description": "Reprezintă un etaj într-o clădire sau navă",
+            "displayType": "Podea"
+        },
+        "Places\/column": {
+            "description": "Reprezintă o coloană într-o clădire sau navă",
+            "displayType": "Coloană"
+        },
+        "Places\/nearby": {
+            "description": "Categorie pentru lucruri aflate la o anumită distanță de un geohash",
+            "displayType": "Aproape de locuri"
+        },
+        "Places\/interest": {
+            "description": "Categorie pentru lucruri aflate la o anumită distanță de un geohash, care se potrivește cu un interes",
+            "displayType": "Locuri de interes"
+        }
+    },
+    "countries": {
+        "SelectCountry": "Selecteaza o tara"
+    }
+}

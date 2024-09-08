@@ -1,0 +1,91 @@
+{
+    "LatLng": "( {{1}} 위도, {{2}} lng)",
+    "nearby": {
+        "PostcodeLabel": "{{1}} ( {{2}} )",
+        "Title": "{{1}} 이내"
+    },
+    "units": {
+        "meter": "미터",
+        "meters": "미터",
+        "kilometer": "킬로미터",
+        "kilometers": "키오미터",
+        "km": "km",
+        "mile": "마일",
+        "miles": "마일",
+        "mi": "미",
+        "foot": "발",
+        "feet": "피트",
+        "inches": "신장"
+    },
+    "location": {
+        "interested": "나는 {{select}} 년 안에 일어나는 일들에 관심이 있다.",
+        "update": "내 위치 업데이트",
+        "set": "내 위치 설정",
+        "prompt": "{{ClickOrTap}} 여기<br> 설정<br> 위치",
+        "myCurrentLocation": "내 현재 위치",
+        "enterAddress": "주소를 입력하세요",
+        "enterPostcode": "우편번호를 입력하세요.",
+        "create": {
+            "action": "위치 추가",
+            "title": "새로운 위치",
+            "nameYourLocation": "위치 이름 지정"
+        },
+        "confirm": {
+            "title": "이 위치를 저장하시겠습니까?",
+            "message": "향후 이 위치를 다시 사용할 계획이 있습니까?",
+            "ok": "예",
+            "cancel": "아니요"
+        },
+        "add": {
+            "title": "이 위치 이름 지정",
+            "placeholder": "집, 직장 등",
+            "ok": "구하다"
+        },
+        "dialog": {
+            "title": "위치 선택"
+        }
+    },
+    "areas": {
+        "filterPlaceholder": "이 위치 안에 지역이 있습니까?",
+        "newArea": "새로운 지역",
+        "promptTitle": "영역 이름 입력:",
+        "absent": "지역을 설정해주세요",
+        "error": "오류",
+        "exist": "이미 존재하는 지역",
+        "addNewArea": "새 영역 추가",
+        "add": "추가하다"
+    },
+    "types": {
+        "Places\/locations": {
+            "description": "위치 모음",
+            "displayType": "위치"
+        },
+        "Places\/location": {
+            "description": "건물, 장소, 선박, 공원 등을 나타냅니다.",
+            "displayType": "위치"
+        },
+        "Places\/area": {
+            "description": "방이나 스위트와 같은 위치 내의 영역을 나타냅니다.",
+            "displayType": "영역"
+        },
+        "Places\/floor": {
+            "description": "건물이나 선박의 바닥을 나타냅니다.",
+            "displayType": "바닥"
+        },
+        "Places\/column": {
+            "description": "건물이나 선박의 기둥을 나타냅니다.",
+            "displayType": "열"
+        },
+        "Places\/nearby": {
+            "description": "geohash의 일정 거리 내에 있는 항목에 대한 범주",
+            "displayType": "주변 장소"
+        },
+        "Places\/interest": {
+            "description": "geohash의 특정 거리 내에 있는 사물에 대한 카테고리, 관심사 일치",
+            "displayType": "관심 장소"
+        }
+    },
+    "countries": {
+        "SelectCountry": "국가를 고르시 오"
+    }
+}

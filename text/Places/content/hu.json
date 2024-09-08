@@ -1,0 +1,91 @@
+{
+    "LatLng": "( {{1}} lat, {{2}} lng)",
+    "nearby": {
+        "PostcodeLabel": "{{1}} ( {{2}} )",
+        "Title": "{{1}} en belül"
+    },
+    "units": {
+        "meter": "méter",
+        "meters": "méter",
+        "kilometer": "kilométer",
+        "kilometers": "kiométer",
+        "km": "km",
+        "mile": "mérföld",
+        "miles": "mérföldre",
+        "mi": "mi",
+        "foot": "láb",
+        "feet": "lábát",
+        "inches": "hüvelyk"
+    },
+    "location": {
+        "interested": "Érdekelnek a {{select}} -en belül zajló dolgok",
+        "update": "Saját pozíció frissítése",
+        "set": "Saját pozíció beállítása",
+        "prompt": "{{ClickOrTap}} ide<br> állítsa be<br> elhelyezkedés",
+        "myCurrentLocation": "Jelenlegi tartózkodási helyem",
+        "enterAddress": "Adjon meg egy címet",
+        "enterPostcode": "Kérjük, adja meg irányítószámát \/ irányítószámát",
+        "create": {
+            "action": "Add meg a helyet",
+            "title": "Új hely",
+            "nameYourLocation": "Nevezze el a helyét"
+        },
+        "confirm": {
+            "title": "Menti ezt a helyet?",
+            "message": "Tervezi-e, hogy a jövőben újra használja ezt a helyet?",
+            "ok": "Igen",
+            "cancel": "Nem"
+        },
+        "add": {
+            "title": "Nevezze el ezt a helyet",
+            "placeholder": "Otthon, Munka stb.",
+            "ok": "Megment"
+        },
+        "dialog": {
+            "title": "Válassza a Hely lehetőséget"
+        }
+    },
+    "areas": {
+        "filterPlaceholder": "Van valami terület ezen a helyen?",
+        "newArea": "Új terület",
+        "promptTitle": "Adja meg a terület nevét:",
+        "absent": "Kérjük, állítsa be a területet",
+        "error": "Hiba",
+        "exist": "A terület már létezik",
+        "addNewArea": "Új terület hozzáadása",
+        "add": "Hozzáadás"
+    },
+    "types": {
+        "Places\/locations": {
+            "description": "helyszínek gyűjteménye",
+            "displayType": "Helyszínek"
+        },
+        "Places\/location": {
+            "description": "Épületet, helyszínt, hajót, parkot stb. jelképez.",
+            "displayType": "Elhelyezkedés"
+        },
+        "Places\/area": {
+            "description": "Egy helyen belüli területet jelöl, például egy szobát vagy lakosztályt",
+            "displayType": "Terület"
+        },
+        "Places\/floor": {
+            "description": "Egy épület vagy hajó emeletét jelöli",
+            "displayType": "Padló"
+        },
+        "Places\/column": {
+            "description": "Egy épületben vagy hajóban lévő oszlopot ábrázol",
+            "displayType": "Oszlop"
+        },
+        "Places\/nearby": {
+            "description": "Kategória a geohash-tól bizonyos távolságon belüli dolgokhoz",
+            "displayType": "Közeli helyek"
+        },
+        "Places\/interest": {
+            "description": "Kategória a geohash-tól bizonyos távolságon belüli dolgokhoz, érdeklődésnek megfelelő",
+            "displayType": "Érdekes helyek"
+        }
+    },
+    "countries": {
+        "SelectCountry": "Válassz egy országot"
+    }
+}

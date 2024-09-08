@@ -1,0 +1,91 @@
+{
+    "LatLng": "( {{1}} latia, {{2}} lng)",
+    "nearby": {
+        "PostcodeLabel": "{{1}} ( {{2}} )",
+        "Title": "{{1}} sisällä"
+    },
+    "units": {
+        "meter": "mittari",
+        "meters": "metriä",
+        "kilometer": "kilometri",
+        "kilometers": "kilometriä",
+        "km": "km",
+        "mile": "mailia",
+        "miles": "mailia",
+        "mi": "mi",
+        "foot": "jalka",
+        "feet": "jalat",
+        "inches": "tuumaa"
+    },
+    "location": {
+        "interested": "Olen kiinnostunut asioista, jotka tapahtuvat {{select}} :n sisällä",
+        "update": "Päivitä Oma sijainti",
+        "set": "Aseta Oma sijainti",
+        "prompt": "{{ClickOrTap}} tänne<br> aseta omasi<br> sijainti",
+        "myCurrentLocation": "Nykyinen sijaintini",
+        "enterAddress": "Anna osoite",
+        "enterPostcode": "Anna postinumerosi\/postinumerosi",
+        "create": {
+            "action": "Lisää sijainti",
+            "title": "Uusi sijainti",
+            "nameYourLocation": "Nimeä sijaintisi"
+        },
+        "confirm": {
+            "title": "Tallennetaanko tämä sijainti?",
+            "message": "Aiotteko käyttää tätä paikkaa uudelleen tulevaisuudessa?",
+            "ok": "Joo",
+            "cancel": "Ei"
+        },
+        "add": {
+            "title": "Nimeä tämä sijainti",
+            "placeholder": "Koti, työ jne.",
+            "ok": "Tallentaa"
+        },
+        "dialog": {
+            "title": "Valitse Sijainti"
+        }
+    },
+    "areas": {
+        "filterPlaceholder": "Onko tässä paikassa mitään aluetta?",
+        "newArea": "Uusi alue",
+        "promptTitle": "Anna alueelle nimi:",
+        "absent": "Aseta alue",
+        "error": "Virhe",
+        "exist": "Alue on jo olemassa",
+        "addNewArea": "Lisää uusi alue",
+        "add": "Lisätä"
+    },
+    "types": {
+        "Places\/locations": {
+            "description": "kokoelma paikkoja",
+            "displayType": "Sijainnit"
+        },
+        "Places\/location": {
+            "description": "Edustaa rakennusta, tapahtumapaikkaa, laivaa, puistoa jne.",
+            "displayType": "Sijainti"
+        },
+        "Places\/area": {
+            "description": "Edustaa aluetta sijainnissa, kuten huonetta tai sviittiä",
+            "displayType": "Alue"
+        },
+        "Places\/floor": {
+            "description": "Edustaa kerrosta rakennuksessa tai laivassa",
+            "displayType": "Lattia"
+        },
+        "Places\/column": {
+            "description": "Edustaa saraketta rakennuksessa tai laivassa",
+            "displayType": "Sarake"
+        },
+        "Places\/nearby": {
+            "description": "Luokka asioille, jotka sijaitsevat tietyllä etäisyydellä geohashista",
+            "displayType": "Paikkoja lähellä"
+        },
+        "Places\/interest": {
+            "description": "Luokka asioille, jotka sijaitsevat tietyllä etäisyydellä geohashista, mikä vastaa kiinnostusta",
+            "displayType": "Kiinnostavia paikkoja"
+        }
+    },
+    "countries": {
+        "SelectCountry": "Valitse maa"
+    }
+}

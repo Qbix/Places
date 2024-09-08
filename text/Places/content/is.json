@@ -1,0 +1,91 @@
+{
+    "LatLng": "( {{1}} lat, {{2}} lng)",
+    "nearby": {
+        "PostcodeLabel": "{{1}} ( {{2}} )",
+        "Title": "innan {{1}}"
+    },
+    "units": {
+        "meter": "metra",
+        "meters": "metra",
+        "kilometer": "kílómetra",
+        "kilometers": "kílómetrar",
+        "km": "km",
+        "mile": "Míla",
+        "miles": "mílur",
+        "mi": "mí",
+        "foot": "fótur",
+        "feet": "fótum",
+        "inches": "tommur"
+    },
+    "location": {
+        "interested": "Ég hef áhuga á að hlutirnir eigi sér stað innan {{select}}",
+        "update": "Uppfærðu staðsetningu mína",
+        "set": "Stilltu staðsetningu mína",
+        "prompt": "{{ClickOrTap}} hingað til<br> stilltu þinn<br> staðsetningu",
+        "myCurrentLocation": "Núverandi staðsetning mín",
+        "enterAddress": "Sláðu inn heimilisfang",
+        "enterPostcode": "Vinsamlegast sláðu inn póstnúmer\/póstnúmer",
+        "create": {
+            "action": "Bæta við staðsetningu",
+            "title": "Ný staðsetning",
+            "nameYourLocation": "Nefndu staðsetningu þína"
+        },
+        "confirm": {
+            "title": "Vista þessa staðsetningu?",
+            "message": "Ætlarðu að nota þennan stað aftur í framtíðinni?",
+            "ok": "Já",
+            "cancel": "Nei"
+        },
+        "add": {
+            "title": "Nefndu þessa staðsetningu",
+            "placeholder": "Heimili, vinna o.s.frv.",
+            "ok": "Vista"
+        },
+        "dialog": {
+            "title": "Veldu staðsetningu"
+        }
+    },
+    "areas": {
+        "filterPlaceholder": "Einhver svæði inni á þessum stað?",
+        "newArea": "Nýtt svæði",
+        "promptTitle": "Sláðu inn nafn fyrir svæðið:",
+        "absent": "Vinsamlegast stilltu svæði",
+        "error": "Villa",
+        "exist": "Svæði er þegar til",
+        "addNewArea": "Bæta við nýju svæði",
+        "add": "Bæta við"
+    },
+    "types": {
+        "Places\/locations": {
+            "description": "safn af stöðum",
+            "displayType": "Staðsetningar"
+        },
+        "Places\/location": {
+            "description": "Táknar byggingu, vettvang, skip, garður osfrv.",
+            "displayType": "Staðsetning"
+        },
+        "Places\/area": {
+            "description": "Táknar svæði innan staðsetningar, eins og herbergi eða svíta",
+            "displayType": "Svæði"
+        },
+        "Places\/floor": {
+            "description": "Táknar hæð í byggingu eða skipi",
+            "displayType": "Gólf"
+        },
+        "Places\/column": {
+            "description": "Táknar súlu í byggingu eða skipi",
+            "displayType": "Dálkur"
+        },
+        "Places\/nearby": {
+            "description": "Flokkur fyrir hluti í ákveðinni fjarlægð frá jarðhöggi",
+            "displayType": "Nálægt stöðum"
+        },
+        "Places\/interest": {
+            "description": "Flokkur fyrir hluti sem eru innan ákveðinnar fjarlægðar frá geohash, sem passa við áhugamál",
+            "displayType": "Áhugi á stöðum"
+        }
+    },
+    "countries": {
+        "SelectCountry": "Veldu land"
+    }
+}

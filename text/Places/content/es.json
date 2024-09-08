@@ -1,0 +1,91 @@
+{
+    "LatLng": "( {{1}} latitud, {{2}} longitud)",
+    "nearby": {
+        "PostcodeLabel": "{{1}} ( {{2}} )",
+        "Title": "dentro de {{1}}"
+    },
+    "units": {
+        "meter": "metro",
+        "meters": "metros",
+        "kilometer": "kilómetro",
+        "kilometers": "quiómetros",
+        "km": "kilómetros",
+        "mile": "milla",
+        "miles": "millas",
+        "mi": "mi",
+        "foot": "pie",
+        "feet": "pies",
+        "inches": "pulgadas"
+    },
+    "location": {
+        "interested": "Estoy interesado en las cosas que suceden dentro de {{select}} de",
+        "update": "Actualizar mi ubicación",
+        "set": "Establecer mi ubicación",
+        "prompt": "{{ClickOrTap}} aquí para<br> establecer su<br> ubicación",
+        "myCurrentLocation": "mi ubicación actual",
+        "enterAddress": "Introduce una direccion",
+        "enterPostcode": "Por favor ingrese su código postal \/ código postal",
+        "create": {
+            "action": "Agregar Direccion",
+            "title": "Nueva ubicacion",
+            "nameYourLocation": "Nombra tu ubicación"
+        },
+        "confirm": {
+            "title": "¿Guardar esta ubicación?",
+            "message": "¿Piensa volver a utilizar esta ubicación en el futuro?",
+            "ok": "Sí",
+            "cancel": "No"
+        },
+        "add": {
+            "title": "Nombra esta ubicación",
+            "placeholder": "Hogar, trabajo, etc",
+            "ok": "Ahorrar"
+        },
+        "dialog": {
+            "title": "Elegir la ubicación"
+        }
+    },
+    "areas": {
+        "filterPlaceholder": "¿Algún área dentro de esta ubicación?",
+        "newArea": "NUEVA Área",
+        "promptTitle": "Introduzca un nombre para el área:",
+        "absent": "Por favor, establezca el área",
+        "error": "Error",
+        "exist": "El área ya existe",
+        "addNewArea": "Agregar nueva área",
+        "add": "Agregar"
+    },
+    "types": {
+        "Places\/locations": {
+            "description": "una colección de lugares",
+            "displayType": "Ubicaciones"
+        },
+        "Places\/location": {
+            "description": "Representa un edificio, lugar, barco, parque, etc.",
+            "displayType": "Ubicación"
+        },
+        "Places\/area": {
+            "description": "Representa un área dentro de una ubicación, como una habitación o suite.",
+            "displayType": "Área"
+        },
+        "Places\/floor": {
+            "description": "Representa un piso en un edificio o nave.",
+            "displayType": "Piso"
+        },
+        "Places\/column": {
+            "description": "Representa una columna en un edificio o nave.",
+            "displayType": "Columna"
+        },
+        "Places\/nearby": {
+            "description": "Categoría para cosas dentro de una cierta distancia de un geohash",
+            "displayType": "Lugares cercanos"
+        },
+        "Places\/interest": {
+            "description": "Categoría para cosas dentro de una cierta distancia de un geohash, que coincida con un interés",
+            "displayType": "Lugares de interés"
+        }
+    },
+    "countries": {
+        "SelectCountry": "Seleccione un país"
+    }
+}

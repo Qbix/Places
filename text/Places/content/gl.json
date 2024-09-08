@@ -1,0 +1,91 @@
+{
+    "LatLng": "( {{1}} lat, {{2}} lng)",
+    "nearby": {
+        "PostcodeLabel": "{{1}} ( {{2}} )",
+        "Title": "dentro de {{1}}"
+    },
+    "units": {
+        "meter": "metro",
+        "meters": "metros",
+        "kilometer": "quilómetro",
+        "kilometers": "quiómetros",
+        "km": "km",
+        "mile": "milla",
+        "miles": "millas",
+        "mi": "mi",
+        "foot": "pé",
+        "feet": "pés",
+        "inches": "polgadas"
+    },
+    "location": {
+        "interested": "Estou interesado en cousas que teñan lugar dentro de {{select}} de",
+        "update": "Actualizar a miña localización",
+        "set": "Establecer a miña localización",
+        "prompt": "{{ClickOrTap}} aquí para<br> configura o teu<br> localización",
+        "myCurrentLocation": "A miña localización actual",
+        "enterAddress": "Introduza un enderezo",
+        "enterPostcode": "Introduce o teu código postal \/ código postal",
+        "create": {
+            "action": "Engadir localización",
+            "title": "Nova localización",
+            "nameYourLocation": "Nomea a túa localización"
+        },
+        "confirm": {
+            "title": "Queres gardar esta localización?",
+            "message": "Pensas volver utilizar esta localización no futuro?",
+            "ok": "Si",
+            "cancel": "Non"
+        },
+        "add": {
+            "title": "Ponlle un nome a esta localización",
+            "placeholder": "Fogar, Traballo, etc.",
+            "ok": "Gardar"
+        },
+        "dialog": {
+            "title": "Escolla Localización"
+        }
+    },
+    "areas": {
+        "filterPlaceholder": "Algunha zona dentro deste lugar?",
+        "newArea": "Zona nova",
+        "promptTitle": "Introduza un nome para a zona:",
+        "absent": "Establece a área",
+        "error": "Erro",
+        "exist": "Zona xa existe",
+        "addNewArea": "Engadir nova área",
+        "add": "Engadir"
+    },
+    "types": {
+        "Places\/locations": {
+            "description": "unha colección de localizacións",
+            "displayType": "Localizacións"
+        },
+        "Places\/location": {
+            "description": "Representa un edificio, local, barco, parque, etc.",
+            "displayType": "Localización"
+        },
+        "Places\/area": {
+            "description": "Representa unha área dentro dunha localización, como unha habitación ou suite",
+            "displayType": "Área"
+        },
+        "Places\/floor": {
+            "description": "Representa un piso dun edificio ou dun barco",
+            "displayType": "Piso"
+        },
+        "Places\/column": {
+            "description": "Representa unha columna nun edificio ou barco",
+            "displayType": "Columna"
+        },
+        "Places\/nearby": {
+            "description": "Categoría para cousas a unha certa distancia dun xeohash",
+            "displayType": "Lugares próximos"
+        },
+        "Places\/interest": {
+            "description": "Categoría para cousas a unha certa distancia dun xeohash, que coincide cun interese",
+            "displayType": "Lugares de interese"
+        }
+    },
+    "countries": {
+        "SelectCountry": "Seleccione un país"
+    }
+}

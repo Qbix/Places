@@ -1,0 +1,195 @@
+{
+	"Q": {
+		"pluginInfo": {
+			"Places": {
+				"version": "1.1",
+				"compatible": "0.5",
+				"connections": ["Streams", "Places"],
+				"requires": {"Streams": "1.0.5"}
+			}
+		},
+		"routes@start": {
+			"Q/plugins/Places/:action": {"module": "Places"}
+		},
+		"handlersBeforeEvent": {
+			"Q/responseExtras": ["Places/before/Q_responseExtras"]
+		},
+		"handlersAfterEvent": {
+			"Streams/interest/add": ["Places/after/Streams_interest_add"],
+			"Streams/interest/remove": ["Places/after/Streams_interest_remove"]
+		},
+		"web": {
+			"contentSecurityPolicy": {
+				"script": ["https://maps.googleapis.com"]
+			},
+			"requireValidNonce": {
+				"include": ["Places"]
+			}
+		},
+		"bundle": {
+			"exclude": {
+				"Places": ["img/squareflags"]
+			}
+		},
+		"environments": {
+			"live": {
+				"prepare": {
+					"{{Places}}": ["js", "css"]
+				}
+			}
+		}
+	},
+	"Streams": {
+		"userStreams": {
+			"Places": "streams.json"
+		},
+		"types": {
+			"Places/locations": {
+				"emoji": "🗺️",
+				"create": true,
+				"edit": true,
+				"defaults": {
+					"title": "Locations",
+					"icon": "{{Places}}/img/icons/locations"
+				}
+			},
+			"Places/location": {
+				"emoji": "📍",
+				"create": true,
+				"edit": true,
+				"messages": {
+					"Places/location/visit": { "post": true },
+					"Places/location/stay": { "post": true }
+				},
+				"defaults": {
+					"icon": "{{Places}}/img/icons/location",
+					"title": "Location"
+				},
+				"relatedFrom": {
+					"*": {
+						"description": "Posted to an entire location"
+					}
+				},
+				"participating": ["Places/participating"]
+			},
+			"Places/area": {
+				"emoji": "🏢",
+				"create": true,
+				"edit": true,
+				"messages": {
+					"Places/location/visit": { "post": true },
+					"Places/location/stay": { "post": true }
+				},
+				"defaults": {
+					"icon": "{{Places}}/img/icons/area",
+					"title": "Area within Location"
+				},
+				"relatedFrom": {
+					"*": {
+						"description": "Posted to a specific area"
+					}
+				},
+				"participating": ["Places/participating"]
+			},
+			"Places/floor": {
+				"emoji": "🏗️",
+				"edit": true,
+				"defaults": {
+					"icon": "{{Places}}/img/icons/floor",
+					"title": "Building Floor"
+				},
+				"relatedFrom": {
+					"*": {
+						"description": "Posted to entire floor"
+					}
+				},
+				"participating": ["Places/participating"]
+			},
+			"Places/column": {
+				"emoji": "🏬",
+				"edit": true,
+				"defaults": {
+					"icon": "{{Places}}/img/icons/column",
+					"title": "Building Column"
+				},
+				"relatedFrom": {
+					"*": {
+						"description": "Posted to entire column"
+					}
+				},
+				"participating": ["Places/participating"]
+			},
+			"Places/nearby": {
+				"emoji": "🎯",
+				"defaults": {
+					"title": "Nearby",
+					"readLevel": 40,
+					"writeLevel": 10,
+					"adminLevel": 20
+				},
+				"relatedTo": {
+					"*": {
+						"description": "New {{fromDisplayType}} posted {{toTitle}}"
+					}
+				}
+			},
+			"Places/interest": {
+				"emoji": "💘",
+				"defaults": {
+					"title": "Nearby Interest",
+					"readLevel": 40,
+					"writeLevel": 10,
+					"adminLevel": 20
+				},
+				"relatedTo": {
+					"*": {
+						"description": "New {{fromDisplayType}} posted to {{toTitle}}"
+					}
+				}
+			}
+		},
+		"relate": {
+			"types": [
+				"Places/location", "Places/area", "Places/floor", "Places/column"
+			]
+		},
+		"invites": {
+			"sort": {
+				"areas": ["Places", "sortAreaFilenames"]
+			}
+		},
+		"onInsert": {
+			"user": ["Places/user/locations"],
+			"person": [
+				"Places/participating"
+			]
+		}
+	},
+	"Places": {
+		"nearby": {
+			"meters": [1000, 5000, 10000, 15000, 20000, 25000, 50000, 75000, 100000],
+			"defaultMeters": 50000,
+			"units": "km"
+		},
+		"geolocation": {
+			"requireLogin": false,
+			"allowClientQueries": false,
+			"timeLimit": 100000
+		},
+		"google": {
+			"keys": {
+				"server": null,
+				"web": null
+			}
+		},
+		"location": {
+			"cache": {
+				"duration": 2592000
+			},
+			"default": {
+				"latitude": 40.7537,
+				"longitude": -73.9992
+			}
+		}
+	}
+}

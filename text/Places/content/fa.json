@@ -1,0 +1,91 @@
+{
+    "LatLng": "( {{1}} لات، {{2}} lng)",
+    "nearby": {
+        "PostcodeLabel": "{{1}} ( {{2}} )",
+        "Title": "در {{1}}"
+    },
+    "units": {
+        "meter": "متر",
+        "meters": "متر",
+        "kilometer": "کیلومتر",
+        "kilometers": "کیلومتر",
+        "km": "کیلومتر",
+        "mile": "مایل",
+        "miles": "مایل",
+        "mi": "مایل",
+        "foot": "پا",
+        "feet": "پا",
+        "inches": "اینچ"
+    },
+    "location": {
+        "interested": "من علاقه مندم که چیزهایی در {{select}} سال اتفاق بیفتند",
+        "update": "مکان من را به روز کنید",
+        "set": "مکان من را تنظیم کنید",
+        "prompt": "{{ClickOrTap}} اینجا به<br> خود را تنظیم کنید<br> محل",
+        "myCurrentLocation": "مکان فعلی من",
+        "enterAddress": "آدرسی را وارد کنید",
+        "enterPostcode": "لطفا کد پستی \/ کد پستی خود را وارد کنید",
+        "create": {
+            "action": "اضافه کردن مکان",
+            "title": "مکان جدید",
+            "nameYourLocation": "مکان خود را نام ببرید"
+        },
+        "confirm": {
+            "title": "این مکان ذخیره شود؟",
+            "message": "آیا قصد دارید در آینده دوباره از این مکان استفاده کنید؟",
+            "ok": "آره",
+            "cancel": "خیر"
+        },
+        "add": {
+            "title": "این مکان را نام ببرید",
+            "placeholder": "خانه، محل کار و غیره",
+            "ok": "صرفه جویی"
+        },
+        "dialog": {
+            "title": "مکان را انتخاب کنید"
+        }
+    },
+    "areas": {
+        "filterPlaceholder": "هیچ منطقه ای در داخل این مکان وجود دارد؟",
+        "newArea": "منطقه جدید",
+        "promptTitle": "یک نام برای منطقه وارد کنید:",
+        "absent": "لطفا منطقه را تعیین کنید",
+        "error": "خطا",
+        "exist": "منطقه در حال حاضر وجود دارد",
+        "addNewArea": "اضافه کردن منطقه جدید",
+        "add": "اضافه کردن"
+    },
+    "types": {
+        "Places\/locations": {
+            "description": "مجموعه ای از مکان ها",
+            "displayType": "مکان ها"
+        },
+        "Places\/location": {
+            "description": "نمایانگر ساختمان، مکان، کشتی، پارک و غیره است.",
+            "displayType": "محل"
+        },
+        "Places\/area": {
+            "description": "نمایانگر یک منطقه در یک مکان، مانند یک اتاق یا سوئیت است",
+            "displayType": "حوزه"
+        },
+        "Places\/floor": {
+            "description": "نمایانگر یک طبقه در یک ساختمان یا کشتی است",
+            "displayType": "کف"
+        },
+        "Places\/column": {
+            "description": "نمایانگر یک ستون در یک ساختمان یا کشتی است",
+            "displayType": "ستون"
+        },
+        "Places\/nearby": {
+            "description": "دسته بندی برای چیزهایی که در فاصله معینی از ژئوهش قرار دارند",
+            "displayType": "نزدیک به مکان ها"
+        },
+        "Places\/interest": {
+            "description": "دسته بندی برای چیزهایی که در فاصله معینی از ژئوهش قرار دارند، مطابق با علاقه",
+            "displayType": "مکان های مورد علاقه"
+        }
+    },
+    "countries": {
+        "SelectCountry": "یک کشور را انتخاب کن"
+    }
+}

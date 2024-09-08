@@ -1,0 +1,91 @@
+{
+    "LatLng": "( {{1}} ላት፣ {{2}} lng)",
+    "nearby": {
+        "PostcodeLabel": "{{1}} ( {{2}} )",
+        "Title": "በ {{1}}"
+    },
+    "units": {
+        "meter": "ሜትር",
+        "meters": "ሜትር",
+        "kilometer": "ኪሎሜትር",
+        "kilometers": "ኪዮሜትሮች",
+        "km": "ኪ.ሜ",
+        "mile": "ማይል",
+        "miles": "ማይል",
+        "mi": "ሚ",
+        "foot": "እግር",
+        "feet": "እግሮች",
+        "inches": "ኢንች"
+    },
+    "location": {
+        "interested": "በ {{select}} ውስጥ በሚከናወኑ ነገሮች ላይ ፍላጎት አለኝ",
+        "update": "የእኔን አካባቢ አዘምን",
+        "set": "አካባቢዬን አቀናብር",
+        "prompt": "{{ClickOrTap}} እዚህ ወደ<br> የእርስዎን<br> አካባቢ",
+        "myCurrentLocation": "አሁን ያለኝ ቦታ",
+        "enterAddress": "አድራሻ አስገባ",
+        "enterPostcode": "እባክዎ የፖስታ ኮድዎን \/ ዚፕ ኮድዎን ያስገቡ",
+        "create": {
+            "action": "አካባቢ ጨምር",
+            "title": "አዲስ ቦታ",
+            "nameYourLocation": "አካባቢዎን ይሰይሙ"
+        },
+        "confirm": {
+            "title": "ይህ አካባቢ ይቀመጥ?",
+            "message": "ለወደፊቱ ይህንን ቦታ እንደገና ለመጠቀም አስበዋል?",
+            "ok": "አዎ",
+            "cancel": "አይ"
+        },
+        "add": {
+            "title": "ይህን አካባቢ ይሰይሙ",
+            "placeholder": "ቤት ፣ ሥራ ፣ ወዘተ.",
+            "ok": "አስቀምጥ"
+        },
+        "dialog": {
+            "title": "አካባቢ ይምረጡ"
+        }
+    },
+    "areas": {
+        "filterPlaceholder": "በዚህ አካባቢ ውስጥ ያለ ማንኛውም ቦታ?",
+        "newArea": "አዲስ አካባቢ",
+        "promptTitle": "ለአካባቢው ስም ያስገቡ፡-",
+        "absent": "እባክዎን አካባቢ ያዘጋጁ",
+        "error": "ስህተት",
+        "exist": "አካባቢ አስቀድሞ አለ።",
+        "addNewArea": "አዲስ አካባቢ ያክሉ",
+        "add": "አክል"
+    },
+    "types": {
+        "Places\/locations": {
+            "description": "የቦታዎች ስብስብ",
+            "displayType": "ቦታዎች"
+        },
+        "Places\/location": {
+            "description": "ሕንፃ፣ ቦታ፣ መርከብ፣ ፓርክ፣ ወዘተ ይወክላል።",
+            "displayType": "አካባቢ"
+        },
+        "Places\/area": {
+            "description": "እንደ ክፍል ወይም ክፍል ያለ አካባቢን ይወክላል",
+            "displayType": "አካባቢ"
+        },
+        "Places\/floor": {
+            "description": "በህንፃ ወይም በመርከብ ውስጥ ወለልን ይወክላል",
+            "displayType": "ወለል"
+        },
+        "Places\/column": {
+            "description": "በህንፃ ወይም በመርከብ ውስጥ አንድ አምድ ይወክላል",
+            "displayType": "አምድ"
+        },
+        "Places\/nearby": {
+            "description": "በጂኦሃሽ የተወሰነ ርቀት ውስጥ ላሉ ነገሮች ምድብ",
+            "displayType": "በቦታዎች አቅራቢያ"
+        },
+        "Places\/interest": {
+            "description": "በጂኦሃሽ የተወሰነ ርቀት ውስጥ ያሉ ነገሮች፣ ከፍላጎት ጋር የሚዛመድ ምድብ",
+            "displayType": "ቦታዎች ፍላጎት"
+        }
+    },
+    "countries": {
+        "SelectCountry": "አገር ይምረጡ"
+    }
+}

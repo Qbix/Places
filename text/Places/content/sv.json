@@ -1,0 +1,91 @@
+{
+    "LatLng": "( {{1}} lat, {{2}} ng)",
+    "nearby": {
+        "PostcodeLabel": "{{1}} ( {{2}} )",
+        "Title": "inom {{1}}"
+    },
+    "units": {
+        "meter": "meter",
+        "meters": "meter",
+        "kilometer": "kilometer",
+        "kilometers": "kilometer",
+        "km": "km",
+        "mile": "mile",
+        "miles": "mil",
+        "mi": "mi",
+        "foot": "fot",
+        "feet": "fötter",
+        "inches": "tum"
+    },
+    "location": {
+        "interested": "Jag är intresserad av saker som äger rum inom {{select}} av",
+        "update": "Uppdatera min plats",
+        "set": "Ställ in min plats",
+        "prompt": "{{ClickOrTap}} hit till<br> ställ in din<br> plats",
+        "myCurrentLocation": "Min nuvarande plats",
+        "enterAddress": "Ange en adress",
+        "enterPostcode": "Vänligen ange ditt postnummer\/postnummer",
+        "create": {
+            "action": "Lägg till plats",
+            "title": "Ny plats",
+            "nameYourLocation": "Namnge din plats"
+        },
+        "confirm": {
+            "title": "Spara den här platsen?",
+            "message": "Planerar du att använda den här platsen igen i framtiden?",
+            "ok": "Ja",
+            "cancel": "Nej"
+        },
+        "add": {
+            "title": "Namnge denna plats",
+            "placeholder": "Hemma, jobb etc.",
+            "ok": "Spara"
+        },
+        "dialog": {
+            "title": "Välj Plats"
+        }
+    },
+    "areas": {
+        "filterPlaceholder": "Något område på denna plats?",
+        "newArea": "Nytt område",
+        "promptTitle": "Ange ett namn för området:",
+        "absent": "Vänligen ange område",
+        "error": "Fel",
+        "exist": "Område finns redan",
+        "addNewArea": "Lägg till nytt område",
+        "add": "Lägg till"
+    },
+    "types": {
+        "Places\/locations": {
+            "description": "en samling platser",
+            "displayType": "Platser"
+        },
+        "Places\/location": {
+            "description": "Representerar en byggnad, lokal, fartyg, park, etc.",
+            "displayType": "Plats"
+        },
+        "Places\/area": {
+            "description": "Representerar ett område inom en plats, till exempel ett rum eller en svit",
+            "displayType": "Område"
+        },
+        "Places\/floor": {
+            "description": "Representerar en våning i en byggnad eller ett fartyg",
+            "displayType": "Golv"
+        },
+        "Places\/column": {
+            "description": "Representerar en kolumn i en byggnad eller ett skepp",
+            "displayType": "Kolumn"
+        },
+        "Places\/nearby": {
+            "description": "Kategori för saker inom ett visst avstånd från en geohash",
+            "displayType": "Nära till platser"
+        },
+        "Places\/interest": {
+            "description": "Kategori för saker inom ett visst avstånd från en geohash, som matchar ett intresse",
+            "displayType": "Platser intresserar"
+        }
+    },
+    "countries": {
+        "SelectCountry": "Välj ett land"
+    }
+}
