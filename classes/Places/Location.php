@@ -51,7 +51,7 @@ class Places_Location extends Base_Places_Location
 			$stream = Streams::create($user->id, $user->id, 'Places/location', array(
 				'name' => $streamName
 			));
-			$stream->join();
+			$stream->join(array('skipAccess' => true));
 			$created = true;
 		} else {
 			$created = false;
