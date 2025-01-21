@@ -1,0 +1,91 @@
+{
+    "LatLng": "( {{1}} lat, {{2}} lng)",
+    "nearby": {
+        "PostcodeLabel": "{{1}} ( {{2}} )",
+        "Title": "{{1}}"
+    },
+    "units": {
+        "meter": "Meter",
+        "meters": "Meter",
+        "kilometer": "Kilometer",
+        "kilometers": "Kilometer",
+        "km": "km",
+        "mile": "Meile",
+        "miles": "Meilen",
+        "mi": "mi",
+        "foot": "Fouss",
+        "feet": "Fouss",
+        "inches": "Zoll"
+    },
+    "countries": {
+        "SelectCountry": "Wielt Land"
+    },
+    "location": {
+        "interested": "Ech interesséiert Saachen déi Plaz bannent {{select}} vun",
+        "update": "Update Meng Location",
+        "set": "Set Meng Location",
+        "prompt": "{{ClickOrTap}} elo<br> setzen Är<br> Standuert",
+        "myCurrentLocation": "Meng aktuell Positioun",
+        "enterAddress": "Gitt eng Adress un",
+        "enterPostcode": "Gitt w.e.g. Är Postleitzuel \/ Postleitzuel un",
+        "create": {
+            "action": "Dobäi Location",
+            "title": "Nei Location",
+            "nameYourLocation": "Numm Är Plaz"
+        },
+        "confirm": {
+            "title": "Dës Plaz späicheren?",
+            "message": "Plan Dir dës Plaz an Zukunft nach eng Kéier ze benotzen?",
+            "ok": "Jo",
+            "cancel": "Nee"
+        },
+        "add": {
+            "title": "Nennt dës Plaz",
+            "placeholder": "Heem, Aarbecht etc.",
+            "ok": "Späicheren"
+        },
+        "dialog": {
+            "title": "Wielt Location"
+        }
+    },
+    "areas": {
+        "filterPlaceholder": "All Beräich an dëser Plaz?",
+        "newArea": "Neit Gebitt",
+        "promptTitle": "Gitt en Numm fir d&#39;Gebitt un:",
+        "absent": "Weg setzen Beräich",
+        "error": "Feeler",
+        "exist": "Beräich schonn existéieren",
+        "addNewArea": "Füügt neit Gebitt",
+        "add": "Addéieren"
+    },
+    "types": {
+        "Places\/locations": {
+            "description": "eng Sammlung vu Plazen",
+            "displayType": "Plaze"
+        },
+        "Places\/location": {
+            "description": "Representéiert e Gebai, Plaz, Schëff, Park, etc.",
+            "displayType": "Location"
+        },
+        "Places\/area": {
+            "description": "Representéiert e Gebitt an enger Plaz, sou wéi e Raum oder Suite",
+            "displayType": "Gebiet"
+        },
+        "Places\/floor": {
+            "description": "Representéiert e Buedem an engem Gebai oder Schëff",
+            "displayType": "Buedem"
+        },
+        "Places\/column": {
+            "description": "Representéiert eng Kolonn an engem Gebai oder Schëff",
+            "displayType": "Kolonn"
+        },
+        "Places\/nearby": {
+            "description": "Kategorie fir Saachen bannent enger gewëssener Distanz vun engem Geohash",
+            "displayType": "No bei Plaze"
+        },
+        "Places\/interest": {
+            "description": "Kategorie fir Saachen bannent enger gewëssener Distanz vun engem Geohash, passenden Interessi",
+            "displayType": "Plaze Interessi"
+        }
+    }
+}

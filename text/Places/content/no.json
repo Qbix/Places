@@ -1,0 +1,91 @@
+{
+    "LatLng": "( {{1}} lat, {{2}} ng)",
+    "nearby": {
+        "PostcodeLabel": "{{1}} ( {{2}} )",
+        "Title": "innen {{1}}"
+    },
+    "units": {
+        "meter": "måler",
+        "meters": "meter",
+        "kilometer": "kilometer",
+        "kilometers": "kilometer",
+        "km": "km",
+        "mile": "mil",
+        "miles": "miles",
+        "mi": "mi",
+        "foot": "fot",
+        "feet": "føtter",
+        "inches": "tommer"
+    },
+    "countries": {
+        "SelectCountry": "Velg Land"
+    },
+    "location": {
+        "interested": "Jeg er interessert i at ting finner sted innen {{select}} av",
+        "update": "Oppdater min plassering",
+        "set": "Angi Min posisjon",
+        "prompt": "{{ClickOrTap}} her til<br> angi din<br> sted",
+        "myCurrentLocation": "Min nåværende plassering",
+        "enterAddress": "Skriv inn en adresse",
+        "enterPostcode": "Vennligst skriv inn postnummer\/postnummer",
+        "create": {
+            "action": "Legg til plassering",
+            "title": "Ny plassering",
+            "nameYourLocation": "Gi navnet ditt sted"
+        },
+        "confirm": {
+            "title": "Vil du lagre denne plasseringen?",
+            "message": "Har du tenkt å bruke dette stedet igjen i fremtiden?",
+            "ok": "Ja",
+            "cancel": "Ingen"
+        },
+        "add": {
+            "title": "Gi dette stedet et navn",
+            "placeholder": "Hjemme, jobb osv.",
+            "ok": "Spare"
+        },
+        "dialog": {
+            "title": "Velg Sted"
+        }
+    },
+    "areas": {
+        "filterPlaceholder": "Noen område inne på dette stedet?",
+        "newArea": "Nytt område",
+        "promptTitle": "Skriv inn et navn for området:",
+        "absent": "Vennligst still inn området",
+        "error": "Feil",
+        "exist": "Området eksisterer allerede",
+        "addNewArea": "Legg til nytt område",
+        "add": "Legge til"
+    },
+    "types": {
+        "Places\/locations": {
+            "description": "en samling lokasjoner",
+            "displayType": "Steder"
+        },
+        "Places\/location": {
+            "description": "Representerer en bygning, et sted, et skip, en park osv.",
+            "displayType": "Sted"
+        },
+        "Places\/area": {
+            "description": "Representerer et område innenfor et sted, for eksempel et rom eller en suite",
+            "displayType": "Område"
+        },
+        "Places\/floor": {
+            "description": "Representerer en etasje i en bygning eller et skip",
+            "displayType": "Gulv"
+        },
+        "Places\/column": {
+            "description": "Representerer en kolonne i en bygning eller et skip",
+            "displayType": "Søyle"
+        },
+        "Places\/nearby": {
+            "description": "Kategori for ting innenfor en viss avstand fra en geohash",
+            "displayType": "Steder i nærheten"
+        },
+        "Places\/interest": {
+            "description": "Kategori for ting innenfor en viss avstand fra en geohash, som matcher en interesse",
+            "displayType": "Steder interesse"
+        }
+    }
+}

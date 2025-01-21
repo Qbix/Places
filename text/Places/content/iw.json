@@ -1,0 +1,91 @@
+{
+    "LatLng": "( {{1}} lat, {{2}} לונג)",
+    "nearby": {
+        "PostcodeLabel": "{{1}} ( {{2}} )",
+        "Title": "בתוך {{1}}"
+    },
+    "units": {
+        "meter": "מֶטֶר",
+        "meters": "מטרים",
+        "kilometer": "קִילוֹמֶטֶר",
+        "kilometers": "קילומטרים",
+        "km": "ק&quot;מ",
+        "mile": "מִיל",
+        "miles": "מיילים",
+        "mi": "מִי",
+        "foot": "רֶגֶל",
+        "feet": "רגליים",
+        "inches": "אינצ&#39;ים"
+    },
+    "countries": {
+        "SelectCountry": "בחר מדינה"
+    },
+    "location": {
+        "interested": "אני מעוניין בדברים שיתרחשו בתוך {{select}} של",
+        "update": "עדכן את המיקום שלי",
+        "set": "הגדר את המיקום שלי",
+        "prompt": "{{ClickOrTap}} כאן ל<br> הגדר את שלך<br> מִקוּם",
+        "myCurrentLocation": "המיקום הנוכחי שלי",
+        "enterAddress": "הזן כתובת",
+        "enterPostcode": "אנא הזן את המיקוד\/מיקוד שלך",
+        "create": {
+            "action": "הוסף מיקום",
+            "title": "מיקום חדש",
+            "nameYourLocation": "תן שם למיקומך"
+        },
+        "confirm": {
+            "title": "לשמור את המיקום הזה?",
+            "message": "האם אתה מתכנן להשתמש במיקום זה שוב בעתיד?",
+            "ok": "כֵּן",
+            "cancel": "לֹא"
+        },
+        "add": {
+            "title": "תן שם למיקום זה",
+            "placeholder": "בית, עבודה וכו&#39;.",
+            "ok": "לְהַצִיל"
+        },
+        "dialog": {
+            "title": "בחר מיקום"
+        }
+    },
+    "areas": {
+        "filterPlaceholder": "אזור כלשהו בתוך המיקום הזה?",
+        "newArea": "אזור חדש",
+        "promptTitle": "הזן שם לאזור:",
+        "absent": "נא להגדיר אזור",
+        "error": "שְׁגִיאָה",
+        "exist": "אזור כבר קיים",
+        "addNewArea": "הוסף אזור חדש",
+        "add": "לְהוֹסִיף"
+    },
+    "types": {
+        "Places\/locations": {
+            "description": "אוסף של מיקומים",
+            "displayType": "מיקומים"
+        },
+        "Places\/location": {
+            "description": "מייצג בניין, מקום, ספינה, פארק וכו&#39;.",
+            "displayType": "מִקוּם"
+        },
+        "Places\/area": {
+            "description": "מייצג אזור בתוך מיקום, כגון חדר או סוויטה",
+            "displayType": "אֵזוֹר"
+        },
+        "Places\/floor": {
+            "description": "מייצג קומה בבניין או בספינה",
+            "displayType": "קוֹמָה"
+        },
+        "Places\/column": {
+            "description": "מייצג עמודה בבניין או בספינה",
+            "displayType": "עַמוּדָה"
+        },
+        "Places\/nearby": {
+            "description": "קטגוריה של דברים במרחק מסוים מגיאואש",
+            "displayType": "בקרבת מקומות"
+        },
+        "Places\/interest": {
+            "description": "קטגוריה של דברים במרחק מסוים מגיאואש, תואמת עניין",
+            "displayType": "מקומות עניין"
+        }
+    }
+}
