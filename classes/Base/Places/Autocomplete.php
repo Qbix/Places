@@ -673,6 +673,24 @@ return array (
 		}						
 		// convention: we'll have updatedTime = insertedTime if just created.
 		$this->updatedTime = $value['updatedTime'] = new Db_Expression('CURRENT_TIMESTAMP');
+		if (!isset($value["query"])) {
+			$this->query = $value["query"] = "";
+		}
+		if (!isset($value["types"])) {
+			$this->types = $value["types"] = "";
+		}
+		if (!isset($value["latitude"])) {
+			$this->latitude = $value["latitude"] = 0;
+		}
+		if (!isset($value["longitude"])) {
+			$this->longitude = $value["longitude"] = 0;
+		}
+		if (!isset($value["meters"])) {
+			$this->meters = $value["meters"] = 0;
+		}
+		if (!isset($value["results"])) {
+			$this->results = $value["results"] = "";
+		}
 		return $value;			
 	}
 

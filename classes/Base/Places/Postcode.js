@@ -714,4 +714,42 @@ Base.column_accuracy = function () {
 return [["int",null,null,null],false,"",null];
 };
 
+Base.prototype.beforeSave = function (value) {
+
+	if (this.fields["countryCode"] == undefined) {
+		this.fields["countryCode"] = value["countryCode"] = "";
+	}
+	if (this.fields["postcode"] == undefined) {
+		this.fields["postcode"] = value["postcode"] = "";
+	}
+	if (this.fields["placeName"] == undefined) {
+		this.fields["placeName"] = value["placeName"] = "";
+	}
+	if (this.fields["stateName"] == undefined) {
+		this.fields["stateName"] = value["stateName"] = "";
+	}
+	if (this.fields["state"] == undefined) {
+		this.fields["state"] = value["state"] = "";
+	}
+	if (this.fields["regionName"] == undefined) {
+		this.fields["regionName"] = value["regionName"] = "";
+	}
+	if (this.fields["region"] == undefined) {
+		this.fields["region"] = value["region"] = "";
+	}
+	if (this.fields["community"] == undefined) {
+		this.fields["community"] = value["community"] = "";
+	}
+	if (this.fields["latitude"] == undefined) {
+		this.fields["latitude"] = value["latitude"] = 0;
+	}
+	if (this.fields["longitude"] == undefined) {
+		this.fields["longitude"] = value["longitude"] = 0;
+	}
+	if (this.fields["accuracy"] == undefined) {
+		this.fields["accuracy"] = value["accuracy"] = 0;
+	}
+
+};
+
 module.exports = Base;

@@ -410,4 +410,18 @@ Base.column_insertedTime = function () {
 return [["timestamp",null,null,null],false,"","CURRENT_TIMESTAMP"];
 };
 
+Base.prototype.beforeSave = function (value) {
+
+	if (this.fields["geohash"] == undefined) {
+		this.fields["geohash"] = value["geohash"] = "";
+	}
+	if (this.fields["publisherId"] == undefined) {
+		this.fields["publisherId"] = value["publisherId"] = "";
+	}
+	if (this.fields["streamName"] == undefined) {
+		this.fields["streamName"] = value["streamName"] = "";
+	}
+
+};
+
 module.exports = Base;

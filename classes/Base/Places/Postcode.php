@@ -870,6 +870,45 @@ return array (
 );			
 	}
 
+	function beforeSave($value)
+	{
+
+		if (!isset($value["countryCode"])) {
+			$this->countryCode = $value["countryCode"] = "";
+		}
+		if (!isset($value["postcode"])) {
+			$this->postcode = $value["postcode"] = "";
+		}
+		if (!isset($value["placeName"])) {
+			$this->placeName = $value["placeName"] = "";
+		}
+		if (!isset($value["stateName"])) {
+			$this->stateName = $value["stateName"] = "";
+		}
+		if (!isset($value["state"])) {
+			$this->state = $value["state"] = "";
+		}
+		if (!isset($value["regionName"])) {
+			$this->regionName = $value["regionName"] = "";
+		}
+		if (!isset($value["region"])) {
+			$this->region = $value["region"] = "";
+		}
+		if (!isset($value["community"])) {
+			$this->community = $value["community"] = "";
+		}
+		if (!isset($value["latitude"])) {
+			$this->latitude = $value["latitude"] = 0;
+		}
+		if (!isset($value["longitude"])) {
+			$this->longitude = $value["longitude"] = 0;
+		}
+		if (!isset($value["accuracy"])) {
+			$this->accuracy = $value["accuracy"] = 0;
+		}
+			
+	}
+
 	/**
 	 * Retrieves field names for class table
 	 * @method fieldNames

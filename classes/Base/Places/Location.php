@@ -472,6 +472,21 @@ return array (
 );			
 	}
 
+	function beforeSave($value)
+	{
+
+		if (!isset($value["geohash"])) {
+			$this->geohash = $value["geohash"] = "";
+		}
+		if (!isset($value["publisherId"])) {
+			$this->publisherId = $value["publisherId"] = "";
+		}
+		if (!isset($value["streamName"])) {
+			$this->streamName = $value["streamName"] = "";
+		}
+			
+	}
+
 	/**
 	 * Retrieves field names for class table
 	 * @method fieldNames
