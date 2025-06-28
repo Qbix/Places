@@ -564,22 +564,22 @@ Base.prototype.beforeSave = function (value) {
 	}
 	// convention: we'll have updatedTime = insertedTime if just created.
 	this['updatedTime'] = value['updatedTime'] = new Db.Expression('CURRENT_TIMESTAMP');
-	if (this.fields["query"] == undefined) {
+	if (this.fields["query"] == undefined && value["query"] == undefined) {
 		this.fields["query"] = value["query"] = "";
 	}
-	if (this.fields["types"] == undefined) {
+	if (this.fields["types"] == undefined && value["types"] == undefined) {
 		this.fields["types"] = value["types"] = "";
 	}
-	if (this.fields["latitude"] == undefined) {
+	if (this.fields["latitude"] == undefined && value["latitude"] == undefined) {
 		this.fields["latitude"] = value["latitude"] = 0;
 	}
-	if (this.fields["longitude"] == undefined) {
+	if (this.fields["longitude"] == undefined && value["longitude"] == undefined) {
 		this.fields["longitude"] = value["longitude"] = 0;
 	}
-	if (this.fields["meters"] == undefined) {
+	if (this.fields["meters"] == undefined && value["meters"] == undefined) {
 		this.fields["meters"] = value["meters"] = 0;
 	}
-	if (this.fields["results"] == undefined) {
+	if (this.fields["results"] == undefined && value["results"] == undefined) {
 		this.fields["results"] = value["results"] = "";
 	}
 	return value;

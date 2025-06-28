@@ -880,37 +880,37 @@ return array (
 	function beforeSave($value)
 	{
 
-		if (!isset($value["countryCode"])) {
+		if (!isset($this->fields["countryCode"]) and !isset($value["countryCode"])) {
 			$this->countryCode = $value["countryCode"] = "";
 		}
-		if (!isset($value["postcode"])) {
+		if (!isset($this->fields["postcode"]) and !isset($value["postcode"])) {
 			$this->postcode = $value["postcode"] = "";
 		}
-		if (!isset($value["placeName"])) {
+		if (!isset($this->fields["placeName"]) and !isset($value["placeName"])) {
 			$this->placeName = $value["placeName"] = "";
 		}
-		if (!isset($value["stateName"])) {
+		if (!isset($this->fields["stateName"]) and !isset($value["stateName"])) {
 			$this->stateName = $value["stateName"] = "";
 		}
-		if (!isset($value["state"])) {
+		if (!isset($this->fields["state"]) and !isset($value["state"])) {
 			$this->state = $value["state"] = "";
 		}
-		if (!isset($value["regionName"])) {
+		if (!isset($this->fields["regionName"]) and !isset($value["regionName"])) {
 			$this->regionName = $value["regionName"] = "";
 		}
-		if (!isset($value["region"])) {
+		if (!isset($this->fields["region"]) and !isset($value["region"])) {
 			$this->region = $value["region"] = "";
 		}
-		if (!isset($value["community"])) {
+		if (!isset($this->fields["community"]) and !isset($value["community"])) {
 			$this->community = $value["community"] = "";
 		}
-		if (!isset($value["latitude"])) {
+		if (!isset($this->fields["latitude"]) and !isset($value["latitude"])) {
 			$this->latitude = $value["latitude"] = 0;
 		}
-		if (!isset($value["longitude"])) {
+		if (!isset($this->fields["longitude"]) and !isset($value["longitude"])) {
 			$this->longitude = $value["longitude"] = 0;
 		}
-		if (!isset($value["accuracy"])) {
+		if (!isset($this->fields["accuracy"]) and !isset($value["accuracy"])) {
 			$this->accuracy = $value["accuracy"] = 0;
 		}
 		return $value;			

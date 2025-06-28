@@ -724,37 +724,37 @@ return [["int",null,null,null],false,"",null];
  */
 Base.prototype.beforeSave = function (value) {
 
-	if (this.fields["countryCode"] == undefined) {
+	if (this.fields["countryCode"] == undefined && value["countryCode"] == undefined) {
 		this.fields["countryCode"] = value["countryCode"] = "";
 	}
-	if (this.fields["postcode"] == undefined) {
+	if (this.fields["postcode"] == undefined && value["postcode"] == undefined) {
 		this.fields["postcode"] = value["postcode"] = "";
 	}
-	if (this.fields["placeName"] == undefined) {
+	if (this.fields["placeName"] == undefined && value["placeName"] == undefined) {
 		this.fields["placeName"] = value["placeName"] = "";
 	}
-	if (this.fields["stateName"] == undefined) {
+	if (this.fields["stateName"] == undefined && value["stateName"] == undefined) {
 		this.fields["stateName"] = value["stateName"] = "";
 	}
-	if (this.fields["state"] == undefined) {
+	if (this.fields["state"] == undefined && value["state"] == undefined) {
 		this.fields["state"] = value["state"] = "";
 	}
-	if (this.fields["regionName"] == undefined) {
+	if (this.fields["regionName"] == undefined && value["regionName"] == undefined) {
 		this.fields["regionName"] = value["regionName"] = "";
 	}
-	if (this.fields["region"] == undefined) {
+	if (this.fields["region"] == undefined && value["region"] == undefined) {
 		this.fields["region"] = value["region"] = "";
 	}
-	if (this.fields["community"] == undefined) {
+	if (this.fields["community"] == undefined && value["community"] == undefined) {
 		this.fields["community"] = value["community"] = "";
 	}
-	if (this.fields["latitude"] == undefined) {
+	if (this.fields["latitude"] == undefined && value["latitude"] == undefined) {
 		this.fields["latitude"] = value["latitude"] = 0;
 	}
-	if (this.fields["longitude"] == undefined) {
+	if (this.fields["longitude"] == undefined && value["longitude"] == undefined) {
 		this.fields["longitude"] = value["longitude"] = 0;
 	}
-	if (this.fields["accuracy"] == undefined) {
+	if (this.fields["accuracy"] == undefined && value["accuracy"] == undefined) {
 		this.fields["accuracy"] = value["accuracy"] = 0;
 	}
 	return value;
