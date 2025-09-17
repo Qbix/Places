@@ -21,8 +21,11 @@ abstract class Base_Places
 	 */
 	static $table_classnames = array (
   0 => 'Places_Autocomplete',
-  1 => 'Places_Location',
-  2 => 'Places_Postcode',
+  1 => 'Places_City',
+  2 => 'Places_Ipv4',
+  3 => 'Places_Ipv6',
+  4 => 'Places_Location',
+  5 => 'Places_Postcode',
 );
 
 	/**

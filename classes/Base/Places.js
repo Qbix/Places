@@ -28,6 +28,9 @@ module.exports = Base;
  */
 Base.tableClasses = [
 	"Places_Autocomplete",
+	"Places_City",
+	"Places_Ipv4",
+	"Places_Ipv6",
 	"Places_Location",
 	"Places_Postcode"
 ];
@@ -57,6 +60,27 @@ Base.connectionName = function() {
  * @type Places.Autocomplete
  */
 Base.Autocomplete = Q.require('Places/Autocomplete');
+
+/**
+ * Link to Places.City model
+ * @property City
+ * @type Places.City
+ */
+Base.City = Q.require('Places/City');
+
+/**
+ * Link to Places.Ipv4 model
+ * @property Ipv4
+ * @type Places.Ipv4
+ */
+Base.Ipv4 = Q.require('Places/Ipv4');
+
+/**
+ * Link to Places.Ipv6 model
+ * @property Ipv6
+ * @type Places.Ipv6
+ */
+Base.Ipv6 = Q.require('Places/Ipv6');
 
 /**
  * Link to Places.Location model

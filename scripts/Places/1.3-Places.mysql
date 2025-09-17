@@ -1,0 +1,117 @@
+-- Enable safe mode
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+-- 1. Add geonameId to postcodes (if not exists)
+ALTER TABLE `{{prefix}}postcode`
+  ADD COLUMN `geonameId` INT NULL AFTER `postcode`;
+
+-- 2. Create city table
+CREATE TABLE IF NOT EXISTS `{{prefix}}city` (
+  `geonameId` INT NOT NULL AUTO_INCREMENT,
+  `countryCode` VARCHAR(2) NOT NULL,
+  `normalizedName` VARCHAR(180) NOT NULL,
+  `englishName` VARCHAR(180) NOT NULL,
+  `localName` VARCHAR(180) NOT NULL,
+  `stateName` VARCHAR(100) DEFAULT NULL,
+  `stateCode` VARCHAR(20) DEFAULT NULL,
+  `regionName` VARCHAR(100) DEFAULT NULL,
+  `regionCode` VARCHAR(20) DEFAULT NULL,
+  `latitude` DOUBLE NOT NULL,
+  `longitude` DOUBLE NOT NULL,
+  `geohash` VARCHAR(31) NOT NULL,
+  `timeZone` VARCHAR(40) DEFAULT NULL,
+  `population` INT DEFAULT NULL,
+  `featureCode` VARCHAR(10) DEFAULT NULL,
+  PRIMARY KEY (`geonameId`),
+  KEY `countryCode` (`countryCode`),
+  KEY `normalizedName` (`normalizedName`),
+  KEY `latlon` (`latitude`,`longitude`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- 3. Create IPv4 table (with countryCode)
+CREATE TABLE IF NOT EXISTS `{{prefix}}ipv4` (
+  `ipMin` INT UNSIGNED NOT NULL,
+  `ipMax` INT UNSIGNED NOT NULL,
+  `geonameId` INT NULL,
+  `countryCode` VARCHAR(2) NULL,
+  `registeredGeonameId` INT NULL,
+  `representedGeonameId` INT NULL,
+  `isAnonymousProxy` TINYINT(1) NOT NULL DEFAULT 0,
+  `isSatelliteProvider` TINYINT(1) NOT NULL DEFAULT 0,
+  `postcode` VARCHAR(20) NULL,
+  `latitude` DOUBLE NULL,
+  `longitude` DOUBLE NULL,
+  `accuracy` INT NULL,
+  `isAnycast` TINYINT(1) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`ipMin`, `ipMax`),
+  KEY `geonameId` (`geonameId`),
+  KEY `countryCode` (`countryCode`),
+  KEY `postcode` (`postcode`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- 4. Create IPv6 table (with countryCode)
+CREATE TABLE IF NOT EXISTS `{{prefix}}ipv6` (
+  `ipMin` VARBINARY(16) NOT NULL,
+  `ipMax` VARBINARY(16) NOT NULL,
+  `geonameId` INT NULL,
+  `countryCode` VARCHAR(2) NULL,
+  `registeredGeonameId` INT NULL,
+  `representedGeonameId` INT NULL,
+  `isAnonymousProxy` TINYINT(1) NOT NULL DEFAULT 0,
+  `isSatelliteProvider` TINYINT(1) NOT NULL DEFAULT 0,
+  `postcode` VARCHAR(20) NULL,
+  `latitude` DOUBLE NULL,
+  `longitude` DOUBLE NULL,
+  `accuracy` INT NULL,
+  `isAnycast` TINYINT(1) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`ipMin`, `ipMax`),
+  KEY `geonameId` (`geonameId`),
+  KEY `countryCode` (`countryCode`),
+  KEY `postcode` (`postcode`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- 5. Seed city table from existing postcode data (NO DISTINCT for speed)
+INSERT INTO `{{prefix}}city` (
+  countryCode, normalizedName, englishName, localName,
+  stateName, stateCode, regionName, regionCode,
+  latitude, longitude, geohash
+)
+SELECT
+  p.countryCode,
+  LOWER(REPLACE(REPLACE(REPLACE(p.placeName, ' ', '_'), '-', ''), '.', '')),
+  p.placeName,
+  p.placeName,
+  p.stateName,
+  p.state,
+  p.regionName,
+  p.region,
+  p.latitude,
+  p.longitude,
+  '' -- geohash to be updated later
+FROM `{{prefix}}postcode` p
+WHERE p.geonameId IS NULL;
+
+-- 6. Create index
+CREATE INDEX byCountryNameLatLon ON {{prefix}}city (countryCode, englishName, latitude, longitude);
+
+-- 7. Optional dedup (clean city table by picking lowest geonameId per name+coords)
+DELETE c1 FROM `{{prefix}}city` c1
+JOIN `{{prefix}}city` c2
+  ON c1.countryCode = c2.countryCode
+ AND c1.englishName = c2.englishName
+ AND c1.latitude = c2.latitude
+ AND c1.longitude = c2.longitude
+ AND c1.geonameId > c2.geonameId;
+
+-- 8. Postcode make some columns optional before removing them with PHP
+
+ALTER TABLE places_postcode
+  MODIFY placeName varchar(180) NULL,
+  MODIFY stateName varchar(100) NULL,
+  MODIFY state varchar(20) NULL,
+  MODIFY regionName varchar(100) NULL,
+  MODIFY region varchar(20) NULL,
+  MODIFY community varchar(100) NULL,
+  MODIFY latitude double NULL,
+  MODIFY longitude double NULL,
+  MODIFY accuracy int NULL;
