@@ -436,4 +436,35 @@ abstract class Places extends Base_Places
 
 		return $response;
 	}
+
+	/**
+     * Lookup IP address from $_SERVER request context and return matching row,
+     * optionally joined with city/country/postcode.
+     *
+     * By default this uses REMOTE_ADDR, which is the most reliable.
+     * Optionally you can pass ['trustProxy' => true] to also consider
+     * HTTP_X_FORWARDED_FOR / HTTP_CLIENT_IP etc.
+     *
+     * @method lookupFromRequest
+     * @static
+     * @param {array} [$options=array()] Optional arguments:
+     *   @param {array} [$options.join=array()] Which related tables to join.
+     *     Can include "postcode", "city", "country".
+     *   @param {boolean} [$options.trustProxy=false] Whether to trust proxy headers.
+     * @return {Db_Row|null} Row object with optional joined data attached, or null if not found.
+     */
+    static function lookupFromRequest($options = array())
+    {
+        $ip = Q_Request::ip();
+        if (!$ip) {
+            return null; // nothing usable
+        }
+
+        // IPv6 vs IPv4
+        if (strpos($ip, ':') !== false) {
+            return Places_Ipv6::lookup($ip, $options);
+        } else {
+            return Places_Ipv4::lookup($ip, $options);
+        }
+    }
 };

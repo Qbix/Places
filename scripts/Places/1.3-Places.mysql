@@ -27,6 +27,7 @@ CREATE TABLE IF NOT EXISTS `{{prefix}}city` (
   KEY `normalizedName` (`normalizedName`),
   KEY `localName` (`localName`),
   KEY `latlon` (`latitude`,`longitude`)
+  KEY `geohash` (`geohash`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- 3. Create IPv4 table (with countryCode)

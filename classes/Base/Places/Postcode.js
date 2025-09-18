@@ -23,16 +23,17 @@ var Row = Q.require('Db/Row');
  * an associative array of {column: value} pairs
  * @param {String} [fields.countryCode] defaults to ""
  * @param {String} [fields.postcode] defaults to ""
- * @param {Integer} [fields.geonameId] defaults to 0
- * @param {String} [fields.placeName] defaults to null
- * @param {String} [fields.stateName] defaults to null
- * @param {String} [fields.state] defaults to null
- * @param {String} [fields.regionName] defaults to null
- * @param {String} [fields.region] defaults to null
- * @param {String} [fields.community] defaults to null
+ * @param {String} [fields.placeName] defaults to ""
+ * @param {String} [fields.stateName] defaults to ""
+ * @param {String} [fields.state] defaults to ""
+ * @param {String} [fields.regionName] defaults to ""
+ * @param {String} [fields.region] defaults to ""
+ * @param {String} [fields.community] defaults to ""
  * @param {Number} [fields.latitude] defaults to 0
  * @param {Number} [fields.longitude] defaults to 0
+ * @param {String} [fields.geohash] defaults to null
  * @param {Integer} [fields.accuracy] defaults to 0
+ * @param {Integer} [fields.geonameId] defaults to 0
  */
 function Base (fields) {
 	Base.constructors.apply(this, arguments);
@@ -53,45 +54,39 @@ Q.mixin(Base, Row);
  * 
  */
 /**
- * @property geonameId
- * @type Integer
- * @default 0
- * 
- */
-/**
  * @property placeName
  * @type String
- * @default null
+ * @default ""
  * 
  */
 /**
  * @property stateName
  * @type String
- * @default null
+ * @default ""
  * 
  */
 /**
  * @property state
  * @type String
- * @default null
+ * @default ""
  * 
  */
 /**
  * @property regionName
  * @type String
- * @default null
+ * @default ""
  * 
  */
 /**
  * @property region
  * @type String
- * @default null
+ * @default ""
  * 
  */
 /**
  * @property community
  * @type String
- * @default null
+ * @default ""
  * 
  */
 /**
@@ -107,7 +102,19 @@ Q.mixin(Base, Row);
  * 
  */
 /**
+ * @property geohash
+ * @type String
+ * @default null
+ * 
+ */
+/**
  * @property accuracy
+ * @type Integer
+ * @default 0
+ * 
+ */
+/**
+ * @property geonameId
  * @type Integer
  * @default 0
  * 
@@ -322,7 +329,6 @@ Base.fieldNames = function () {
 	return [
 		"countryCode",
 		"postcode",
-		"geonameId",
 		"placeName",
 		"stateName",
 		"state",
@@ -331,7 +337,9 @@ Base.fieldNames = function () {
 		"community",
 		"latitude",
 		"longitude",
-		"accuracy"
+		"geohash",
+		"accuracy",
+		"geonameId"
 	];
 };
 
@@ -412,6 +420,353 @@ return [["varchar","10","",false],false,"",null];
 };
 
 /**
+ * Method is called before setting the field and verifies if value is string of length within acceptable limit.
+ * Optionally accept numeric value which is converted to string
+ * @method beforeSet_placeName
+ * @param {string} value
+ * @return {string} The value
+ * @throws {Error} An exception is thrown if 'value' is not string or is exceedingly long
+ */
+Base.prototype.beforeSet_placeName = function (value) {
+		if (value == null) {
+			value='';
+		}
+		if (value instanceof Db.Expression) return value;
+		if (typeof value !== "string" && typeof value !== "number")
+			throw new Error('Must pass a String to '+this.table()+".placeName");
+		if (typeof value === "string" && value.length > 180)
+			throw new Error('Exceedingly long value being assigned to '+this.table()+".placeName");
+		return value;
+};
+
+	/**
+	 * Returns the maximum string length that can be assigned to the placeName field
+	 * @return {integer}
+	 */
+Base.prototype.maxSize_placeName = function () {
+
+		return 180;
+};
+
+	/**
+	 * Returns schema information for placeName column
+	 * @return {array} [[typeName, displayRange, modifiers, unsigned], isNull, key, default]
+	 */
+Base.column_placeName = function () {
+
+return [["varchar","180","",false],false,"",null];
+};
+
+/**
+ * Method is called before setting the field and verifies if value is string of length within acceptable limit.
+ * Optionally accept numeric value which is converted to string
+ * @method beforeSet_stateName
+ * @param {string} value
+ * @return {string} The value
+ * @throws {Error} An exception is thrown if 'value' is not string or is exceedingly long
+ */
+Base.prototype.beforeSet_stateName = function (value) {
+		if (value == null) {
+			value='';
+		}
+		if (value instanceof Db.Expression) return value;
+		if (typeof value !== "string" && typeof value !== "number")
+			throw new Error('Must pass a String to '+this.table()+".stateName");
+		if (typeof value === "string" && value.length > 100)
+			throw new Error('Exceedingly long value being assigned to '+this.table()+".stateName");
+		return value;
+};
+
+	/**
+	 * Returns the maximum string length that can be assigned to the stateName field
+	 * @return {integer}
+	 */
+Base.prototype.maxSize_stateName = function () {
+
+		return 100;
+};
+
+	/**
+	 * Returns schema information for stateName column
+	 * @return {array} [[typeName, displayRange, modifiers, unsigned], isNull, key, default]
+	 */
+Base.column_stateName = function () {
+
+return [["varchar","100","",false],false,"",null];
+};
+
+/**
+ * Method is called before setting the field and verifies if value is string of length within acceptable limit.
+ * Optionally accept numeric value which is converted to string
+ * @method beforeSet_state
+ * @param {string} value
+ * @return {string} The value
+ * @throws {Error} An exception is thrown if 'value' is not string or is exceedingly long
+ */
+Base.prototype.beforeSet_state = function (value) {
+		if (value == null) {
+			value='';
+		}
+		if (value instanceof Db.Expression) return value;
+		if (typeof value !== "string" && typeof value !== "number")
+			throw new Error('Must pass a String to '+this.table()+".state");
+		if (typeof value === "string" && value.length > 20)
+			throw new Error('Exceedingly long value being assigned to '+this.table()+".state");
+		return value;
+};
+
+	/**
+	 * Returns the maximum string length that can be assigned to the state field
+	 * @return {integer}
+	 */
+Base.prototype.maxSize_state = function () {
+
+		return 20;
+};
+
+	/**
+	 * Returns schema information for state column
+	 * @return {array} [[typeName, displayRange, modifiers, unsigned], isNull, key, default]
+	 */
+Base.column_state = function () {
+
+return [["varchar","20","",false],false,"",null];
+};
+
+/**
+ * Method is called before setting the field and verifies if value is string of length within acceptable limit.
+ * Optionally accept numeric value which is converted to string
+ * @method beforeSet_regionName
+ * @param {string} value
+ * @return {string} The value
+ * @throws {Error} An exception is thrown if 'value' is not string or is exceedingly long
+ */
+Base.prototype.beforeSet_regionName = function (value) {
+		if (value == null) {
+			value='';
+		}
+		if (value instanceof Db.Expression) return value;
+		if (typeof value !== "string" && typeof value !== "number")
+			throw new Error('Must pass a String to '+this.table()+".regionName");
+		if (typeof value === "string" && value.length > 100)
+			throw new Error('Exceedingly long value being assigned to '+this.table()+".regionName");
+		return value;
+};
+
+	/**
+	 * Returns the maximum string length that can be assigned to the regionName field
+	 * @return {integer}
+	 */
+Base.prototype.maxSize_regionName = function () {
+
+		return 100;
+};
+
+	/**
+	 * Returns schema information for regionName column
+	 * @return {array} [[typeName, displayRange, modifiers, unsigned], isNull, key, default]
+	 */
+Base.column_regionName = function () {
+
+return [["varchar","100","",false],false,"",null];
+};
+
+/**
+ * Method is called before setting the field and verifies if value is string of length within acceptable limit.
+ * Optionally accept numeric value which is converted to string
+ * @method beforeSet_region
+ * @param {string} value
+ * @return {string} The value
+ * @throws {Error} An exception is thrown if 'value' is not string or is exceedingly long
+ */
+Base.prototype.beforeSet_region = function (value) {
+		if (value == null) {
+			value='';
+		}
+		if (value instanceof Db.Expression) return value;
+		if (typeof value !== "string" && typeof value !== "number")
+			throw new Error('Must pass a String to '+this.table()+".region");
+		if (typeof value === "string" && value.length > 20)
+			throw new Error('Exceedingly long value being assigned to '+this.table()+".region");
+		return value;
+};
+
+	/**
+	 * Returns the maximum string length that can be assigned to the region field
+	 * @return {integer}
+	 */
+Base.prototype.maxSize_region = function () {
+
+		return 20;
+};
+
+	/**
+	 * Returns schema information for region column
+	 * @return {array} [[typeName, displayRange, modifiers, unsigned], isNull, key, default]
+	 */
+Base.column_region = function () {
+
+return [["varchar","20","",false],false,"",null];
+};
+
+/**
+ * Method is called before setting the field and verifies if value is string of length within acceptable limit.
+ * Optionally accept numeric value which is converted to string
+ * @method beforeSet_community
+ * @param {string} value
+ * @return {string} The value
+ * @throws {Error} An exception is thrown if 'value' is not string or is exceedingly long
+ */
+Base.prototype.beforeSet_community = function (value) {
+		if (value == null) {
+			value='';
+		}
+		if (value instanceof Db.Expression) return value;
+		if (typeof value !== "string" && typeof value !== "number")
+			throw new Error('Must pass a String to '+this.table()+".community");
+		if (typeof value === "string" && value.length > 100)
+			throw new Error('Exceedingly long value being assigned to '+this.table()+".community");
+		return value;
+};
+
+	/**
+	 * Returns the maximum string length that can be assigned to the community field
+	 * @return {integer}
+	 */
+Base.prototype.maxSize_community = function () {
+
+		return 100;
+};
+
+	/**
+	 * Returns schema information for community column
+	 * @return {array} [[typeName, displayRange, modifiers, unsigned], isNull, key, default]
+	 */
+Base.column_community = function () {
+
+return [["varchar","100","",false],false,"",null];
+};
+
+/**
+ * Method is called before setting the field to verify if value is a number
+ * @method beforeSet_latitude
+ * @param {number} value
+ * @return {number} The value
+ * @throws {Error} If 'value' is not number
+ */
+Base.prototype.beforeSet_latitude = function (value) {
+		if (value instanceof Db.Expression) return value;
+		value = Number(value);
+		if (isNaN(value))
+			throw new Error('Non-number value being assigned to '+this.table()+".latitude");
+		return value;
+};
+
+	/**
+	 * Returns schema information for latitude column
+	 * @return {array} [[typeName, displayRange, modifiers, unsigned], isNull, key, default]
+	 */
+Base.column_latitude = function () {
+
+return [["double",null,null,null],false,"MUL",null];
+};
+
+/**
+ * Method is called before setting the field to verify if value is a number
+ * @method beforeSet_longitude
+ * @param {number} value
+ * @return {number} The value
+ * @throws {Error} If 'value' is not number
+ */
+Base.prototype.beforeSet_longitude = function (value) {
+		if (value instanceof Db.Expression) return value;
+		value = Number(value);
+		if (isNaN(value))
+			throw new Error('Non-number value being assigned to '+this.table()+".longitude");
+		return value;
+};
+
+	/**
+	 * Returns schema information for longitude column
+	 * @return {array} [[typeName, displayRange, modifiers, unsigned], isNull, key, default]
+	 */
+Base.column_longitude = function () {
+
+return [["double",null,null,null],false,"MUL",null];
+};
+
+/**
+ * Method is called before setting the field and verifies if value is string of length within acceptable limit.
+ * Optionally accept numeric value which is converted to string
+ * @method beforeSet_geohash
+ * @param {string} value
+ * @return {string} The value
+ * @throws {Error} An exception is thrown if 'value' is not string or is exceedingly long
+ */
+Base.prototype.beforeSet_geohash = function (value) {
+		if (value == undefined) return value;
+		if (value instanceof Db.Expression) return value;
+		if (typeof value !== "string" && typeof value !== "number")
+			throw new Error('Must pass a String to '+this.table()+".geohash");
+		if (typeof value === "string" && value.length > 31)
+			throw new Error('Exceedingly long value being assigned to '+this.table()+".geohash");
+		return value;
+};
+
+	/**
+	 * Returns the maximum string length that can be assigned to the geohash field
+	 * @return {integer}
+	 */
+Base.prototype.maxSize_geohash = function () {
+
+		return 31;
+};
+
+	/**
+	 * Returns schema information for geohash column
+	 * @return {array} [[typeName, displayRange, modifiers, unsigned], isNull, key, default]
+	 */
+Base.column_geohash = function () {
+
+return [["varchar","31","",false],true,"MUL",null];
+};
+
+/**
+ * Method is called before setting the field and verifies if integer value falls within allowed limits
+ * @method beforeSet_accuracy
+ * @param {integer} value
+ * @return {integer} The value
+ * @throws {Error} An exception is thrown if 'value' is not integer or does not fit in allowed range
+ */
+Base.prototype.beforeSet_accuracy = function (value) {
+		if (value instanceof Db.Expression) return value;
+		value = Number(value);
+		if (isNaN(value) || Math.floor(value) != value) 
+			throw new Error('Non-integer value being assigned to '+this.table()+".accuracy");
+		if (value < -2147483648 || value > 2147483647)
+			throw new Error("Out-of-range value "+JSON.stringify(value)+" being assigned to "+this.table()+".accuracy");
+		return value;
+};
+
+/**
+ * Returns the maximum integer that can be assigned to the accuracy field
+ * @return {integer}
+ */
+Base.prototype.maxSize_accuracy = function () {
+
+		return 2147483647;
+};
+
+	/**
+	 * Returns schema information for accuracy column
+	 * @return {array} [[typeName, displayRange, modifiers, unsigned], isNull, key, default]
+	 */
+Base.column_accuracy = function () {
+
+return [["int",null,null,null],false,"",null];
+};
+
+/**
  * Method is called before setting the field and verifies if integer value falls within allowed limits
  * @method beforeSet_geonameId
  * @param {integer} value
@@ -444,309 +799,7 @@ Base.prototype.maxSize_geonameId = function () {
 	 */
 Base.column_geonameId = function () {
 
-return [["int",null,null,null],true,"",null];
-};
-
-/**
- * Method is called before setting the field and verifies if value is string of length within acceptable limit.
- * Optionally accept numeric value which is converted to string
- * @method beforeSet_placeName
- * @param {string} value
- * @return {string} The value
- * @throws {Error} An exception is thrown if 'value' is not string or is exceedingly long
- */
-Base.prototype.beforeSet_placeName = function (value) {
-		if (value == undefined) return value;
-		if (value instanceof Db.Expression) return value;
-		if (typeof value !== "string" && typeof value !== "number")
-			throw new Error('Must pass a String to '+this.table()+".placeName");
-		if (typeof value === "string" && value.length > 180)
-			throw new Error('Exceedingly long value being assigned to '+this.table()+".placeName");
-		return value;
-};
-
-	/**
-	 * Returns the maximum string length that can be assigned to the placeName field
-	 * @return {integer}
-	 */
-Base.prototype.maxSize_placeName = function () {
-
-		return 180;
-};
-
-	/**
-	 * Returns schema information for placeName column
-	 * @return {array} [[typeName, displayRange, modifiers, unsigned], isNull, key, default]
-	 */
-Base.column_placeName = function () {
-
-return [["varchar","180","",false],true,"",null];
-};
-
-/**
- * Method is called before setting the field and verifies if value is string of length within acceptable limit.
- * Optionally accept numeric value which is converted to string
- * @method beforeSet_stateName
- * @param {string} value
- * @return {string} The value
- * @throws {Error} An exception is thrown if 'value' is not string or is exceedingly long
- */
-Base.prototype.beforeSet_stateName = function (value) {
-		if (value == undefined) return value;
-		if (value instanceof Db.Expression) return value;
-		if (typeof value !== "string" && typeof value !== "number")
-			throw new Error('Must pass a String to '+this.table()+".stateName");
-		if (typeof value === "string" && value.length > 100)
-			throw new Error('Exceedingly long value being assigned to '+this.table()+".stateName");
-		return value;
-};
-
-	/**
-	 * Returns the maximum string length that can be assigned to the stateName field
-	 * @return {integer}
-	 */
-Base.prototype.maxSize_stateName = function () {
-
-		return 100;
-};
-
-	/**
-	 * Returns schema information for stateName column
-	 * @return {array} [[typeName, displayRange, modifiers, unsigned], isNull, key, default]
-	 */
-Base.column_stateName = function () {
-
-return [["varchar","100","",false],true,"",null];
-};
-
-/**
- * Method is called before setting the field and verifies if value is string of length within acceptable limit.
- * Optionally accept numeric value which is converted to string
- * @method beforeSet_state
- * @param {string} value
- * @return {string} The value
- * @throws {Error} An exception is thrown if 'value' is not string or is exceedingly long
- */
-Base.prototype.beforeSet_state = function (value) {
-		if (value == undefined) return value;
-		if (value instanceof Db.Expression) return value;
-		if (typeof value !== "string" && typeof value !== "number")
-			throw new Error('Must pass a String to '+this.table()+".state");
-		if (typeof value === "string" && value.length > 20)
-			throw new Error('Exceedingly long value being assigned to '+this.table()+".state");
-		return value;
-};
-
-	/**
-	 * Returns the maximum string length that can be assigned to the state field
-	 * @return {integer}
-	 */
-Base.prototype.maxSize_state = function () {
-
-		return 20;
-};
-
-	/**
-	 * Returns schema information for state column
-	 * @return {array} [[typeName, displayRange, modifiers, unsigned], isNull, key, default]
-	 */
-Base.column_state = function () {
-
-return [["varchar","20","",false],true,"",null];
-};
-
-/**
- * Method is called before setting the field and verifies if value is string of length within acceptable limit.
- * Optionally accept numeric value which is converted to string
- * @method beforeSet_regionName
- * @param {string} value
- * @return {string} The value
- * @throws {Error} An exception is thrown if 'value' is not string or is exceedingly long
- */
-Base.prototype.beforeSet_regionName = function (value) {
-		if (value == undefined) return value;
-		if (value instanceof Db.Expression) return value;
-		if (typeof value !== "string" && typeof value !== "number")
-			throw new Error('Must pass a String to '+this.table()+".regionName");
-		if (typeof value === "string" && value.length > 100)
-			throw new Error('Exceedingly long value being assigned to '+this.table()+".regionName");
-		return value;
-};
-
-	/**
-	 * Returns the maximum string length that can be assigned to the regionName field
-	 * @return {integer}
-	 */
-Base.prototype.maxSize_regionName = function () {
-
-		return 100;
-};
-
-	/**
-	 * Returns schema information for regionName column
-	 * @return {array} [[typeName, displayRange, modifiers, unsigned], isNull, key, default]
-	 */
-Base.column_regionName = function () {
-
-return [["varchar","100","",false],true,"",null];
-};
-
-/**
- * Method is called before setting the field and verifies if value is string of length within acceptable limit.
- * Optionally accept numeric value which is converted to string
- * @method beforeSet_region
- * @param {string} value
- * @return {string} The value
- * @throws {Error} An exception is thrown if 'value' is not string or is exceedingly long
- */
-Base.prototype.beforeSet_region = function (value) {
-		if (value == undefined) return value;
-		if (value instanceof Db.Expression) return value;
-		if (typeof value !== "string" && typeof value !== "number")
-			throw new Error('Must pass a String to '+this.table()+".region");
-		if (typeof value === "string" && value.length > 20)
-			throw new Error('Exceedingly long value being assigned to '+this.table()+".region");
-		return value;
-};
-
-	/**
-	 * Returns the maximum string length that can be assigned to the region field
-	 * @return {integer}
-	 */
-Base.prototype.maxSize_region = function () {
-
-		return 20;
-};
-
-	/**
-	 * Returns schema information for region column
-	 * @return {array} [[typeName, displayRange, modifiers, unsigned], isNull, key, default]
-	 */
-Base.column_region = function () {
-
-return [["varchar","20","",false],true,"",null];
-};
-
-/**
- * Method is called before setting the field and verifies if value is string of length within acceptable limit.
- * Optionally accept numeric value which is converted to string
- * @method beforeSet_community
- * @param {string} value
- * @return {string} The value
- * @throws {Error} An exception is thrown if 'value' is not string or is exceedingly long
- */
-Base.prototype.beforeSet_community = function (value) {
-		if (value == undefined) return value;
-		if (value instanceof Db.Expression) return value;
-		if (typeof value !== "string" && typeof value !== "number")
-			throw new Error('Must pass a String to '+this.table()+".community");
-		if (typeof value === "string" && value.length > 100)
-			throw new Error('Exceedingly long value being assigned to '+this.table()+".community");
-		return value;
-};
-
-	/**
-	 * Returns the maximum string length that can be assigned to the community field
-	 * @return {integer}
-	 */
-Base.prototype.maxSize_community = function () {
-
-		return 100;
-};
-
-	/**
-	 * Returns schema information for community column
-	 * @return {array} [[typeName, displayRange, modifiers, unsigned], isNull, key, default]
-	 */
-Base.column_community = function () {
-
-return [["varchar","100","",false],true,"",null];
-};
-
-/**
- * Method is called before setting the field to verify if value is a number
- * @method beforeSet_latitude
- * @param {number} value
- * @return {number} The value
- * @throws {Error} If 'value' is not number
- */
-Base.prototype.beforeSet_latitude = function (value) {
-		if (value == undefined) return value;
-		if (value instanceof Db.Expression) return value;
-		value = Number(value);
-		if (isNaN(value))
-			throw new Error('Non-number value being assigned to '+this.table()+".latitude");
-		return value;
-};
-
-	/**
-	 * Returns schema information for latitude column
-	 * @return {array} [[typeName, displayRange, modifiers, unsigned], isNull, key, default]
-	 */
-Base.column_latitude = function () {
-
-return [["double",null,null,null],true,"MUL",null];
-};
-
-/**
- * Method is called before setting the field to verify if value is a number
- * @method beforeSet_longitude
- * @param {number} value
- * @return {number} The value
- * @throws {Error} If 'value' is not number
- */
-Base.prototype.beforeSet_longitude = function (value) {
-		if (value == undefined) return value;
-		if (value instanceof Db.Expression) return value;
-		value = Number(value);
-		if (isNaN(value))
-			throw new Error('Non-number value being assigned to '+this.table()+".longitude");
-		return value;
-};
-
-	/**
-	 * Returns schema information for longitude column
-	 * @return {array} [[typeName, displayRange, modifiers, unsigned], isNull, key, default]
-	 */
-Base.column_longitude = function () {
-
-return [["double",null,null,null],true,"MUL",null];
-};
-
-/**
- * Method is called before setting the field and verifies if integer value falls within allowed limits
- * @method beforeSet_accuracy
- * @param {integer} value
- * @return {integer} The value
- * @throws {Error} An exception is thrown if 'value' is not integer or does not fit in allowed range
- */
-Base.prototype.beforeSet_accuracy = function (value) {
-		if (value == undefined) return value;
-		if (value instanceof Db.Expression) return value;
-		value = Number(value);
-		if (isNaN(value) || Math.floor(value) != value) 
-			throw new Error('Non-integer value being assigned to '+this.table()+".accuracy");
-		if (value < -2147483648 || value > 2147483647)
-			throw new Error("Out-of-range value "+JSON.stringify(value)+" being assigned to "+this.table()+".accuracy");
-		return value;
-};
-
-/**
- * Returns the maximum integer that can be assigned to the accuracy field
- * @return {integer}
- */
-Base.prototype.maxSize_accuracy = function () {
-
-		return 2147483647;
-};
-
-	/**
-	 * Returns schema information for accuracy column
-	 * @return {array} [[typeName, displayRange, modifiers, unsigned], isNull, key, default]
-	 */
-Base.column_accuracy = function () {
-
-return [["int",null,null,null],true,"",null];
+return [["int",null,null,null],true,"MUL",null];
 };
 
 /**
@@ -764,6 +817,33 @@ Base.prototype.beforeSave = function (value) {
 	}
 	if (this.fields["postcode"] == undefined && value["postcode"] == undefined) {
 		this.fields["postcode"] = value["postcode"] = "";
+	}
+	if (this.fields["placeName"] == undefined && value["placeName"] == undefined) {
+		this.fields["placeName"] = value["placeName"] = "";
+	}
+	if (this.fields["stateName"] == undefined && value["stateName"] == undefined) {
+		this.fields["stateName"] = value["stateName"] = "";
+	}
+	if (this.fields["state"] == undefined && value["state"] == undefined) {
+		this.fields["state"] = value["state"] = "";
+	}
+	if (this.fields["regionName"] == undefined && value["regionName"] == undefined) {
+		this.fields["regionName"] = value["regionName"] = "";
+	}
+	if (this.fields["region"] == undefined && value["region"] == undefined) {
+		this.fields["region"] = value["region"] = "";
+	}
+	if (this.fields["community"] == undefined && value["community"] == undefined) {
+		this.fields["community"] = value["community"] = "";
+	}
+	if (this.fields["latitude"] == undefined && value["latitude"] == undefined) {
+		this.fields["latitude"] = value["latitude"] = 0;
+	}
+	if (this.fields["longitude"] == undefined && value["longitude"] == undefined) {
+		this.fields["longitude"] = value["longitude"] = 0;
+	}
+	if (this.fields["accuracy"] == undefined && value["accuracy"] == undefined) {
+		this.fields["accuracy"] = value["accuracy"] = 0;
 	}
 	return value;
 };

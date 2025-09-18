@@ -29,6 +29,7 @@ module.exports = Base;
 Base.tableClasses = [
 	"Places_Autocomplete",
 	"Places_City",
+	"Places_Country",
 	"Places_Ipv4",
 	"Places_Ipv6",
 	"Places_Location",
@@ -67,6 +68,13 @@ Base.Autocomplete = Q.require('Places/Autocomplete');
  * @type Places.City
  */
 Base.City = Q.require('Places/City');
+
+/**
+ * Link to Places.Country model
+ * @property Country
+ * @type Places.Country
+ */
+Base.Country = Q.require('Places/Country');
 
 /**
  * Link to Places.Ipv4 model

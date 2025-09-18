@@ -167,43 +167,73 @@ class Places_Geohash
      * @param {string} $field The name of the field to test
      * @param {string} $center A geohash that represents the center point
      * @param {integer} $limit The number of items to return, at most
+     * @param {boolean} $skipDecoding If true, the distance will not be calculated
+     *  using the haversine formula, instead the geohashes themselves will be compared.
+     *  This is faster, but less accurate.
      * @return {array} An array of Db_Row objects sorted by increasing distance from center
      */
-    static function fetchByDistance($query, $field, $center, $limit)
+    static function fetchByDistance($query, $field, $center, $limit, $skipDecoding = false)
     {
-		$above = clone $query;
-    	$above = $above->where(array(
-	        $field => new Db_Range($center, true, false, null)
-	    ))->orderBy($field, true)->fetchAll(PDO::FETCH_ASSOC);
-		$below = clone $query;
-	    $below = $below->where(array(
-		    $field => new Db_Range(null, false, false, $center)
-	    ))->orderBy($field, false)->fetchAll(PDO::FETCH_ASSOC);
-    	$result = array();
-    	$i = $j = $k = 0;
-    	$a = count($above);
-    	$b = count($below);
-    	while ($k < $limit && $i < $a) {
-    		while ($k < $limit && $j < $b) {
-    			if (self::closer($center, $above[$i], $below[$j])) {
-    				$result[] = $above[$i];
-    				++$i;
-			    } else {
-    				$result[] = $below[$j];
-    				++$j;
-			    }
-				++$k;
-		    }
-		    ++$k;
-	    }
-	    while ($k < $limit && $j < $b) {
-    		$result[] = $below[$j];
-    		++$j;
-    		++$k;
-	    }
+        $above = clone $query;
+        $above = $above->where(array(
+            $field => new Db_Range($center, true, false, null)
+        ))->orderBy($field, true)->fetchAll();
 
-	    return $result;
+        $below = clone $query;
+        $below = $below->where(array(
+            $field => new Db_Range(null, false, false, $center)
+        ))->orderBy($field, false)->fetchAll();
+
+        $result = array();
+        $i = $j = $k = 0;
+        $a = count($above);
+        $b = count($below);
+
+        // merge rows until limit reached
+        while ($k < $limit && $i < $a && $j < $b) {
+            if (self::closer($center, $above[$i], $below[$j])) {
+                $result[] = $above[$i++];
+            } else {
+                $result[] = $below[$j++];
+            }
+            ++$k;
+        }
+        while ($k < $limit && $i < $a) {
+            $result[] = $above[$i++];
+            ++$k;
+        }
+        while ($k < $limit && $j < $b) {
+            $result[] = $below[$j++];
+            ++$k;
+        }
+
+        if (!$skipDecoding) {
+            // decode center geohash
+            list($lat0, $lon0) = Places_Geohash::decode($center);
+
+            // annotate rows with haversine distance
+            foreach ($result as $row) {
+                $lat = $row->get('latitude');
+                $lon = $row->get('longitude');
+                $dist = Places::distance($lat0, $lon0, $lat, $lon);
+                $row->set('Places/distance', $dist);
+            }
+
+            // sort rows by annotated distance
+            usort($result, array('Places_City', 'compareByDistance'));
+        }
+
+        return array_slice($result, 0, $limit);
     }
+
+    private static function compareByDistance($a, $b)
+    {
+        $da = $a->get('Places/distance');
+        $db = $b->get('Places/distance');
+        if ($da == $db) return 0;
+        return ($da < $db) ? -1 : 1;
+    }
+
 
     private static function closer($center, $a, $b) {
     	$cn = self::alpha2num($center);

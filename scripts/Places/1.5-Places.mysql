@@ -1,0 +1,1012 @@
+CREATE TABLE {{prefix}}country (
+  countryCode      VARCHAR(2)     NOT NULL,
+  countryCode3     VARCHAR(3)     DEFAULT NULL,
+  geonameId        INT            DEFAULT NULL,
+  numericCode      INT            DEFAULT NULL,
+  phoneCode        VARCHAR(20)    DEFAULT NULL,
+  normalizedName   VARCHAR(180)   DEFAULT "",
+  englishName      VARCHAR(180)   DEFAULT "",
+  localName        VARCHAR(180)   DEFAULT "",
+  emojiFlag        VARCHAR(8)     DEFAULT NULL,
+  area             BIGINT         DEFAULT NULL,
+  population       BIGINT         DEFAULT NULL,
+  continent        VARCHAR(2)     DEFAULT NULL,
+  currencyCode     VARCHAR(3)     DEFAULT NULL,
+  currencyName     VARCHAR(64)    DEFAULT NULL,
+  PRIMARY KEY (countryCode),
+  KEY geonameId (geonameId),
+  KEY numericCode (numericCode),
+  KEY area (area),
+  KEY population (population),
+  KEY continent (continent),
+  KEY currencyCode (currencyCode)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO {{prefix}}country
+(countryCode, countryCode3, geonameId, numericCode, phoneCode,
+ normalizedName, englishName, localName,
+ emojiFlag, area, population, continent, currencyCode, currencyName)
+VALUES
+('AF', 'AFG', 1149361, 4, '93',
+ 'afghanistan', 'Afghanistan', 'افغانستان',
+ '🇦🇫', 647500, 37172386, 'AS', 'AFN', 'Afghani'),
+
+('AX', 'ALA', 661882, 248, '+358 (18)',
+ 'aland_islands', 'Åland Islands', 'Åland',
+ '🇦🇽', 1580, 26711, 'EU', 'EUR', 'Euro'),
+
+('AL', 'ALB', 783754, 8, '355',
+ 'albania', 'Albania', 'Shqipëria',
+ '🇦🇱', 28748, 2866376, 'EU', 'ALL', 'Lek'),
+
+('AQ', 'ATA', 6697173, 10, '672',
+ 'antarctica', 'Antarctica', 'Antarctica',
+ '🇦🇶', 14000000, 0, 'AN', NULL, NULL),
+
+('DZ', 'DZA', 2589581, 12, '213',
+ 'algeria', 'Algeria', 'الجزائر',
+ '🇩🇿', 2381740, 42228429, 'AF', 'DZD', 'Dinar'),
+
+('AS', 'ASM', 5880801, 16, '+1 (684)',
+ 'american_samoa', 'American Samoa', 'Amerika Sāmoa',
+ '🇦🇸', 199, 55465, 'OC', 'USD', 'Dollar'),
+
+('AD', 'AND', 3041565, 20, '376',
+ 'andorra', 'Andorra', 'Andorra',
+ '🇦🇩', 468, 77006, 'EU', 'EUR', 'Euro'),
+
+('AO', 'AGO', 3351879, 24, '244',
+ 'angola', 'Angola', 'Angola',
+ '🇦🇴', 1246700, 30809762, 'AF', 'AOA', 'Kwanza'),
+
+('AI', 'AIA', 3573511, 660, '+1 (264)',
+ 'anguilla', 'Anguilla', 'Anguilla',
+ '🇦🇮', 102, 13254, 'NA', 'XCD', 'Dollar'),
+
+('AG', 'ATG', 3576396, 28, '+1 (268)',
+ 'antigua_and_barbuda', 'Antigua and Barbuda', 'Antigua and Barbuda',
+ '🇦🇬', 443, 96286, 'NA', 'XCD', 'Dollar'),
+
+('AR', 'ARG', 3865483, 32, '54',
+ 'argentina', 'Argentina', 'Argentina',
+ '🇦🇷', 2766890, 44494502, 'SA', 'ARS', 'Peso'),
+
+('AM', 'ARM', 174982, 51, '374',
+ 'armenia', 'Armenia', 'Հայաստան',
+ '🇦🇲', 29800, 2951776, 'AS', 'AMD', 'Dram'),
+
+('AW', 'ABW', 3577279, 533, '297',
+ 'aruba', 'Aruba', 'Aruba',
+ '🇦🇼', 193, 105845, 'NA', 'AWG', 'Guilder'),
+
+('AU', 'AUS', 2077456, 36, '61',
+ 'australia', 'Australia', 'Australia',
+ '🇦🇺', 7686850, 24992369, 'OC', 'AUD', 'Dollar'),
+
+('AT', 'AUT', 2782113, 40, '43',
+ 'austria', 'Austria', 'Österreich',
+ '🇦🇹', 83858, 8840521, 'EU', 'EUR', 'Euro'),
+
+('AZ', 'AZE', 587116, 31, '994',
+ 'azerbaijan', 'Azerbaijan', 'Azərbaycan',
+ '🇦🇿', 86600, 9939800, 'AS', 'AZN', 'Manat'),
+
+('BS', 'BHS', 3572887, 44, '1-242',
+ 'bahamas', 'Bahamas', 'Bahamas',
+ '🇧🇸', 13940, 385640, 'NA', 'BSD', 'Dollar'),
+
+('BH', 'BHR', 290291, 48, '973',
+ 'bahrain', 'Bahrain', 'البحرين',
+ '🇧🇭', 765, 1569439, 'AS', 'BHD', 'Dinar'),
+
+('BD', 'BGD', 1210997, 50, '880',
+ 'bangladesh', 'Bangladesh', 'বাংলাদেশ',
+ '🇧🇩', 143998, 161376708, 'AS', 'BDT', 'Taka'),
+
+ ('BB', 'BRB', 3374084, 52, '1-246',
+ 'barbados', 'Barbados', 'Barbados',
+ '🇧🇧', 430, 286641, 'NA', 'BBD', 'Dollar'),
+
+('BY', 'BLR', 630336, 112, '375',
+ 'belarus', 'Belarus', 'Беларусь',
+ '🇧🇾', 207600, 9483499, 'EU', 'BYN', 'Ruble'),
+
+('BE', 'BEL', 2802361, 56, '32',
+ 'belgium', 'Belgium', 'België',
+ '🇧🇪', 30528, 11433256, 'EU', 'EUR', 'Euro'),
+
+('BZ', 'BLZ', 3582678, 84, '501',
+ 'belize', 'Belize', 'Belize',
+ '🇧🇿', 22966, 383071, 'NA', 'BZD', 'Dollar'),
+
+('BJ', 'BEN', 2395170, 204, '229',
+ 'benin', 'Benin', 'Bénin',
+ '🇧🇯', 112622, 11485048, 'AF', 'XOF', 'Franc'),
+
+('BM', 'BMU', 3573345, 60, '1-441',
+ 'bermuda', 'Bermuda', 'Bermuda',
+ '🇧🇲', 53, 63968, 'NA', 'BMD', 'Dollar'),
+
+('BT', 'BTN', 1252634, 64, '975',
+ 'bhutan', 'Bhutan', 'འབྲུག་ཡུལ་',
+ '🇧🇹', 47000, 754394, 'AS', 'BTN', 'Ngultrum'),
+
+('BO', 'BOL', 3923057, 68, '591',
+ 'bolivia', 'Bolivia', 'Bolivia',
+ '🇧🇴', 1098581, 11353142, 'SA', 'BOB', 'Boliviano'),
+
+('BA', 'BIH', 3277605, 70, '387',
+ 'bosnia_and_herzegovina', 'Bosnia and Herzegovina', 'Bosna i Hercegovina',
+ '🇧🇦', 51129, 3323929, 'EU', 'BAM', 'Mark'),
+
+('BW', 'BWA', 933860, 72, '267',
+ 'botswana', 'Botswana', 'Botswana',
+ '🇧🇼', 581730, 2254063, 'AF', 'BWP', 'Pula'),
+
+('BR', 'BRA', 3469034, 76, '55',
+ 'brazil', 'Brazil', 'Brasil',
+ '🇧🇷', 8511965, 209469333, 'SA', 'BRL', 'Real'),
+
+('IO', 'IOT', 1282588, 86, '246',
+ 'british_indian_ocean_territory', 'British Indian Ocean Territory', 'British Indian Ocean Territory',
+ '🇮🇴', 60, 2500, 'AS', 'USD', 'Dollar'),
+
+('BN', 'BRN', 1820814, 96, '673',
+ 'brunei', 'Brunei', 'Brunei Darussalam',
+ '🇧🇳', 5770, 428962, 'AS', 'BND', 'Dollar'),
+
+('BG', 'BGR', 732800, 100, '359',
+ 'bulgaria', 'Bulgaria', 'България',
+ '🇧🇬', 110879, 7025037, 'EU', 'BGN', 'Lev'),
+
+('BF', 'BFA', 2361809, 854, '226',
+ 'burkina_faso', 'Burkina Faso', 'Burkina Faso',
+ '🇧🇫', 272967, 19751535, 'AF', 'XOF', 'Franc'),
+
+('BI', 'BDI', 433561, 108, '257',
+ 'burundi', 'Burundi', 'Uburundi',
+ '🇧🇮', 27834, 11175378, 'AF', 'BIF', 'Franc'),
+
+('KH', 'KHM', 1831722, 116, '855',
+ 'cambodia', 'Cambodia', 'កម្ពុជា',
+ '🇰🇭', 181035, 16249798, 'AS', 'KHR', 'Riels'),
+
+('CM', 'CMR', 2233387, 120, '237',
+ 'cameroon', 'Cameroon', 'Cameroun',
+ '🇨🇲', 475442, 25216237, 'AF', 'XAF', 'Franc'),
+
+('CA', 'CAN', 6251999, 124, '1',
+ 'canada', 'Canada', 'Canada',
+ '🇨🇦', 9984670, 37058856, 'NA', 'CAD', 'Dollar'),
+
+('CV', 'CPV', 3374766, 132, '238',
+ 'cape_verde', 'Cape Verde', 'Cabo Verde',
+ '🇨🇻', 4033, 543767, 'AF', 'CVE', 'Escudo'),
+
+('KY', 'CYM', 3580718, 136, '1-345',
+ 'cayman_islands', 'Cayman Islands', 'Cayman Islands',
+ '🇰🇾', 264, 64174, 'NA', 'KYD', 'Dollar'),
+
+('CF', 'CAF', 239880, 140, '236',
+ 'central_african_republic', 'Central African Republic', 'République centrafricaine',
+ '🇨🇫', 622984, 4666377, 'AF', 'XAF', 'Franc'),
+
+('TD', 'TCD', 2434508, 148, '235',
+ 'chad', 'Chad', 'Tchad',
+ '🇹🇩', 1284000, 15477751, 'AF', 'XAF', 'Franc'),
+
+('CL', 'CHL', 3895114, 152, '56',
+ 'chile', 'Chile', 'Chile',
+ '🇨🇱', 756102, 18729160, 'SA', 'CLP', 'Peso'),
+
+('CN', 'CHN', 1814991, 156, '86',
+ 'china', 'China', '中国',
+ '🇨🇳', 9596960, 1392730000, 'AS', 'CNY', 'Yuan Renminbi'),
+
+('CX', 'CXR', 2078138, 162, '61',
+ 'christmas_island', 'Christmas Island', 'Christmas Island',
+ '🇨🇽', 135, 1500, 'AS', 'AUD', 'Dollar'),
+
+('CC', 'CCK', 1547376, 166, '61',
+ 'cocos_islands', 'Cocos (Keeling) Islands', 'Kepulauan Cocos',
+ '🇨🇨', 14, 628, 'AS', 'AUD', 'Dollar'),
+
+('CO', 'COL', 3686110, 170, '57',
+ 'colombia', 'Colombia', 'Colombia',
+ '🇨🇴', 1138910, 49648685, 'SA', 'COP', 'Peso'),
+
+('KM', 'COM', 921929, 174, '269',
+ 'comoros', 'Comoros', 'Komori',
+ '🇰🇲', 2235, 832322, 'AF', 'KMF', 'Franc'),
+
+('CG', 'COG', 2260494, 178, '242',
+ 'congo', 'Congo', 'Congo',
+ '🇨🇬', 342000, 5244363, 'AF', 'XAF', 'Franc'),
+
+('CD', 'COD', 203312, 180, '243',
+ 'democratic_republic_of_the_congo', 'Democratic Republic of the Congo', 'République démocratique du Congo',
+ '🇨🇩', 2344858, 84068091, 'AF', 'CDF', 'Franc'),
+
+('CK', 'COK', 1899402, 184, '682',
+ 'cook_islands', 'Cook Islands', 'Cook Islands',
+ '🇨🇰', 236, 21388, 'OC', 'NZD', 'Dollar'),
+
+('CR', 'CRI', 3624060, 188, '506',
+ 'costa_rica', 'Costa Rica', 'Costa Rica',
+ '🇨🇷', 51100, 4999441, 'NA', 'CRC', 'Colon'),
+
+('CI', 'CIV', 2287781, 384, '225',
+ 'cote_d_ivoire', 'Côte d’Ivoire', 'Côte d’Ivoire',
+ '🇨🇮', 322463, 25069229, 'AF', 'XOF', 'Franc'),
+
+('HR', 'HRV', 3202326, 191, '385',
+ 'croatia', 'Croatia', 'Hrvatska',
+ '🇭🇷', 56542, 4089400, 'EU', 'HRK', 'Kuna'),
+
+('CU', 'CUB', 3562981, 192, '53',
+ 'cuba', 'Cuba', 'Cuba',
+ '🇨🇺', 110861, 11338138, 'NA', 'CUP', 'Peso'),
+
+('CW', 'CUW', 7626836, 531, '599',
+ 'curacao', 'Curaçao', 'Curaçao',
+ '🇨🇼', 444, 155014, 'NA', 'ANG', 'Guilder'),
+
+('CY', 'CYP', 146669, 196, '357',
+ 'cyprus', 'Cyprus', 'Κύπρος',
+ '🇨🇾', 9251, 1189265, 'EU', 'EUR', 'Euro'),
+
+('CZ', 'CZE', 3077311, 203, '420',
+ 'czech_republic', 'Czech Republic', 'Česká republika',
+ '🇨🇿', 78866, 10625695, 'EU', 'CZK', 'Koruna'),
+
+('DK', 'DNK', 2623032, 208, '45',
+ 'denmark', 'Denmark', 'Danmark',
+ '🇩🇰', 43094, 5797446, 'EU', 'DKK', 'Krone'),
+
+('DJ', 'DJI', 223816, 262, '253',
+ 'djibouti', 'Djibouti', 'جيبوتي',
+ '🇩🇯', 23200, 958920, 'AF', 'DJF', 'Franc'),
+
+('DM', 'DMA', 3575830, 212, '1-767',
+ 'dominica', 'Dominica', 'Dominica',
+ '🇩🇲', 751, 71625, 'NA', 'XCD', 'Dollar'),
+
+('DO', 'DOM', 3508796, 214, '1-809,1-829,1-849',
+ 'dominican_republic', 'Dominican Republic', 'República Dominicana',
+ '🇩🇴', 48730, 10627165, 'NA', 'DOP', 'Peso'),
+
+('EC', 'ECU', 3658394, 218, '593',
+ 'ecuador', 'Ecuador', 'Ecuador',
+ '🇪🇨', 283561, 17084357, 'SA', 'USD', 'Dollar'),
+
+('EG', 'EGY', 357994, 818, '20',
+ 'egypt', 'Egypt', 'مصر',
+ '🇪🇬', 1001450, 98423595, 'AF', 'EGP', 'Pound'),
+
+('SV', 'SLV', 3585968, 222, '503',
+ 'el_salvador', 'El Salvador', 'El Salvador',
+ '🇸🇻', 21041, 6420744, 'NA', 'USD', 'Dollar'),
+
+('GQ', 'GNQ', 2309096, 226, '240',
+ 'equatorial_guinea', 'Equatorial Guinea', 'Guinea Ecuatorial',
+ '🇬🇶', 28051, 1308974, 'AF', 'XAF', 'Franc'),
+
+('ER', 'ERI', 338010, 232, '291',
+ 'eritrea', 'Eritrea', 'ኤርትራ',
+ '🇪🇷', 121320, 5187948, 'AF', 'ERN', 'Nakfa'),
+
+('EE', 'EST', 453733, 233, '372',
+ 'estonia', 'Estonia', 'Eesti',
+ '🇪🇪', 45227, 1321977, 'EU', 'EUR', 'Euro'),
+
+('ET', 'ETH', 337996, 231, '251',
+ 'ethiopia', 'Ethiopia', 'ኢትዮጵያ',
+ '🇪🇹', 1127127, 109224559, 'AF', 'ETB', 'Birr'),
+
+('FK', 'FLK', 3474415, 238, '500',
+ 'falkland_islands', 'Falkland Islands', 'Islas Malvinas',
+ '🇫🇰', 12173, 2563, 'SA', 'FKP', 'Pound'),
+
+('FO', 'FRO', 2622320, 234, '298',
+ 'faroe_islands', 'Faroe Islands', 'Føroyar',
+ '🇫🇴', 1399, 48497, 'EU', 'DKK', 'Krone'),
+
+('FJ', 'FJI', 2205218, 242, '679',
+ 'fiji', 'Fiji', 'Fiji',
+ '🇫🇯', 18274, 883483, 'OC', 'FJD', 'Dollar'),
+
+('FI', 'FIN', 660013, 246, '358',
+ 'finland', 'Finland', 'Suomi',
+ '🇫🇮', 338145, 5518050, 'EU', 'EUR', 'Euro'),
+
+('FR', 'FRA', 3017382, 250, '33',
+ 'france', 'France', 'France',
+ '🇫🇷', 551695, 66987244, 'EU', 'EUR', 'Euro'),
+
+('GF', 'GUF', 3381670, 254, '594',
+ 'french_guiana', 'French Guiana', 'Guyane',
+ '🇬🇫', 91000, 195506, 'SA', 'EUR', 'Euro'),
+
+('PF', 'PYF', 4030656, 258, '689',
+ 'french_polynesia', 'French Polynesia', 'Polynésie française',
+ '🇵🇫', 4167, 277679, 'OC', 'XPF', 'Franc'),
+
+('TF', 'ATF', 1546748, 260, '262',
+ 'french_southern_territories', 'French Southern Territories', 'Terres australes et antarctiques françaises',
+ '🇹🇫', 7829, 140, 'AN', 'EUR', 'Euro'),
+
+('GA', 'GAB', 2400553, 266, '241',
+ 'gabon', 'Gabon', 'Gabon',
+ '🇬🇦', 267667, 2119275, 'AF', 'XAF', 'Franc'),
+
+('GM', 'GMB', 2413451, 270, '220',
+ 'gambia', 'Gambia', 'Gambia',
+ '🇬🇲', 11295, 2280102, 'AF', 'GMD', 'Dalasi'),
+
+('GE', 'GEO', 614540, 268, '995',
+ 'georgia', 'Georgia', 'საქართველო',
+ '🇬🇪', 69700, 3731000, 'AS', 'GEL', 'Lari'),
+
+('DE', 'DEU', 2921044, 276, '49',
+ 'germany', 'Germany', 'Deutschland',
+ '🇩🇪', 357021, 82905782, 'EU', 'EUR', 'Euro'),
+
+('GH', 'GHA', 2300660, 288, '233',
+ 'ghana', 'Ghana', 'Ghana',
+ '🇬🇭', 238533, 29767108, 'AF', 'GHS', 'Cedi'),
+
+('GI', 'GIB', 2411586, 292, '350',
+ 'gibraltar', 'Gibraltar', 'Gibraltar',
+ '🇬🇮', 7, 33691, 'EU', 'GIP', 'Pound'),
+
+('GR', 'GRC', 390903, 300, '30',
+ 'greece', 'Greece', 'Ελλάδα',
+ '🇬🇷', 131940, 10727668, 'EU', 'EUR', 'Euro'),
+
+('GL', 'GRL', 3425505, 304, '299',
+ 'greenland', 'Greenland', 'Kalaallit Nunaat',
+ '🇬🇱', 2166086, 56025, 'NA', 'DKK', 'Krone'),
+
+('GD', 'GRD', 3580239, 308, '1-473',
+ 'grenada', 'Grenada', 'Grenada',
+ '🇬🇩', 344, 111454, 'NA', 'XCD', 'Dollar'),
+
+('GP', 'GLP', 3579143, 312, '590',
+ 'guadeloupe', 'Guadeloupe', 'Guadeloupe',
+ '🇬🇵', 1705, 443000, 'NA', 'EUR', 'Euro'),
+
+('GU', 'GUM', 4043988, 316, '1-671',
+ 'guam', 'Guam', 'Guam',
+ '🇬🇺', 549, 165768, 'OC', 'USD', 'Dollar'),
+
+('GT', 'GTM', 3595528, 320, '502',
+ 'guatemala', 'Guatemala', 'Guatemala',
+ '🇬🇹', 108889, 17247807, 'NA', 'GTQ', 'Quetzal'),
+
+('GG', 'GGY', 3042362, 831, '44',
+ 'guernsey', 'Guernsey', 'Guernsey',
+ '🇬🇬', 78, 65228, 'EU', 'GBP', 'Pound'),
+
+('GN', 'GIN', 2420477, 324, '224',
+ 'guinea', 'Guinea', 'Guinée',
+ '🇬🇳', 245857, 12414318, 'AF', 'GNF', 'Franc'),
+
+('GW', 'GNB', 2372248, 624, '245',
+ 'guinea_bissau', 'Guinea-Bissau', 'Guiné-Bissau',
+ '🇬🇼', 36125, 1874309, 'AF', 'XOF', 'Franc'),
+
+('GY', 'GUY', 3378535, 328, '592',
+ 'guyana', 'Guyana', 'Guyana',
+ '🇬🇾', 214969, 779004, 'SA', 'GYD', 'Dollar'),
+
+('HT', 'HTI', 3723988, 332, '509',
+ 'haiti', 'Haiti', 'Haïti',
+ '🇭🇹', 27750, 11123176, 'NA', 'HTG', 'Gourde'),
+
+('HM', 'HMD', 1547314, 334, '672',
+ 'heard_island_and_mcdonald_islands', 'Heard Island and McDonald Islands', 'Heard Island and McDonald Islands',
+ '🇭🇲', 412, 0, 'AN', 'AUD', 'Dollar'),
+
+('VA', 'VAT', 3164670, 336, '379',
+ 'vatican_city', 'Vatican City', 'Città del Vaticano',
+ '🇻🇦', 0, 921, 'EU', 'EUR', 'Euro'),
+
+('HN', 'HND', 3608932, 340, '504',
+ 'honduras', 'Honduras', 'Honduras',
+ '🇭🇳', 112492, 9587522, 'NA', 'HNL', 'Lempira'),
+
+('HK', 'HKG', 1819730, 344, '852',
+ 'hong_kong', 'Hong Kong', '香港',
+ '🇭🇰', 1092, 7451000, 'AS', 'HKD', 'Dollar'),
+
+('HU', 'HUN', 719819, 348, '36',
+ 'hungary', 'Hungary', 'Magyarország',
+ '🇭🇺', 93030, 9768785, 'EU', 'HUF', 'Forint'),
+
+('IS', 'ISL', 2629691, 352, '354',
+ 'iceland', 'Iceland', 'Ísland',
+ '🇮🇸', 103000, 353574, 'EU', 'ISK', 'Krona'),
+
+('IN', 'IND', 1269750, 356, '91',
+ 'india', 'India', 'भारत',
+ '🇮🇳', 3287590, 1352617328, 'AS', 'INR', 'Rupee'),
+
+('ID', 'IDN', 1643084, 360, '62',
+ 'indonesia', 'Indonesia', 'Indonesia',
+ '🇮🇩', 1904569, 267663435, 'AS', 'IDR', 'Rupiah'),
+
+('IR', 'IRN', 130758, 364, '98',
+ 'iran', 'Iran', 'ایران',
+ '🇮🇷', 1648195, 81800269, 'AS', 'IRR', 'Rial'),
+
+('IQ', 'IRQ', 99237, 368, '964',
+ 'iraq', 'Iraq', 'العراق',
+ '🇮🇶', 438317, 38433600, 'AS', 'IQD', 'Dinar'),
+
+('IE', 'IRL', 2963597, 372, '353',
+ 'ireland', 'Ireland', 'Éire',
+ '🇮🇪', 70273, 4853506, 'EU', 'EUR', 'Euro'),
+
+('IM', 'IMN', 3042225, 833, '44',
+ 'isle_of_man', 'Isle of Man', 'Isle of Man',
+ '🇮🇲', 572, 84077, 'EU', 'GBP', 'Pound'),
+
+('IL', 'ISR', 294640, 376, '972',
+ 'israel', 'Israel', 'ישראל',
+ '🇮🇱', 20770, 8882800, 'AS', 'ILS', 'Shekel'),
+
+('IT', 'ITA', 3175395, 380, '39',
+ 'italy', 'Italy', 'Italia',
+ '🇮🇹', 301230, 60431283, 'EU', 'EUR', 'Euro'),
+
+('JM', 'JAM', 3489940, 388, '1-876',
+ 'jamaica', 'Jamaica', 'Jamaica',
+ '🇯🇲', 10991, 2934855, 'NA', 'JMD', 'Dollar'),
+
+('JP', 'JPN', 1861060, 392, '81',
+ 'japan', 'Japan', '日本',
+ '🇯🇵', 377835, 126529100, 'AS', 'JPY', 'Yen'),
+
+('JE', 'JEY', 3042142, 832, '44',
+ 'jersey', 'Jersey', 'Jersey',
+ '🇯🇪', 116, 90812, 'EU', 'GBP', 'Pound'),
+
+('JO', 'JOR', 248816, 400, '962',
+ 'jordan', 'Jordan', 'الأردن',
+ '🇯🇴', 89342, 9956011, 'AS', 'JOD', 'Dinar'),
+
+('KZ', 'KAZ', 1522867, 398, '7',
+ 'kazakhstan', 'Kazakhstan', 'Қазақстан',
+ '🇰🇿', 2724900, 18276499, 'AS', 'KZT', 'Tenge'),
+
+('KE', 'KEN', 192950, 404, '254',
+ 'kenya', 'Kenya', 'Kenya',
+ '🇰🇪', 580367, 51393010, 'AF', 'KES', 'Shilling'),
+
+('KI', 'KIR', 4030945, 296, '686',
+ 'kiribati', 'Kiribati', 'Kiribati',
+ '🇰🇮', 811, 115847, 'OC', 'AUD', 'Dollar'),
+
+('KP', 'PRK', 1873107, 408, '850',
+ 'north_korea', 'North Korea', '조선민주주의인민공화국',
+ '🇰🇵', 120538, 25549604, 'AS', 'KPW', 'Won'),
+
+('KR', 'KOR', 1835841, 410, '82',
+ 'south_korea', 'South Korea', '대한민국',
+ '🇰🇷', 98480, 51635256, 'AS', 'KRW', 'Won'),
+
+('KW', 'KWT', 285570, 414, '965',
+ 'kuwait', 'Kuwait', 'الكويت',
+ '🇰🇼', 17818, 4137309, 'AS', 'KWD', 'Dinar'),
+
+('KG', 'KGZ', 1527747, 417, '996',
+ 'kyrgyzstan', 'Kyrgyzstan', 'Кыргызстан',
+ '🇰🇬', 199951, 6315800, 'AS', 'KGS', 'Som'),
+
+('LA', 'LAO', 1655842, 418, '856',
+ 'laos', 'Laos', 'ສປປລາວ',
+ '🇱🇦', 236800, 7061507, 'AS', 'LAK', 'Kip'),
+
+('LV', 'LVA', 458258, 428, '371',
+ 'latvia', 'Latvia', 'Latvija',
+ '🇱🇻', 64589, 1926542, 'EU', 'EUR', 'Euro'),
+
+('LB', 'LBN', 272103, 422, '961',
+ 'lebanon', 'Lebanon', 'لبنان',
+ '🇱🇧', 10400, 6848925, 'AS', 'LBP', 'Pound'),
+
+('LS', 'LSO', 932692, 426, '266',
+ 'lesotho', 'Lesotho', 'Lesotho',
+ '🇱🇸', 30355, 2108132, 'AF', 'LSL', 'Loti'),
+
+('LR', 'LBR', 2275384, 430, '231',
+ 'liberia', 'Liberia', 'Liberia',
+ '🇱🇷', 111369, 4818977, 'AF', 'LRD', 'Dollar'),
+
+('LY', 'LBY', 2215636, 434, '218',
+ 'libya', 'Libya', 'ليبيا',
+ '🇱🇾', 1759540, 6678567, 'AF', 'LYD', 'Dinar'),
+
+('LI', 'LIE', 3042058, 438, '423',
+ 'liechtenstein', 'Liechtenstein', 'Liechtenstein',
+ '🇱🇮', 160, 37910, 'EU', 'CHF', 'Franc'),
+
+('LT', 'LTU', 597427, 440, '370',
+ 'lithuania', 'Lithuania', 'Lietuva',
+ '🇱🇹', 65300, 2789533, 'EU', 'EUR', 'Euro'),
+
+('LU', 'LUX', 2960313, 442, '352',
+ 'luxembourg', 'Luxembourg', 'Luxembourg',
+ '🇱🇺', 2586, 607950, 'EU', 'EUR', 'Euro'),
+
+('MO', 'MAC', 1821275, 446, '853',
+ 'macau', 'Macau', '澳門',
+ '🇲🇴', 30, 631636, 'AS', 'MOP', 'Pataca'),
+
+('MK', 'MKD', 718075, 807, '389',
+ 'north_macedonia', 'North Macedonia', 'Северна Македонија',
+ '🇲🇰', 25713, 2082958, 'EU', 'MKD', 'Denar'),
+
+('MG', 'MDG', 1062947, 450, '261',
+ 'madagascar', 'Madagascar', 'Madagasikara',
+ '🇲🇬', 587041, 26262368, 'AF', 'MGA', 'Ariary'),
+
+('MW', 'MWI', 927384, 454, '265',
+ 'malawi', 'Malawi', 'Malawi',
+ '🇲🇼', 118484, 18143315, 'AF', 'MWK', 'Kwacha'),
+
+('MY', 'MYS', 1733045, 458, '60',
+ 'malaysia', 'Malaysia', 'Malaysia',
+ '🇲🇾', 329847, 31528585, 'AS', 'MYR', 'Ringgit'),
+
+('MV', 'MDV', 1282028, 462, '960',
+ 'maldives', 'Maldives', 'Maldives',
+ '🇲🇻', 298, 515696, 'AS', 'MVR', 'Rufiyaa'),
+
+('ML', 'MLI', 2453866, 466, '223',
+ 'mali', 'Mali', 'Mali',
+ '🇲🇱', 1240192, 19077690, 'AF', 'XOF', 'Franc'),
+
+('MT', 'MLT', 2562770, 470, '356',
+ 'malta', 'Malta', 'Malta',
+ '🇲🇹', 316, 483530, 'EU', 'EUR', 'Euro'),
+
+('MH', 'MHL', 2080185, 584, '692',
+ 'marshall_islands', 'Marshall Islands', 'Aelōn̄ in M̧ajeļ',
+ '🇲🇭', 181, 58413, 'OC', 'USD', 'Dollar'),
+
+('MQ', 'MTQ', 3570311, 474, '596',
+ 'martinique', 'Martinique', 'Martinique',
+ '🇲🇶', 1128, 432900, 'NA', 'EUR', 'Euro'),
+
+('MR', 'MRT', 2378080, 478, '222',
+ 'mauritania', 'Mauritania', 'موريتانيا',
+ '🇲🇷', 1030700, 4403319, 'AF', 'MRU', 'Ouguiya'),
+
+('MU', 'MUS', 934292, 480, '230',
+ 'mauritius', 'Mauritius', 'Moris',
+ '🇲🇺', 2040, 1265303, 'AF', 'MUR', 'Rupee'),
+
+('YT', 'MYT', 1024031, 175, '262',
+ 'mayotte', 'Mayotte', 'Mayotte',
+ '🇾🇹', 374, 279471, 'AF', 'EUR', 'Euro'),
+
+('MX', 'MEX', 3996063, 484, '52',
+ 'mexico', 'Mexico', 'México',
+ '🇲🇽', 1964375, 126190788, 'NA', 'MXN', 'Peso'),
+
+('FM', 'FSM', 2081918, 583, '691',
+ 'micronesia', 'Micronesia', 'Micronesia',
+ '🇫🇲', 702, 112640, 'OC', 'USD', 'Dollar'),
+
+('MD', 'MDA', 617790, 498, '373',
+ 'moldova', 'Moldova', 'Republica Moldova',
+ '🇲🇩', 33846, 3545883, 'EU', 'MDL', 'Leu'),
+
+('MC', 'MCO', 2993457, 492, '377',
+ 'monaco', 'Monaco', 'Monaco',
+ '🇲🇨', 2, 38682, 'EU', 'EUR', 'Euro'),
+
+('MN', 'MNG', 2029969, 496, '976',
+ 'mongolia', 'Mongolia', 'Монгол улс',
+ '🇲🇳', 1564116, 3170208, 'AS', 'MNT', 'Tugrik'),
+
+('ME', 'MNE', 3194884, 499, '382',
+ 'montenegro', 'Montenegro', 'Crna Gora',
+ '🇲🇪', 13812, 622345, 'EU', 'EUR', 'Euro'),
+
+('MS', 'MSR', 3578097, 500, '1-664',
+ 'montserrat', 'Montserrat', 'Montserrat',
+ '🇲🇸', 102, 9341, 'NA', 'XCD', 'Dollar'),
+
+('MA', 'MAR', 2542007, 504, '212',
+ 'morocco', 'Morocco', 'المغرب',
+ '🇲🇦', 446550, 36029138, 'AF', 'MAD', 'Dirham'),
+
+('MZ', 'MOZ', 1036973, 508, '258',
+ 'mozambique', 'Mozambique', 'Moçambique',
+ '🇲🇿', 801590, 29495962, 'AF', 'MZN', 'Metical'),
+
+('MM', 'MMR', 1327865, 104, '95',
+ 'myanmar', 'Myanmar', 'မြန်မာ',
+ '🇲🇲', 676578, 53708395, 'AS', 'MMK', 'Kyat'),
+
+('NA', 'NAM', 3355338, 516, '264',
+ 'namibia', 'Namibia', 'Namibia',
+ '🇳🇦', 825615, 2448255, 'AF', 'NAD', 'Dollar'),
+
+('NR', 'NRU', 2110425, 520, '674',
+ 'nauru', 'Nauru', 'Nauru',
+ '🇳🇷', 21, 12704, 'OC', 'AUD', 'Dollar'),
+
+('NP', 'NPL', 1282988, 524, '977',
+ 'nepal', 'Nepal', 'नेपाल',
+ '🇳🇵', 147181, 28087871, 'AS', 'NPR', 'Rupee'),
+
+('NL', 'NLD', 2750405, 528, '31',
+ 'netherlands', 'Netherlands', 'Nederland',
+ '🇳🇱', 41543, 17231017, 'EU', 'EUR', 'Euro'),
+
+('NC', 'NCL', 2139685, 540, '687',
+ 'new_caledonia', 'New Caledonia', 'Nouvelle-Calédonie',
+ '🇳🇨', 18575, 284060, 'OC', 'XPF', 'Franc'),
+
+('NZ', 'NZL', 2186224, 554, '64',
+ 'new_zealand', 'New Zealand', 'Aotearoa',
+ '🇳🇿', 270467, 4885500, 'OC', 'NZD', 'Dollar'),
+
+ ('NI', 'NIC', 3617476, 558, '505',
+ 'nicaragua', 'Nicaragua', 'Nicaragua',
+ '🇳🇮', 130373, 6465513, 'NA', 'NIO', 'Cordoba'),
+
+('NE', 'NER', 2440476, 562, '227',
+ 'niger', 'Niger', 'Niger',
+ '🇳🇪', 1267000, 22442948, 'AF', 'XOF', 'Franc'),
+
+('NG', 'NGA', 2328926, 566, '234',
+ 'nigeria', 'Nigeria', 'Nigeria',
+ '🇳🇬', 923768, 195874740, 'AF', 'NGN', 'Naira'),
+
+('NU', 'NIU', 4036232, 570, '683',
+ 'niue', 'Niue', 'Niuē',
+ '🇳🇺', 260, 2166, 'OC', 'NZD', 'Dollar'),
+
+('NF', 'NFK', 2155115, 574, '672',
+ 'norfolk_island', 'Norfolk Island', 'Norfolk Island',
+ '🇳🇫', 36, 1828, 'OC', 'AUD', 'Dollar'),
+
+('MP', 'MNP', 4041468, 580, '1-670',
+ 'northern_mariana_islands', 'Northern Mariana Islands', 'Northern Mariana Islands',
+ '🇲🇵', 464, 56882, 'OC', 'USD', 'Dollar'),
+
+('NO', 'NOR', 3144096, 578, '47',
+ 'norway', 'Norway', 'Norge',
+ '🇳🇴', 323802, 5314336, 'EU', 'NOK', 'Krone'),
+
+('OM', 'OMN', 286963, 512, '968',
+ 'oman', 'Oman', 'عُمان',
+ '🇴🇲', 309500, 4829483, 'AS', 'OMR', 'Rial'),
+
+('PK', 'PAK', 1168579, 586, '92',
+ 'pakistan', 'Pakistan', 'پاکستان',
+ '🇵🇰', 796095, 212215030, 'AS', 'PKR', 'Rupee'),
+
+('PW', 'PLW', 1559582, 585, '680',
+ 'palau', 'Palau', 'Belau',
+ '🇵🇼', 459, 17907, 'OC', 'USD', 'Dollar'),
+
+('PS', 'PSE', 6254930, 275, '970',
+ 'palestine', 'Palestine', 'فلسطين',
+ '🇵🇸', 6220, 4569087, 'AS', 'ILS', 'Shekel'),
+
+('PA', 'PAN', 3703430, 591, '507',
+ 'panama', 'Panama', 'Panamá',
+ '🇵🇦', 75417, 4176873, 'NA', 'PAB', 'Balboa'),
+
+('PG', 'PNG', 2088628, 598, '675',
+ 'papua_new_guinea', 'Papua New Guinea', 'Papua Niugini',
+ '🇵🇬', 462840, 8606316, 'OC', 'PGK', 'Kina'),
+
+('PY', 'PRY', 3437598, 600, '595',
+ 'paraguay', 'Paraguay', 'Paraguay',
+ '🇵🇾', 406752, 6956071, 'SA', 'PYG', 'Guarani'),
+
+('PE', 'PER', 3932488, 604, '51',
+ 'peru', 'Peru', 'Perú',
+ '🇵🇪', 1285216, 31989256, 'SA', 'PEN', 'Sol'),
+
+('PH', 'PHL', 1694008, 608, '63',
+ 'philippines', 'Philippines', 'Pilipinas',
+ '🇵🇭', 342353, 106651922, 'AS', 'PHP', 'Peso'),
+
+ ('PN', 'PCN', 4030699, 612, '870',
+ 'pitcairn_islands', 'Pitcairn Islands', 'Pitcairn Islands',
+ '🇵🇳', 47, 46, 'OC', 'NZD', 'Dollar'),
+
+('PL', 'POL', 798544, 616, '48',
+ 'poland', 'Poland', 'Polska',
+ '🇵🇱', 312685, 37978548, 'EU', 'PLN', 'Zloty'),
+
+('PT', 'PRT', 2264397, 620, '351',
+ 'portugal', 'Portugal', 'Portugal',
+ '🇵🇹', 92212, 10281762, 'EU', 'EUR', 'Euro'),
+
+('PR', 'PRI', 4566966, 630, '1-787,1-939',
+ 'puerto_rico', 'Puerto Rico', 'Puerto Rico',
+ '🇵🇷', 8870, 3195153, 'NA', 'USD', 'Dollar'),
+
+('QA', 'QAT', 289688, 634, '974',
+ 'qatar', 'Qatar', 'قطر',
+ '🇶🇦', 11586, 2781677, 'AS', 'QAR', 'Rial'),
+
+('RE', 'REU', 935317, 638, '262',
+ 'reunion', 'Réunion', 'La Réunion',
+ '🇷🇪', 2517, 776948, 'AF', 'EUR', 'Euro'),
+
+('RO', 'ROU', 798549, 642, '40',
+ 'romania', 'Romania', 'România',
+ '🇷🇴', 238391, 19473936, 'EU', 'RON', 'Leu'),
+
+('RU', 'RUS', 2017370, 643, '7',
+ 'russia', 'Russia', 'Россия',
+ '🇷🇺', 17098242, 144478050, 'EU', 'RUB', 'Ruble'),
+
+('RW', 'RWA', 49518, 646, '250',
+ 'rwanda', 'Rwanda', 'Rwanda',
+ '🇷🇼', 26338, 12301939, 'AF', 'RWF', 'Franc'),
+
+ ('BL', 'BLM', 3578476, 652, '590',
+ 'saint_barthelemy', 'Saint Barthélemy', 'Saint-Barthélemy',
+ '🇧🇱', 21, 8450, 'NA', 'EUR', 'Euro'),
+
+('SH', 'SHN', 3370751, 654, '290',
+ 'saint_helena', 'Saint Helena', 'Saint Helena',
+ '🇸🇭', 410, 7460, 'AF', 'SHP', 'Pound'),
+
+('KN', 'KNA', 3575174, 659, '1-869',
+ 'saint_kitts_and_nevis', 'Saint Kitts and Nevis', 'Saint Kitts and Nevis',
+ '🇰🇳', 261, 52441, 'NA', 'XCD', 'Dollar'),
+
+('LC', 'LCA', 3576468, 662, '1-758',
+ 'saint_lucia', 'Saint Lucia', 'Saint Lucia',
+ '🇱🇨', 616, 181889, 'NA', 'XCD', 'Dollar'),
+
+('MF', 'MAF', 3578421, 663, '590',
+ 'saint_martin', 'Saint Martin (French part)', 'Saint-Martin',
+ '🇲🇫', 53, 37264, 'NA', 'EUR', 'Euro'),
+
+('PM', 'SPM', 3424932, 666, '508',
+ 'saint_pierre_and_miquelon', 'Saint Pierre and Miquelon', 'Saint-Pierre-et-Miquelon',
+ '🇵🇲', 242, 7012, 'NA', 'EUR', 'Euro'),
+
+('VC', 'VCT', 3577815, 670, '1-784',
+ 'saint_vincent_and_the_grenadines', 'Saint Vincent and the Grenadines', 'Saint Vincent and the Grenadines',
+ '🇻🇨', 389, 110211, 'NA', 'XCD', 'Dollar'),
+
+('WS', 'WSM', 4034894, 882, '685',
+ 'samoa', 'Samoa', 'Samoa',
+ '🇼🇸', 2831, 196130, 'OC', 'WST', 'Tala'),
+
+('SM', 'SMR', 3168068, 674, '378',
+ 'san_marino', 'San Marino', 'San Marino',
+ '🇸🇲', 61, 33785, 'EU', 'EUR', 'Euro'),
+
+('ST', 'STP', 2410758, 678, '239',
+ 'sao_tome_and_principe', 'São Tomé and Príncipe', 'São Tomé e Príncipe',
+ '🇸🇹', 1001, 197700, 'AF', 'STN', 'Dobra'),
+
+('SA', 'SAU', 102358, 682, '966',
+ 'saudi_arabia', 'Saudi Arabia', 'السعودية',
+ '🇸🇦', 2149690, 33699947, 'AS', 'SAR', 'Rial'),
+
+('SN', 'SEN', 2245662, 686, '221',
+ 'senegal', 'Senegal', 'Sénégal',
+ '🇸🇳', 196722, 15854360, 'AF', 'XOF', 'Franc'),
+
+('RS', 'SRB', 6290252, 688, '381',
+ 'serbia', 'Serbia', 'Србија',
+ '🇷🇸', 88361, 6982084, 'EU', 'RSD', 'Dinar'),
+
+('SC', 'SYC', 241170, 690, '248',
+ 'seychelles', 'Seychelles', 'Sesel',
+ '🇸🇨', 455, 96762, 'AF', 'SCR', 'Rupee'),
+
+('SL', 'SLE', 2403846, 694, '232',
+ 'sierra_leone', 'Sierra Leone', 'Sierra Leone',
+ '🇸🇱', 71740, 7650154, 'AF', 'SLL', 'Leone'),
+
+ ('SG', 'SGP', 1880251, 702, '65',
+ 'singapore', 'Singapore', 'Singapore',
+ '🇸🇬', 697, 5638676, 'AS', 'SGD', 'Dollar'),
+
+('SX', 'SXM', 7609695, 534, '1-721',
+ 'sint_maarten', 'Sint Maarten (Dutch part)', 'Sint Maarten',
+ '🇸🇽', 34, 40654, 'NA', 'ANG', 'Guilder'),
+
+('SK', 'SVK', 3057568, 703, '421',
+ 'slovakia', 'Slovakia', 'Slovensko',
+ '🇸🇰', 49035, 5447011, 'EU', 'EUR', 'Euro'),
+
+('SI', 'SVN', 3190538, 705, '386',
+ 'slovenia', 'Slovenia', 'Slovenija',
+ '🇸🇮', 20273, 2067372, 'EU', 'EUR', 'Euro'),
+
+('SB', 'SLB', 2103350, 90, '677',
+ 'solomon_islands', 'Solomon Islands', 'Solomon Islands',
+ '🇸🇧', 28896, 652858, 'OC', 'SBD', 'Dollar'),
+
+('SO', 'SOM', 51537, 706, '252',
+ 'somalia', 'Somalia', 'Soomaaliya',
+ '🇸🇴', 637657, 15008154, 'AF', 'SOS', 'Shilling'),
+
+('ZA', 'ZAF', 953987, 710, '27',
+ 'south_africa', 'South Africa', 'South Africa',
+ '🇿🇦', 1219090, 57779622, 'AF', 'ZAR', 'Rand'),
+
+('GS', 'SGS', 3474415, 239, '500',
+ 'south_georgia_and_south_sandwich_islands', 'South Georgia and the South Sandwich Islands', 'South Georgia and the South Sandwich Islands',
+ '🇬🇸', 3903, 30, 'AN', 'GBP', 'Pound'),
+
+('SS', 'SSD', 7909807, 728, '211',
+ 'south_sudan', 'South Sudan', 'South Sudan',
+ '🇸🇸', 619745, 8260490, 'AF', 'SSP', 'Pound'),
+
+('ES', 'ESP', 2510769, 724, '34',
+ 'spain', 'Spain', 'España',
+ '🇪🇸', 505992, 46723749, 'EU', 'EUR', 'Euro'),
+
+('LK', 'LKA', 1227603, 144, '94',
+ 'sri_lanka', 'Sri Lanka', 'ශ්‍රී ලංකා',
+ '🇱🇰', 65610, 21670000, 'AS', 'LKR', 'Rupee'),
+
+('SD', 'SDN', 366755, 729, '249',
+ 'sudan', 'Sudan', 'السودان',
+ '🇸🇩', 1861484, 41801533, 'AF', 'SDG', 'Pound'),
+
+('SR', 'SUR', 3382998, 740, '597',
+ 'suriname', 'Suriname', 'Suriname',
+ '🇸🇷', 163820, 575991, 'SA', 'SRD', 'Dollar'),
+
+('SJ', 'SJM', 607072, 744, '47',
+ 'svalbard_and_jan_mayen', 'Svalbard and Jan Mayen', 'Svalbard og Jan Mayen',
+ '🇸🇯', 62049, 2550, 'EU', 'NOK', 'Krone'),
+
+('SE', 'SWE', 2661886, 752, '46',
+ 'sweden', 'Sweden', 'Sverige',
+ '🇸🇪', 450295, 10183175, 'EU', 'SEK', 'Krona'),
+
+('CH', 'CHE', 2658434, 756, '41',
+ 'switzerland', 'Switzerland', 'Schweiz',
+ '🇨🇭', 41284, 8516543, 'EU', 'CHF', 'Franc'),
+
+ ('SY', 'SYR', 163843, 760, '963',
+ 'syria', 'Syria', 'سوريا',
+ '🇸🇾', 185180, 16906283, 'AS', 'SYP', 'Pound'),
+
+('TW', 'TWN', 1668284, 158, '886',
+ 'taiwan', 'Taiwan', '臺灣',
+ '🇹🇼', 36193, 23451837, 'AS', 'TWD', 'Dollar'),
+
+('TJ', 'TJK', 1220409, 762, '992',
+ 'tajikistan', 'Tajikistan', 'Тоҷикистон',
+ '🇹🇯', 143100, 9100837, 'AS', 'TJS', 'Somoni'),
+
+('TZ', 'TZA', 149590, 834, '255',
+ 'tanzania', 'Tanzania', 'Tanzania',
+ '🇹🇿', 945087, 59091392, 'AF', 'TZS', 'Shilling'),
+
+('TH', 'THA', 1605651, 764, '66',
+ 'thailand', 'Thailand', 'ประเทศไทย',
+ '🇹🇭', 513120, 69428524, 'AS', 'THB', 'Baht'),
+
+('TL', 'TLS', 1966436, 626, '670',
+ 'timor_leste', 'Timor-Leste', 'Timor-Leste',
+ '🇹🇱', 14874, 1267972, 'OC', 'USD', 'Dollar'),
+
+('TG', 'TGO', 2363686, 768, '228',
+ 'togo', 'Togo', 'Togo',
+ '🇹🇬', 56785, 7889094, 'AF', 'XOF', 'Franc'),
+
+('TK', 'TKL', 4031074, 772, '690',
+ 'tokelau', 'Tokelau', 'Tokelau',
+ '🇹🇰', 12, 1466, 'OC', 'NZD', 'Dollar'),
+
+('TO', 'TON', 4032283, 776, '676',
+ 'tonga', 'Tonga', 'Tonga',
+ '🇹🇴', 747, 103197, 'OC', 'TOP', 'Paʻanga'),
+
+('TT', 'TTO', 3573591, 780, '1-868',
+ 'trinidad_and_tobago', 'Trinidad and Tobago', 'Trinidad and Tobago',
+ '🇹🇹', 5130, 1389858, 'NA', 'TTD', 'Dollar'),
+
+ ('TN', 'TUN', 2464461, 788, '216',
+ 'tunisia', 'Tunisia', 'تونس',
+ '🇹🇳', 163610, 11565204, 'AF', 'TND', 'Dinar'),
+
+('TR', 'TUR', 298795, 792, '90',
+ 'turkey', 'Turkey', 'Türkiye',
+ '🇹🇷', 783562, 82319724, 'AS', 'TRY', 'Lira'),
+
+('TM', 'TKM', 1218197, 795, '993',
+ 'turkmenistan', 'Turkmenistan', 'Türkmenistan',
+ '🇹🇲', 488100, 5850902, 'AS', 'TMT', 'Manat'),
+
+('TC', 'TCA', 3576916, 796, '1-649',
+ 'turks_and_caicos_islands', 'Turks and Caicos Islands', 'Turks and Caicos Islands',
+ '🇹🇨', 430, 35446, 'NA', 'USD', 'Dollar'),
+
+('TV', 'TUV', 2110297, 798, '688',
+ 'tuvalu', 'Tuvalu', 'Tuvalu',
+ '🇹🇻', 26, 11508, 'OC', 'AUD', 'Dollar'),
+
+('UG', 'UGA', 226074, 800, '256',
+ 'uganda', 'Uganda', 'Uganda',
+ '🇺🇬', 241038, 42723139, 'AF', 'UGX', 'Shilling'),
+
+('UA', 'UKR', 690791, 804, '380',
+ 'ukraine', 'Ukraine', 'Україна',
+ '🇺🇦', 603700, 44622516, 'EU', 'UAH', 'Hryvnia'),
+
+('AE', 'ARE', 290557, 784, '971',
+ 'united_arab_emirates', 'United Arab Emirates', 'الإمارات العربية المتحدة',
+ '🇦🇪', 83600, 9630959, 'AS', 'AED', 'Dirham'),
+
+('GB', 'GBR', 2635167, 826, '44',
+ 'united_kingdom', 'United Kingdom', 'United Kingdom',
+ '🇬🇧', 243610, 66488991, 'EU', 'GBP', 'Pound'),
+
+('US', 'USA', 6252001, 840, '1',
+ 'united_states', 'United States', 'United States',
+ '🇺🇸', 9629091, 327167434, 'NA', 'USD', 'Dollar'),
+
+ ('UM', 'UMI', 5854968, 581, '1',
+ 'united_states_minor_outlying_islands', 'United States Minor Outlying Islands', 'United States Minor Outlying Islands',
+ '🇺🇲', 34, 300, 'OC', 'USD', 'Dollar'),
+
+('UY', 'URY', 3439705, 858, '598',
+ 'uruguay', 'Uruguay', 'Uruguay',
+ '🇺🇾', 176215, 3461734, 'SA', 'UYU', 'Peso'),
+
+('UZ', 'UZB', 1512440, 860, '998',
+ 'uzbekistan', 'Uzbekistan', 'Oʻzbekiston',
+ '🇺🇿', 447400, 32956100, 'AS', 'UZS', 'Som'),
+
+('VU', 'VUT', 2134431, 548, '678',
+ 'vanuatu', 'Vanuatu', 'Vanuatu',
+ '🇻🇺', 12189, 292680, 'OC', 'VUV', 'Vatu'),
+
+('VE', 'VEN', 3625428, 862, '58',
+ 'venezuela', 'Venezuela', 'Venezuela',
+ '🇻🇪', 912050, 28870195, 'SA', 'VES', 'Bolívar'),
+
+('VN', 'VNM', 1562822, 704, '84',
+ 'vietnam', 'Vietnam', 'Việt Nam',
+ '🇻🇳', 331212, 95540395, 'AS', 'VND', 'Dong'),
+
+('VG', 'VGB', 3577718, 92, '1-284',
+ 'virgin_islands_british', 'Virgin Islands (British)', 'British Virgin Islands',
+ '🇻🇬', 151, 29802, 'NA', 'USD', 'Dollar'),
+
+('VI', 'VIR', 4796775, 850, '1-340',
+ 'virgin_islands_us', 'Virgin Islands (U.S.)', 'United States Virgin Islands',
+ '🇻🇮', 347, 106977, 'NA', 'USD', 'Dollar'),
+
+('WF', 'WLF', 4034749, 876, '681',
+ 'wallis_and_futuna', 'Wallis and Futuna', 'Wallis-et-Futuna',
+ '🇼🇫', 274, 16025, 'OC', 'XPF', 'Franc'),
+
+('EH', 'ESH', 2461445, 732, '212',
+ 'western_sahara', 'Western Sahara', 'الصحراء الغربية',
+ '🇪🇭', 266000, 273008, 'AF', 'MAD', 'Dirham'),
+
+('YE', 'YEM', 69543, 887, '967',
+ 'yemen', 'Yemen', 'اليمن',
+ '🇾🇪', 527968, 28498687, 'AS', 'YER', 'Rial'),
+
+('ZM', 'ZMB', 895949, 894, '260',
+ 'zambia', 'Zambia', 'Zambia',
+ '🇿🇲', 752612, 17351822, 'AF', 'ZMW', 'Kwacha'),
+
+('ZW', 'ZWE', 878675, 716, '263',
+ 'zimbabwe', 'Zimbabwe', 'Zimbabwe',
+ '🇿🇼', 390757, 14439018, 'AF', 'ZWL', 'Dollar');

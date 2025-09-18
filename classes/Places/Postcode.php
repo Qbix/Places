@@ -14,6 +14,30 @@
 class Places_Postcode extends Base_Places_Postcode
 {
 	/**
+	 * Fetch nearest postcodes by geohash distance.
+	 * @method fetchByDistance
+	 * @static
+	 * @param {string} $geohash Geohash to search around
+	 * @param {integer} $limit Maximum number of results (default 10)
+	 * @param {array} [$options] Additional options
+	 * @param {string} [$options.countryCode] Only return cities with this countryCode
+	 * @param {boolean} [$options.skipDecoding=false] If true, skips haversine distance
+	 * @return {array} Array of Places_Postcode objects sorted by increasing distance
+	 */
+	static function fetchByDistance($geohash, $limit = 10, $options = array())
+	{
+		$query = self::select();
+		$field = 'geohash';
+		$skipDecoding = Q::ifset($options, 'skipDecoding', false);
+		foreach (array('countryCode') as $opt) {
+			if (!empty($options[$opt])) {
+				$query = $query->where(array($opt => $options[$opt]));
+			}
+		}
+		return Places_Geohash::fetchByDistance($query, $field, $geohash, $limit, $skipDecoding);
+	}
+
+	/**
 	 * The setUp() method is called the first time
 	 * an object of this class is constructed.
 	 * @method setUp

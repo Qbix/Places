@@ -1,0 +1,9 @@
+ALTER TABLE `{{prefix}}postcode`
+  DROP COLUMN placeName,
+  DROP COLUMN stateName,
+  DROP COLUMN state,
+  DROP COLUMN regionName,
+  DROP COLUMN region,
+  DROP COLUMN community,
+  ADD COLUMN `geohash` VARCHAR(31) NULL AFTER `longitude`,
+  ADD INDEX `geohash`(`geohash`),
