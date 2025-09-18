@@ -22,5 +22,6 @@ CREATE TABLE IF NOT EXISTS `{{prefix}}postcode` (
 
 -------- NEXT QUERY STARTS HERE --------
 
+INSERT INTO `{{prefix}}postcode` (`countryCode`, `postcode`, `placeName`, `stateName`, `state`, `regionName`, `region`, `community`, `latitude`, `longitude`, `accuracy`) VALUES
 ('US', '99553', 'Akutan', 'Alaska', 'AK', 'Aleutians East', '013', '', 54.143, -165.7854, 0),
 ('US', '11201', 'Brooklyn', 'New York', 'NY', 'Kings', '047', '', 40.694, -73.9903, 0)
