@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `{{prefix}}city` (
   KEY `countryCode` (`countryCode`),
   KEY `normalizedName` (`normalizedName`),
   KEY `localName` (`localName`),
-  KEY `latlon` (`latitude`,`longitude`)
+  KEY `latlon` (`latitude`,`longitude`),
   KEY `geohash` (`geohash`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
