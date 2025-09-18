@@ -18,12 +18,6 @@
  * an associative array of $column => $value pairs
  * @param {string} [$fields.countryCode] defaults to ""
  * @param {string} [$fields.postcode] defaults to ""
- * @param {string} [$fields.placeName] defaults to ""
- * @param {string} [$fields.stateName] defaults to ""
- * @param {string} [$fields.state] defaults to ""
- * @param {string} [$fields.regionName] defaults to ""
- * @param {string} [$fields.region] defaults to ""
- * @param {string} [$fields.community] defaults to ""
  * @param {float} [$fields.latitude] defaults to 0
  * @param {float} [$fields.longitude] defaults to 0
  * @param {string} [$fields.geohash] defaults to null
@@ -40,42 +34,6 @@ abstract class Base_Places_Postcode extends Db_Row
 	 */
 	/**
 	 * @property $postcode
-	 * @type string
-	 * @default ""
-	 * 
-	 */
-	/**
-	 * @property $placeName
-	 * @type string
-	 * @default ""
-	 * 
-	 */
-	/**
-	 * @property $stateName
-	 * @type string
-	 * @default ""
-	 * 
-	 */
-	/**
-	 * @property $state
-	 * @type string
-	 * @default ""
-	 * 
-	 */
-	/**
-	 * @property $regionName
-	 * @type string
-	 * @default ""
-	 * 
-	 */
-	/**
-	 * @property $region
-	 * @type string
-	 * @default ""
-	 * 
-	 */
-	/**
-	 * @property $community
 	 * @type string
 	 * @default ""
 	 * 
@@ -121,6 +79,8 @@ abstract class Base_Places_Postcode extends Db_Row
 		$this->setTable(self::table());
 		$this->setPrimaryKey(
 			array (
+			  0 => 'countryCode',
+			  1 => 'postcode',
 			)
 		);
 	}
@@ -373,7 +333,7 @@ return array (
     3 => false,
   ),
   1 => false,
-  2 => 'MUL',
+  2 => 'PRI',
   3 => NULL,
 );			
 	}
@@ -428,337 +388,7 @@ return array (
     3 => false,
   ),
   1 => false,
-  2 => '',
-  3 => NULL,
-);			
-	}
-
-	/**
-	 * Method is called before setting the field and verifies if value is string of length within acceptable limit.
-	 * Optionally accept numeric value which is converted to string
-	 * @method beforeSet_placeName
-	 * @param {string} $value
-	 * @return {array} An array of field name and value
-	 * @throws {Exception} An exception is thrown if $value is not string or is exceedingly long
-	 */
-	function beforeSet_placeName($value)
-	{
-		if (!isset($value)) {
-			$value='';
-		}
-		if ($value instanceof Db_Expression
-               or $value instanceof Db_Range) {
-			return array('placeName', $value);
-		}
-		if (!is_string($value) and !is_numeric($value))
-			throw new Exception('Must pass a string to '.$this->getTable().".placeName");
-		if (strlen($value) > 180)
-			throw new Exception('Exceedingly long value being assigned to '.$this->getTable().".placeName");
-		return array('placeName', $value);			
-	}
-
-	/**
-	 * Returns the maximum string length that can be assigned to the placeName field
-	 * @return {integer}
-	 */
-	function maxSize_placeName()
-	{
-
-		return 180;			
-	}
-
-	/**
-	 * Returns schema information for placeName column
-	 * @return {array} [[typeName, displayRange, modifiers, unsigned], isNull, key, default]
-	 */
-	static function column_placeName()
-	{
-
-return array (
-  0 => 
-  array (
-    0 => 'varchar',
-    1 => '180',
-    2 => '',
-    3 => false,
-  ),
-  1 => false,
-  2 => '',
-  3 => NULL,
-);			
-	}
-
-	/**
-	 * Method is called before setting the field and verifies if value is string of length within acceptable limit.
-	 * Optionally accept numeric value which is converted to string
-	 * @method beforeSet_stateName
-	 * @param {string} $value
-	 * @return {array} An array of field name and value
-	 * @throws {Exception} An exception is thrown if $value is not string or is exceedingly long
-	 */
-	function beforeSet_stateName($value)
-	{
-		if (!isset($value)) {
-			$value='';
-		}
-		if ($value instanceof Db_Expression
-               or $value instanceof Db_Range) {
-			return array('stateName', $value);
-		}
-		if (!is_string($value) and !is_numeric($value))
-			throw new Exception('Must pass a string to '.$this->getTable().".stateName");
-		if (strlen($value) > 100)
-			throw new Exception('Exceedingly long value being assigned to '.$this->getTable().".stateName");
-		return array('stateName', $value);			
-	}
-
-	/**
-	 * Returns the maximum string length that can be assigned to the stateName field
-	 * @return {integer}
-	 */
-	function maxSize_stateName()
-	{
-
-		return 100;			
-	}
-
-	/**
-	 * Returns schema information for stateName column
-	 * @return {array} [[typeName, displayRange, modifiers, unsigned], isNull, key, default]
-	 */
-	static function column_stateName()
-	{
-
-return array (
-  0 => 
-  array (
-    0 => 'varchar',
-    1 => '100',
-    2 => '',
-    3 => false,
-  ),
-  1 => false,
-  2 => '',
-  3 => NULL,
-);			
-	}
-
-	/**
-	 * Method is called before setting the field and verifies if value is string of length within acceptable limit.
-	 * Optionally accept numeric value which is converted to string
-	 * @method beforeSet_state
-	 * @param {string} $value
-	 * @return {array} An array of field name and value
-	 * @throws {Exception} An exception is thrown if $value is not string or is exceedingly long
-	 */
-	function beforeSet_state($value)
-	{
-		if (!isset($value)) {
-			$value='';
-		}
-		if ($value instanceof Db_Expression
-               or $value instanceof Db_Range) {
-			return array('state', $value);
-		}
-		if (!is_string($value) and !is_numeric($value))
-			throw new Exception('Must pass a string to '.$this->getTable().".state");
-		if (strlen($value) > 20)
-			throw new Exception('Exceedingly long value being assigned to '.$this->getTable().".state");
-		return array('state', $value);			
-	}
-
-	/**
-	 * Returns the maximum string length that can be assigned to the state field
-	 * @return {integer}
-	 */
-	function maxSize_state()
-	{
-
-		return 20;			
-	}
-
-	/**
-	 * Returns schema information for state column
-	 * @return {array} [[typeName, displayRange, modifiers, unsigned], isNull, key, default]
-	 */
-	static function column_state()
-	{
-
-return array (
-  0 => 
-  array (
-    0 => 'varchar',
-    1 => '20',
-    2 => '',
-    3 => false,
-  ),
-  1 => false,
-  2 => '',
-  3 => NULL,
-);			
-	}
-
-	/**
-	 * Method is called before setting the field and verifies if value is string of length within acceptable limit.
-	 * Optionally accept numeric value which is converted to string
-	 * @method beforeSet_regionName
-	 * @param {string} $value
-	 * @return {array} An array of field name and value
-	 * @throws {Exception} An exception is thrown if $value is not string or is exceedingly long
-	 */
-	function beforeSet_regionName($value)
-	{
-		if (!isset($value)) {
-			$value='';
-		}
-		if ($value instanceof Db_Expression
-               or $value instanceof Db_Range) {
-			return array('regionName', $value);
-		}
-		if (!is_string($value) and !is_numeric($value))
-			throw new Exception('Must pass a string to '.$this->getTable().".regionName");
-		if (strlen($value) > 100)
-			throw new Exception('Exceedingly long value being assigned to '.$this->getTable().".regionName");
-		return array('regionName', $value);			
-	}
-
-	/**
-	 * Returns the maximum string length that can be assigned to the regionName field
-	 * @return {integer}
-	 */
-	function maxSize_regionName()
-	{
-
-		return 100;			
-	}
-
-	/**
-	 * Returns schema information for regionName column
-	 * @return {array} [[typeName, displayRange, modifiers, unsigned], isNull, key, default]
-	 */
-	static function column_regionName()
-	{
-
-return array (
-  0 => 
-  array (
-    0 => 'varchar',
-    1 => '100',
-    2 => '',
-    3 => false,
-  ),
-  1 => false,
-  2 => '',
-  3 => NULL,
-);			
-	}
-
-	/**
-	 * Method is called before setting the field and verifies if value is string of length within acceptable limit.
-	 * Optionally accept numeric value which is converted to string
-	 * @method beforeSet_region
-	 * @param {string} $value
-	 * @return {array} An array of field name and value
-	 * @throws {Exception} An exception is thrown if $value is not string or is exceedingly long
-	 */
-	function beforeSet_region($value)
-	{
-		if (!isset($value)) {
-			$value='';
-		}
-		if ($value instanceof Db_Expression
-               or $value instanceof Db_Range) {
-			return array('region', $value);
-		}
-		if (!is_string($value) and !is_numeric($value))
-			throw new Exception('Must pass a string to '.$this->getTable().".region");
-		if (strlen($value) > 20)
-			throw new Exception('Exceedingly long value being assigned to '.$this->getTable().".region");
-		return array('region', $value);			
-	}
-
-	/**
-	 * Returns the maximum string length that can be assigned to the region field
-	 * @return {integer}
-	 */
-	function maxSize_region()
-	{
-
-		return 20;			
-	}
-
-	/**
-	 * Returns schema information for region column
-	 * @return {array} [[typeName, displayRange, modifiers, unsigned], isNull, key, default]
-	 */
-	static function column_region()
-	{
-
-return array (
-  0 => 
-  array (
-    0 => 'varchar',
-    1 => '20',
-    2 => '',
-    3 => false,
-  ),
-  1 => false,
-  2 => '',
-  3 => NULL,
-);			
-	}
-
-	/**
-	 * Method is called before setting the field and verifies if value is string of length within acceptable limit.
-	 * Optionally accept numeric value which is converted to string
-	 * @method beforeSet_community
-	 * @param {string} $value
-	 * @return {array} An array of field name and value
-	 * @throws {Exception} An exception is thrown if $value is not string or is exceedingly long
-	 */
-	function beforeSet_community($value)
-	{
-		if (!isset($value)) {
-			$value='';
-		}
-		if ($value instanceof Db_Expression
-               or $value instanceof Db_Range) {
-			return array('community', $value);
-		}
-		if (!is_string($value) and !is_numeric($value))
-			throw new Exception('Must pass a string to '.$this->getTable().".community");
-		if (strlen($value) > 100)
-			throw new Exception('Exceedingly long value being assigned to '.$this->getTable().".community");
-		return array('community', $value);			
-	}
-
-	/**
-	 * Returns the maximum string length that can be assigned to the community field
-	 * @return {integer}
-	 */
-	function maxSize_community()
-	{
-
-		return 100;			
-	}
-
-	/**
-	 * Returns schema information for community column
-	 * @return {array} [[typeName, displayRange, modifiers, unsigned], isNull, key, default]
-	 */
-	static function column_community()
-	{
-
-return array (
-  0 => 
-  array (
-    0 => 'varchar',
-    1 => '100',
-    2 => '',
-    3 => false,
-  ),
-  1 => false,
-  2 => '',
+  2 => 'PRI',
   3 => NULL,
 );			
 	}
@@ -1006,30 +636,19 @@ return array (
 	 */
 	function beforeSave($value)
 	{
-
+		if (!$this->retrieved) {
+			$table = $this->getTable();
+			foreach (array('countryCode','postcode') as $name) {
+				if (!isset($value[$name])) {
+					throw new Exception("the field $table.$name needs a value, because it is NOT NULL, not auto_increment, and lacks a default value.");
+				}
+			}
+		}
 		if (!isset($this->fields["countryCode"]) and !isset($value["countryCode"])) {
 			$this->countryCode = $value["countryCode"] = "";
 		}
 		if (!isset($this->fields["postcode"]) and !isset($value["postcode"])) {
 			$this->postcode = $value["postcode"] = "";
-		}
-		if (!isset($this->fields["placeName"]) and !isset($value["placeName"])) {
-			$this->placeName = $value["placeName"] = "";
-		}
-		if (!isset($this->fields["stateName"]) and !isset($value["stateName"])) {
-			$this->stateName = $value["stateName"] = "";
-		}
-		if (!isset($this->fields["state"]) and !isset($value["state"])) {
-			$this->state = $value["state"] = "";
-		}
-		if (!isset($this->fields["regionName"]) and !isset($value["regionName"])) {
-			$this->regionName = $value["regionName"] = "";
-		}
-		if (!isset($this->fields["region"]) and !isset($value["region"])) {
-			$this->region = $value["region"] = "";
-		}
-		if (!isset($this->fields["community"]) and !isset($value["community"])) {
-			$this->community = $value["community"] = "";
 		}
 		if (!isset($this->fields["latitude"]) and !isset($value["latitude"])) {
 			$this->latitude = $value["latitude"] = 0;
@@ -1053,7 +672,7 @@ return array (
 	 */
 	static function fieldNames($table_alias = null, $field_alias_prefix = null)
 	{
-		$field_names = array('countryCode', 'postcode', 'placeName', 'stateName', 'state', 'regionName', 'region', 'community', 'latitude', 'longitude', 'geohash', 'accuracy', 'geonameId');
+		$field_names = array('countryCode', 'postcode', 'latitude', 'longitude', 'geohash', 'accuracy', 'geonameId');
 		$result = $field_names;
 		if (!empty($table_alias)) {
 			$temp = array();

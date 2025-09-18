@@ -26,6 +26,9 @@ var Row = Q.require('Db/Row');
  * @param {Integer} [fields.geonameId] defaults to 0
  * @param {Integer} [fields.numericCode] defaults to 0
  * @param {String} [fields.phoneCode] defaults to null
+ * @param {String} [fields.normalizedName] defaults to ""
+ * @param {String} [fields.englishName] defaults to ""
+ * @param {String} [fields.localName] defaults to ""
  * @param {String} [fields.emojiFlag] defaults to null
  * @param {Integer} [fields.area] defaults to 0
  * @param {Integer} [fields.population] defaults to 0
@@ -67,6 +70,24 @@ Q.mixin(Base, Row);
  * @property phoneCode
  * @type String
  * @default null
+ * 
+ */
+/**
+ * @property normalizedName
+ * @type String
+ * @default ""
+ * 
+ */
+/**
+ * @property englishName
+ * @type String
+ * @default ""
+ * 
+ */
+/**
+ * @property localName
+ * @type String
+ * @default ""
  * 
  */
 /**
@@ -318,6 +339,9 @@ Base.fieldNames = function () {
 		"geonameId",
 		"numericCode",
 		"phoneCode",
+		"normalizedName",
+		"englishName",
+		"localName",
 		"emojiFlag",
 		"area",
 		"population",
@@ -434,7 +458,7 @@ Base.prototype.maxSize_geonameId = function () {
 	 */
 Base.column_geonameId = function () {
 
-return [["int",null,null,null],true,"",null];
+return [["int",null,null,null],true,"MUL",null];
 };
 
 /**
@@ -470,7 +494,7 @@ Base.prototype.maxSize_numericCode = function () {
 	 */
 Base.column_numericCode = function () {
 
-return [["int",null,null,null],true,"",null];
+return [["int",null,null,null],true,"MUL",null];
 };
 
 /**
@@ -507,6 +531,114 @@ Base.prototype.maxSize_phoneCode = function () {
 Base.column_phoneCode = function () {
 
 return [["varchar","20","",false],true,"",null];
+};
+
+/**
+ * Method is called before setting the field and verifies if value is string of length within acceptable limit.
+ * Optionally accept numeric value which is converted to string
+ * @method beforeSet_normalizedName
+ * @param {string} value
+ * @return {string} The value
+ * @throws {Error} An exception is thrown if 'value' is not string or is exceedingly long
+ */
+Base.prototype.beforeSet_normalizedName = function (value) {
+		if (value == undefined) return value;
+		if (value instanceof Db.Expression) return value;
+		if (typeof value !== "string" && typeof value !== "number")
+			throw new Error('Must pass a String to '+this.table()+".normalizedName");
+		if (typeof value === "string" && value.length > 180)
+			throw new Error('Exceedingly long value being assigned to '+this.table()+".normalizedName");
+		return value;
+};
+
+	/**
+	 * Returns the maximum string length that can be assigned to the normalizedName field
+	 * @return {integer}
+	 */
+Base.prototype.maxSize_normalizedName = function () {
+
+		return 180;
+};
+
+	/**
+	 * Returns schema information for normalizedName column
+	 * @return {array} [[typeName, displayRange, modifiers, unsigned], isNull, key, default]
+	 */
+Base.column_normalizedName = function () {
+
+return [["varchar","180","",false],true,"",""];
+};
+
+/**
+ * Method is called before setting the field and verifies if value is string of length within acceptable limit.
+ * Optionally accept numeric value which is converted to string
+ * @method beforeSet_englishName
+ * @param {string} value
+ * @return {string} The value
+ * @throws {Error} An exception is thrown if 'value' is not string or is exceedingly long
+ */
+Base.prototype.beforeSet_englishName = function (value) {
+		if (value == undefined) return value;
+		if (value instanceof Db.Expression) return value;
+		if (typeof value !== "string" && typeof value !== "number")
+			throw new Error('Must pass a String to '+this.table()+".englishName");
+		if (typeof value === "string" && value.length > 180)
+			throw new Error('Exceedingly long value being assigned to '+this.table()+".englishName");
+		return value;
+};
+
+	/**
+	 * Returns the maximum string length that can be assigned to the englishName field
+	 * @return {integer}
+	 */
+Base.prototype.maxSize_englishName = function () {
+
+		return 180;
+};
+
+	/**
+	 * Returns schema information for englishName column
+	 * @return {array} [[typeName, displayRange, modifiers, unsigned], isNull, key, default]
+	 */
+Base.column_englishName = function () {
+
+return [["varchar","180","",false],true,"",""];
+};
+
+/**
+ * Method is called before setting the field and verifies if value is string of length within acceptable limit.
+ * Optionally accept numeric value which is converted to string
+ * @method beforeSet_localName
+ * @param {string} value
+ * @return {string} The value
+ * @throws {Error} An exception is thrown if 'value' is not string or is exceedingly long
+ */
+Base.prototype.beforeSet_localName = function (value) {
+		if (value == undefined) return value;
+		if (value instanceof Db.Expression) return value;
+		if (typeof value !== "string" && typeof value !== "number")
+			throw new Error('Must pass a String to '+this.table()+".localName");
+		if (typeof value === "string" && value.length > 180)
+			throw new Error('Exceedingly long value being assigned to '+this.table()+".localName");
+		return value;
+};
+
+	/**
+	 * Returns the maximum string length that can be assigned to the localName field
+	 * @return {integer}
+	 */
+Base.prototype.maxSize_localName = function () {
+
+		return 180;
+};
+
+	/**
+	 * Returns schema information for localName column
+	 * @return {array} [[typeName, displayRange, modifiers, unsigned], isNull, key, default]
+	 */
+Base.column_localName = function () {
+
+return [["varchar","180","",false],true,"",""];
 };
 
 /**
@@ -578,7 +710,7 @@ Base.prototype.maxSize_area = function () {
 	 */
 Base.column_area = function () {
 
-return [["bigint",null,null,null],true,"",null];
+return [["bigint",null,null,null],true,"MUL",null];
 };
 
 /**
@@ -614,7 +746,7 @@ Base.prototype.maxSize_population = function () {
 	 */
 Base.column_population = function () {
 
-return [["bigint",null,null,null],true,"",null];
+return [["bigint",null,null,null],true,"MUL",null];
 };
 
 /**
@@ -650,7 +782,7 @@ Base.prototype.maxSize_continent = function () {
 	 */
 Base.column_continent = function () {
 
-return [["varchar","2","",false],true,"",null];
+return [["varchar","2","",false],true,"MUL",null];
 };
 
 /**
@@ -686,7 +818,7 @@ Base.prototype.maxSize_currencyCode = function () {
 	 */
 Base.column_currencyCode = function () {
 
-return [["varchar","3","",false],true,"",null];
+return [["varchar","3","",false],true,"MUL",null];
 };
 
 /**

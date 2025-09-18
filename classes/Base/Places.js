@@ -33,7 +33,8 @@ Base.tableClasses = [
 	"Places_Ipv4",
 	"Places_Ipv6",
 	"Places_Location",
-	"Places_Postcode"
+	"Places_Postcode",
+	"Places_PostcodeOld"
 ];
 
 /**
@@ -103,3 +104,10 @@ Base.Location = Q.require('Places/Location');
  * @type Places.Postcode
  */
 Base.Postcode = Q.require('Places/Postcode');
+
+/**
+ * Link to Places.PostcodeOld model
+ * @property PostcodeOld
+ * @type Places.PostcodeOld
+ */
+Base.PostcodeOld = Q.require('Places/PostcodeOld');

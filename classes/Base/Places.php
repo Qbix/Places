@@ -27,6 +27,7 @@ abstract class Base_Places
   4 => 'Places_Ipv6',
   5 => 'Places_Location',
   6 => 'Places_Postcode',
+  7 => 'Places_PostcodeOld',
 );
 
 	/**

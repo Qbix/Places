@@ -21,6 +21,9 @@
  * @param {integer} [$fields.geonameId] defaults to 0
  * @param {integer} [$fields.numericCode] defaults to 0
  * @param {string} [$fields.phoneCode] defaults to null
+ * @param {string} [$fields.normalizedName] defaults to ""
+ * @param {string} [$fields.englishName] defaults to ""
+ * @param {string} [$fields.localName] defaults to ""
  * @param {string} [$fields.emojiFlag] defaults to null
  * @param {integer} [$fields.area] defaults to 0
  * @param {integer} [$fields.population] defaults to 0
@@ -58,6 +61,24 @@ abstract class Base_Places_Country extends Db_Row
 	 * @property $phoneCode
 	 * @type string
 	 * @default null
+	 * 
+	 */
+	/**
+	 * @property $normalizedName
+	 * @type string
+	 * @default ""
+	 * 
+	 */
+	/**
+	 * @property $englishName
+	 * @type string
+	 * @default ""
+	 * 
+	 */
+	/**
+	 * @property $localName
+	 * @type string
+	 * @default ""
 	 * 
 	 */
 	/**
@@ -473,7 +494,7 @@ return array (
     3 => NULL,
   ),
   1 => true,
-  2 => '',
+  2 => 'MUL',
   3 => NULL,
 );			
 	}
@@ -531,7 +552,7 @@ return array (
     3 => NULL,
   ),
   1 => true,
-  2 => '',
+  2 => 'MUL',
   3 => NULL,
 );			
 	}
@@ -588,6 +609,171 @@ return array (
   1 => true,
   2 => '',
   3 => NULL,
+);			
+	}
+
+	/**
+	 * Method is called before setting the field and verifies if value is string of length within acceptable limit.
+	 * Optionally accept numeric value which is converted to string
+	 * @method beforeSet_normalizedName
+	 * @param {string} $value
+	 * @return {array} An array of field name and value
+	 * @throws {Exception} An exception is thrown if $value is not string or is exceedingly long
+	 */
+	function beforeSet_normalizedName($value)
+	{
+		if (!isset($value)) {
+			return array('normalizedName', $value);
+		}
+		if ($value instanceof Db_Expression
+               or $value instanceof Db_Range) {
+			return array('normalizedName', $value);
+		}
+		if (!is_string($value) and !is_numeric($value))
+			throw new Exception('Must pass a string to '.$this->getTable().".normalizedName");
+		if (strlen($value) > 180)
+			throw new Exception('Exceedingly long value being assigned to '.$this->getTable().".normalizedName");
+		return array('normalizedName', $value);			
+	}
+
+	/**
+	 * Returns the maximum string length that can be assigned to the normalizedName field
+	 * @return {integer}
+	 */
+	function maxSize_normalizedName()
+	{
+
+		return 180;			
+	}
+
+	/**
+	 * Returns schema information for normalizedName column
+	 * @return {array} [[typeName, displayRange, modifiers, unsigned], isNull, key, default]
+	 */
+	static function column_normalizedName()
+	{
+
+return array (
+  0 => 
+  array (
+    0 => 'varchar',
+    1 => '180',
+    2 => '',
+    3 => false,
+  ),
+  1 => true,
+  2 => '',
+  3 => '',
+);			
+	}
+
+	/**
+	 * Method is called before setting the field and verifies if value is string of length within acceptable limit.
+	 * Optionally accept numeric value which is converted to string
+	 * @method beforeSet_englishName
+	 * @param {string} $value
+	 * @return {array} An array of field name and value
+	 * @throws {Exception} An exception is thrown if $value is not string or is exceedingly long
+	 */
+	function beforeSet_englishName($value)
+	{
+		if (!isset($value)) {
+			return array('englishName', $value);
+		}
+		if ($value instanceof Db_Expression
+               or $value instanceof Db_Range) {
+			return array('englishName', $value);
+		}
+		if (!is_string($value) and !is_numeric($value))
+			throw new Exception('Must pass a string to '.$this->getTable().".englishName");
+		if (strlen($value) > 180)
+			throw new Exception('Exceedingly long value being assigned to '.$this->getTable().".englishName");
+		return array('englishName', $value);			
+	}
+
+	/**
+	 * Returns the maximum string length that can be assigned to the englishName field
+	 * @return {integer}
+	 */
+	function maxSize_englishName()
+	{
+
+		return 180;			
+	}
+
+	/**
+	 * Returns schema information for englishName column
+	 * @return {array} [[typeName, displayRange, modifiers, unsigned], isNull, key, default]
+	 */
+	static function column_englishName()
+	{
+
+return array (
+  0 => 
+  array (
+    0 => 'varchar',
+    1 => '180',
+    2 => '',
+    3 => false,
+  ),
+  1 => true,
+  2 => '',
+  3 => '',
+);			
+	}
+
+	/**
+	 * Method is called before setting the field and verifies if value is string of length within acceptable limit.
+	 * Optionally accept numeric value which is converted to string
+	 * @method beforeSet_localName
+	 * @param {string} $value
+	 * @return {array} An array of field name and value
+	 * @throws {Exception} An exception is thrown if $value is not string or is exceedingly long
+	 */
+	function beforeSet_localName($value)
+	{
+		if (!isset($value)) {
+			return array('localName', $value);
+		}
+		if ($value instanceof Db_Expression
+               or $value instanceof Db_Range) {
+			return array('localName', $value);
+		}
+		if (!is_string($value) and !is_numeric($value))
+			throw new Exception('Must pass a string to '.$this->getTable().".localName");
+		if (strlen($value) > 180)
+			throw new Exception('Exceedingly long value being assigned to '.$this->getTable().".localName");
+		return array('localName', $value);			
+	}
+
+	/**
+	 * Returns the maximum string length that can be assigned to the localName field
+	 * @return {integer}
+	 */
+	function maxSize_localName()
+	{
+
+		return 180;			
+	}
+
+	/**
+	 * Returns schema information for localName column
+	 * @return {array} [[typeName, displayRange, modifiers, unsigned], isNull, key, default]
+	 */
+	static function column_localName()
+	{
+
+return array (
+  0 => 
+  array (
+    0 => 'varchar',
+    1 => '180',
+    2 => '',
+    3 => false,
+  ),
+  1 => true,
+  2 => '',
+  3 => '',
 );			
 	}
 
@@ -699,7 +885,7 @@ return array (
     3 => NULL,
   ),
   1 => true,
-  2 => '',
+  2 => 'MUL',
   3 => NULL,
 );			
 	}
@@ -757,7 +943,7 @@ return array (
     3 => NULL,
   ),
   1 => true,
-  2 => '',
+  2 => 'MUL',
   3 => NULL,
 );			
 	}
@@ -812,7 +998,7 @@ return array (
     3 => false,
   ),
   1 => true,
-  2 => '',
+  2 => 'MUL',
   3 => NULL,
 );			
 	}
@@ -867,7 +1053,7 @@ return array (
     3 => false,
   ),
   1 => true,
-  2 => '',
+  2 => 'MUL',
   3 => NULL,
 );			
 	}
@@ -960,7 +1146,7 @@ return array (
 	 */
 	static function fieldNames($table_alias = null, $field_alias_prefix = null)
 	{
-		$field_names = array('countryCode', 'countryCode3', 'geonameId', 'numericCode', 'phoneCode', 'emojiFlag', 'area', 'population', 'continent', 'currencyCode', 'currencyName');
+		$field_names = array('countryCode', 'countryCode3', 'geonameId', 'numericCode', 'phoneCode', 'normalizedName', 'englishName', 'localName', 'emojiFlag', 'area', 'population', 'continent', 'currencyCode', 'currencyName');
 		$result = $field_names;
 		if (!empty($table_alias)) {
 			$temp = array();
