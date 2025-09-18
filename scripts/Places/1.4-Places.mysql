@@ -6,4 +6,4 @@ ALTER TABLE `{{prefix}}postcode`
   DROP COLUMN region,
   DROP COLUMN community,
   ADD COLUMN `geohash` VARCHAR(31) NULL AFTER `longitude`,
-  ADD INDEX `geohash`(`geohash`),
+  ADD INDEX `geohash`(`geohash`);
