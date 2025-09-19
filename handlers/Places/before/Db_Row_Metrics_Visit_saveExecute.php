@@ -10,7 +10,7 @@ function Places_before_Db_Row_Metrics_Visit_saveExecute($params)
     $query = $params['query'];
 
     // Only enrich on insert
-    if ($params['inserted'] && $row->IP && Q_Request::isPublicIP($row->IP)) {
+    if ($params['inserted'] && $row->IP && Q_Utils::isPublicIP($row->IP)) {
         $place = Places::lookupFromRequest(array(
             'join' => array('city', 'country', 'postcode')
         ));

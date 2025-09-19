@@ -455,15 +455,14 @@ abstract class Places extends Base_Places
      */
     static function lookupFromRequest($options = array())
     {
-        $ip = Q_Request::ip();
+		list($ip, $protocol, $isPublic) = Q_Request::ip();
         if (!$ip) {
             return null; // nothing usable
         }
 
-        // IPv6 vs IPv4
-        if (strpos($ip, ':') !== false) {
+        if ($protocol === 'v6') {
             return Places_Ipv6::lookup($ip, $options);
-        } else {
+        } else if ($protocol === 'v4') {
             return Places_Ipv4::lookup($ip, $options);
         }
     }
