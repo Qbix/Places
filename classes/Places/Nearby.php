@@ -10,14 +10,16 @@ class Places_Nearby
 	 * @static
 	 * @param {double} $latitude The latitude of the coordinates to search around
 	 * @param {double} $longitude The longitude of the coordinates to search around
-	 * @param {array} [$metersArray=null] To override the default in "Places"/"nearby"/"meters" config. Useful for only notifying people within a certain radius.
-	 * @param {string} [$experienceId='main'] The id of the experience stream, the part that comes after "Streams/experience/"
+	 * @param {array} [$metersArray=null] To override the default in "Places"/"nearby"/"meters" config.
+	 *   Useful for only notifying people within a certain radius.
+	 * @param {string} [$experienceId='main'] The id of the experience stream,
+	 *   the part that comes after "Streams/experience/"
 	 * @return {array} Returns an array of several ($streamName => $info) pairs
 	 *  where the $streamName is the name of the stream corresponding to the "nearby point"
-	 *  and $info includes the keys "latitude", "longitude", and "meters".
+	 *  and $info includes the keys "latitude", "longitude", "geohash", and "meters".
 	 */
 	static function forPublishers(
-		$latitude, 
+		$latitude,
 		$longitude,
 		$metersArray = null,
 		$experienceId = 'main')
@@ -27,29 +29,35 @@ class Places_Nearby
 			$metersArray = Q_Config::expect('Places', 'nearby', 'meters');
 		}
 		foreach ($metersArray as $meters) {
-			if ($longitude > 180) { $longitude = $longitude%180 - 180; }
-			if ($longitude < -180) { $longitude = $longitude%180 + 180; }
-			if ($latitude > 90) { $latitude = $latitude%90 - 90; }
-			if ($latitude < -90) { $latitude = $latitude%90 + 90; }
+			// Normalize
+			if ($longitude > 180)  $longitude = $longitude % 180 - 180;
+			if ($longitude < -180) $longitude = $longitude % 180 + 180;
+			if ($latitude > 90)    $latitude  = $latitude % 90 - 90;
+			if ($latitude < -90)   $latitude  = $latitude % 90 + 90;
+
+			// Publishers are snapped to their enclosing cell
 			list($latQuantized, $longQuantized, $latGrid, $longGrid)
-				= Places::quantize($latitude, $longitude, $meters);
-			$streamName = Places_Nearby::streamName(
+				= Places::quantize($latitude, $longitude, $meters * 2);
+
+			$streamName = self::streamName(
 				$latQuantized, $longQuantized, $meters, $experienceId
 			);
 			$result[$streamName] = array(
-				'latitude' => $latQuantized,
+				'latitude'  => $latQuantized,
 				'longitude' => $longQuantized,
-				'geohash' => Places_Geohash::encode($latQuantized, $longQuantized, 6),
-				'meters' => $meters
+				'geohash'   => Places_Geohash::encode($latQuantized, $longQuantized, 6),
+				'meters'    => $meters
 			);
 		}
 		return $result;
 	}
-	
+
 	/**
 	 * Call this function to find the "nearby points" to subscribe to
 	 * on a grid of quantized (latitude, longitude) pairs
 	 * which are spaced at most $meters apart.
+	 * Subscribers join the 2x2 block anchored at the corner nearest to their point,
+	 * so the circle of radius $meters is always contained.
 	 * @param {double} $latitude The latitude of the coordinates to search around
 	 * @param {double} $longitude The longitude of the coordinates to search around
 	 * @param {double} $meters The radius, in meters, around this location.
@@ -58,37 +66,48 @@ class Places_Nearby
 	 *  the part that comes after "Streams/experience/"
 	 * @return {Array} Returns an array of up to four ($streamName => $info) pairs
 	 *  where the $streamName is the name of the stream corresponding to the "nearby point"
-	 *  and $info includes the keys "latitude", "longitude", and "meters".
+	 *  and $info includes the keys "latitude", "longitude", "geohash", and "meters".
 	 */
 	static function forSubscribers(
-		$latitude, 
-		$longitude, 
+		$latitude,
+		$longitude,
 		$meters,
 		$experienceId = 'main')
 	{
-		list($latQuantized, $longQuantized, $latGrid, $a)
-			= Places::quantize($latitude, $longitude, $meters);
-
 		$metersArray = Q_Config::expect('Places', 'nearby', 'meters');
 		if (!in_array($meters, $metersArray)) {
 			throw new Q_Exception("The $meters meters value needs to be in Places/nearby/meters config.");
 		}
-		
+
+		// Use 2x radius for quantization grid
+		list($latQuantized, $longQuantized, $latGrid, $longGrid)
+			= Places::quantize($latitude, $longitude, $meters * 2);
+
+		// Figure out which half of the cell we are in
+		$latOffset  = ($latitude - $latQuantized) / $latGrid;
+		$longOffset = ($longitude - $longQuantized) / $longGrid;
+
+		$latBase  = ($latOffset >= 0.5) ? $latQuantized + $latGrid : $latQuantized;
+		$longBase = ($longOffset >= 0.5) ? $longQuantized + $longGrid : $longQuantized;
+
 		$result = array();
-		foreach (array($latQuantized, $latQuantized+$latGrid*1.1) as $lat) {
-			list($a, $b, $c, $longGrid) = Places::quantize($lat, $longitude, $meters);
-			foreach (array($longQuantized, $longQuantized+$longGrid*1.1) as $long) {
-				list($latQ, $longQ) = Places::quantize($lat, $long, $meters);
-				if ($longQ > 180) { $longQ = $longQ%180 - 180; }
-				if ($longQ < -180) { $longQ = $longQ%180 + 180; }
-				if ($latQ > 90) { $latQ = $latQ%90 - 90; }
-				if ($latQ < -90) { $latQ = $latQ%90 + 90; }
+		for ($i = 0; $i <= 1; $i++) {
+			for ($j = 0; $j <= 1; $j++) {
+				$latQ  = $latBase  - $i * $latGrid;
+				$longQ = $longBase - $j * $longGrid;
+
+				// Normalize
+				if ($longQ > 180)  $longQ = $longQ % 180 - 180;
+				if ($longQ < -180) $longQ = $longQ % 180 + 180;
+				if ($latQ > 90)    $latQ = $latQ % 90 - 90;
+				if ($latQ < -90)   $latQ = $latQ % 90 + 90;
+
 				$streamName = self::streamName($latQ, $longQ, $meters, $experienceId);
 				$result[$streamName] = array(
-					'latitude' => $lat,
-					'longitude' => $long,
-					'geohash' => Places_Geohash::encode($latQ, $longQ, 6),
-					'meters' => $meters
+					'latitude'  => $latQ,
+					'longitude' => $longQ,
+					'geohash'   => Places_Geohash::encode($latQ, $longQ, 6),
+					'meters'    => $meters
 				);
 			}
 		}
