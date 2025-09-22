@@ -31,6 +31,7 @@ function Places_after_Q_session_write($params)
 		$className = 'Places_Ip' . $protocol;
 		$lookup = call_user_func(
 			array($className, 'lookup'),
+			$ip,
 			array('join' => array('postcode'))
 		);
 		if ($lookup) {
