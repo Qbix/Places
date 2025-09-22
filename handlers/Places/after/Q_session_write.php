@@ -42,7 +42,7 @@ function Places_after_Q_session_write($params)
 				$lookup->fields, 
 				$postcode ? $postcode->fields : array()
 			);
-			$data['geohash'] = Places_Geohash::encode($lookup->fields['latitude'], $lookup->fields['longitude']);
+			$data['Places/geohash'] = Places_Geohash::encode($lookup->fields['latitude'], $lookup->fields['longitude']);
 			unset($data['ipMin']);
 			unset($data['ipMax']);
 		}
