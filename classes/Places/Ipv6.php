@@ -25,7 +25,7 @@ class Places_Ipv6 extends Base_Places_Ipv6
             ))
             ->limit(1);
 
-        $row = $query->fetchRow();
+        $row = $query->fetchDbRow();
         if (!$row) {
             return null;
         }

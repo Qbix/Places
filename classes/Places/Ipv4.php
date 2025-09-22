@@ -37,7 +37,7 @@ class Places_Ipv4 extends Base_Places_Ipv4
             ))
             ->limit(1);
 
-        $row = $query->fetchRow();
+        $row = $query->fetchDbRow();
         if (!$row) {
             return null;
         }
@@ -54,7 +54,7 @@ class Places_Ipv4 extends Base_Places_Ipv4
                     'postcode' => $row->postcode
                 ))
                 ->limit(1)
-                ->fetchRow();
+                ->fetchDbRow();
             if ($pc) {
                 $row->set('Places/postcode', $pc);
             }
@@ -65,7 +65,7 @@ class Places_Ipv4 extends Base_Places_Ipv4
             $city = Places_City::select()
                 ->where(array('geonameId' => $geoId))
                 ->limit(1)
-                ->fetchRow();
+                ->fetchDbRow();
             if ($city) {
                 $row->set('Places/city', $city);
             }
@@ -76,7 +76,7 @@ class Places_Ipv4 extends Base_Places_Ipv4
             $country = Places_Country::select()
                 ->where(array('countryCode' => $cc))
                 ->limit(1)
-                ->fetchRow();
+                ->fetchDbRow();
             if ($country) {
                 $row->set('Places/country', $country);
             }

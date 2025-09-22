@@ -17,7 +17,7 @@
 		"handlersAfterEvent": {
 			"Streams/interest/add": ["Places/after/Streams_interest_add"],
 			"Streams/interest/remove": ["Places/after/Streams_interest_remove"],
-			"Q/session/save": ["Places/after/Q_session_save"]
+			"Q/session/write": ["Places/after/Q_session_write"]
 		},
 		"web": {
 			"contentSecurityPolicy": {
