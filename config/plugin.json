@@ -159,12 +159,7 @@
 				"areas": ["Places", "sortAreaFilenames"]
 			}
 		},
-		"onInsert": {
-			"user": ["Places/user/locations"],
-			"person": [
-				"Places/participating"
-			]
-		}
+		"onInsert": {}
 	},
 	"Places": {
 		"nearby": {

@@ -149,6 +149,7 @@ class Places_Location extends Base_Places_Location
 			$location->setAttribute($attributes);
 			$location->changed();
 		} else {
+			$locationsStream = Streams_Stream::fetchOrCreate($publisherId, $publisherId, "Places/user/locations");
 			$location = Streams::create($asUserId, $publisherId, 'Places/location', array(
 				'name' => $streamName,
 				'title' => $result['name'],
