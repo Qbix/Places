@@ -35,7 +35,7 @@ class Places_Ipv4 extends Base_Places_Ipv4
             ->where(array(
                 'ipMin' => new Db_Range(null, false, false, $ipNum) // ipMin <= $ipNum
             ))
-            ->orderBy('ipMin DESC')
+            ->orderBy('ipMin', false)
             ->limit(1);
 
         $row = $query->fetchDbRow();

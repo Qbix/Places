@@ -23,7 +23,7 @@ class Places_Ipv6 extends Base_Places_Ipv6
             ->where(array(
                 'ipMin' => new Db_Range(null, false, false, $packed) // ipMin <= $packed
             ))
-            ->orderBy('ipMin DESC')
+            ->orderBy('ipMin')
             ->limit(1);
 
         $row = $query->fetchDbRow();
