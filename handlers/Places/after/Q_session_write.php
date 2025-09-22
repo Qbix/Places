@@ -51,7 +51,9 @@ function Places_after_Q_session_write($params)
 	}
 
 	// Save/update the stream
-    $stream = Streams_Stream::fetchOrCreate($user->id, $user->id, 'Places/user/location/ip');
+    $stream = Streams_Stream::fetchOrCreate($user->id, $user->id, 'Places/user/location/ip', array(
+		'subscribe' => true
+	));
     $stream->setAttribute($data);
     $stream->changed();
 

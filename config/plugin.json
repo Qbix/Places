@@ -71,6 +71,7 @@
 						"description": "Posted to an entire location"
 					}
 				},
+				"syncRelations": ["from"],
 				"participating": ["Places/participating"]
 			},
 			"Places/area": {
