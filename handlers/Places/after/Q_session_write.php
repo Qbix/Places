@@ -1,15 +1,16 @@
 <?php
 
-function Places_after_Q_session_write($params, $result)
+function Places_after_Q_session_write($params)
 {
-	// Only act if this was a *new* session
-	if (empty($params['new']) || empty($result)) {
+	// Only act if this was a new session
+	$row = Q::ifset($params, 'row', null);
+	if (!$row or !$row->get('ipWasJustSet')) {
 		return $result;
 	}
 
 	// Grab IP info from request
-	list($ip, $protocol, $isPublic) = Q_Request::ip();
-	if (!$ip || !$isPublic) {
+	$data = $row->get('ipWasJustSet');
+	if (empty($data['ip']) || empty($data['isPublic'])) {
 		return $result; // nothing useful
 	}
 
@@ -20,19 +21,16 @@ function Places_after_Q_session_write($params, $result)
 	}
 
 	// Base payload
-	$data = array(
-		'ip'       => $ip,
-		'protocol' => $protocol
-	);
+	unset($data['isPublic']);
 
 	// Add location lookup data if available
 	$lookup = array();
 	try {
-		if ($protocol === 'v6') {
-			$lookup = Places_Ipv6::lookup($ip, array('join' => array('postcode')));
-		} elseif ($protocol === 'v4') {
-			$lookup = Places_Ipv4::lookup($ip, array('join'=>array('postcode')));
-		}
+		$className = 'Places_Ip' . $protocol;
+		$lookup = call_user_func(
+			array($className, 'lookup'),
+			array('join' => array('postcode'))
+		);
 		if ($lookup) {
 			$postcode = $lookup->get('Places/postcode');
 			$city = $lookup->get('Places/city');
