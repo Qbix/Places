@@ -18,15 +18,18 @@ class Places_Ipv6 extends Base_Places_Ipv6
             return null;
         }
 
+        // Step 1: candidate by ipMin (fast with index)
         $query = self::select()
             ->where(array(
-                'ipMin <=' => $packed,
-                'ipMax >=' => $packed
+                'ipMin' => new Db_Range(null, false, false, $packed) // ipMin <= $packed
             ))
+            ->orderBy('ipMin DESC')
             ->limit(1);
 
         $row = $query->fetchDbRow();
-        if (!$row) {
+
+        // Step 2: check ipMax condition
+        if (!$row || $row->ipMax < $packed) {
             return null;
         }
 
@@ -39,7 +42,7 @@ class Places_Ipv6 extends Base_Places_Ipv6
             $pc = Places_Postcode::select()
                 ->where(array(
                     'countryCode' => $cc,
-                    'postcode' => $row->postcode
+                    'postcode'    => $row->postcode
                 ))
                 ->limit(1)
                 ->fetchRow();

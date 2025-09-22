@@ -30,15 +30,18 @@ class Places_Ipv4 extends Base_Places_Ipv4
             return null;
         }
 
+        // Step 1: Find candidate by ipMin (fast with index)
         $query = self::select()
             ->where(array(
-                'ipMin' => new Db_Range(null, false, false, $ipNum),
-                'ipMax' => new Db_Range($ipNum, false, false, null)
+                'ipMin' => new Db_Range(null, false, false, $ipNum) // ipMin <= $ipNum
             ))
+            ->orderBy('ipMin DESC')
             ->limit(1);
 
         $row = $query->fetchDbRow();
-        if (!$row) {
+
+        // Step 2: Check ipMax condition
+        if (!$row || $row->ipMax < $ipNum) {
             return null;
         }
 
@@ -51,7 +54,7 @@ class Places_Ipv4 extends Base_Places_Ipv4
             $pc = Places_Postcode::select()
                 ->where(array(
                     'countryCode' => $cc,
-                    'postcode' => $row->postcode
+                    'postcode'    => $row->postcode
                 ))
                 ->limit(1)
                 ->fetchDbRow();
