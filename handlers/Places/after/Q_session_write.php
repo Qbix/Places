@@ -13,6 +13,8 @@ function Places_after_Q_session_write($params)
 	if (empty($data['ip']) || empty($data['isPublic'])) {
 		return $result; // nothing useful
 	}
+	$ip = $data['ip'];
+	$protocol = $data['protocol'];
 
 	// Only proceed if we have a logged-in user
 	$user = Users::loggedInUser();
