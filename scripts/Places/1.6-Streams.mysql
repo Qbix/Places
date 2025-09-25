@@ -1,0 +1,1 @@
+INSERT INTO {{prefix}}related_from(fromPublisherId, fromStreamName, type, toPublisherId, toStreamName) VALUES ("", "Places/location/", "attribute/Places/geohash", "Streams", "Streams/search/all");

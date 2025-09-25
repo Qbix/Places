@@ -56,6 +56,4 @@ function Places_after_Q_session_write($params)
 	));
     $stream->setAttribute($data);
     $stream->changed();
-
-	return $result;
 }
