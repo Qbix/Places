@@ -36,6 +36,8 @@ var Row = Q.require('Db/Row');
  * @param {String} [fields.timeZone] defaults to null
  * @param {Integer} [fields.population] defaults to 0
  * @param {String} [fields.featureCode] defaults to null
+ * @param {Integer} [fields.regionGeonameId] defaults to 0
+ * @param {Integer} [fields.districtGeonameId] defaults to 0
  */
 function Base (fields) {
 	Base.constructors.apply(this, arguments);
@@ -132,6 +134,18 @@ Q.mixin(Base, Row);
  * @type String
  * @default null
  * 
+ */
+/**
+ * @property regionGeonameId
+ * @type Integer
+ * @default 0
+ * FK to places_region.geonameId (ADM1)
+ */
+/**
+ * @property districtGeonameId
+ * @type Integer
+ * @default 0
+ * FK to places_district.geonameId (ADM2)
  */
 
 /**
@@ -355,7 +369,9 @@ Base.fieldNames = function () {
 		"geohash",
 		"timeZone",
 		"population",
-		"featureCode"
+		"featureCode",
+		"regionGeonameId",
+		"districtGeonameId"
 	];
 };
 
@@ -882,6 +898,78 @@ Base.prototype.maxSize_featureCode = function () {
 Base.column_featureCode = function () {
 
 return [["varchar","10","",false],true,"",null];
+};
+
+/**
+ * Method is called before setting the field and verifies if integer value falls within allowed limits
+ * @method beforeSet_regionGeonameId
+ * @param {integer} value
+ * @return {integer} The value
+ * @throws {Error} An exception is thrown if 'value' is not integer or does not fit in allowed range
+ */
+Base.prototype.beforeSet_regionGeonameId = function (value) {
+		if (value == undefined) return value;
+		if (value instanceof Db.Expression) return value;
+		value = Number(value);
+		if (isNaN(value) || Math.floor(value) != value) 
+			throw new Error('Non-integer value being assigned to '+this.table()+".regionGeonameId");
+		if (value < -2147483648 || value > 2147483647)
+			throw new Error("Out-of-range value "+JSON.stringify(value)+" being assigned to "+this.table()+".regionGeonameId");
+		return value;
+};
+
+/**
+ * Returns the maximum integer that can be assigned to the regionGeonameId field
+ * @return {integer}
+ */
+Base.prototype.maxSize_regionGeonameId = function () {
+
+		return 2147483647;
+};
+
+	/**
+	 * Returns schema information for regionGeonameId column
+	 * @return {array} [[typeName, displayRange, modifiers, unsigned], isNull, key, default]
+	 */
+Base.column_regionGeonameId = function () {
+
+return [["int",null,null,null],true,"",null];
+};
+
+/**
+ * Method is called before setting the field and verifies if integer value falls within allowed limits
+ * @method beforeSet_districtGeonameId
+ * @param {integer} value
+ * @return {integer} The value
+ * @throws {Error} An exception is thrown if 'value' is not integer or does not fit in allowed range
+ */
+Base.prototype.beforeSet_districtGeonameId = function (value) {
+		if (value == undefined) return value;
+		if (value instanceof Db.Expression) return value;
+		value = Number(value);
+		if (isNaN(value) || Math.floor(value) != value) 
+			throw new Error('Non-integer value being assigned to '+this.table()+".districtGeonameId");
+		if (value < -2147483648 || value > 2147483647)
+			throw new Error("Out-of-range value "+JSON.stringify(value)+" being assigned to "+this.table()+".districtGeonameId");
+		return value;
+};
+
+/**
+ * Returns the maximum integer that can be assigned to the districtGeonameId field
+ * @return {integer}
+ */
+Base.prototype.maxSize_districtGeonameId = function () {
+
+		return 2147483647;
+};
+
+	/**
+	 * Returns schema information for districtGeonameId column
+	 * @return {array} [[typeName, displayRange, modifiers, unsigned], isNull, key, default]
+	 */
+Base.column_districtGeonameId = function () {
+
+return [["int",null,null,null],true,"",null];
 };
 
 /**

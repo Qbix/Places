@@ -31,6 +31,8 @@
  * @param {string} [$fields.timeZone] defaults to null
  * @param {integer} [$fields.population] defaults to 0
  * @param {string} [$fields.featureCode] defaults to null
+ * @param {integer} [$fields.regionGeonameId] defaults to 0
+ * @param {integer} [$fields.districtGeonameId] defaults to 0
  */
 abstract class Base_Places_City extends Db_Row
 {
@@ -125,6 +127,18 @@ abstract class Base_Places_City extends Db_Row
 	 * 
 	 */
 	/**
+	 * @property $regionGeonameId
+	 * @type integer
+	 * @default 0
+	 * FK to places_region.geonameId (ADM1)
+	 */
+	/**
+	 * @property $districtGeonameId
+	 * @type integer
+	 * @default 0
+	 * FK to places_district.geonameId (ADM2)
+	 */
+	/**
 	 * The setUp() method is called the first time
 	 * an object of this class is constructed.
 	 * @method setUp
@@ -205,7 +219,6 @@ abstract class Base_Places_City extends Db_Row
 			}
 			$fields = implode(',', $fieldNames);
 		}
-		$alias = isset($alias) ? ' '.$alias : '';
 		$q = self::db()->select($fields, self::table(true, $alias));
 		$q->className = 'Places_City';
 		return $q;
@@ -1123,6 +1136,122 @@ return array (
 	}
 
 	/**
+	 * Method is called before setting the field and verifies if integer value falls within allowed limits
+	 * @method beforeSet_regionGeonameId
+	 * @param {integer} $value
+	 * @return {array} An array of field name and value
+	 * @throws {Exception} An exception is thrown if $value is not integer or does not fit in allowed range
+	 */
+	function beforeSet_regionGeonameId($value)
+	{
+		if (!isset($value)) {
+			return array('regionGeonameId', $value);
+		}
+		if ($value instanceof Db_Expression
+               or $value instanceof Db_Range) {
+			return array('regionGeonameId', $value);
+		}
+		if (!is_numeric($value) or floor($value) != $value)
+			throw new Exception('Non-integer value being assigned to '.$this->getTable().".regionGeonameId");
+		$value = intval($value);
+		if ($value < -2147483648 or $value > 2147483647) {
+			$json = json_encode($value);
+			throw new Exception("Out-of-range value $json being assigned to ".$this->getTable().".regionGeonameId");
+		}
+		return array('regionGeonameId', $value);			
+	}
+
+	/**
+	 * @method maxSize_regionGeonameId
+	 * Returns the maximum integer that can be assigned to the regionGeonameId field
+	 * @return {integer}
+	 */
+	function maxSize_regionGeonameId()
+	{
+
+		return 2147483647;			
+	}
+
+	/**
+	 * Returns schema information for regionGeonameId column
+	 * @return {array} [[typeName, displayRange, modifiers, unsigned], isNull, key, default]
+	 */
+	static function column_regionGeonameId()
+	{
+
+return array (
+  0 => 
+  array (
+    0 => 'int',
+    1 => NULL,
+    2 => NULL,
+    3 => NULL,
+  ),
+  1 => true,
+  2 => '',
+  3 => NULL,
+);			
+	}
+
+	/**
+	 * Method is called before setting the field and verifies if integer value falls within allowed limits
+	 * @method beforeSet_districtGeonameId
+	 * @param {integer} $value
+	 * @return {array} An array of field name and value
+	 * @throws {Exception} An exception is thrown if $value is not integer or does not fit in allowed range
+	 */
+	function beforeSet_districtGeonameId($value)
+	{
+		if (!isset($value)) {
+			return array('districtGeonameId', $value);
+		}
+		if ($value instanceof Db_Expression
+               or $value instanceof Db_Range) {
+			return array('districtGeonameId', $value);
+		}
+		if (!is_numeric($value) or floor($value) != $value)
+			throw new Exception('Non-integer value being assigned to '.$this->getTable().".districtGeonameId");
+		$value = intval($value);
+		if ($value < -2147483648 or $value > 2147483647) {
+			$json = json_encode($value);
+			throw new Exception("Out-of-range value $json being assigned to ".$this->getTable().".districtGeonameId");
+		}
+		return array('districtGeonameId', $value);			
+	}
+
+	/**
+	 * @method maxSize_districtGeonameId
+	 * Returns the maximum integer that can be assigned to the districtGeonameId field
+	 * @return {integer}
+	 */
+	function maxSize_districtGeonameId()
+	{
+
+		return 2147483647;			
+	}
+
+	/**
+	 * Returns schema information for districtGeonameId column
+	 * @return {array} [[typeName, displayRange, modifiers, unsigned], isNull, key, default]
+	 */
+	static function column_districtGeonameId()
+	{
+
+return array (
+  0 => 
+  array (
+    0 => 'int',
+    1 => NULL,
+    2 => NULL,
+    3 => NULL,
+  ),
+  1 => true,
+  2 => '',
+  3 => NULL,
+);			
+	}
+
+	/**
 	 * Check if mandatory fields are set and updates 'magic fields' with appropriate values
 	 * @method beforeSave
 	 * @param {array} $value The array of fields
@@ -1169,7 +1298,7 @@ return array (
 	 */
 	static function fieldNames($table_alias = null, $field_alias_prefix = null)
 	{
-		$field_names = array('geonameId', 'countryCode', 'normalizedName', 'englishName', 'localName', 'stateName', 'stateCode', 'regionName', 'regionCode', 'latitude', 'longitude', 'geohash', 'timeZone', 'population', 'featureCode');
+		$field_names = array('geonameId', 'countryCode', 'normalizedName', 'englishName', 'localName', 'stateName', 'stateCode', 'regionName', 'regionCode', 'latitude', 'longitude', 'geohash', 'timeZone', 'population', 'featureCode', 'regionGeonameId', 'districtGeonameId');
 		$result = $field_names;
 		if (!empty($table_alias)) {
 			$temp = array();

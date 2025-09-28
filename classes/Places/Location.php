@@ -275,6 +275,139 @@ class Places_Location extends Base_Places_Location
 		// old approach
 		return array();
 	}
+
+class Places_Location
+{
+	/**
+	 * Common logic for when a user's location changes.
+	 * Called from HTTP handler (source = "geolocation") and from session hook (source = "ip").
+	 * @class Places_Location
+	 * @method changed
+	 * @param {array} $params An associative array of parameters:
+	 * @param {Users_User} $params.user   The logged-in user whose location is being updated (required).
+	 * @param {string} [$params.source]   Source of the update. Either "geolocation" (from HTTP) or "ip" (from session hook).
+	 * @param {double} [$params.latitude] The new latitude. If set, must also specify longitude.
+	 * @param {double} [$params.longitude] The new longitude. If set, must also specify latitude.
+	 * @param {string} [$params.postcode] The new zip code. Can be set instead of latitude/longitude.
+	 * @param {double} [$params.meters]   The distance around their location that the user is interested in.
+	 * @param {Number} [$params.joinNearby=0] Pass 1 to join the Places/nearby stream at the new location. Pass 2 to join and subscribe.
+	 * @param {Number} [$params.leaveNearby=0] Pass 1 to unsubscribe from the Places/nearby stream at the old location. Pass 2 to unsubscribe and leave.
+	 * @param {Number} [$params.joinInterests=0] Pass 1 to join all the local interests at the new location. Pass 2 to join and subscribe.
+	 * @param {Number} [$params.leaveInterests=0] Pass 1 to unsubscribe from all local interests at the old location. Pass 2 to unsubscribe and leave.
+	 * @param {double} [$params.accuracy]
+	 * @param {double} [$params.altitude]
+	 * @param {double} [$params.altitudeAccuracy]
+	 * @param {double} [$params.heading]
+	 * @param {double} [$params.speed]
+	 * @param {integer} [$params.timezone]
+	 * @param {string} [$params.placeName] Optional place name.
+	 * @param {string} [$params.state]     Optional state or region name.
+	 * @param {string} [$params.country]   Optional country code.
+	 */
+	static function changed(array $params)
+	{
+		$user   = $params['user'];
+		$source = Q::ifset($params, 'source', 'geolocation');
+
+		$stream = self::userStream($user->id);
+		$oldLatitude  = $stream->getAttribute('latitude');
+		$oldLongitude = $stream->getAttribute('longitude');
+		$oldMeters    = $stream->getAttribute('meters');
+
+		if (empty($oldLatitude) || empty($oldLongitude)) {
+			$created = true;
+		}
+
+		// Collect attributes
+		$fields = array(
+			'accuracy','altitude','altitudeAccuracy','heading',
+			'latitude','longitude','speed','meters','postcode',
+			'timezone','placeName','state','country'
+		);
+		$attributes = array_intersect_key($params, array_flip($fields));
+
+		// Normalize timezone
+		if (isset($attributes['timezone'])) {
+			$attributes['timezone'] = floatval($attributes['timezone']);
+		}
+
+		// If postcode given but no lat/lon → resolve it
+		if (!empty($attributes['postcode']) && !isset($attributes['latitude'])) {
+			$z = new Places_Postcode();
+			$z->countryCode = 'US';
+			$z->postcode = $attributes['postcode'];
+			if ($z->retrieve()) {
+				$attributes['latitude']  = $z->latitude;
+				$attributes['longitude'] = $z->longitude;
+				$attributes['country']   = $z->countryCode;
+			} else {
+				throw new Q_Exception_MissingRow(array(
+					'table' => 'postcode',
+					'criteria' => $attributes['postcode']
+				), 'postcode');
+			}
+		}
+
+		// Ensure meters
+		$attributes['meters'] = floatval(Q::ifset(
+			$attributes, 'meters',
+			$oldMeters ?: Q_Config::expect('Places','nearby','defaultMeters')
+		));
+
+		// Auto-fill postcode/placeName if missing
+		if (empty($attributes['postcode']) && isset($attributes['latitude'])) {
+			$postcodes = Places_Postcode::nearby(
+				$attributes['latitude'],
+				$attributes['longitude'],
+				$attributes['meters'],
+				1
+			);
+			if ($postcode = $postcodes ? reset($postcodes) : null) {
+				$attributes['postcode']  = $postcode->postcode;
+				$attributes['placeName'] = $postcode->placeName;
+				$attributes['state']     = $postcode->state;
+				$attributes['country']   = $postcode->countryCode;
+			}
+		}
+
+		// Save to user stream
+		$stream->setAttribute($attributes);
+		$stream->changed();
+		$stream->post($user->id, array(
+			'type' => 'Places/location/updated',
+			'content' => '',
+			'instructions' => $stream->getAllAttributes()
+		), true);
+
+		// Join/leave flags
+		$leaveNearby    = isset($oldMeters) ? Q::ifset($params,'leaveNearby',0) : 0;
+		$joinNearby     = Q::ifset($params,'joinNearby',0);
+		$leaveInterests = isset($oldMeters) ? Q::ifset($params,'leaveInterests',0) : 0;
+		$joinInterests  = Q::ifset($params,'joinInterests',0);
+
+		// Detect no change
+		$latitude  = $stream->getAttribute('latitude');
+		$longitude = $stream->getAttribute('longitude');
+		$meters    = $stream->getAttribute('meters');
+		$noChange = (
+			abs($latitude - $oldLatitude) < 0.0001 &&
+			abs($longitude - $oldLongitude) < 0.0001 &&
+			abs($meters - $oldMeters) < 0.001
+		);
+
+		$attributes['stream'] = $stream;
+		Q_Response::setSlot('attributes', $attributes);
+
+		if (!$noChange) {
+			// keep all join/leave nearby + interests logic here
+			// (but NO response sending / session closing)
+		}
+
+		$attributes['created'] = !empty($created);
+		$attributes['source']  = $source;
+
+		Q::event("Places/location/changed", $attributes, 'after');
+	}
 	 
 	/**
 	 * Implements the __set_state method, so it can work with

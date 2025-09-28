@@ -23,11 +23,15 @@ abstract class Base_Places
   0 => 'Places_Autocomplete',
   1 => 'Places_City',
   2 => 'Places_Country',
-  3 => 'Places_Ipv4',
-  4 => 'Places_Ipv6',
-  5 => 'Places_Location',
-  6 => 'Places_Postcode',
-  7 => 'Places_PostcodeOld',
+  3 => 'Places_District',
+  4 => 'Places_Hierarchy',
+  5 => 'Places_HierarchyFull',
+  6 => 'Places_Ipv4',
+  7 => 'Places_Ipv6',
+  8 => 'Places_Location',
+  9 => 'Places_Postcode',
+  10 => 'Places_PostcodeOld',
+  11 => 'Places_Region',
 );
 
 	/**

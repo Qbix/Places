@@ -2,58 +2,86 @@
 
 function Places_after_Q_session_write($params)
 {
-	// Only act if this was a new session
+	// Only act if this was a new session with IP info
 	$row = Q::ifset($params, 'row', null);
-	if (!$row or !$row->get('ipWasJustSet')) {
-		return $result;
+	if (!$row || !$row->get('ipWasJustSet')) {
+		return;
 	}
 
-	// Grab IP info from request
+	// Grab IP info
 	$data = $row->get('ipWasJustSet');
 	if (empty($data['ip']) || empty($data['isPublic'])) {
-		return $result; // nothing useful
+		return; // nothing useful
 	}
-	$ip = $data['ip'];
+	$ip       = $data['ip'];
 	$protocol = $data['protocol'];
 
 	// Only proceed if we have a logged-in user
 	$user = Users::loggedInUser();
 	if (!$user) {
-		return $result;
+		return;
 	}
 
 	// Base payload
 	unset($data['isPublic']);
 
-	// Add location lookup data if available
-	$lookup = array();
+	// Attempt IP-to-location lookup
 	try {
 		$className = 'Places_Ip' . $protocol;
-		$lookup = call_user_func(
-			array($className, 'lookup'),
-			$ip,
-			array('join' => array('postcode'))
-		);
+		$lookup = call_user_func([$className, 'lookup'], $ip, ['join' => ['postcode']]);
 		if ($lookup) {
 			$postcode = $lookup->get('Places/postcode');
-			$city = $lookup->get('Places/city');
+			$city     = $lookup->get('Places/city');
 			$data = array_merge(
-				$data, 
-				$lookup->fields, 
-				$postcode ? $postcode->fields : array()
+				$data,
+				$lookup->fields,
+				$postcode ? $postcode->fields : []
 			);
-			$data['Places/geohash'] = Places_Geohash::encode($lookup->fields['latitude'], $lookup->fields['longitude']);
-			unset($data['ipMin']);
-			unset($data['ipMax']);
+			$data['Places/geohash'] = Places_Geohash::encode(
+				$lookup->fields['latitude'],
+				$lookup->fields['longitude']
+			);
+			unset($data['ipMin'], $data['ipMax']);
 		}
 	} catch (Exception $e) {
 		Q::log("Places: failed IP lookup for $ip ($protocol): ".$e->getMessage(), 'warn');
 	}
 
-	// Save/update the stream
-    $stream = Streams_Stream::fetchOrCreate($user->id, $user->id, 'Places/user/location/ip', array(
-		'subscribe' => true
-	));
-    $stream->setAttribute($data);
-    $stream->changed();
+	// Save/update IP-specific stream
+	$stream = Streams_Stream::fetchOrCreate(
+		$user->id,
+		$user->id,
+		'Places/user/location/ip',
+		['subscribe' => true]
+	);
+	$stream->setAttribute($data);
+	$stream->changed();
+
+	// Fire geohash event for listeners
+	if (!empty($data['Places/geohash'])) {
+		Q::event(
+			'Places/session/ip/geohash',
+			[
+				'geohash'   => $data['Places/geohash'],
+				'latitude'  => Q::ifset($data, 'latitude', null),
+				'longitude' => Q::ifset($data, 'longitude', null),
+				'meters'    => Q_Config::get('Places','nearby','subscribe','ip','radius',null),
+				'userId'    => $user->id
+			],
+			'after'
+		);
+	}
+
+	// Auto-subscribe if config is set
+	$meters = Q_Config::get('Places','nearby','subscribe','ip','radius',null);
+	if ($meters && !empty($data['latitude']) && !empty($data['longitude'])) {
+		Places_Location::changed([
+			'user'      => $user,
+			'source'    => 'ip',
+			'latitude'  => $data['latitude'],
+			'longitude' => $data['longitude'],
+			'meters'    => $meters,
+			'joinNearby'=> 2 // join + subscribe
+		]);
+	}
 }

@@ -30,11 +30,15 @@ Base.tableClasses = [
 	"Places_Autocomplete",
 	"Places_City",
 	"Places_Country",
+	"Places_District",
+	"Places_Hierarchy",
+	"Places_HierarchyFull",
 	"Places_Ipv4",
 	"Places_Ipv6",
 	"Places_Location",
 	"Places_Postcode",
-	"Places_PostcodeOld"
+	"Places_PostcodeOld",
+	"Places_Region"
 ];
 
 /**
@@ -78,6 +82,27 @@ Base.City = Q.require('Places/City');
 Base.Country = Q.require('Places/Country');
 
 /**
+ * Link to Places.District model
+ * @property District
+ * @type Places.District
+ */
+Base.District = Q.require('Places/District');
+
+/**
+ * Link to Places.Hierarchy model
+ * @property Hierarchy
+ * @type Places.Hierarchy
+ */
+Base.Hierarchy = Q.require('Places/Hierarchy');
+
+/**
+ * Link to Places.HierarchyFull model
+ * @property HierarchyFull
+ * @type Places.HierarchyFull
+ */
+Base.HierarchyFull = Q.require('Places/HierarchyFull');
+
+/**
  * Link to Places.Ipv4 model
  * @property Ipv4
  * @type Places.Ipv4
@@ -111,3 +136,10 @@ Base.Postcode = Q.require('Places/Postcode');
  * @type Places.PostcodeOld
  */
 Base.PostcodeOld = Q.require('Places/PostcodeOld');
+
+/**
+ * Link to Places.Region model
+ * @property Region
+ * @type Places.Region
+ */
+Base.Region = Q.require('Places/Region');

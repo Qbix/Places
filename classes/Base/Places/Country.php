@@ -198,7 +198,6 @@ abstract class Base_Places_Country extends Db_Row
 			}
 			$fields = implode(',', $fieldNames);
 		}
-		$alias = isset($alias) ? ' '.$alias : '';
 		$q = self::db()->select($fields, self::table(true, $alias));
 		$q->className = 'Places_Country';
 		return $q;

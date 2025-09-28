@@ -1,0 +1,49 @@
+CREATE TABLE {{prefix}}region (
+	geonameId INT NOT NULL COMMENT 'Unique GeoNames ID for the ADM1 region',
+	countryCode VARCHAR(2) NOT NULL COMMENT 'ISO 2-letter country code (e.g. US, FR, IR)',
+	regionCode VARCHAR(20) NOT NULL COMMENT 'ADM1 code within the country (e.g. NY, 02, BK)',
+	englishName VARCHAR(180) NOT NULL COMMENT 'Region name with accents, from admin1CodesASCII.txt column 2',
+	localName VARCHAR(180) DEFAULT NULL COMMENT 'Optional native-language name, to be filled later from alternateNamesV2',
+	PRIMARY KEY (geonameId),
+	UNIQUE KEY byCountryRegion (countryCode, regionCode),
+	KEY byCountry (countryGeonameId),
+	KEY byCountryName (countryCode, englishName)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE {{prefix}}district (
+	geonameId INT NOT NULL COMMENT 'Unique GeoNames ID for the ADM2 district',
+	countryCode VARCHAR(2) NOT NULL COMMENT 'ISO 2-letter country code (e.g. US, UG, FR)',
+	regionCode VARCHAR(20) NOT NULL COMMENT 'ADM1 code of the parent region (links to places_region.regionCode)',
+	districtCode VARCHAR(40) NOT NULL COMMENT 'ADM2 code within the region (e.g. 090 for US counties, BAB for Azerbaijani rayons)',
+	englishName VARCHAR(180) NOT NULL COMMENT 'District name with accents, from admin2Codes.txt column 2',
+	localName VARCHAR(180) DEFAULT NULL COMMENT 'Optional native-language name, to be filled later from alternateNamesV2',
+	PRIMARY KEY (geonameId),
+	UNIQUE KEY byCountryRegionDistrict (countryCode, regionCode, districtCode),
+	KEY byCountry (countryGeonameId),
+	KEY byCountryName (countryCode, englishName),
+	KEY byRegion (regionCode)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+ALTER TABLE {{prefix}}city
+	ADD COLUMN regionGeonameId INT DEFAULT NULL COMMENT 'FK to places_region.geonameId (ADM1)',
+	ADD COLUMN districtGeonameId INT DEFAULT NULL COMMENT 'FK to places_district.geonameId (ADM2)',
+	ADD KEY byRegionGeonameId (regionGeonameId),
+	ADD KEY byDistrictGeonameId (districtGeonameId),
+	DROP COLUMN stateName,
+	DROP COLUMN stateCode,
+	DROP COLUMN regionName,
+	DROP COLUMN regionCode;
+	
+CREATE TABLE `{{prefix}}hierarchy` (
+  `parentGeonameId` int NOT NULL,
+  `childGeonameId` int NOT NULL,
+  `relationType` tinyint NOT NULL,
+  `parentType` enum('country','region','district','city','borough') DEFAULT NULL,
+  `childType` enum('country','region','district','city','borough') DEFAULT NULL,
+  PRIMARY KEY (`parentGeonameId`,`childGeonameId`),
+  KEY `idx_child` (`childGeonameId`),
+  KEY `idx_parent` (`parentGeonameId`),
+  KEY `idx_relation` (`relationType`),
+  KEY `idx_childType` (`childType`),
+  KEY `idx_parentType` (`parentType`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
