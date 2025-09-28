@@ -72,16 +72,27 @@ function Places_after_Q_session_write($params)
 		);
 	}
 
-	// Auto-subscribe if config is set
-	$meters = Q_Config::get('Places','nearby','subscribe','ip','radius',null);
-	if ($meters && !empty($data['latitude']) && !empty($data['longitude'])) {
-		Places_Location::changed([
-			'user'      => $user,
-			'source'    => 'ip',
-			'latitude'  => $data['latitude'],
-			'longitude' => $data['longitude'],
-			'meters'    => $meters,
-			'joinNearby'=> 2 // join + subscribe
-		]);
+	$configSubscribe = Q_Config::get('Places','location','ip','subscribe', false);
+	$meters = Q_Config::get('Places','location','ip','meters', null);
+	if ($configSubscribe && !empty($data['latitude']) && !empty($data['longitude'])) {
+		$shouldUpdate = false;
+		if ($configSubscribe === true) {
+			$shouldUpdate = true;
+		} elseif ($configSubscribe === 1) {
+			$mainStream = Places_Location::userStream($user->id);
+			if (!$mainStream->getAttribute('latitude') || !$mainStream->getAttribute('longitude')) {
+				$shouldUpdate = true;
+			}
+		}
+		if ($shouldUpdate) {
+			Places_Location::changed([
+				'user'      => $user,
+				'source'    => 'ip',
+				'latitude'  => $data['latitude'],
+				'longitude' => $data['longitude'],
+				'meters'    => $meters,
+				'joinNearby'=> 2
+			]);
+		}
 	}
 }
