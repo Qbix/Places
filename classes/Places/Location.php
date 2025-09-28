@@ -275,9 +275,7 @@ class Places_Location extends Base_Places_Location
 		// old approach
 		return array();
 	}
-
-class Places_Location
-{
+	
 	/**
 	 * Common logic for when a user's location changes.
 	 * Called from HTTP handler (source = "geolocation") and from session hook (source = "ip").
@@ -306,19 +304,24 @@ class Places_Location
 	 */
 	static function changed(array $params)
 	{
-		$user   = $params['user'];
+		$user   = Q::ifset($params, 'user', null);
 		$source = Q::ifset($params, 'source', 'geolocation');
 
-		$stream = self::userStream($user->id);
+		if (!$user) {
+			$user = Users::loggedInUser();
+			if (!$user) {
+				return;
+			}
+		}
+
+		$stream       = self::userStream($user->id);
 		$oldLatitude  = $stream->getAttribute('latitude');
 		$oldLongitude = $stream->getAttribute('longitude');
 		$oldMeters    = $stream->getAttribute('meters');
 
-		if (empty($oldLatitude) || empty($oldLongitude)) {
-			$created = true;
-		}
+		$created = (empty($oldLatitude) || empty($oldLongitude));
 
-		// Collect attributes
+		// Collect attributes to set
 		$fields = array(
 			'accuracy','altitude','altitudeAccuracy','heading',
 			'latitude','longitude','speed','meters','postcode',
@@ -331,18 +334,18 @@ class Places_Location
 			$attributes['timezone'] = floatval($attributes['timezone']);
 		}
 
-		// If postcode given but no lat/lon → resolve it
+		// If postcode is given but no lat/lon → resolve it
 		if (!empty($attributes['postcode']) && !isset($attributes['latitude'])) {
 			$z = new Places_Postcode();
 			$z->countryCode = 'US';
-			$z->postcode = $attributes['postcode'];
+			$z->postcode    = $attributes['postcode'];
 			if ($z->retrieve()) {
 				$attributes['latitude']  = $z->latitude;
 				$attributes['longitude'] = $z->longitude;
 				$attributes['country']   = $z->countryCode;
 			} else {
 				throw new Q_Exception_MissingRow(array(
-					'table' => 'postcode',
+					'table'    => 'postcode',
 					'criteria' => $attributes['postcode']
 				), 'postcode');
 			}
@@ -354,7 +357,7 @@ class Places_Location
 			$oldMeters ?: Q_Config::expect('Places','nearby','defaultMeters')
 		));
 
-		// Auto-fill postcode/placeName if missing
+		// Auto-fill postcode/placeName if missing but lat/lon exists
 		if (empty($attributes['postcode']) && isset($attributes['latitude'])) {
 			$postcodes = Places_Postcode::nearby(
 				$attributes['latitude'],
@@ -370,12 +373,15 @@ class Places_Location
 			}
 		}
 
+		// Always store the update source
+		$attributes['source'] = $source;
+
 		// Save to user stream
 		$stream->setAttribute($attributes);
 		$stream->changed();
 		$stream->post($user->id, array(
-			'type' => 'Places/location/updated',
-			'content' => '',
+			'type'         => 'Places/location/updated',
+			'content'      => '',
 			'instructions' => $stream->getAllAttributes()
 		), true);
 
@@ -390,22 +396,22 @@ class Places_Location
 		$longitude = $stream->getAttribute('longitude');
 		$meters    = $stream->getAttribute('meters');
 		$noChange = (
-			abs($latitude - $oldLatitude) < 0.0001 &&
-			abs($longitude - $oldLongitude) < 0.0001 &&
-			abs($meters - $oldMeters) < 0.001
+			abs($latitude - $oldLatitude)  < 0.0001 &&
+			abs($longitude - $oldLongitude)< 0.0001 &&
+			abs($meters - $oldMeters)      < 0.001
 		);
 
-		$attributes['stream'] = $stream;
-		Q_Response::setSlot('attributes', $attributes);
+		// Prepare for listeners
+		$attributes['stream']  = $stream;
+		$attributes['created'] = $created;
 
+		// Handle join/leave only if changed
 		if (!$noChange) {
-			// keep all join/leave nearby + interests logic here
-			// (but NO response sending / session closing)
+			// keep existing join/leave nearby + interests logic here
+			// (but DO NOT send response or close session here)
 		}
 
-		$attributes['created'] = !empty($created);
-		$attributes['source']  = $source;
-
+		Q_Response::setSlot('attributes', $attributes);
 		Q::event("Places/location/changed", $attributes, 'after');
 	}
 	 

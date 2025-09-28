@@ -72,15 +72,17 @@ function Places_after_Q_session_write($params)
 		);
 	}
 
-	$configSubscribe = Q_Config::get('Places','location','ip','subscribe', false);
+	$config = Q_Config::get('Places','location','ip','changed', false);
 	$meters = Q_Config::get('Places','location','ip','meters', null);
-	if ($configSubscribe && !empty($data['latitude']) && !empty($data['longitude'])) {
+	if ($config && !empty($data['latitude']) && !empty($data['longitude'])) {
 		$shouldUpdate = false;
-		if ($configSubscribe === true) {
+		if ($config === true) {
 			$shouldUpdate = true;
-		} elseif ($configSubscribe === 1) {
+		} elseif ($config === 1) {
 			$mainStream = Places_Location::userStream($user->id);
-			if (!$mainStream->getAttribute('latitude') || !$mainStream->getAttribute('longitude')) {
+			if (!$mainStream 
+			|| !$mainStream->getAttribute('latitude')
+			|| !$mainStream->getAttribute('longitude')) {
 				$shouldUpdate = true;
 			}
 		}
