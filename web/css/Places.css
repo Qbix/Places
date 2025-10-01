@@ -130,7 +130,7 @@
 
 .Places_user_location_update { text-align: center; }
 
-.Places_globe_tool { width: 100%; aspect-ratio: 1; }
+.Places_globe_tool { width: 90%; aspect-ratio: 1; margin: auto; }
 .Places_globe_tool canvas { cursor: pointer; }
 
 .Places_countries_tool .Places_countries_select,
@@ -196,4 +196,10 @@
 
 .Places_location_dialog .Q_dialog_slot {
 	overflow: visible;
+}
+
+@media (prefers-color-scheme: dark) {
+	.Places_globe_shadow {
+		filter: brightness(0.5);
+	}
 }

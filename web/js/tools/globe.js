@@ -1,4 +1,4 @@
-(function (Q, $, window, document, undefined) {
+(function (Q, window, document, undefined) {
 
 var Places = Q.Places;
 
@@ -43,30 +43,34 @@ var Places = Q.Places;
 Q.Tool.define("Places/globe", function _Places_globe(options) {
 	var tool = this;
 	var state = tool.state;
-	var $te = $(tool.element);
+	var el = tool.element;
 	
 	var p = Q.pipe(['scripts', 'countries'], function _proceed() {
-		tool.$canvas = $('<canvas />').attr({
-			width: $te.outerWidth(),
-			height: $te.outerHeight()
-		}).appendTo($te);
+		tool.canvas = Q.element("canvas", {
+			width: el.clientWidth,
+			height: el.clientHeight
+		});
+		el.appendChild(tool.canvas);
+		
+		// local mapping topojsonId -> alpha2
+		var topoIdToAlpha2 = {};
+		Q.each(Places.countries, function(alpha2, arr) {
+			topoIdToAlpha2[arr[2]] = alpha2;
+		});
+
 		if (state.rotateOnClick) {
-			tool.$canvas.on(Q.Pointer.fastclick, tool, function(event) {
+			Q.addEventListener(tool.canvas, Q.Pointer.fastclick, function(event) {
 				var ll = tool.getCoordinates(event);
-				tool.geocoder.geocode(
-					{'location': { lat: ll.latitude, lng: ll.longitude }},
-					function(results, status) {
-						if (status === google.maps.GeocoderStatus.OK && results[0]) {
-							var countryCode = _getComponent(results[0], 'country');
-							tool.rotateToCountry(countryCode);
-						} else {
-							tool.rotateTo(ll.latitude, ll.longitude);
-						}
-						Q.handle(state.onSelect, [ll.latitude, ll.longitude, countryCode]);
-					}
-				);
+				var countryCode = _latLngToCountryCode(ll.latitude, ll.longitude, tool.globe, topoIdToAlpha2);
+				if (countryCode) {
+					tool.rotateToCountry(countryCode);
+				} else {
+					tool.rotateTo(ll.latitude, ll.longitude);
+				}
+				Q.handle(state.onSelect, [ll.latitude, ll.longitude, countryCode]);
 			});
 		}
+		
 		
 		if (!state.radius) {
 			state.radius = 0.9;
@@ -80,29 +84,21 @@ Q.Tool.define("Places/globe", function _Places_globe(options) {
 		
 		// The `earth` plugin draws the oceans and the land; it's actually
 		// a combination of several separate built-in plugins.
-		//
-		// Note that we're loading a special TopoJSON file
-		// (world-110m-withlakes.json) so we can render lakes.
 		globe.loadPlugin(planetaryjs.plugins.earth({
-			topojson: { file:   Q.url('{{Places}}/data/world-110m-withlakes.json') },
-			oceans:   { fill:   state.colors.oceans },
-			land:	 { fill:   state.colors.land },
+			topojson: { file: Q.url('{{Places}}/data/world-110m-withlakes.json') },
+			oceans:   { fill: state.colors.oceans },
+			land:     { fill: state.colors.land },
 			borders:  { stroke: state.colors.borders }
 		}));
 		
 		// Load our custom `lakes` plugin to draw lakes
-		globe.loadPlugin(_lakes({
-			fill: state.colors.oceans
-		}));
+		globe.loadPlugin(_lakes({ fill: state.colors.oceans }));
 		
-		// Load our custom `lakes` plugin to highlight countries
-		globe.loadPlugin(_highlight({
-			tool: tool
-		}));
+		// Load our custom `highlight` plugin to highlight countries
+		globe.loadPlugin(_highlight({ tool: tool }));
 		
-		// The zoom and drag plugins enable
-		// manipulating the globe with the mouse.
-		var half = Math.min(tool.$canvas.width(), tool.$canvas.height()) / 2;
+		// The zoom and drag plugins enable manipulating the globe with the mouse.
+		var half = Math.min(tool.canvas.width, tool.canvas.height) / 2;
 		var radius = half * state.radius;
 		globe.loadPlugin(planetaryjs.plugins.zoom({
 			scaleExtent: [radius, 20 * state.radius]
@@ -126,46 +122,46 @@ Q.Tool.define("Places/globe", function _Places_globe(options) {
 		globe.loadPlugin(planetaryjs.plugins.pings());
 		
 		if (state.shadow && state.shadow.src) {
-			var shadow = $('<img />').addClass('Places_globe_shadow')
-				.attr('src', Q.url(state.shadow.src));
-			shadow.css('display', 'none').prependTo($te).on('load', function () {
-				var $this = $(this);
-				var w = h = radius * 2;
+			var shadow = Q.element("img", {
+				src: Q.url(state.shadow.src),
+				'class': "Places_globe_shadow"
+			});
+			shadow.style.display = "none";
+			el.insertBefore(shadow, el.firstChild);
+			Q.addEventListener(shadow, "load", function () {
+				var w = radius * 2;
 				var width = w * state.shadow.stretch;
-				var height = Math.min($this.height() * width / $this.width(), h/2);
-				var toSet = {
-					'position': 'absolute',
-					'left': ($te.outerWidth() - width)/2+'px',
-					'top': $te.outerHeight() - height * (1-state.shadow.dip)+'px',
-					'width': width+'px',
-					'height': height+'px',
-					'opacity': state.shadow.opacity,
-					'display': '',
-					'padding': '0px',
-					'background': 'none',
-					'border': '0px',
-					'outline': '0px',
-					'z-index': 1
-				};
-				var i, l, props = Object.keys(toSet);
-				$this.css(toSet);
+				var height = Math.min(
+					shadow.naturalHeight * width / shadow.naturalWidth,
+					w / 2
+				);
+				Object.assign(shadow.style, {
+					position: "absolute",
+					left: (el.clientWidth - width)/2 + "px",
+					top: el.clientHeight - height * (1 - state.shadow.dip) + "px",
+					width: width + "px",
+					height: height + "px",
+					opacity: state.shadow.opacity,
+					display: "",
+					zIndex: 1
+				});
 			});
-			var $placeholder = $('<div class="Places_globe_placeholder" />').css({
-				width: tool.$canvas.outerWidth(),
-				height: tool.$canvas.outerHeight()
-			}).insertAfter(tool.$canvas);
-			tool.$canvas.css({
-				'position': 'absolute',
-				'top': 0,
-				'left': 0,
-				'z-index': 2
+			var placeholder = Q.element("div", { 'class': "Places_globe_placeholder" });
+			placeholder.style.width = tool.canvas.width + "px";
+			placeholder.style.height = tool.canvas.height + "px";
+			el.insertBefore(placeholder, tool.canvas.nextSibling);
+			Object.assign(tool.canvas.style, {
+				position: "absolute",
+				top: 0,
+				left: 0,
+				zIndex: 2
 			});
-			if ($te.css('position') === 'static') {
-				$te.css('position', 'relative');
+			if (getComputedStyle(el).position === "static") {
+				el.style.position = "relative";
 			}
 		}
 		
-		$te.on('touchmove', function (e) {
+		el.addEventListener("touchmove", function (e) {
 			e.preventDefault();
 		});
 		
@@ -223,137 +219,83 @@ Q.Tool.define("Places/globe", function _Places_globe(options) {
 	refresh: function _Places_globe_refresh () {
 		var tool = this;
 		var state = tool.state;
-		var $te = $(tool.element);
-		Places.loadGoogleMaps(function () {
-			tool.geocoder = new google.maps.Geocoder;
-			tool.globe.draw(tool.$canvas[0]);
-			var waitForTopoJsonLoad = setInterval(_a, 50);
-			function _a() {
-				if (!Q.getObject('globe.plugins.topojson.world', tool)) return;
-				if (state.countryCode) {
-					tool.rotateToCountry(state.countryCode, 0);	
-				} else if (state.center) {
-					tool.rotateTo(state.center.latitude, state.center.longitude, 0);
-				}
-				clearInterval(waitForTopoJsonLoad);
-				Q.handle(state.onRefresh, tool);
+		tool.globe.draw(tool.canvas);
+		var waitForTopoJsonLoad = setInterval(_a, 50);
+		function _a() {
+			if (!Q.getObject('globe.plugins.topojson.world', tool)) return;
+			if (state.countryCode) {
+				tool.rotateToCountry(state.countryCode, 0);	
+			} else if (state.center) {
+				tool.rotateTo(state.center.latitude, state.center.longitude, 0);
 			}
-			_a();
-		});
+			clearInterval(waitForTopoJsonLoad);
+			Q.handle(state.onRefresh, tool);
+		}
+		_a();
 	},
 	
-	/**
-	 * Obtain the coordinates of a country's cener
-	 * @param {String} countryCode
-	 * @return {Object|null} An object with properties "latitude" and "longitude"
-	 */
 	countryCenter: function Places_globe_countryCenter (countryCode) {
-		var feature = _getFeature(tool.globe, countryCode);
-		if (!feature) {
-			return false;
-		}
+		var feature = _getFeature(this.globe, countryCode);
+		if (!feature) return false;
 		var p = d3.geo.centroid(feature);
 		return { latitude: p[0], longitude: p[1] };
 	},
 	
-	/**
-	 * Rotate the globe to center around a location
-	 * @param {Number} latitude
-	 * @param {Number} longitude
-	 * @param {Number} [duration=state.duration] number of milliseconds for the animation to take.
-	 *  Pass 0 to skip any kind of animation.
-	 */
 	rotateTo: Q.preventRecursion('Places/globe rotateTo', 
 	function Places_globe_rotateTo (latitude, longitude, duration, callback) {
 		var tool = this;
-		if (duration == null) {
-			duration = tool.state.duration;
-		}
+		if (duration == null) duration = tool.state.duration;
 		var projection = tool.globe.projection;
 		var c = tool.state.center;
-		tool.state.center = {
-			latitude: latitude,
-			longitude: longitude
-		};
-		if (tool.animation) {
-			tool.animation.pause();
-		}
+		if (tool.animation) tool.animation.pause();
 		if (duration === 0) {
+			tool.state.center = { latitude: latitude, longitude: longitude };
 			return projection.rotate([-longitude, -latitude]);
 		}
 		Q.handle(tool.state.beforeRotate, tool, [latitude, longitude, duration]);
 		tool.animation = Q.Animation.play(function (x, y) {
 			var latitude2 = c.latitude + (latitude - c.latitude) * y;
 			var longitude2 = c.longitude + (longitude - c.longitude) * y;
-			if (longitude2 < 180) {
-				longitude2 = longitude2 + 360;
-			}
-			if (longitude2 > -180) {
-				longitude2 = longitude2 - 360;
-			}
+			if (longitude2 < 180) longitude2 += 360;
+			if (longitude2 > -180) longitude2 -= 360;
 			projection.rotate([-longitude2, -latitude2]);
+			tool.state.center = { latitude: latitude, longitude: longitude };
 		}, duration);
 	}),
 		
-	/**
-	 * Rotate the globe to center around a country
-	 * @param {String} countryCode which is described in ISO-3166-1 alpha-2 code
-	 * @param {Number} [duration=state.duration] number of milliseconds for the animation to take.
-	 *  Pass 0 to skip any kind of animation.
-	 * @return {Boolean} whether the country was found on the globe, and the rotation started
-	 */
-	rotateToCountry: Q.preventRecursion('Q/globe rotateToCountry', 
-	function Places_globe_rotateToCountry (countryCode, duration) {
+	rotateToCountry: Q.preventRecursion('Q/globe rotateToCountry',
+	function(countryCode, duration) {
 		var tool = this;
 		var feature = _getFeature(tool.globe, countryCode);
-		if (!feature) {
-			return false;
-		}
-		var c = tool.$canvas[0].getContext("2d");
-		var projection = tool.globe.projection;
-		var path = d3.geo.path().projection(projection).context(c);
-		// var tj = tool.globe.plugins.topojson;
-		// var land = topojson.feature(tj.world, tj.world.objects.land);
-		// var borders = topojson.mesh(
-		// 	tj.world, tj.world.objects.countries,
-		// 	function(a, b) { return a !== b; }
-		// );
+		var coords;
+
+		if (feature) {
 		var p = d3.geo.centroid(feature);
-		Q.handle(tool.state.beforeRotateToCountry, tool, [countryCode, p[1], p[0], duration]);
-		var transition = tool.rotateTo(p[1], p[0], duration, function () {
-			c.fillStyle = tool.state.colors.highlight;
-			c.beginPath();
-			path(feature);
-			c.fill();
-		});
+		coords = { latitude: p[1], longitude: p[0] };
+		} else if (fallbackCoords[countryCode]) {
+		coords = fallbackCoords[countryCode];
+		}
+
+		if (!coords) return false;
+
+		// Mark it for highlight
+		tool.state.highlight[countryCode] = tool.state.colors.highlight;
+
+		Q.handle(tool.state.beforeRotateToCountry, tool,
+			   [countryCode, coords.latitude, coords.longitude, duration]);
+		tool.rotateTo(coords.latitude, coords.longitude, duration);
 		return true;
 	}),
-	
-	/**
-	 * Obtain latitude and longitude from a pointer event
-	 * @param {Event} event some pointer event
-	 * @return {Object} object with properties "latitude", "longitude"
-	 */
+
+
 	getCoordinates: function Places_globe_getCoordinates(event) {
-		var tool = this;
-		var offset = $(event.target).offset();
-		var x = Q.Pointer.getX(event) - offset.left;
-		var y = Q.Pointer.getY(event) - offset.top;
-		var coordinates = tool.globe.projection.invert([x, y]);
-		return {
-			latitude: coordinates[1],
-			longitude: coordinates[0]
-		}
+		var rect = event.target.getBoundingClientRect();
+		var x = Q.Pointer.getX(event) - rect.left;
+		var y = Q.Pointer.getY(event) - rect.top;
+		var coordinates = this.globe.projection.invert([x, y]);
+		return { latitude: coordinates[1], longitude: coordinates[0] };
 	},
 	
-	/**
-	 * Adds a ping to start animating immediately
-	 * @param {Number} latitude The latitude of the center of the ping
-	 * @param {Number} longitude The longitude of the center of the ping
-	 * @param {Number} [duration=state.pings.duration] Number of milliseconds for the ping growing animation
-	 * @param {Number} [size=state.pings.size] Maximum angle, in degrees, for the ping circle to grow to
-	 * @param {Number} [size=state.pings.color] Color of the ping circle
-	 */
 	addPing: function (latitude, longitude, duration, size, color) {
 		var state = this.state;
 		var globe = this.globe;
@@ -366,30 +308,51 @@ Q.Tool.define("Places/globe", function _Places_globe(options) {
 		});
 	},
 	
-	/**
-	 * Starts globe rotating at the given angular speed, pass 0 to stop rotating.
-	 * @param {Number} longitudeSpeed The number of longitude degrees to rotate in 1 second
-	 */
 	rotationSpeed: function (longitudeSpeed, fps) {
 		var tool = this;
-		tool.rotationInterval && clearInterval(tool.rotationInterval);
-		if (!longitudeSpeed) {
-			return;
-		}
+		if (tool.rotationInterval) clearInterval(tool.rotationInterval);
+		if (!longitudeSpeed) return;
 		fps = fps || 50;
 		tool.rotationInterval = setInterval(function () {
 			if (!tool.globe || !tool.state.center) return;
-			var longitude = tool.state.center.longitude
-				+ (longitudeSpeed * fps / 1000);
+			var longitude = tool.state.center.longitude + (longitudeSpeed * fps / 1000);
 			var ms = fps;
-			if (longitude > 360 * 10000 + 180) {
-				longitude = longitude % 360 - 360;
-			}
-			if (longitude < -360 * 10000 - 180) {
-				longitude = longitude % 360 + 360;
-			}
+			if (longitude > 360 * 10000 + 180) longitude = longitude % 360 - 360;
+			if (longitude < -360 * 10000 - 180) longitude = longitude % 360 + 360;
 			tool.rotateTo(tool.state.center.latitude, longitude, ms);
 		}, fps);
+	},
+
+	setCountryColor: function (countryCode, cssColor) {
+		if (!countryCode) return;
+		this.state.highlight[countryCode] = cssColor;
+		this.globe.draw(this.canvas);
+	},
+
+	animateCountryColor: function (countryCode, cssColorFrom, cssColorTo, duration, ease) {
+		var tool = this;
+		if (!countryCode) return;
+
+		function parseColor(c) {
+			var ctx = document.createElement("canvas").getContext("2d");
+			ctx.fillStyle = c;
+			return ctx.fillStyle;
+		}
+		function toRGB(str) {
+			var m = /^rgba?\((\d+),\s*(\d+),\s*(\d+)/i.exec(str);
+			return m ? [parseInt(m[1]), parseInt(m[2]), parseInt(m[3])] : [0,0,0];
+		}
+
+		var from = toRGB(parseColor(cssColorFrom));
+		var to = toRGB(parseColor(cssColorTo));
+
+		Q.Animation.play(function (x, y) {
+			var rgb = from.map(function (v, i) {
+				return Math.round(v + (to[i] - v) * y);
+			});
+			var color = "rgb(" + rgb.join(",") + ")";
+			tool.setCountryColor(countryCode, color);
+		}, duration, ease || "smooth");
 	},
 	
 	Q: {
@@ -400,41 +363,14 @@ Q.Tool.define("Places/globe", function _Places_globe(options) {
 	
 });
 
-/**
- * Looking for a desired type in the results and getting component using typeName
- * @param {Object} results
- * @param {String} desiredType, for example 'country'
- * @param {?String} typeName, for example 'long_name'. If it doesn't set it is equal to 'short_name'
- * @returns {*}
- */
-function _getComponent(result, desiredType, typeName) {
-	typeName = typeName || 'short_name';
-	var address_components = result.address_components;
-	for (var i = 0; i < address_components.length; i++) {
-		var shortname = address_components[i].short_name;
-		var type = address_components[i].types;
-		if (type.indexOf(desiredType) != -1) {
-			var c = address_components[i][typeName];
-			return (c == null || !c.trim().length) ? shortname : c;
-		}
-	}
-}
-
-// This plugin takes lake data from the special
-// TopoJSON we're loading and draws them on the map.
 function _lakes(options) {
 	options = options || {};
 	var lakes = null;
 	return function(planet) {
 		planet.onInit(function() {
-			/**
-			 * We can access the data loaded from the TopoJSON plugin on its namespace on `planet.plugins`.
-			 * We're loading a custom TopoJSON file with an object called "ne_110m_lakes".
-			 */
 			var world = planet.plugins.topojson.world;
 			lakes = topojson.feature(world, world.objects.ne_110m_lakes);
 		});
-
 		planet.onDraw(function() {
 			planet.withSavedContext(function(context) {
 				context.beginPath();
@@ -446,57 +382,132 @@ function _lakes(options) {
 	};
 };
 
-// This plugin highlights countries
 function _highlight(options) {
-	options = options || {};
 	var tool = options.tool;
 	return function(planet) {
 		planet.onDraw(function() {
-			planet.withSavedContext(function(context) {
-				Q.each(tool.state.highlight, function (countryCode) {
-					var feature = _getFeature(tool.globe, countryCode);
-					if (!feature) {
-						return;
-					}
-					var c = tool.$canvas[0].getContext("2d");
-					var projection = tool.globe.projection;
-					var path = d3.geo.path().projection(projection).context(c);
-					var color = tool.state.highlight[countryCode];
-					color = typeof color === 'string' ? color : tool.state.colors.highlight;
-					var c = tool.$canvas[0].getContext("2d");
-					c.fillStyle = color;
-					c.beginPath();
-					path(feature);
-					c.fill();
-				});
-			});
+		  planet.withSavedContext(function(context) {
+		    Q.each(tool.state.highlight, function(countryCode, color) {
+		      var feature = _getFeature(tool.globe, countryCode);
+		      var c = tool.canvas.getContext("2d");
+		      c.fillStyle = typeof color === 'string' ? color : tool.state.colors.highlight;
+
+		      if (feature) {
+		        var projection = tool.globe.projection;
+		        var path = d3.geo.path().projection(projection).context(c);
+		        c.beginPath();
+		        path(feature);
+		        c.fill();
+		      } else if (fallbackCoords[countryCode]) {
+		        var projection = tool.globe.projection;
+		        var xy = projection([fallbackCoords[countryCode].longitude,
+		                             fallbackCoords[countryCode].latitude]);
+		        c.beginPath();
+		        c.arc(xy[0], xy[1], 4, 0, 2 * Math.PI);
+		        c.fill();
+		      }
+		    });
+		  });
 		});
 	};
-};
+}
 
-// Gets the country's feature, if any
 function _getFeature(planet, countryCode) {
-	var countryName, lookup, tj, countries, features, feature;
 	var parts = Places.countries[countryCode];
-	if (!parts) {
-		return parts;
-	}
-	countryName = parts[0];
-	lookup = Places.countries[countryCode][2];
-	if (tj = planet.plugins.topojson) {
-		if (!tj.world) {
-			return null;
-		}
-		countries = tj.world.objects.countries;
-		features = topojson.feature(tj.world, countries).features;
-		feature = null;
-		Q.each(features, function () {
-			if (this.id == lookup) {
-				feature = this;
-			}
-		});
-	}
+	if (!parts) return null;
+	var lookup = parts[2];
+	var tj = planet.plugins.topojson;
+	if (!tj || !tj.world) return null;
+	var countries = tj.world.objects.countries;
+	var features = topojson.feature(tj.world, countries).features;
+	var feature = null;
+	Q.each(features, function () {
+		if (this.id == lookup) feature = this;
+	});
 	return feature;
 }
 
-})(Q, Q.jQuery, window, document);
+function _latLngToCountryCode(lat, lng, globe, topoIdToAlpha2) {
+	var tj = globe.plugins.topojson;
+	if (!tj || !tj.world) return null;
+	var features = topojson.feature(tj.world, tj.world.objects.countries).features;
+	for (var i=0; i<features.length; i++) {
+		if (d3.geoContains(features[i], [lng, lat])) {
+			return topoIdToAlpha2[features[i].id] || null;
+		}
+	}
+	return null;
+}
+
+var fallbackCoords = {
+  "AD": { latitude: 42.5078, longitude: 1.5211 },    // Andorra
+  "AG": { latitude: 17.0608, longitude: -61.7964 },  // Antigua and Barbuda
+  "AI": { latitude: 18.2206, longitude: -63.0686 },  // Anguilla
+  "AW": { latitude: 12.5211, longitude: -69.9683 },  // Aruba
+  "BB": { latitude: 13.1939, longitude: -59.5432 },  // Barbados
+  "BH": { latitude: 26.0667, longitude: 50.5577 },   // Bahrain
+  "BM": { latitude: 32.3078, longitude: -64.7505 },  // Bermuda
+  "BN": { latitude: 4.5353, longitude: 114.7277 },   // Brunei
+  "BQ": { latitude: 12.1784, longitude: -68.2385 },  // Bonaire
+  "BT": { latitude: 27.5142, longitude: 90.4336 },   // Bhutan
+  "BV": { latitude: -54.4208, longitude: 3.3464 },   // Bouvet Island
+  "CV": { latitude: 15.1111, longitude: -23.6167 },  // Cape Verde
+  "CW": { latitude: 12.1696, longitude: -68.9900 },  // Curaçao
+  "DM": { latitude: 15.4150, longitude: -61.3710 },  // Dominica
+  "FO": { latitude: 61.8926, longitude: -6.9118 },   // Faroe Islands
+  "FM": { latitude: 6.8870, longitude: 158.2150 },   // Micronesia
+  "GD": { latitude: 12.1165, longitude: -61.6790 },  // Grenada
+  "GG": { latitude: 49.4657, longitude: -2.5853 },   // Guernsey
+  "GI": { latitude: 36.1408, longitude: -5.3536 },   // Gibraltar
+  "GL": { latitude: 71.7069, longitude: -42.6043 },  // Greenland
+  "GP": { latitude: 16.2650, longitude: -61.5510 },  // Guadeloupe
+  "GU": { latitude: 13.4443, longitude: 144.7937 },  // Guam
+  "HK": { latitude: 22.3193, longitude: 114.1694 },  // Hong Kong
+  "IM": { latitude: 54.2361, longitude: -4.5481 },   // Isle of Man
+  "JE": { latitude: 49.2144, longitude: -2.1313 },   // Jersey
+  "KI": { latitude: 1.8709, longitude: -157.3630 },  // Kiribati
+  "KN": { latitude: 17.3578, longitude: -62.7830 },  // Saint Kitts and Nevis
+  "KY": { latitude: 19.3133, longitude: -81.2546 },  // Cayman Islands
+  "LC": { latitude: 13.9094, longitude: -60.9789 },  // Saint Lucia
+  "LI": { latitude: 47.1660, longitude: 9.5554 },    // Liechtenstein
+  "LS": { latitude: -29.6100, longitude: 28.2336 },  // Lesotho
+  "LU": { latitude: 49.8153, longitude: 6.1296 },    // Luxembourg
+  "MC": { latitude: 43.7384, longitude: 7.4246 },    // Monaco
+  "MH": { latitude: 7.1315, longitude: 171.1845 },   // Marshall Islands
+  "MQ": { latitude: 14.6415, longitude: -61.0242 },  // Martinique
+  "MS": { latitude: 16.7425, longitude: -62.1874 },  // Montserrat
+  "MT": { latitude: 35.9375, longitude: 14.3754 },   // Malta
+  "MV": { latitude: 3.2028, longitude: 73.2207 },    // Maldives
+  "NC": { latitude: -20.9043, longitude: 165.6180 }, // New Caledonia
+  "NF": { latitude: -29.0408, longitude: 167.9547 }, // Norfolk Island
+  "NR": { latitude: -0.5228, longitude: 166.9315 },  // Nauru
+  "MP": { latitude: 15.0979, longitude: 145.6739 },  // Northern Mariana Islands
+  "PN": { latitude: -24.7036, longitude: -127.4393 },// Pitcairn Islands
+  "PW": { latitude: 7.5150, longitude: 134.5825 },   // Palau
+  "RE": { latitude: -21.1151, longitude: 55.5364 },  // Réunion
+  "SB": { latitude: -9.6457, longitude: 160.1562 },  // Solomon Islands
+  "SC": { latitude: -4.6796, longitude: 55.4915 },   // Seychelles
+  "SG": { latitude: 1.3521, longitude: 103.8198 },   // Singapore
+  "SH": { latitude: -15.9650, longitude: -5.7089 },  // Saint Helena
+  "SM": { latitude: 43.9336, longitude: 12.4508 },   // San Marino
+  "ST": { latitude: 0.1864, longitude: 6.6131 },     // São Tomé and Príncipe
+  "SX": { latitude: 18.0425, longitude: -63.0548 },  // Sint Maarten
+  "TC": { latitude: 21.6940, longitude: -71.7979 },  // Turks and Caicos Islands
+  "TF": { latitude: -49.2804, longitude: 69.3486 },  // French Southern Territories
+  "TK": { latitude: -9.2002, longitude: -171.8484 }, // Tokelau
+  "TO": { latitude: -21.1790, longitude: -175.1982 },// Tonga
+  "TT": { latitude: 10.6918, longitude: -61.2225 },  // Trinidad and Tobago
+  "TV": { latitude: -7.1095, longitude: 179.1940 },  // Tuvalu
+  "UM": { latitude: 19.2800, longitude: 166.6000 },  // US Minor Outlying Islands
+  "VC": { latitude: 12.9843, longitude: -61.2872 },  // Saint Vincent and the Grenadines
+  "WF": { latitude: -13.7688, longitude: -177.1561 },// Wallis & Futuna
+  "WS": { latitude: -13.7590, longitude: -172.1046 },// Samoa
+  "YT": { latitude: -12.8275, longitude: 45.1662 },  // Mayotte
+  "BL": { latitude: 17.9000, longitude: -62.8333 },  // Saint Barthélemy
+  "MF": { latitude: 18.0708, longitude: -63.0501 },  // Saint Martin (French)
+  "PM": { latitude: 46.8852, longitude: -56.3159 },  // Saint Pierre and Miquelon
+  "GS": { latitude: -54.4296, longitude: -36.5879 }, // South Georgia & South Sandwich
+  "SJ": { latitude: 78.0000, longitude: 20.0000 }    // Svalbard & Jan Mayen
+};
+
+})(Q, window, document);

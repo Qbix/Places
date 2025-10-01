@@ -1,91 +1,91 @@
 {
-    "LatLng": "( {{1}} lat, {{2}} lng)",
-    "nearby": {
-        "PostcodeLabel": "{{1}} ( {{2}} )",
-        "Title": "znotraj {{1}}"
-    },
-    "units": {
-        "meter": "meter",
-        "meters": "metrov",
-        "kilometer": "kilometer",
-        "kilometers": "kilometri",
-        "km": "km",
-        "mile": "milja",
-        "miles": "milje",
-        "mi": "mi",
-        "foot": "noga",
-        "feet": "noge",
-        "inches": "palcev"
-    },
-    "location": {
-        "interested": "Zanimajo me stvari, ki se dogajajo znotraj {{select}}",
-        "update": "Posodobi Mojo lokacijo",
-        "set": "Nastavi mojo lokacijo",
-        "prompt": "{{ClickOrTap}} sem za<br> nastavite svoje<br> lokacijo",
-        "myCurrentLocation": "Moja trenutna lokacija",
-        "enterAddress": "Vnesite naslov",
-        "enterPostcode": "Vnesite svojo poštno številko",
-        "create": {
-            "action": "Dodaj lokacijo",
-            "title": "Nova lokacija",
-            "nameYourLocation": "Poimenujte svojo lokacijo"
-        },
-        "confirm": {
-            "title": "Shrani to lokacijo?",
-            "message": "Ali nameravate to lokacijo ponovno uporabljati v prihodnosti?",
-            "ok": "ja",
-            "cancel": "št"
-        },
-        "add": {
-            "title": "Poimenujte to lokacijo",
-            "placeholder": "Dom, služba itd.",
-            "ok": "Shrani"
-        },
-        "dialog": {
-            "title": "Izberite Lokacija"
-        }
-    },
-    "areas": {
-        "filterPlaceholder": "Kakšno območje znotraj te lokacije?",
-        "newArea": "Novo območje",
-        "promptTitle": "Vnesite ime za območje:",
-        "absent": "Nastavite območje",
-        "error": "Napaka",
-        "exist": "Območje že obstaja",
-        "addNewArea": "Dodajte novo območje",
-        "add": "Dodaj"
-    },
-    "types": {
-        "Places\/locations": {
-            "description": "zbirka lokacij",
-            "displayType": "Lokacije"
-        },
-        "Places\/location": {
-            "description": "Predstavlja zgradbo, prizorišče, ladjo, park itd.",
-            "displayType": "Lokacija"
-        },
-        "Places\/area": {
-            "description": "Predstavlja območje znotraj lokacije, kot je soba ali apartma",
-            "displayType": "Območje"
-        },
-        "Places\/floor": {
-            "description": "Predstavlja nadstropje v zgradbi ali ladji",
-            "displayType": "Nadstropje"
-        },
-        "Places\/column": {
-            "description": "Predstavlja steber v zgradbi ali ladji",
-            "displayType": "Stolpec"
-        },
-        "Places\/nearby": {
-            "description": "Kategorija za stvari znotraj določene razdalje od geohasha",
-            "displayType": "Kraji v bližini"
-        },
-        "Places\/interest": {
-            "description": "Kategorija za stvari znotraj določene razdalje od geohasha, ki se ujema z zanimanjem",
-            "displayType": "Kraji zanimajo"
-        }
-    },
-    "countries": {
-        "SelectCountry": "Izberite državo"
-    }
+	"LatLng": "( {{1}} lat, {{2}} lng)",
+	"nearby": {
+		"PostcodeLabel": "{{1}} ( {{2}} )",
+		"Title": "znotraj {{1}}"
+	},
+	"units": {
+		"meter": "meter",
+		"meters": "metrov",
+		"kilometer": "kilometer",
+		"kilometers": "kilometri",
+		"km": "km",
+		"mile": "milja",
+		"miles": "milje",
+		"mi": "mi",
+		"foot": "noga",
+		"feet": "noge",
+		"inches": "palcev"
+	},
+	"location": {
+		"interested": "Zanimajo me stvari, ki se dogajajo znotraj {{select}}",
+		"update": "Posodobi Mojo lokacijo",
+		"set": "Nastavi mojo lokacijo",
+		"prompt": "{{ClickOrTap}} sem za<br> nastavite svoje<br> lokacijo",
+		"myCurrentLocation": "Moja trenutna lokacija",
+		"enterAddress": "Vnesite naslov",
+		"enterPostcode": "Vnesite svojo po\u0161tno \u0161tevilko",
+		"create": {
+			"action": "Dodaj lokacijo",
+			"title": "Nova lokacija",
+			"nameYourLocation": "Poimenujte svojo lokacijo"
+		},
+		"confirm": {
+			"title": "Shrani to lokacijo?",
+			"message": "Ali nameravate to lokacijo ponovno uporabljati v prihodnosti?",
+			"ok": "ja",
+			"cancel": "\u0161t"
+		},
+		"add": {
+			"title": "Poimenujte to lokacijo",
+			"placeholder": "Dom, slu\u017eba itd.",
+			"ok": "Shrani"
+		},
+		"dialog": {
+			"title": "Izberite Lokacija"
+		}
+	},
+	"areas": {
+		"filterPlaceholder": "Kak\u0161no obmo\u010dje znotraj te lokacije?",
+		"newArea": "Novo obmo\u010dje",
+		"promptTitle": "Vnesite ime za obmo\u010dje:",
+		"absent": "Nastavite obmo\u010dje",
+		"error": "Napaka",
+		"exist": "Obmo\u010dje \u017ee obstaja",
+		"addNewArea": "Dodajte novo obmo\u010dje",
+		"add": "Dodaj"
+	},
+	"types": {
+		"Places/locations": {
+			"description": "zbirka lokacij",
+			"displayType": "Lokacije"
+		},
+		"Places/location": {
+			"description": "Predstavlja zgradbo, prizori\u0161\u010de, ladjo, park itd.",
+			"displayType": "Lokacija"
+		},
+		"Places/area": {
+			"description": "Predstavlja obmo\u010dje znotraj lokacije, kot je soba ali apartma",
+			"displayType": "Obmo\u010dje"
+		},
+		"Places/floor": {
+			"description": "Predstavlja nadstropje v zgradbi ali ladji",
+			"displayType": "Nadstropje"
+		},
+		"Places/column": {
+			"description": "Predstavlja steber v zgradbi ali ladji",
+			"displayType": "Stolpec"
+		},
+		"Places/nearby": {
+			"description": "Kategorija za stvari znotraj dolo\u010dene razdalje od geohasha",
+			"displayType": "Kraji v bli\u017eini"
+		},
+		"Places/interest": {
+			"description": "Kategorija za stvari znotraj dolo\u010dene razdalje od geohasha, ki se ujema z zanimanjem",
+			"displayType": "Kraji zanimajo"
+		}
+	},
+	"countries": {
+		"SelectCountry": "Izberite dr\u017eavo"
+	}
 }

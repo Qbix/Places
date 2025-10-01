@@ -1,111 +1,105 @@
-(function (Q, $, window, document, undefined) {
+(function (Q, window, document, undefined) {
 
 var Places = Q.Places;
 
 /**
- * Places Tools
- * @module Places-tools
- */
-
-/**
- * Displays a way to select one or more countries
+ * Displays a dropdown to select one or more countries, with optional globe synchronization
  * @class Places countries
  * @constructor
- * @param {Object} [options] used to pass options
- * @param {String} [options.flags="{{Places}}/img/squareflags"] the path for the flags, or set to false to omit the flag
- * @param {String} [options.countryCode] the initial country to select in the list
- * @param {Array} [options.firstCountryCodes='US'] array of country codes to place first in the list
- * @param {Boolean} [options.sort] if true, sorts the countries alphabetically
- * @param {Q.Tool} [options.globe] a reference to a "Places/globe" tool to synchronize
- * @param {Q.Event} [options.onReady] this event occurs when the countries selector is ready
- * @param {Q.Event} [options.onChange=new Q.Event()] Occurs when the value has changed
+ * @param {Object} [options] Configuration options
+ * @param {String} [options.countryCode=null] The initial ISO-3166-1 alpha-2 country code to select
+ * @param {Array} [options.firstCountryCodes=['US']] Country codes to appear at the top of the list
+ * @param {Boolean} [options.sort=false] If true, countries are sorted alphabetically
+ * @param {Q.Tool|String|null} [options.globe=null] A reference or ID of a "Places/globe" tool to synchronize with
+ * @param {Boolean} [options.localized=false] Whether to display localized country names (requires language)
+ * @param {String|null} [options.language=null] Language code (e.g. "fr", "es") to localize country names
+ * @param {Q.Event} [options.onReady] Fired when the selector is fully initialized
+ * @param {Q.Event} [options.onChange] Fired when the selected country changes.
+ *   Callback arguments: `(countryCode)`
  */
 Q.Tool.define("Places/countries", function _Places_countries(options) {
 	var tool = this;
 	var state = tool.state;
-	var $te = $(tool.element);
-	
+	var el = tool.element;
+
+	if (typeof state.globe === 'string') {
+		state.globe = Q.Tool.byId(state.globe);
+	}
+
 	state.countryCode = state.countryCode && state.countryCode.toUpperCase();
-	tool.$options = {};
-	
-	var position = $te.css('position');
-	$te.css('position', position === 'static' ? 'relative' : position);
-	
+	tool.optionsByCode = {};
+
+	// match jQuery’s css('position')
+	if (getComputedStyle(el).position === "static") {
+		el.style.position = "relative";
+	}
+
 	Places.loadCountries(function () {
-		// if (state.flags) {
-		// 	tool.$flag = $('<img class="Places_countries_flag" />').attr({
-		// 		src: Q.url(state.flags+'/'+state.countryCode+'.png')
-		// 	}).appendTo(tool.element).on('error', function () {
-		// 		this.src = Q.url(state.flags+'/Unknown.png')
-		// 	});
-		// 	$te.addClass('Places_countries_flags');
-		// }
-		var $select = tool.$select = 
-			$('<select class="Places_countries_select" />').appendTo($te);
+		// Build <select>
+		var select = tool.select = Q.element("select", {
+			'class': "Places_countries_select"
+		});
+		el.appendChild(select);
+
 		if (!state.countries) {
 			state.countries = [];
 			for (var k in Places.countries) {
 				state.countries.push(k);
 			}
 		}
+
 		tool.refresh();
-		$select.on('change', tool,
-		Q.preventRecursion('Places/countries onchange', function () {
-			var countryCode = tool.$select.val() || state.countryCode;
-			if (state.globe) {
-				state.globe.rotateToCountry(countryCode);
-			}
-			Q.handle(state.onChange, tool, [countryCode]);
-			// if (tool.$flag) {
-			//     tool.$flag.attr({
-			//         src: Q.url(state.flags+'/'+countryCode+'.png')
-			//     });
-			// }
-		}));
+
+		select.addEventListener("change",
+			Q.preventRecursion("Places/countries onchange", function () {
+				var countryCode = select.value || state.countryCode;
+				if (state.globe) {
+					state.globe.rotateToCountry(countryCode);
+				}
+				Q.handle(state.onChange, tool, [countryCode]);
+			})
+		);
+
 		Q.handle(state.onReady, tool);
+	}, {
+		localized: state.localized,
+		language: state.language
 	});
-	
-	tool.Q.onStateChanged('countryCode').set(function () {
+
+	tool.Q.onStateChanged("countryCode").set(function () {
 		var globe = this.state.globe;
 		var countryCode = this.state.countryCode;
-		this.$select.val(countryCode);
-		this.$select.trigger('change');
+		this.select.value = countryCode;
+		this.select.dispatchEvent(new Event("change"));
 		if (globe) {
 			globe.rotateToCountry(countryCode);
 		}
 	}, "Places/countries");
-	
+
 	if (state.globe) {
 		this.globe(state.globe);
 	}
 },
 
-{ // default options here
+{ // defaults
 	flags: "{{Places}}/img/squareflags",
 	countryCode: null,
 	firstCountryCodes: ['US'],
 	globe: null,
 	sort: false,
-	optionPrefix: '',
 	onChange: new Q.Event(),
-	onReady: new Q.Event()
+	onReady: new Q.Event(),
+	language: null,
+	localized: false
 },
 
-{ // methods go here
-	
-	/**
-	 * @setCountry
-	 * @param {String} countryCode
-	 */
-	setCountry: Q.preventRecursion('Places/countries setCountry', function (countryCode) {
+{ // methods
+
+	setCountry: Q.preventRecursion("Places/countries setCountry", function (countryCode) {
 		this.state.countryCode = countryCode;
-		this.stateChanged('countryCode');
+		this.stateChanged("countryCode");
 	}),
-	
-	/**
-	 * @method globe
-	 * @param {Q.Tool|false} globeTool A reference to a "Places/globe" tool, or false to unlink
-	 */
+
 	globe: function (globeTool) {
 		if (!globeTool) {
 			this.state.globe = null;
@@ -117,65 +111,57 @@ Q.Tool.define("Places/countries", function _Places_countries(options) {
 			tool.setCountry(countryCode);
 		}, true);
 	},
-	
-	/**
-	 * Refreshes the list of countries, to reflect any updates
-	 * @method refresh
-	 */
+
 	refresh: function () {
 		this.state.onReady.add(function () {
 			var tool = this;
 			var state = tool.state;
-			tool.$select.empty();
+			var select = tool.select;
+			select.innerHTML = "";
+
 			if (state.countryCode) {
-				tool.$select.val(state.countryCode);
-				tool.$select.trigger('change');
+				select.value = state.countryCode;
+				select.dispatchEvent(new Event("change"));
 			} else {
-				$('<option />')
-					.attr('disabled', 'disabled')
-					.attr('selected', 'selected')
-					.attr('value', '')
-					.text(tool.text.countries.SelectCountry)
-					.prependTo(tool.$select);
-				tool.$select.val('');
+				var placeholder = Q.element("option", {
+					value: "",
+					disabled: true,
+					selected: true
+				}, [tool.text.countries.SelectCountry]);
+				select.insertBefore(placeholder, select.firstChild);
+				select.value = "";
 			}
+
 			var codes = {};
 			Q.each(state.firstCountryCodes, function (i, countryCode) {
-				// place flag at the end, for keyboard shortcuts to work
-				var text = Places.countries[countryCode][0]
-					+ ' ' + Places.countries[countryCode][3];
-				var $option = $('<option />')
-					.attr('value', countryCode)
-					.text(text)
-					.appendTo(tool.$select);
-				tool.$options[countryCode] = $option;
+				var flag = Places.countries[countryCode][3];
+				var name = Places.countries[countryCode][0];
+				var text = flag + " " + name;
+				var option = Q.element("option", { value: countryCode }, [text]);
+				select.appendChild(option);
+				tool.optionsByCode[countryCode] = option;
 				codes[countryCode] = true;
 			});
+
 			if (state.sort) {
 				state.countries.sort(function (a, b) {
 					var a1 = Places.countries[a][0];
 					var b1 = Places.countries[b][0];
-					return a1 > b1 ? 1 : (a == b ? 0 : -1);
+					return a1 > b1 ? 1 : (a1 === b1 ? 0 : -1);
 				});
 			}
+
 			Q.each(state.countries, function (i, countryCode) {
-				var countryCode = countryCode;
-				if (codes[countryCode]) {
-					return;
-				}
-				// place flag at the end, for keyboard shortcuts to work
-				var text = state.optionPrefix
-					+ Places.countries[countryCode][0]
-					+ ' ' + Places.countries[countryCode][3];
-				var $option = $('<option />')
-					.attr('value', countryCode)
-					.text(text)
-					.appendTo(tool.$select);
-				tool.$options[countryCode] = $option;
+				if (codes[countryCode]) return;
+				var flag = Places.countries[countryCode][3];
+				var name = Places.countries[countryCode][0];
+				var text = flag + " " + name;
+				var option = Q.element("option", { value: countryCode }, [text]);
+				select.appendChild(option);
+				tool.optionsByCode[countryCode] = option;
 			});
 		}, this);
 	}
-	
 });
 
-})(Q, Q.jQuery, window, document);
+})(Q, window, document);

@@ -1,91 +1,91 @@
 {
-    "LatLng": "( {{1}} latitud, {{2}} longitud)",
-    "nearby": {
-        "PostcodeLabel": "{{1}} ( {{2}} )",
-        "Title": "dentro de {{1}}"
-    },
-    "units": {
-        "meter": "metro",
-        "meters": "metros",
-        "kilometer": "kilómetro",
-        "kilometers": "quiómetros",
-        "km": "kilómetros",
-        "mile": "milla",
-        "miles": "millas",
-        "mi": "mi",
-        "foot": "pie",
-        "feet": "pies",
-        "inches": "pulgadas"
-    },
-    "location": {
-        "interested": "Estoy interesado en las cosas que suceden dentro de {{select}} de",
-        "update": "Actualizar mi ubicación",
-        "set": "Establecer mi ubicación",
-        "prompt": "{{ClickOrTap}} aquí para<br> establecer su<br> ubicación",
-        "myCurrentLocation": "mi ubicación actual",
-        "enterAddress": "Introduce una direccion",
-        "enterPostcode": "Por favor ingrese su código postal \/ código postal",
-        "create": {
-            "action": "Agregar Direccion",
-            "title": "Nueva ubicacion",
-            "nameYourLocation": "Nombra tu ubicación"
-        },
-        "confirm": {
-            "title": "¿Guardar esta ubicación?",
-            "message": "¿Piensa volver a utilizar esta ubicación en el futuro?",
-            "ok": "Sí",
-            "cancel": "No"
-        },
-        "add": {
-            "title": "Nombra esta ubicación",
-            "placeholder": "Hogar, trabajo, etc",
-            "ok": "Ahorrar"
-        },
-        "dialog": {
-            "title": "Elegir la ubicación"
-        }
-    },
-    "areas": {
-        "filterPlaceholder": "¿Algún área dentro de esta ubicación?",
-        "newArea": "NUEVA Área",
-        "promptTitle": "Introduzca un nombre para el área:",
-        "absent": "Por favor, establezca el área",
-        "error": "Error",
-        "exist": "El área ya existe",
-        "addNewArea": "Agregar nueva área",
-        "add": "Agregar"
-    },
-    "types": {
-        "Places\/locations": {
-            "description": "una colección de lugares",
-            "displayType": "Ubicaciones"
-        },
-        "Places\/location": {
-            "description": "Representa un edificio, lugar, barco, parque, etc.",
-            "displayType": "Ubicación"
-        },
-        "Places\/area": {
-            "description": "Representa un área dentro de una ubicación, como una habitación o suite.",
-            "displayType": "Área"
-        },
-        "Places\/floor": {
-            "description": "Representa un piso en un edificio o nave.",
-            "displayType": "Piso"
-        },
-        "Places\/column": {
-            "description": "Representa una columna en un edificio o nave.",
-            "displayType": "Columna"
-        },
-        "Places\/nearby": {
-            "description": "Categoría para cosas dentro de una cierta distancia de un geohash",
-            "displayType": "Lugares cercanos"
-        },
-        "Places\/interest": {
-            "description": "Categoría para cosas dentro de una cierta distancia de un geohash, que coincida con un interés",
-            "displayType": "Lugares de interés"
-        }
-    },
-    "countries": {
-        "SelectCountry": "Seleccione un país"
-    }
+	"LatLng": "( {{1}} latitud, {{2}} longitud)",
+	"nearby": {
+		"PostcodeLabel": "{{1}} ( {{2}} )",
+		"Title": "dentro de {{1}}"
+	},
+	"units": {
+		"meter": "metro",
+		"meters": "metros",
+		"kilometer": "kil\u00f3metro",
+		"kilometers": "qui\u00f3metros",
+		"km": "kil\u00f3metros",
+		"mile": "milla",
+		"miles": "millas",
+		"mi": "mi",
+		"foot": "pie",
+		"feet": "pies",
+		"inches": "pulgadas"
+	},
+	"location": {
+		"interested": "Estoy interesado en las cosas que suceden dentro de {{select}} de",
+		"update": "Actualizar mi ubicaci\u00f3n",
+		"set": "Establecer mi ubicaci\u00f3n",
+		"prompt": "{{ClickOrTap}} aqu\u00ed para<br> establecer su<br> ubicaci\u00f3n",
+		"myCurrentLocation": "mi ubicaci\u00f3n actual",
+		"enterAddress": "Introduce una direccion",
+		"enterPostcode": "Por favor ingrese su c\u00f3digo postal / c\u00f3digo postal",
+		"create": {
+			"action": "Agregar Direccion",
+			"title": "Nueva ubicacion",
+			"nameYourLocation": "Nombra tu ubicaci\u00f3n"
+		},
+		"confirm": {
+			"title": "\u00bfGuardar esta ubicaci\u00f3n?",
+			"message": "\u00bfPiensa volver a utilizar esta ubicaci\u00f3n en el futuro?",
+			"ok": "S\u00ed",
+			"cancel": "No"
+		},
+		"add": {
+			"title": "Nombra esta ubicaci\u00f3n",
+			"placeholder": "Hogar, trabajo, etc",
+			"ok": "Ahorrar"
+		},
+		"dialog": {
+			"title": "Elegir la ubicaci\u00f3n"
+		}
+	},
+	"areas": {
+		"filterPlaceholder": "\u00bfAlg\u00fan \u00e1rea dentro de esta ubicaci\u00f3n?",
+		"newArea": "NUEVA \u00c1rea",
+		"promptTitle": "Introduzca un nombre para el \u00e1rea:",
+		"absent": "Por favor, establezca el \u00e1rea",
+		"error": "Error",
+		"exist": "El \u00e1rea ya existe",
+		"addNewArea": "Agregar nueva \u00e1rea",
+		"add": "Agregar"
+	},
+	"types": {
+		"Places/locations": {
+			"description": "una colecci\u00f3n de lugares",
+			"displayType": "Ubicaciones"
+		},
+		"Places/location": {
+			"description": "Representa un edificio, lugar, barco, parque, etc.",
+			"displayType": "Ubicaci\u00f3n"
+		},
+		"Places/area": {
+			"description": "Representa un \u00e1rea dentro de una ubicaci\u00f3n, como una habitaci\u00f3n o suite.",
+			"displayType": "\u00c1rea"
+		},
+		"Places/floor": {
+			"description": "Representa un piso en un edificio o nave.",
+			"displayType": "Piso"
+		},
+		"Places/column": {
+			"description": "Representa una columna en un edificio o nave.",
+			"displayType": "Columna"
+		},
+		"Places/nearby": {
+			"description": "Categor\u00eda para cosas dentro de una cierta distancia de un geohash",
+			"displayType": "Lugares cercanos"
+		},
+		"Places/interest": {
+			"description": "Categor\u00eda para cosas dentro de una cierta distancia de un geohash, que coincida con un inter\u00e9s",
+			"displayType": "Lugares de inter\u00e9s"
+		}
+	},
+	"countries": {
+		"SelectCountry": "Seleccione un pa\u00eds"
+	}
 }

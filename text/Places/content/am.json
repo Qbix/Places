@@ -1,91 +1,91 @@
 {
-    "LatLng": "( {{1}} ላት፣ {{2}} lng)",
-    "nearby": {
-        "PostcodeLabel": "{{1}} ( {{2}} )",
-        "Title": "በ {{1}}"
-    },
-    "units": {
-        "meter": "ሜትር",
-        "meters": "ሜትር",
-        "kilometer": "ኪሎሜትር",
-        "kilometers": "ኪዮሜትሮች",
-        "km": "ኪ.ሜ",
-        "mile": "ማይል",
-        "miles": "ማይል",
-        "mi": "ሚ",
-        "foot": "እግር",
-        "feet": "እግሮች",
-        "inches": "ኢንች"
-    },
-    "location": {
-        "interested": "በ {{select}} ውስጥ በሚከናወኑ ነገሮች ላይ ፍላጎት አለኝ",
-        "update": "የእኔን አካባቢ አዘምን",
-        "set": "አካባቢዬን አቀናብር",
-        "prompt": "{{ClickOrTap}} እዚህ ወደ<br> የእርስዎን<br> አካባቢ",
-        "myCurrentLocation": "አሁን ያለኝ ቦታ",
-        "enterAddress": "አድራሻ አስገባ",
-        "enterPostcode": "እባክዎ የፖስታ ኮድዎን \/ ዚፕ ኮድዎን ያስገቡ",
-        "create": {
-            "action": "አካባቢ ጨምር",
-            "title": "አዲስ ቦታ",
-            "nameYourLocation": "አካባቢዎን ይሰይሙ"
-        },
-        "confirm": {
-            "title": "ይህ አካባቢ ይቀመጥ?",
-            "message": "ለወደፊቱ ይህንን ቦታ እንደገና ለመጠቀም አስበዋል?",
-            "ok": "አዎ",
-            "cancel": "አይ"
-        },
-        "add": {
-            "title": "ይህን አካባቢ ይሰይሙ",
-            "placeholder": "ቤት ፣ ሥራ ፣ ወዘተ.",
-            "ok": "አስቀምጥ"
-        },
-        "dialog": {
-            "title": "አካባቢ ይምረጡ"
-        }
-    },
-    "areas": {
-        "filterPlaceholder": "በዚህ አካባቢ ውስጥ ያለ ማንኛውም ቦታ?",
-        "newArea": "አዲስ አካባቢ",
-        "promptTitle": "ለአካባቢው ስም ያስገቡ፡-",
-        "absent": "እባክዎን አካባቢ ያዘጋጁ",
-        "error": "ስህተት",
-        "exist": "አካባቢ አስቀድሞ አለ።",
-        "addNewArea": "አዲስ አካባቢ ያክሉ",
-        "add": "አክል"
-    },
-    "types": {
-        "Places\/locations": {
-            "description": "የቦታዎች ስብስብ",
-            "displayType": "ቦታዎች"
-        },
-        "Places\/location": {
-            "description": "ሕንፃ፣ ቦታ፣ መርከብ፣ ፓርክ፣ ወዘተ ይወክላል።",
-            "displayType": "አካባቢ"
-        },
-        "Places\/area": {
-            "description": "እንደ ክፍል ወይም ክፍል ያለ አካባቢን ይወክላል",
-            "displayType": "አካባቢ"
-        },
-        "Places\/floor": {
-            "description": "በህንፃ ወይም በመርከብ ውስጥ ወለልን ይወክላል",
-            "displayType": "ወለል"
-        },
-        "Places\/column": {
-            "description": "በህንፃ ወይም በመርከብ ውስጥ አንድ አምድ ይወክላል",
-            "displayType": "አምድ"
-        },
-        "Places\/nearby": {
-            "description": "በጂኦሃሽ የተወሰነ ርቀት ውስጥ ላሉ ነገሮች ምድብ",
-            "displayType": "በቦታዎች አቅራቢያ"
-        },
-        "Places\/interest": {
-            "description": "በጂኦሃሽ የተወሰነ ርቀት ውስጥ ያሉ ነገሮች፣ ከፍላጎት ጋር የሚዛመድ ምድብ",
-            "displayType": "ቦታዎች ፍላጎት"
-        }
-    },
-    "countries": {
-        "SelectCountry": "አገር ይምረጡ"
-    }
+	"LatLng": "( {{1}} \u120b\u1275\u1363 {{2}} lng)",
+	"nearby": {
+		"PostcodeLabel": "{{1}} ( {{2}} )",
+		"Title": "\u1260 {{1}}"
+	},
+	"units": {
+		"meter": "\u121c\u1275\u122d",
+		"meters": "\u121c\u1275\u122d",
+		"kilometer": "\u12aa\u120e\u121c\u1275\u122d",
+		"kilometers": "\u12aa\u12ee\u121c\u1275\u122e\u127d",
+		"km": "\u12aa.\u121c",
+		"mile": "\u121b\u12ed\u120d",
+		"miles": "\u121b\u12ed\u120d",
+		"mi": "\u121a",
+		"foot": "\u12a5\u130d\u122d",
+		"feet": "\u12a5\u130d\u122e\u127d",
+		"inches": "\u12a2\u1295\u127d"
+	},
+	"location": {
+		"interested": "\u1260 {{select}} \u12cd\u1235\u1325 \u1260\u121a\u12a8\u1293\u12c8\u1291 \u1290\u1308\u122e\u127d \u120b\u12ed \u134d\u120b\u130e\u1275 \u12a0\u1208\u129d",
+		"update": "\u12e8\u12a5\u1294\u1295 \u12a0\u12ab\u1263\u1262 \u12a0\u12d8\u121d\u1295",
+		"set": "\u12a0\u12ab\u1263\u1262\u12ec\u1295 \u12a0\u1240\u1293\u1265\u122d",
+		"prompt": "{{ClickOrTap}} \u12a5\u12da\u1205 \u12c8\u12f0<br> \u12e8\u12a5\u122d\u1235\u12ce\u1295<br> \u12a0\u12ab\u1263\u1262",
+		"myCurrentLocation": "\u12a0\u1201\u1295 \u12eb\u1208\u129d \u1266\u1273",
+		"enterAddress": "\u12a0\u12f5\u122b\u123b \u12a0\u1235\u1308\u1263",
+		"enterPostcode": "\u12a5\u1263\u12ad\u12ce \u12e8\u1356\u1235\u1273 \u12ae\u12f5\u12ce\u1295 / \u12da\u1355 \u12ae\u12f5\u12ce\u1295 \u12eb\u1235\u1308\u1261",
+		"create": {
+			"action": "\u12a0\u12ab\u1263\u1262 \u1328\u121d\u122d",
+			"title": "\u12a0\u12f2\u1235 \u1266\u1273",
+			"nameYourLocation": "\u12a0\u12ab\u1263\u1262\u12ce\u1295 \u12ed\u1230\u12ed\u1219"
+		},
+		"confirm": {
+			"title": "\u12ed\u1205 \u12a0\u12ab\u1263\u1262 \u12ed\u1240\u1218\u1325?",
+			"message": "\u1208\u12c8\u12f0\u134a\u1271 \u12ed\u1205\u1295\u1295 \u1266\u1273 \u12a5\u1295\u12f0\u1308\u1293 \u1208\u1218\u1320\u1240\u121d \u12a0\u1235\u1260\u12cb\u120d?",
+			"ok": "\u12a0\u12ce",
+			"cancel": "\u12a0\u12ed"
+		},
+		"add": {
+			"title": "\u12ed\u1205\u1295 \u12a0\u12ab\u1263\u1262 \u12ed\u1230\u12ed\u1219",
+			"placeholder": "\u1264\u1275 \u1363 \u1225\u122b \u1363 \u12c8\u12d8\u1270.",
+			"ok": "\u12a0\u1235\u1240\u121d\u1325"
+		},
+		"dialog": {
+			"title": "\u12a0\u12ab\u1263\u1262 \u12ed\u121d\u1228\u1321"
+		}
+	},
+	"areas": {
+		"filterPlaceholder": "\u1260\u12da\u1205 \u12a0\u12ab\u1263\u1262 \u12cd\u1235\u1325 \u12eb\u1208 \u121b\u1295\u129b\u12cd\u121d \u1266\u1273?",
+		"newArea": "\u12a0\u12f2\u1235 \u12a0\u12ab\u1263\u1262",
+		"promptTitle": "\u1208\u12a0\u12ab\u1263\u1262\u12cd \u1235\u121d \u12eb\u1235\u1308\u1261\u1361-",
+		"absent": "\u12a5\u1263\u12ad\u12ce\u1295 \u12a0\u12ab\u1263\u1262 \u12eb\u12d8\u130b\u1301",
+		"error": "\u1235\u1205\u1270\u1275",
+		"exist": "\u12a0\u12ab\u1263\u1262 \u12a0\u1235\u1240\u12f5\u121e \u12a0\u1208\u1362",
+		"addNewArea": "\u12a0\u12f2\u1235 \u12a0\u12ab\u1263\u1262 \u12eb\u12ad\u1209",
+		"add": "\u12a0\u12ad\u120d"
+	},
+	"types": {
+		"Places/locations": {
+			"description": "\u12e8\u1266\u1273\u12ce\u127d \u1235\u1265\u1235\u1265",
+			"displayType": "\u1266\u1273\u12ce\u127d"
+		},
+		"Places/location": {
+			"description": "\u1215\u1295\u1343\u1363 \u1266\u1273\u1363 \u1218\u122d\u12a8\u1265\u1363 \u1353\u122d\u12ad\u1363 \u12c8\u12d8\u1270 \u12ed\u12c8\u12ad\u120b\u120d\u1362",
+			"displayType": "\u12a0\u12ab\u1263\u1262"
+		},
+		"Places/area": {
+			"description": "\u12a5\u1295\u12f0 \u12ad\u134d\u120d \u12c8\u12ed\u121d \u12ad\u134d\u120d \u12eb\u1208 \u12a0\u12ab\u1263\u1262\u1295 \u12ed\u12c8\u12ad\u120b\u120d",
+			"displayType": "\u12a0\u12ab\u1263\u1262"
+		},
+		"Places/floor": {
+			"description": "\u1260\u1205\u1295\u1343 \u12c8\u12ed\u121d \u1260\u1218\u122d\u12a8\u1265 \u12cd\u1235\u1325 \u12c8\u1208\u120d\u1295 \u12ed\u12c8\u12ad\u120b\u120d",
+			"displayType": "\u12c8\u1208\u120d"
+		},
+		"Places/column": {
+			"description": "\u1260\u1205\u1295\u1343 \u12c8\u12ed\u121d \u1260\u1218\u122d\u12a8\u1265 \u12cd\u1235\u1325 \u12a0\u1295\u12f5 \u12a0\u121d\u12f5 \u12ed\u12c8\u12ad\u120b\u120d",
+			"displayType": "\u12a0\u121d\u12f5"
+		},
+		"Places/nearby": {
+			"description": "\u1260\u1302\u12a6\u1203\u123d \u12e8\u1270\u12c8\u1230\u1290 \u122d\u1240\u1275 \u12cd\u1235\u1325 \u120b\u1209 \u1290\u1308\u122e\u127d \u121d\u12f5\u1265",
+			"displayType": "\u1260\u1266\u1273\u12ce\u127d \u12a0\u1245\u122b\u1262\u12eb"
+		},
+		"Places/interest": {
+			"description": "\u1260\u1302\u12a6\u1203\u123d \u12e8\u1270\u12c8\u1230\u1290 \u122d\u1240\u1275 \u12cd\u1235\u1325 \u12eb\u1209 \u1290\u1308\u122e\u127d\u1363 \u12a8\u134d\u120b\u130e\u1275 \u130b\u122d \u12e8\u121a\u12db\u1218\u12f5 \u121d\u12f5\u1265",
+			"displayType": "\u1266\u1273\u12ce\u127d \u134d\u120b\u130e\u1275"
+		}
+	},
+	"countries": {
+		"SelectCountry": "\u12a0\u1308\u122d \u12ed\u121d\u1228\u1321"
+	}
 }

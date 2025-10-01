@@ -1,91 +1,91 @@
 {
-    "LatLng": "( {{1}} lat, {{2}} lng)",
-    "nearby": {
-        "PostcodeLabel": "{{1}} ( {{2}} )",
-        "Title": "brenda {{1}}"
-    },
-    "units": {
-        "meter": "metër",
-        "meters": "metra",
-        "kilometer": "kilometër",
-        "kilometers": "kiometra",
-        "km": "km",
-        "mile": "milje",
-        "miles": "milje",
-        "mi": "mi",
-        "foot": "këmbë",
-        "feet": "këmbët",
-        "inches": "inç"
-    },
-    "location": {
-        "interested": "Unë jam i interesuar që gjërat të ndodhin brenda {{select}} ditësh",
-        "update": "Përditëso vendndodhjen time",
-        "set": "Cakto vendndodhjen time",
-        "prompt": "{{ClickOrTap}} këtu për të<br> vendosni tuajën<br> vendndodhjen",
-        "myCurrentLocation": "Vendndodhja ime aktuale",
-        "enterAddress": "Fut një adresë",
-        "enterPostcode": "Ju lutemi shkruani kodin postar \/ kodin postar",
-        "create": {
-            "action": "Shto vendndodhjen",
-            "title": "Vendndodhja e re",
-            "nameYourLocation": "Emërtoni vendndodhjen tuaj"
-        },
-        "confirm": {
-            "title": "Të ruhet ky vend?",
-            "message": "A planifikoni ta përdorni përsëri këtë vendndodhje në të ardhmen?",
-            "ok": "po",
-            "cancel": "Nr"
-        },
-        "add": {
-            "title": "Emërtojeni këtë vendndodhje",
-            "placeholder": "Shtëpia, Puna etj.",
-            "ok": "Ruaj"
-        },
-        "dialog": {
-            "title": "Zgjidhni Vendndodhjen"
-        }
-    },
-    "areas": {
-        "filterPlaceholder": "Ndonjë zonë brenda këtij lokacioni?",
-        "newArea": "Zonë e re",
-        "promptTitle": "Futni një emër për zonën:",
-        "absent": "Ju lutemi vendosni zonën",
-        "error": "Gabim",
-        "exist": "Zona tashmë ekziston",
-        "addNewArea": "Shto një zonë të re",
-        "add": "Shtoni"
-    },
-    "types": {
-        "Places\/locations": {
-            "description": "një koleksion vendesh",
-            "displayType": "Vendndodhjet"
-        },
-        "Places\/location": {
-            "description": "Përfaqëson një ndërtesë, vend, anije, park etj.",
-            "displayType": "Vendndodhja"
-        },
-        "Places\/area": {
-            "description": "Përfaqëson një zonë brenda një vendndodhjeje, të tillë si një dhomë ose suitë",
-            "displayType": "Zona"
-        },
-        "Places\/floor": {
-            "description": "Përfaqëson një kat në një ndërtesë ose anije",
-            "displayType": "Kati"
-        },
-        "Places\/column": {
-            "description": "Përfaqëson një kolonë në një ndërtesë ose anije",
-            "displayType": "Kolona"
-        },
-        "Places\/nearby": {
-            "description": "Kategoria për gjërat brenda një distance të caktuar nga një gjeohash",
-            "displayType": "Pranë nga vendet"
-        },
-        "Places\/interest": {
-            "description": "Kategoria për gjërat brenda një distance të caktuar nga një gjeohash, që përputhet me një interes",
-            "displayType": "Vende me interes"
-        }
-    },
-    "countries": {
-        "SelectCountry": "Zgjidhni një shtet"
-    }
+	"LatLng": "( {{1}} lat, {{2}} lng)",
+	"nearby": {
+		"PostcodeLabel": "{{1}} ( {{2}} )",
+		"Title": "brenda {{1}}"
+	},
+	"units": {
+		"meter": "met\u00ebr",
+		"meters": "metra",
+		"kilometer": "kilomet\u00ebr",
+		"kilometers": "kiometra",
+		"km": "km",
+		"mile": "milje",
+		"miles": "milje",
+		"mi": "mi",
+		"foot": "k\u00ebmb\u00eb",
+		"feet": "k\u00ebmb\u00ebt",
+		"inches": "in\u00e7"
+	},
+	"location": {
+		"interested": "Un\u00eb jam i interesuar q\u00eb gj\u00ebrat t\u00eb ndodhin brenda {{select}} dit\u00ebsh",
+		"update": "P\u00ebrdit\u00ebso vendndodhjen time",
+		"set": "Cakto vendndodhjen time",
+		"prompt": "{{ClickOrTap}} k\u00ebtu p\u00ebr t\u00eb<br> vendosni tuaj\u00ebn<br> vendndodhjen",
+		"myCurrentLocation": "Vendndodhja ime aktuale",
+		"enterAddress": "Fut nj\u00eb adres\u00eb",
+		"enterPostcode": "Ju lutemi shkruani kodin postar / kodin postar",
+		"create": {
+			"action": "Shto vendndodhjen",
+			"title": "Vendndodhja e re",
+			"nameYourLocation": "Em\u00ebrtoni vendndodhjen tuaj"
+		},
+		"confirm": {
+			"title": "T\u00eb ruhet ky vend?",
+			"message": "A planifikoni ta p\u00ebrdorni p\u00ebrs\u00ebri k\u00ebt\u00eb vendndodhje n\u00eb t\u00eb ardhmen?",
+			"ok": "po",
+			"cancel": "Nr"
+		},
+		"add": {
+			"title": "Em\u00ebrtojeni k\u00ebt\u00eb vendndodhje",
+			"placeholder": "Sht\u00ebpia, Puna etj.",
+			"ok": "Ruaj"
+		},
+		"dialog": {
+			"title": "Zgjidhni Vendndodhjen"
+		}
+	},
+	"areas": {
+		"filterPlaceholder": "Ndonj\u00eb zon\u00eb brenda k\u00ebtij lokacioni?",
+		"newArea": "Zon\u00eb e re",
+		"promptTitle": "Futni nj\u00eb em\u00ebr p\u00ebr zon\u00ebn:",
+		"absent": "Ju lutemi vendosni zon\u00ebn",
+		"error": "Gabim",
+		"exist": "Zona tashm\u00eb ekziston",
+		"addNewArea": "Shto nj\u00eb zon\u00eb t\u00eb re",
+		"add": "Shtoni"
+	},
+	"types": {
+		"Places/locations": {
+			"description": "nj\u00eb koleksion vendesh",
+			"displayType": "Vendndodhjet"
+		},
+		"Places/location": {
+			"description": "P\u00ebrfaq\u00ebson nj\u00eb nd\u00ebrtes\u00eb, vend, anije, park etj.",
+			"displayType": "Vendndodhja"
+		},
+		"Places/area": {
+			"description": "P\u00ebrfaq\u00ebson nj\u00eb zon\u00eb brenda nj\u00eb vendndodhjeje, t\u00eb till\u00eb si nj\u00eb dhom\u00eb ose suit\u00eb",
+			"displayType": "Zona"
+		},
+		"Places/floor": {
+			"description": "P\u00ebrfaq\u00ebson nj\u00eb kat n\u00eb nj\u00eb nd\u00ebrtes\u00eb ose anije",
+			"displayType": "Kati"
+		},
+		"Places/column": {
+			"description": "P\u00ebrfaq\u00ebson nj\u00eb kolon\u00eb n\u00eb nj\u00eb nd\u00ebrtes\u00eb ose anije",
+			"displayType": "Kolona"
+		},
+		"Places/nearby": {
+			"description": "Kategoria p\u00ebr gj\u00ebrat brenda nj\u00eb distance t\u00eb caktuar nga nj\u00eb gjeohash",
+			"displayType": "Pran\u00eb nga vendet"
+		},
+		"Places/interest": {
+			"description": "Kategoria p\u00ebr gj\u00ebrat brenda nj\u00eb distance t\u00eb caktuar nga nj\u00eb gjeohash, q\u00eb p\u00ebrputhet me nj\u00eb interes",
+			"displayType": "Vende me interes"
+		}
+	},
+	"countries": {
+		"SelectCountry": "Zgjidhni nj\u00eb shtet"
+	}
 }

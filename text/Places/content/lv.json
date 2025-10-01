@@ -1,91 +1,91 @@
 {
-    "LatLng": "( {{1}} lati, {{2}} lng)",
-    "nearby": {
-        "PostcodeLabel": "{{1}} ( {{2}} )",
-        "Title": "{{1}} robežās"
-    },
-    "units": {
-        "meter": "metrs",
-        "meters": "metri",
-        "kilometer": "kilometrs",
-        "kilometers": "kilometri",
-        "km": "km",
-        "mile": "jūdze",
-        "miles": "jūdzes",
-        "mi": "mi",
-        "foot": "pēda",
-        "feet": "pēdas",
-        "inches": "collas"
-    },
-    "location": {
-        "interested": "Mani interesē lietas, kas notiek {{select}} gadu robežās",
-        "update": "Atjaunināt manu atrašanās vietu",
-        "set": "Iestatīt manu atrašanās vietu",
-        "prompt": "{{ClickOrTap}} šeit uz<br> iestatiet savu<br> atrašanās vieta",
-        "myCurrentLocation": "Mana pašreizējā atrašanās vieta",
-        "enterAddress": "Ievadiet adresi",
-        "enterPostcode": "Lūdzu, ievadiet savu pasta indeksu\/pasta indeksu",
-        "create": {
-            "action": "Pievienot atrašanās vietu",
-            "title": "Jauna vieta",
-            "nameYourLocation": "Nosauciet savu atrašanās vietu"
-        },
-        "confirm": {
-            "title": "Vai saglabāt šo atrašanās vietu?",
-            "message": "Vai plānojat izmantot šo vietu arī turpmāk?",
-            "ok": "Jā",
-            "cancel": "Nē"
-        },
-        "add": {
-            "title": "Nosauciet šo vietu",
-            "placeholder": "Mājas, darbs utt.",
-            "ok": "Saglabāt"
-        },
-        "dialog": {
-            "title": "Izvēlieties Atrašanās vieta"
-        }
-    },
-    "areas": {
-        "filterPlaceholder": "Vai šajā vietā ir kāda zona?",
-        "newArea": "Jauns rajons",
-        "promptTitle": "Ievadiet apgabala nosaukumu:",
-        "absent": "Lūdzu, iestatiet apgabalu",
-        "error": "Kļūda",
-        "exist": "Teritorija jau pastāv",
-        "addNewArea": "Pievienojiet jaunu apgabalu",
-        "add": "Pievienot"
-    },
-    "types": {
-        "Places\/locations": {
-            "description": "vietu kolekcija",
-            "displayType": "Atrašanās vietas"
-        },
-        "Places\/location": {
-            "description": "Apzīmē ēku, norises vietu, kuģi, parku utt.",
-            "displayType": "Atrašanās vieta"
-        },
-        "Places\/area": {
-            "description": "Apzīmē apgabalu atrašanās vietā, piemēram, istabu vai komplektu",
-            "displayType": "Apgabals"
-        },
-        "Places\/floor": {
-            "description": "Apzīmē stāvu ēkā vai kuģī",
-            "displayType": "Stāvs"
-        },
-        "Places\/column": {
-            "description": "Apzīmē kolonnu ēkā vai kuģī",
-            "displayType": "Kolonna"
-        },
-        "Places\/nearby": {
-            "description": "Kategorija lietām, kas atrodas noteiktā attālumā no ģeohašas",
-            "displayType": "Blakus vietām"
-        },
-        "Places\/interest": {
-            "description": "Kategorija lietām, kas atrodas noteiktā attālumā no ģeohašas, kas atbilst interesēm",
-            "displayType": "Interesējošās vietas"
-        }
-    },
-    "countries": {
-        "SelectCountry": "Izvēlieties valsti"
-    }
+	"LatLng": "( {{1}} lati, {{2}} lng)",
+	"nearby": {
+		"PostcodeLabel": "{{1}} ( {{2}} )",
+		"Title": "{{1}} robe\u017e\u0101s"
+	},
+	"units": {
+		"meter": "metrs",
+		"meters": "metri",
+		"kilometer": "kilometrs",
+		"kilometers": "kilometri",
+		"km": "km",
+		"mile": "j\u016bdze",
+		"miles": "j\u016bdzes",
+		"mi": "mi",
+		"foot": "p\u0113da",
+		"feet": "p\u0113das",
+		"inches": "collas"
+	},
+	"location": {
+		"interested": "Mani interes\u0113 lietas, kas notiek {{select}}\u00a0gadu robe\u017e\u0101s",
+		"update": "Atjaunin\u0101t manu atra\u0161an\u0101s vietu",
+		"set": "Iestat\u012bt manu atra\u0161an\u0101s vietu",
+		"prompt": "{{ClickOrTap}} \u0161eit uz<br> iestatiet savu<br> atra\u0161an\u0101s vieta",
+		"myCurrentLocation": "Mana pa\u0161reiz\u0113j\u0101 atra\u0161an\u0101s vieta",
+		"enterAddress": "Ievadiet adresi",
+		"enterPostcode": "L\u016bdzu, ievadiet savu pasta indeksu/pasta indeksu",
+		"create": {
+			"action": "Pievienot atra\u0161an\u0101s vietu",
+			"title": "Jauna vieta",
+			"nameYourLocation": "Nosauciet savu atra\u0161an\u0101s vietu"
+		},
+		"confirm": {
+			"title": "Vai saglab\u0101t \u0161o atra\u0161an\u0101s vietu?",
+			"message": "Vai pl\u0101nojat izmantot \u0161o vietu ar\u012b turpm\u0101k?",
+			"ok": "J\u0101",
+			"cancel": "N\u0113"
+		},
+		"add": {
+			"title": "Nosauciet \u0161o vietu",
+			"placeholder": "M\u0101jas, darbs utt.",
+			"ok": "Saglab\u0101t"
+		},
+		"dialog": {
+			"title": "Izv\u0113lieties Atra\u0161an\u0101s vieta"
+		}
+	},
+	"areas": {
+		"filterPlaceholder": "Vai \u0161aj\u0101 viet\u0101 ir k\u0101da zona?",
+		"newArea": "Jauns rajons",
+		"promptTitle": "Ievadiet apgabala nosaukumu:",
+		"absent": "L\u016bdzu, iestatiet apgabalu",
+		"error": "K\u013c\u016bda",
+		"exist": "Teritorija jau past\u0101v",
+		"addNewArea": "Pievienojiet jaunu apgabalu",
+		"add": "Pievienot"
+	},
+	"types": {
+		"Places/locations": {
+			"description": "vietu kolekcija",
+			"displayType": "Atra\u0161an\u0101s vietas"
+		},
+		"Places/location": {
+			"description": "Apz\u012bm\u0113 \u0113ku, norises vietu, ku\u0123i, parku utt.",
+			"displayType": "Atra\u0161an\u0101s vieta"
+		},
+		"Places/area": {
+			"description": "Apz\u012bm\u0113 apgabalu atra\u0161an\u0101s viet\u0101, piem\u0113ram, istabu vai komplektu",
+			"displayType": "Apgabals"
+		},
+		"Places/floor": {
+			"description": "Apz\u012bm\u0113 st\u0101vu \u0113k\u0101 vai ku\u0123\u012b",
+			"displayType": "St\u0101vs"
+		},
+		"Places/column": {
+			"description": "Apz\u012bm\u0113 kolonnu \u0113k\u0101 vai ku\u0123\u012b",
+			"displayType": "Kolonna"
+		},
+		"Places/nearby": {
+			"description": "Kategorija liet\u0101m, kas atrodas noteikt\u0101 att\u0101lum\u0101 no \u0123eoha\u0161as",
+			"displayType": "Blakus viet\u0101m"
+		},
+		"Places/interest": {
+			"description": "Kategorija liet\u0101m, kas atrodas noteikt\u0101 att\u0101lum\u0101 no \u0123eoha\u0161as, kas atbilst interes\u0113m",
+			"displayType": "Interes\u0113jo\u0161\u0101s vietas"
+		}
+	},
+	"countries": {
+		"SelectCountry": "Izv\u0113lieties valsti"
+	}
 }

@@ -1,0 +1,1496 @@
+{
+	"AF": [
+		"Afghanistan",
+		"93",
+		4,
+		"\ud83c\udde6\ud83c\uddeb"
+	],
+	"AX": [
+		"\u00c5land",
+		"358 (18)",
+		248,
+		"\ud83c\udde6\ud83c\uddfd"
+	],
+	"AL": [
+		"Albani\u00eb",
+		"355",
+		8,
+		"\ud83c\udde6\ud83c\uddf1"
+	],
+	"AQ": [
+		"Antarctica",
+		"672",
+		10,
+		"\ud83c\udde6\ud83c\uddf6"
+	],
+	"DZ": [
+		"Algerije",
+		"213",
+		12,
+		"\ud83c\udde9\ud83c\uddff"
+	],
+	"AS": [
+		"Amerikaans Samoa",
+		"1 (684)",
+		16,
+		"\ud83c\udde6\ud83c\uddf8"
+	],
+	"AD": [
+		"Andorra",
+		"376",
+		20,
+		"\ud83c\udde6\ud83c\udde9"
+	],
+	"AO": [
+		"Angola",
+		"244",
+		24,
+		"\ud83c\udde6\ud83c\uddf4"
+	],
+	"AI": [
+		"Anguilla",
+		"1 (264)",
+		660,
+		"\ud83c\udde6\ud83c\uddee"
+	],
+	"AG": [
+		"Antigua en Barbuda",
+		"1 (268)",
+		28,
+		"\ud83c\udde6\ud83c\uddec"
+	],
+	"AR": [
+		"Argentini\u00eb",
+		"54",
+		32,
+		"\ud83c\udde6\ud83c\uddf7"
+	],
+	"AM": [
+		"Armeni\u00eb",
+		"374",
+		51,
+		"\ud83c\udde6\ud83c\uddf2"
+	],
+	"AW": [
+		"Aruba",
+		"297",
+		533,
+		"\ud83c\udde6\ud83c\uddfc"
+	],
+	"AU": [
+		"Australi\u00eb",
+		"61",
+		36,
+		"\ud83c\udde6\ud83c\uddfa"
+	],
+	"AT": [
+		"Oostenrijk",
+		"43",
+		40,
+		"\ud83c\udde6\ud83c\uddf9"
+	],
+	"AZ": [
+		"Azerbeidzjan",
+		"994",
+		31,
+		"\ud83c\udde6\ud83c\uddff"
+	],
+	"BS": [
+		"Bahamas",
+		"1 (242)",
+		44,
+		"\ud83c\udde7\ud83c\uddf8"
+	],
+	"BH": [
+		"Bahrein",
+		"973",
+		48,
+		"\ud83c\udde7\ud83c\udded"
+	],
+	"BD": [
+		"Bangladesh",
+		"880",
+		50,
+		"\ud83c\udde7\ud83c\udde9"
+	],
+	"BB": [
+		"Barbados",
+		"1 (246)",
+		52,
+		"\ud83c\udde7\ud83c\udde7"
+	],
+	"BY": [
+		"Wit-Rusland",
+		"375",
+		112,
+		"\ud83c\udde7\ud83c\uddfe"
+	],
+	"BE": [
+		"Belgi\u00eb",
+		"32",
+		56,
+		"\ud83c\udde7\ud83c\uddea"
+	],
+	"BZ": [
+		"Belize",
+		"501",
+		84,
+		"\ud83c\udde7\ud83c\uddff"
+	],
+	"BJ": [
+		"Benin",
+		"229",
+		204,
+		"\ud83c\udde7\ud83c\uddef"
+	],
+	"BM": [
+		"Bermuda",
+		"1 (441)",
+		60,
+		"\ud83c\udde7\ud83c\uddf2"
+	],
+	"BT": [
+		"Bhutan",
+		"975",
+		64,
+		"\ud83c\udde7\ud83c\uddf9"
+	],
+	"BO": [
+		"Bolivia",
+		"591",
+		68,
+		"\ud83c\udde7\ud83c\uddf4"
+	],
+	"BQ": [
+		"Bonaire",
+		"599 (7)",
+		535,
+		"\ud83c\udde7\ud83c\uddf6"
+	],
+	"BA": [
+		"Bosni\u00eb en Herzegovina",
+		"387",
+		70,
+		"\ud83c\udde7\ud83c\udde6"
+	],
+	"BW": [
+		"Botswana",
+		"267",
+		72,
+		"\ud83c\udde7\ud83c\uddfc"
+	],
+	"BV": [
+		"Bouvet-eiland",
+		"47",
+		"74",
+		"\ud83c\udde7\ud83c\uddfb"
+	],
+	"BR": [
+		"Brazili\u00eb",
+		"55",
+		76,
+		"\ud83c\udde7\ud83c\uddf7"
+	],
+	"IO": [
+		"Brits Territorium in de Indische Oceaan",
+		"246",
+		86,
+		"\ud83c\uddee\ud83c\uddf4"
+	],
+	"VG": [
+		"Britse Maagdeneilanden",
+		"1 (284)",
+		92,
+		"\ud83c\uddfb\ud83c\uddec"
+	],
+	"BN": [
+		"Brunei Darussalam",
+		"673",
+		96,
+		"\ud83c\udde7\ud83c\uddf3"
+	],
+	"BG": [
+		"Bulgarije",
+		"359",
+		100,
+		"\ud83c\udde7\ud83c\uddec"
+	],
+	"BF": [
+		"Burkina Faso",
+		"226",
+		854,
+		"\ud83c\udde7\ud83c\uddeb"
+	],
+	"BI": [
+		"Boeroendi",
+		"257",
+		108,
+		"\ud83c\udde7\ud83c\uddee"
+	],
+	"KH": [
+		"Cambodja",
+		"855",
+		116,
+		"\ud83c\uddf0\ud83c\udded"
+	],
+	"CM": [
+		"Kameroen",
+		"237",
+		120,
+		"\ud83c\udde8\ud83c\uddf2"
+	],
+	"CA": [
+		"Canada",
+		"1",
+		124,
+		"\ud83c\udde8\ud83c\udde6"
+	],
+	"CV": [
+		"Kaapverdi\u00eb",
+		"238",
+		132,
+		"\ud83c\udde8\ud83c\uddfb"
+	],
+	"KY": [
+		"Kaaimaneilanden",
+		"1 (345)",
+		136,
+		"\ud83c\uddf0\ud83c\uddfe"
+	],
+	"CF": [
+		"Centraal-Afrikaanse Republiek",
+		"236",
+		140,
+		"\ud83c\udde8\ud83c\uddeb"
+	],
+	"TD": [
+		"Tsjaad",
+		"235",
+		148,
+		"\ud83c\uddf9\ud83c\udde9"
+	],
+	"CL": [
+		"Chili",
+		"56",
+		152,
+		"\ud83c\udde8\ud83c\uddf1"
+	],
+	"CN": [
+		"China",
+		"86",
+		156,
+		"\ud83c\udde8\ud83c\uddf3"
+	],
+	"CX": [
+		"Christmaseiland",
+		"61 (89164)",
+		162,
+		"\ud83c\udde8\ud83c\uddfd"
+	],
+	"CC": [
+		"Cocos (Keeling) Eilanden",
+		"61 (89162)",
+		166,
+		"\ud83c\udde8\ud83c\udde8"
+	],
+	"CO": [
+		"Colombia",
+		"57",
+		170,
+		"\ud83c\udde8\ud83c\uddf4"
+	],
+	"KM": [
+		"Comoren",
+		"269",
+		174,
+		"\ud83c\uddf0\ud83c\uddf2"
+	],
+	"CG": [
+		"Congo",
+		"242",
+		178,
+		"\ud83c\udde8\ud83c\uddec"
+	],
+	"CD": [
+		"Congo, Democratische Republiek",
+		"243",
+		180,
+		"\ud83c\udde8\ud83c\udde9"
+	],
+	"CK": [
+		"Cookeilanden",
+		"682",
+		184,
+		"\ud83c\udde8\ud83c\uddf0"
+	],
+	"CR": [
+		"Costa Rica",
+		"506",
+		188,
+		"\ud83c\udde8\ud83c\uddf7"
+	],
+	"HR": [
+		"Kroati\u00eb",
+		"385",
+		191,
+		"\ud83c\udded\ud83c\uddf7"
+	],
+	"CU": [
+		"Cuba",
+		"53",
+		192,
+		"\ud83c\udde8\ud83c\uddfa"
+	],
+	"CW": [
+		"Curacao",
+		"599 (9)",
+		531,
+		"\ud83c\udde8\ud83c\uddfc"
+	],
+	"CY": [
+		"Cyprus",
+		"357",
+		196,
+		"\ud83c\udde8\ud83c\uddfe"
+	],
+	"CZ": [
+		"Tsjechische Republiek",
+		"420",
+		203,
+		"\ud83c\udde8\ud83c\uddff"
+	],
+	"DK": [
+		"Denemarken",
+		"45",
+		208,
+		"\ud83c\udde9\ud83c\uddf0"
+	],
+	"DJ": [
+		"Djibouti",
+		"253",
+		262,
+		"\ud83c\udde9\ud83c\uddef"
+	],
+	"DM": [
+		"Dominica",
+		"1 (767)",
+		212,
+		"\ud83c\udde9\ud83c\uddf2"
+	],
+	"DO": [
+		"Dominicaanse Republiek",
+		"1",
+		214,
+		"\ud83c\udde9\ud83c\uddf4"
+	],
+	"TL": [
+		"Oost-Timor",
+		"670",
+		626,
+		"\ud83c\uddf9\ud83c\uddf1"
+	],
+	"EC": [
+		"Ecuador",
+		"593",
+		218,
+		"\ud83c\uddea\ud83c\udde8"
+	],
+	"EG": [
+		"Egypte",
+		"20",
+		818,
+		"\ud83c\uddea\ud83c\uddec"
+	],
+	"SV": [
+		"El Salvador",
+		"503",
+		222,
+		"\ud83c\uddf8\ud83c\uddfb"
+	],
+	"GQ": [
+		"Equatoriaal-Guinea",
+		"240",
+		226,
+		"\ud83c\uddec\ud83c\uddf6"
+	],
+	"ER": [
+		"Eritrea",
+		"291",
+		232,
+		"\ud83c\uddea\ud83c\uddf7"
+	],
+	"EE": [
+		"Estland",
+		"372",
+		233,
+		"\ud83c\uddea\ud83c\uddea"
+	],
+	"SZ": [
+		"Eswatini",
+		"268",
+		748,
+		"\ud83c\uddf8\ud83c\uddff"
+	],
+	"ET": [
+		"Ethiopi\u00eb",
+		"251",
+		231,
+		"\ud83c\uddea\ud83c\uddf9"
+	],
+	"FK": [
+		"Falklandeilanden",
+		"500",
+		238,
+		"\ud83c\uddeb\ud83c\uddf0"
+	],
+	"FO": [
+		"Faer\u00f6er Eilanden",
+		"298",
+		234,
+		"\ud83c\uddeb\ud83c\uddf4"
+	],
+	"FJ": [
+		"Fiji",
+		"679",
+		242,
+		"\ud83c\uddeb\ud83c\uddef"
+	],
+	"FI": [
+		"Finland",
+		"358",
+		246,
+		"\ud83c\uddeb\ud83c\uddee"
+	],
+	"FR": [
+		"Frankrijk",
+		"33",
+		250,
+		"\ud83c\uddeb\ud83c\uddf7"
+	],
+	"GF": [
+		"Frans-Guyana",
+		"594",
+		254,
+		"\ud83c\uddec\ud83c\uddeb"
+	],
+	"FM": [
+		"Frans Micronesi\u00eb",
+		"691",
+		583,
+		"\ud83c\uddeb\ud83c\uddf2"
+	],
+	"PF": [
+		"Frans-Polynesi\u00eb",
+		"689",
+		258,
+		"\ud83c\uddf5\ud83c\uddeb"
+	],
+	"TF": [
+		"Franse Zuidelijke Gebieden",
+		"262",
+		260,
+		"\ud83c\uddf9\ud83c\uddeb"
+	],
+	"GA": [
+		"Gabon",
+		"241",
+		266,
+		"\ud83c\uddec\ud83c\udde6"
+	],
+	"GM": [
+		"Gambia",
+		"220",
+		270,
+		"\ud83c\uddec\ud83c\uddf2"
+	],
+	"GE": [
+		"Georgi\u00eb",
+		"995",
+		268,
+		"\ud83c\uddec\ud83c\uddea"
+	],
+	"DE": [
+		"Duitsland",
+		"49",
+		276,
+		"\ud83c\udde9\ud83c\uddea"
+	],
+	"GH": [
+		"Ghana",
+		"233",
+		288,
+		"\ud83c\uddec\ud83c\udded"
+	],
+	"GI": [
+		"Gibraltar",
+		"350",
+		292,
+		"\ud83c\uddec\ud83c\uddee"
+	],
+	"GR": [
+		"Griekenland",
+		"30",
+		300,
+		"\ud83c\uddec\ud83c\uddf7"
+	],
+	"GL": [
+		"Groenland",
+		"299",
+		304,
+		"\ud83c\uddec\ud83c\uddf1"
+	],
+	"GD": [
+		"Grenada",
+		"1 (473)",
+		308,
+		"\ud83c\uddec\ud83c\udde9"
+	],
+	"GP": [
+		"Guadeloupe",
+		"590",
+		312,
+		"\ud83c\uddec\ud83c\uddf5"
+	],
+	"GU": [
+		"Guam",
+		"1 (671)",
+		316,
+		"\ud83c\uddec\ud83c\uddfa"
+	],
+	"GT": [
+		"Guatemala",
+		"502",
+		320,
+		"\ud83c\uddec\ud83c\uddf9"
+	],
+	"GG": [
+		"Guernsey",
+		"44 (1481)",
+		831,
+		"\ud83c\uddec\ud83c\uddec"
+	],
+	"GN": [
+		"Guinea",
+		"224",
+		324,
+		"\ud83c\uddec\ud83c\uddf3"
+	],
+	"GW": [
+		"Guinee-Bissau",
+		"245",
+		624,
+		"\ud83c\uddec\ud83c\uddfc"
+	],
+	"GY": [
+		"Guyana",
+		"592",
+		328,
+		"\ud83c\uddec\ud83c\uddfe"
+	],
+	"HT": [
+		"Ha\u00efti",
+		"509",
+		332,
+		"\ud83c\udded\ud83c\uddf9"
+	],
+	"HM": [
+		"Heard- en McDonaldeilanden",
+		"672",
+		334,
+		"\ud83c\udded\ud83c\uddf2"
+	],
+	"HN": [
+		"Honduras",
+		"504",
+		340,
+		"\ud83c\udded\ud83c\uddf3"
+	],
+	"HK": [
+		"Hongkong",
+		"852",
+		344,
+		"\ud83c\udded\ud83c\uddf0"
+	],
+	"HU": [
+		"Hongarije",
+		"36",
+		348,
+		"\ud83c\udded\ud83c\uddfa"
+	],
+	"IS": [
+		"IJsland",
+		"354",
+		352,
+		"\ud83c\uddee\ud83c\uddf8"
+	],
+	"IN": [
+		"Indi\u00eb",
+		"91",
+		356,
+		"\ud83c\uddee\ud83c\uddf3"
+	],
+	"ID": [
+		"Indonesi\u00eb",
+		"62",
+		360,
+		"\ud83c\uddee\ud83c\udde9"
+	],
+	"IR": [
+		"Iran",
+		"98",
+		364,
+		"\ud83c\uddee\ud83c\uddf7"
+	],
+	"IQ": [
+		"Irak",
+		"964",
+		368,
+		"\ud83c\uddee\ud83c\uddf6"
+	],
+	"IE": [
+		"Ierland",
+		"353",
+		372,
+		"\ud83c\uddee\ud83c\uddea"
+	],
+	"IM": [
+		"Eiland Man",
+		"44 (1624)",
+		833,
+		"\ud83c\uddee\ud83c\uddf2"
+	],
+	"IL": [
+		"Isra\u00ebl",
+		"972",
+		376,
+		"\ud83c\uddee\ud83c\uddf1"
+	],
+	"IT": [
+		"Itali\u00eb",
+		"39",
+		380,
+		"\ud83c\uddee\ud83c\uddf9"
+	],
+	"CI": [
+		"Ivoorkust",
+		"225",
+		384,
+		"\ud83c\udde8\ud83c\uddee"
+	],
+	"JM": [
+		"Jamaica",
+		"1",
+		388,
+		"\ud83c\uddef\ud83c\uddf2"
+	],
+	"JP": [
+		"Japan",
+		"81",
+		392,
+		"\ud83c\uddef\ud83c\uddf5"
+	],
+	"JE": [
+		"Jersey",
+		"44 (1534)",
+		832,
+		"\ud83c\uddef\ud83c\uddea"
+	],
+	"JO": [
+		"Jordani\u00eb",
+		"962",
+		400,
+		"\ud83c\uddef\ud83c\uddf4"
+	],
+	"KZ": [
+		"Kazachstan",
+		"7",
+		398,
+		"\ud83c\uddf0\ud83c\uddff"
+	],
+	"KE": [
+		"Kenia",
+		"254",
+		404,
+		"\ud83c\uddf0\ud83c\uddea"
+	],
+	"KI": [
+		"Kiribati",
+		"686",
+		296,
+		"\ud83c\uddf0\ud83c\uddee"
+	],
+	"KW": [
+		"Koeweit",
+		"965",
+		414,
+		"\ud83c\uddf0\ud83c\uddfc"
+	],
+	"KG": [
+		"Kirgizi\u00eb",
+		"996",
+		417,
+		"\ud83c\uddf0\ud83c\uddec"
+	],
+	"LA": [
+		"Laos",
+		"856",
+		418,
+		"\ud83c\uddf1\ud83c\udde6"
+	],
+	"LV": [
+		"Letland",
+		"371",
+		428,
+		"\ud83c\uddf1\ud83c\uddfb"
+	],
+	"LB": [
+		"Libanon",
+		"961",
+		422,
+		"\ud83c\uddf1\ud83c\udde7"
+	],
+	"LS": [
+		"Lesotho",
+		"266",
+		426,
+		"\ud83c\uddf1\ud83c\uddf8"
+	],
+	"LR": [
+		"Liberia",
+		"231",
+		430,
+		"\ud83c\uddf1\ud83c\uddf7"
+	],
+	"LY": [
+		"Libi\u00eb",
+		"218",
+		434,
+		"\ud83c\uddf1\ud83c\uddfe"
+	],
+	"LI": [
+		"Liechtenstein",
+		"423",
+		438,
+		"\ud83c\uddf1\ud83c\uddee"
+	],
+	"LT": [
+		"Litouwen",
+		"370",
+		440,
+		"\ud83c\uddf1\ud83c\uddf9"
+	],
+	"LU": [
+		"Luxemburg",
+		"352",
+		442,
+		"\ud83c\uddf1\ud83c\uddfa"
+	],
+	"MO": [
+		"Macau",
+		"853",
+		446,
+		"\ud83c\uddf2\ud83c\uddf4"
+	],
+	"MG": [
+		"Madagascar",
+		"261",
+		450,
+		"\ud83c\uddf2\ud83c\uddec"
+	],
+	"MW": [
+		"Malawi",
+		"265",
+		454,
+		"\ud83c\uddf2\ud83c\uddfc"
+	],
+	"MY": [
+		"Maleisi\u00eb",
+		"60",
+		458,
+		"\ud83c\uddf2\ud83c\uddfe"
+	],
+	"MV": [
+		"Maldiven",
+		"960",
+		462,
+		"\ud83c\uddf2\ud83c\uddfb"
+	],
+	"ML": [
+		"Mali",
+		"223",
+		466,
+		"\ud83c\uddf2\ud83c\uddf1"
+	],
+	"MT": [
+		"Malta",
+		"356",
+		470,
+		"\ud83c\uddf2\ud83c\uddf9"
+	],
+	"MH": [
+		"Marshalleilanden",
+		"692",
+		584,
+		"\ud83c\uddf2\ud83c\udded"
+	],
+	"MQ": [
+		"Martinique",
+		"596",
+		474,
+		"\ud83c\uddf2\ud83c\uddf6"
+	],
+	"MR": [
+		"Mauritani\u00eb",
+		"222",
+		478,
+		"\ud83c\uddf2\ud83c\uddf7"
+	],
+	"MU": [
+		"Mauritius",
+		"230",
+		480,
+		"\ud83c\uddf2\ud83c\uddfa"
+	],
+	"YT": [
+		"Mayotte",
+		"262 (537)",
+		175,
+		"\ud83c\uddfe\ud83c\uddf9"
+	],
+	"MX": [
+		"Mexico",
+		"52",
+		484,
+		"\ud83c\uddf2\ud83c\uddfd"
+	],
+	"MD": [
+		"Moldavi\u00eb",
+		"373",
+		498,
+		"\ud83c\uddf2\ud83c\udde9"
+	],
+	"MC": [
+		"Monaco",
+		"377",
+		492,
+		"\ud83c\uddf2\ud83c\udde8"
+	],
+	"MN": [
+		"Mongoli\u00eb",
+		"976",
+		496,
+		"\ud83c\uddf2\ud83c\uddf3"
+	],
+	"ME": [
+		"Montenegro",
+		"382",
+		499,
+		"\ud83c\uddf2\ud83c\uddea"
+	],
+	"MS": [
+		"Montserrat",
+		"1 (664)",
+		500,
+		"\ud83c\uddf2\ud83c\uddf8"
+	],
+	"MA": [
+		"Marokko",
+		"212",
+		504,
+		"\ud83c\uddf2\ud83c\udde6"
+	],
+	"MZ": [
+		"Mozambique",
+		"258",
+		508,
+		"\ud83c\uddf2\ud83c\uddff"
+	],
+	"MM": [
+		"Myanmar",
+		"95",
+		104,
+		"\ud83c\uddf2\ud83c\uddf2"
+	],
+	"NA": [
+		"Namibi\u00eb",
+		"264",
+		516,
+		"\ud83c\uddf3\ud83c\udde6"
+	],
+	"NR": [
+		"Nauru",
+		"674",
+		520,
+		"\ud83c\uddf3\ud83c\uddf7"
+	],
+	"NP": [
+		"Nepal",
+		"977",
+		524,
+		"\ud83c\uddf3\ud83c\uddf5"
+	],
+	"NL": [
+		"Nederland",
+		"31",
+		528,
+		"\ud83c\uddf3\ud83c\uddf1"
+	],
+	"NC": [
+		"Nieuw-Caledoni\u00eb",
+		"687",
+		540,
+		"\ud83c\uddf3\ud83c\udde8"
+	],
+	"NZ": [
+		"Nieuw-Zeeland",
+		"64",
+		554,
+		"\ud83c\uddf3\ud83c\uddff"
+	],
+	"NI": [
+		"Nicaragua",
+		"505",
+		558,
+		"\ud83c\uddf3\ud83c\uddee"
+	],
+	"NE": [
+		"Niger",
+		"227",
+		562,
+		"\ud83c\uddf3\ud83c\uddea"
+	],
+	"NG": [
+		"Nigeria",
+		"234",
+		566,
+		"\ud83c\uddf3\ud83c\uddec"
+	],
+	"NU": [
+		"Niue",
+		"683",
+		570,
+		"\ud83c\uddf3\ud83c\uddfa"
+	],
+	"NF": [
+		"Norfolkeiland",
+		"672 (3)",
+		574,
+		"\ud83c\uddf3\ud83c\uddeb"
+	],
+	"KP": [
+		"Noord-Korea",
+		"850",
+		408,
+		"\ud83c\uddf0\ud83c\uddf5"
+	],
+	"MK": [
+		"Noord-Macedoni\u00eb",
+		"389",
+		807,
+		"\ud83c\uddf2\ud83c\uddf0"
+	],
+	"MP": [
+		"Noordelijke Marianen",
+		"1 (670)",
+		580,
+		"\ud83c\uddf2\ud83c\uddf5"
+	],
+	"NO": [
+		"Noorwegen",
+		"47",
+		578,
+		"\ud83c\uddf3\ud83c\uddf4"
+	],
+	"OM": [
+		"Oman",
+		"968",
+		512,
+		"\ud83c\uddf4\ud83c\uddf2"
+	],
+	"PK": [
+		"Pakistan",
+		"92",
+		586,
+		"\ud83c\uddf5\ud83c\uddf0"
+	],
+	"PW": [
+		"Palau",
+		"680",
+		585,
+		"\ud83c\uddf5\ud83c\uddfc"
+	],
+	"PS": [
+		"Palestina",
+		"970",
+		275,
+		"\ud83c\uddf5\ud83c\uddf8"
+	],
+	"PA": [
+		"Panama",
+		"507",
+		591,
+		"\ud83c\uddf5\ud83c\udde6"
+	],
+	"PG": [
+		"Papoea-Nieuw-Guinea",
+		"675",
+		598,
+		"\ud83c\uddf5\ud83c\uddec"
+	],
+	"PY": [
+		"Paraguay",
+		"595",
+		600,
+		"\ud83c\uddf5\ud83c\uddfe"
+	],
+	"PE": [
+		"Peru",
+		"51",
+		604,
+		"\ud83c\uddf5\ud83c\uddea"
+	],
+	"PH": [
+		"Filippijnen",
+		"63",
+		608,
+		"\ud83c\uddf5\ud83c\udded"
+	],
+	"PN": [
+		"Pitcairneilanden",
+		"64",
+		612,
+		"\ud83c\uddf5\ud83c\uddf3"
+	],
+	"PL": [
+		"Polen",
+		"48",
+		616,
+		"\ud83c\uddf5\ud83c\uddf1"
+	],
+	"PT": [
+		"Portugal",
+		"351",
+		620,
+		"\ud83c\uddf5\ud83c\uddf9"
+	],
+	"PR": [
+		"Puerto Rico",
+		"1",
+		630,
+		"\ud83c\uddf5\ud83c\uddf7"
+	],
+	"QA": [
+		"Qatar",
+		"974",
+		634,
+		"\ud83c\uddf6\ud83c\udde6"
+	],
+	"RE": [
+		"Bijeenkomst",
+		"262",
+		638,
+		"\ud83c\uddf7\ud83c\uddea"
+	],
+	"RO": [
+		"Roemeni\u00eb",
+		"40",
+		642,
+		"\ud83c\uddf7\ud83c\uddf4"
+	],
+	"RU": [
+		"Rusland",
+		"7",
+		643,
+		"\ud83c\uddf7\ud83c\uddfa"
+	],
+	"RW": [
+		"Rwanda",
+		"250",
+		646,
+		"\ud83c\uddf7\ud83c\uddfc"
+	],
+	"BL": [
+		"Sint-Barth\u00e9lemy",
+		"590",
+		652,
+		"\ud83c\udde7\ud83c\uddf1"
+	],
+	"SH": [
+		"Sint-Helena",
+		"290",
+		654,
+		"\ud83c\uddf8\ud83c\udded"
+	],
+	"KN": [
+		"Saint Kitts en Nevis",
+		"1 (869)",
+		659,
+		"\ud83c\uddf0\ud83c\uddf3"
+	],
+	"LC": [
+		"Sint Lucia",
+		"1 (758)",
+		662,
+		"\ud83c\uddf1\ud83c\udde8"
+	],
+	"MF": [
+		"Sint Maarten",
+		"590",
+		663,
+		"\ud83c\uddf2\ud83c\uddeb"
+	],
+	"PM": [
+		"Saint-Pierre en Miquelon",
+		"508",
+		666,
+		"\ud83c\uddf5\ud83c\uddf2"
+	],
+	"VC": [
+		"Saint Vincent en de Grenadines",
+		"1 (784)",
+		670,
+		"\ud83c\uddfb\ud83c\udde8"
+	],
+	"ST": [
+		"S\u00e3o Tom\u00e9 en Principe",
+		"239",
+		678,
+		"\ud83c\uddf8\ud83c\uddf9"
+	],
+	"WS": [
+		"Samoa",
+		"685",
+		882,
+		"\ud83c\uddfc\ud83c\uddf8"
+	],
+	"SM": [
+		"San Marino",
+		"378",
+		674,
+		"\ud83c\uddf8\ud83c\uddf2"
+	],
+	"SA": [
+		"Saoedi-Arabi\u00eb",
+		"966",
+		682,
+		"\ud83c\uddf8\ud83c\udde6"
+	],
+	"SX": [
+		"Sint Maarten",
+		"1 (721)",
+		534,
+		"\ud83c\uddf8\ud83c\uddfd"
+	],
+	"SN": [
+		"Senegal",
+		"221",
+		686,
+		"\ud83c\uddf8\ud83c\uddf3"
+	],
+	"KR": [
+		"Zuid-Korea",
+		"82",
+		410,
+		"\ud83c\uddf0\ud83c\uddf7"
+	],
+	"RS": [
+		"Servi\u00eb",
+		"381",
+		688,
+		"\ud83c\uddf7\ud83c\uddf8"
+	],
+	"SC": [
+		"Seychellen",
+		"248",
+		690,
+		"\ud83c\uddf8\ud83c\udde8"
+	],
+	"SL": [
+		"Sierra Leone",
+		"232",
+		694,
+		"\ud83c\uddf8\ud83c\uddf1"
+	],
+	"SG": [
+		"Singapore",
+		"65",
+		702,
+		"\ud83c\uddf8\ud83c\uddec"
+	],
+	"SK": [
+		"Slowakije",
+		"421",
+		703,
+		"\ud83c\uddf8\ud83c\uddf0"
+	],
+	"SI": [
+		"Sloveni\u00eb",
+		"386",
+		705,
+		"\ud83c\uddf8\ud83c\uddee"
+	],
+	"SB": [
+		"Salomonseilanden",
+		"677",
+		90,
+		"\ud83c\uddf8\ud83c\udde7"
+	],
+	"SO": [
+		"Somali\u00eb",
+		"252",
+		706,
+		"\ud83c\uddf8\ud83c\uddf4"
+	],
+	"ZA": [
+		"Zuid-Afrika",
+		"27",
+		710,
+		"\ud83c\uddff\ud83c\udde6"
+	],
+	"GS": [
+		"Zuidelijke Sandwicheilanden",
+		"500",
+		239,
+		"\ud83c\uddec\ud83c\uddf8"
+	],
+	"SS": [
+		"Zuid-Soedan",
+		"211",
+		728,
+		"\ud83c\uddf8\ud83c\uddf8"
+	],
+	"ES": [
+		"Spanje",
+		"34",
+		724,
+		"\ud83c\uddea\ud83c\uddf8"
+	],
+	"LK": [
+		"Sri Lanka",
+		"94",
+		144,
+		"\ud83c\uddf1\ud83c\uddf0"
+	],
+	"SD": [
+		"Soedan",
+		"249",
+		729,
+		"\ud83c\uddf8\ud83c\udde9"
+	],
+	"SR": [
+		"Suriname",
+		"597",
+		740,
+		"\ud83c\uddf8\ud83c\uddf7"
+	],
+	"SJ": [
+		"Spitsbergen",
+		"47 (79)",
+		744,
+		"\ud83c\uddf8\ud83c\uddef"
+	],
+	"SE": [
+		"Zweden",
+		"46",
+		752,
+		"\ud83c\uddf8\ud83c\uddea"
+	],
+	"CH": [
+		"Zwitserland",
+		"41",
+		756,
+		"\ud83c\udde8\ud83c\udded"
+	],
+	"SY": [
+		"Syri\u00eb",
+		"963",
+		760,
+		"\ud83c\uddf8\ud83c\uddfe"
+	],
+	"TW": [
+		"Taiwan",
+		"886",
+		158,
+		"\ud83c\uddf9\ud83c\uddfc"
+	],
+	"TJ": [
+		"Tadzjikistan",
+		"992",
+		762,
+		"\ud83c\uddf9\ud83c\uddef"
+	],
+	"TZ": [
+		"Tanzania",
+		"255",
+		834,
+		"\ud83c\uddf9\ud83c\uddff"
+	],
+	"TH": [
+		"Thailand",
+		"66",
+		764,
+		"\ud83c\uddf9\ud83c\udded"
+	],
+	"TG": [
+		"Togo",
+		"228",
+		768,
+		"\ud83c\uddf9\ud83c\uddec"
+	],
+	"TK": [
+		"Tokelau",
+		"690",
+		772,
+		"\ud83c\uddf9\ud83c\uddf0"
+	],
+	"TO": [
+		"Tonga",
+		"676",
+		776,
+		"\ud83c\uddf9\ud83c\uddf4"
+	],
+	"TT": [
+		"Trinidad en Tobago",
+		"1 (868)",
+		780,
+		"\ud83c\uddf9\ud83c\uddf9"
+	],
+	"TN": [
+		"Tunesi\u00eb",
+		"216",
+		788,
+		"\ud83c\uddf9\ud83c\uddf3"
+	],
+	"TM": [
+		"Turkmenistan",
+		"993",
+		795,
+		"\ud83c\uddf9\ud83c\uddf2"
+	],
+	"TR": [
+		"Turkije",
+		"90",
+		792,
+		"\ud83c\uddf9\ud83c\uddf7"
+	],
+	"TC": [
+		"Turks- en Caicoseilanden",
+		"1 (649)",
+		796,
+		"\ud83c\uddf9\ud83c\udde8"
+	],
+	"TV": [
+		"Tuvalu",
+		"688",
+		798,
+		"\ud83c\uddf9\ud83c\uddfb"
+	],
+	"UG": [
+		"Oeganda",
+		"256",
+		800,
+		"\ud83c\uddfa\ud83c\uddec"
+	],
+	"UA": [
+		"Oekra\u00efne",
+		"380",
+		804,
+		"\ud83c\uddfa\ud83c\udde6"
+	],
+	"AE": [
+		"Verenigde Arabische Emiraten",
+		"971",
+		784,
+		"\ud83c\udde6\ud83c\uddea"
+	],
+	"GB": [
+		"Verenigd Koninkrijk",
+		"44",
+		826,
+		"\ud83c\uddec\ud83c\udde7"
+	],
+	"US": [
+		"Verenigde Staten",
+		"1",
+		840,
+		"\ud83c\uddfa\ud83c\uddf8"
+	],
+	"UM": [
+		"Kleine afgelegen eilanden van de Verenigde Staten",
+		"1",
+		581,
+		"\ud83c\uddfa\ud83c\uddf2"
+	],
+	"UY": [
+		"Uruguay",
+		"598",
+		858,
+		"\ud83c\uddfa\ud83c\uddfe"
+	],
+	"VI": [
+		"Amerikaanse Maagdeneilanden",
+		"1 (340)",
+		850,
+		"\ud83c\uddfb\ud83c\uddee"
+	],
+	"UZ": [
+		"Oezbekistan",
+		"998",
+		860,
+		"\ud83c\uddfa\ud83c\uddff"
+	],
+	"VA": [
+		"Vaticaan",
+		"379",
+		336,
+		"\ud83c\uddfb\ud83c\udde6"
+	],
+	"VU": [
+		"Vanuatu",
+		"678",
+		548,
+		"\ud83c\uddfb\ud83c\uddfa"
+	],
+	"VE": [
+		"Venezuela",
+		"58",
+		862,
+		"\ud83c\uddfb\ud83c\uddea"
+	],
+	"VN": [
+		"Vietnam",
+		"84",
+		704,
+		"\ud83c\uddfb\ud83c\uddf3"
+	],
+	"WF": [
+		"Wallis en Futuna",
+		"681",
+		876,
+		"\ud83c\uddfc\ud83c\uddeb"
+	],
+	"EH": [
+		"Westelijke Sahara",
+		"212",
+		732,
+		"\ud83c\uddea\ud83c\udded"
+	],
+	"YE": [
+		"Jemen",
+		"967",
+		887,
+		"\ud83c\uddfe\ud83c\uddea"
+	],
+	"ZM": [
+		"Zambia",
+		"260",
+		894,
+		"\ud83c\uddff\ud83c\uddf2"
+	],
+	"ZW": [
+		"Zimbabwe",
+		"263",
+		716,
+		"\ud83c\uddff\ud83c\uddfc"
+	]
+}

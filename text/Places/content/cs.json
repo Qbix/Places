@@ -1,91 +1,91 @@
 {
-    "LatLng": "( {{1}} lat, {{2}} lng)",
-    "nearby": {
-        "PostcodeLabel": "{{1}} ( {{2}} )",
-        "Title": "do {{1}}"
-    },
-    "units": {
-        "meter": "Metr",
-        "meters": "metrů",
-        "kilometer": "kilometr",
-        "kilometers": "kilometry",
-        "km": "km",
-        "mile": "míle",
-        "miles": "mil",
-        "mi": "mi",
-        "foot": "chodidlo",
-        "feet": "chodidla",
-        "inches": "palce"
-    },
-    "location": {
-        "interested": "Zajímají mě věci, které se odehrávají do {{select}} od",
-        "update": "Aktualizujte moji polohu",
-        "set": "Nastavte moji polohu",
-        "prompt": "{{ClickOrTap}} sem<br> nastavte si svůj<br> umístění",
-        "myCurrentLocation": "Moje aktuální poloha",
-        "enterAddress": "Zadejte adresu",
-        "enterPostcode": "Zadejte své PSČ",
-        "create": {
-            "action": "Přidat lokaci",
-            "title": "Nové umístění",
-            "nameYourLocation": "Pojmenujte svou polohu"
-        },
-        "confirm": {
-            "title": "Uložit toto místo?",
-            "message": "Plánujete tuto lokalitu v budoucnu znovu využít?",
-            "ok": "Ano",
-            "cancel": "Ne"
-        },
-        "add": {
-            "title": "Pojmenujte toto místo",
-            "placeholder": "Domov, Práce atd.",
-            "ok": "Uložit"
-        },
-        "dialog": {
-            "title": "Vyberte umístění"
-        }
-    },
-    "areas": {
-        "filterPlaceholder": "Nějaká oblast uvnitř tohoto místa?",
-        "newArea": "Nová oblast",
-        "promptTitle": "Zadejte název oblasti:",
-        "absent": "Nastavte prosím oblast",
-        "error": "Chyba",
-        "exist": "Oblast již existuje",
-        "addNewArea": "Přidat novou oblast",
-        "add": "Přidat"
-    },
-    "types": {
-        "Places\/locations": {
-            "description": "sbírka míst",
-            "displayType": "Místa"
-        },
-        "Places\/location": {
-            "description": "Představuje budovu, místo konání, loď, park atd.",
-            "displayType": "Umístění"
-        },
-        "Places\/area": {
-            "description": "Představuje oblast v rámci umístění, jako je pokoj nebo apartmá",
-            "displayType": "Plocha"
-        },
-        "Places\/floor": {
-            "description": "Představuje podlahu v budově nebo lodi",
-            "displayType": "Podlaha"
-        },
-        "Places\/column": {
-            "description": "Představuje sloup v budově nebo lodi",
-            "displayType": "Sloupec"
-        },
-        "Places\/nearby": {
-            "description": "Kategorie pro věci v určité vzdálenosti od geohash",
-            "displayType": "V blízkosti míst"
-        },
-        "Places\/interest": {
-            "description": "Kategorie pro věci v určité vzdálenosti od geohash, odpovídající zájmu",
-            "displayType": "Zájem o místa"
-        }
-    },
-    "countries": {
-        "SelectCountry": "Vyber zemi"
-    }
+	"LatLng": "( {{1}} lat, {{2}} lng)",
+	"nearby": {
+		"PostcodeLabel": "{{1}} ( {{2}} )",
+		"Title": "do {{1}}"
+	},
+	"units": {
+		"meter": "Metr",
+		"meters": "metr\u016f",
+		"kilometer": "kilometr",
+		"kilometers": "kilometry",
+		"km": "km",
+		"mile": "m\u00edle",
+		"miles": "mil",
+		"mi": "mi",
+		"foot": "chodidlo",
+		"feet": "chodidla",
+		"inches": "palce"
+	},
+	"location": {
+		"interested": "Zaj\u00edmaj\u00ed m\u011b v\u011bci, kter\u00e9 se odehr\u00e1vaj\u00ed do {{select}} od",
+		"update": "Aktualizujte moji polohu",
+		"set": "Nastavte moji polohu",
+		"prompt": "{{ClickOrTap}} sem<br> nastavte si sv\u016fj<br> um\u00edst\u011bn\u00ed",
+		"myCurrentLocation": "Moje aktu\u00e1ln\u00ed poloha",
+		"enterAddress": "Zadejte adresu",
+		"enterPostcode": "Zadejte sv\u00e9 PS\u010c",
+		"create": {
+			"action": "P\u0159idat lokaci",
+			"title": "Nov\u00e9 um\u00edst\u011bn\u00ed",
+			"nameYourLocation": "Pojmenujte svou polohu"
+		},
+		"confirm": {
+			"title": "Ulo\u017eit toto m\u00edsto?",
+			"message": "Pl\u00e1nujete tuto lokalitu v budoucnu znovu vyu\u017e\u00edt?",
+			"ok": "Ano",
+			"cancel": "Ne"
+		},
+		"add": {
+			"title": "Pojmenujte toto m\u00edsto",
+			"placeholder": "Domov, Pr\u00e1ce atd.",
+			"ok": "Ulo\u017eit"
+		},
+		"dialog": {
+			"title": "Vyberte um\u00edst\u011bn\u00ed"
+		}
+	},
+	"areas": {
+		"filterPlaceholder": "N\u011bjak\u00e1 oblast uvnit\u0159 tohoto m\u00edsta?",
+		"newArea": "Nov\u00e1 oblast",
+		"promptTitle": "Zadejte n\u00e1zev oblasti:",
+		"absent": "Nastavte pros\u00edm oblast",
+		"error": "Chyba",
+		"exist": "Oblast ji\u017e existuje",
+		"addNewArea": "P\u0159idat novou oblast",
+		"add": "P\u0159idat"
+	},
+	"types": {
+		"Places/locations": {
+			"description": "sb\u00edrka m\u00edst",
+			"displayType": "M\u00edsta"
+		},
+		"Places/location": {
+			"description": "P\u0159edstavuje budovu, m\u00edsto kon\u00e1n\u00ed, lo\u010f, park atd.",
+			"displayType": "Um\u00edst\u011bn\u00ed"
+		},
+		"Places/area": {
+			"description": "P\u0159edstavuje oblast v r\u00e1mci um\u00edst\u011bn\u00ed, jako je pokoj nebo apartm\u00e1",
+			"displayType": "Plocha"
+		},
+		"Places/floor": {
+			"description": "P\u0159edstavuje podlahu v budov\u011b nebo lodi",
+			"displayType": "Podlaha"
+		},
+		"Places/column": {
+			"description": "P\u0159edstavuje sloup v budov\u011b nebo lodi",
+			"displayType": "Sloupec"
+		},
+		"Places/nearby": {
+			"description": "Kategorie pro v\u011bci v ur\u010dit\u00e9 vzd\u00e1lenosti od geohash",
+			"displayType": "V bl\u00edzkosti m\u00edst"
+		},
+		"Places/interest": {
+			"description": "Kategorie pro v\u011bci v ur\u010dit\u00e9 vzd\u00e1lenosti od geohash, odpov\u00eddaj\u00edc\u00ed z\u00e1jmu",
+			"displayType": "Z\u00e1jem o m\u00edsta"
+		}
+	},
+	"countries": {
+		"SelectCountry": "Vyber zemi"
+	}
 }

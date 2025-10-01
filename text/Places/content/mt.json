@@ -1,91 +1,91 @@
 {
-    "LatLng": "( {{1}} lat, {{2}} lng)",
-    "nearby": {
-        "PostcodeLabel": "{{1}} ( {{2}} )",
-        "Title": "fi żmien {{1}}"
-    },
-    "units": {
-        "meter": "metru",
-        "meters": "metri",
-        "kilometer": "kilometru",
-        "kilometers": "kjometri",
-        "km": "km",
-        "mile": "mil",
-        "miles": "mili",
-        "mi": "mi",
-        "foot": "sieq",
-        "feet": "saqajn",
-        "inches": "pulzieri"
-    },
-    "location": {
-        "interested": "Jien interessat f&#39;affarijiet li jseħħu fi żmien {{select}} ta&#39;",
-        "update": "Aġġorna l-Post Tiegħi",
-        "set": "Issettja l-Post Tiegħi",
-        "prompt": "{{ClickOrTap}} hawn biex<br> issettja tiegħek<br> post",
-        "myCurrentLocation": "Post attwali tiegħi",
-        "enterAddress": "Daħħal indirizz",
-        "enterPostcode": "Jekk jogħġbok daħħal il-kodiċi postali \/ zipcode tiegħek",
-        "create": {
-            "action": "Żid Post",
-            "title": "Post ġdid",
-            "nameYourLocation": "Semmi l-post tiegħek"
-        },
-        "confirm": {
-            "title": "Issalva dan il-post?",
-            "message": "Qed tippjana li terġa&#39; tuża dan il-post fil-futur?",
-            "ok": "Iva",
-            "cancel": "Nru"
-        },
-        "add": {
-            "title": "Semmi dan il-post",
-            "placeholder": "Dar, Xogħol eċċ.",
-            "ok": "Ħlief"
-        },
-        "dialog": {
-            "title": "Agħżel Post"
-        }
-    },
-    "areas": {
-        "filterPlaceholder": "Xi żona ġewwa dan il-post?",
-        "newArea": "Żona ġdida",
-        "promptTitle": "Daħħal isem għaż-żona:",
-        "absent": "Jekk jogħġbok issettja l-erja",
-        "error": "Żball",
-        "exist": "Żona diġà jeżistu",
-        "addNewArea": "Żid żona ġdida",
-        "add": "Żid"
-    },
-    "types": {
-        "Places\/locations": {
-            "description": "ġabra ta’ postijiet",
-            "displayType": "Postijiet"
-        },
-        "Places\/location": {
-            "description": "Jirrappreżenta bini, post, vapur, park, eċċ.",
-            "displayType": "Post"
-        },
-        "Places\/area": {
-            "description": "Jirrappreżenta żona f&#39;post, bħal kamra jew suite",
-            "displayType": "Żona"
-        },
-        "Places\/floor": {
-            "description": "Jirrappreżenta art f&#39;bini jew vapur",
-            "displayType": "Art"
-        },
-        "Places\/column": {
-            "description": "Jirrappreżenta kolonna f&#39;bini jew vapur",
-            "displayType": "Kolonna"
-        },
-        "Places\/nearby": {
-            "description": "Kategorija għal affarijiet f&#39;ċerta distanza ta&#39; geohash",
-            "displayType": "Qrib mill-postijiet"
-        },
-        "Places\/interest": {
-            "description": "Kategorija għal affarijiet f&#39;ċerta distanza ta&#39; geohash, li taqbel ma&#39; interess",
-            "displayType": "Postijiet ta&#39; interess"
-        }
-    },
-    "countries": {
-        "SelectCountry": "Agħżel pajjiż"
-    }
+	"LatLng": "( {{1}} lat, {{2}} lng)",
+	"nearby": {
+		"PostcodeLabel": "{{1}} ( {{2}} )",
+		"Title": "fi \u017cmien {{1}}"
+	},
+	"units": {
+		"meter": "metru",
+		"meters": "metri",
+		"kilometer": "kilometru",
+		"kilometers": "kjometri",
+		"km": "km",
+		"mile": "mil",
+		"miles": "mili",
+		"mi": "mi",
+		"foot": "sieq",
+		"feet": "saqajn",
+		"inches": "pulzieri"
+	},
+	"location": {
+		"interested": "Jien interessat f&#39;affarijiet li jse\u0127\u0127u fi \u017cmien {{select}} ta&#39;",
+		"update": "A\u0121\u0121orna l-Post Tieg\u0127i",
+		"set": "Issettja l-Post Tieg\u0127i",
+		"prompt": "{{ClickOrTap}} hawn biex<br> issettja tieg\u0127ek<br> post",
+		"myCurrentLocation": "Post attwali tieg\u0127i",
+		"enterAddress": "Da\u0127\u0127al indirizz",
+		"enterPostcode": "Jekk jog\u0127\u0121bok da\u0127\u0127al il-kodi\u010bi postali / zipcode tieg\u0127ek",
+		"create": {
+			"action": "\u017bid Post",
+			"title": "Post \u0121did",
+			"nameYourLocation": "Semmi l-post tieg\u0127ek"
+		},
+		"confirm": {
+			"title": "Issalva dan il-post?",
+			"message": "Qed tippjana li ter\u0121a&#39; tu\u017ca dan il-post fil-futur?",
+			"ok": "Iva",
+			"cancel": "Nru"
+		},
+		"add": {
+			"title": "Semmi dan il-post",
+			"placeholder": "Dar, Xog\u0127ol e\u010b\u010b.",
+			"ok": "\u0126lief"
+		},
+		"dialog": {
+			"title": "Ag\u0127\u017cel Post"
+		}
+	},
+	"areas": {
+		"filterPlaceholder": "Xi \u017cona \u0121ewwa dan il-post?",
+		"newArea": "\u017bona \u0121dida",
+		"promptTitle": "Da\u0127\u0127al isem g\u0127a\u017c-\u017cona:",
+		"absent": "Jekk jog\u0127\u0121bok issettja l-erja",
+		"error": "\u017bball",
+		"exist": "\u017bona di\u0121\u00e0 je\u017cistu",
+		"addNewArea": "\u017bid \u017cona \u0121dida",
+		"add": "\u017bid"
+	},
+	"types": {
+		"Places/locations": {
+			"description": "\u0121abra ta\u2019 postijiet",
+			"displayType": "Postijiet"
+		},
+		"Places/location": {
+			"description": "Jirrappre\u017centa bini, post, vapur, park, e\u010b\u010b.",
+			"displayType": "Post"
+		},
+		"Places/area": {
+			"description": "Jirrappre\u017centa \u017cona f&#39;post, b\u0127al kamra jew suite",
+			"displayType": "\u017bona"
+		},
+		"Places/floor": {
+			"description": "Jirrappre\u017centa art f&#39;bini jew vapur",
+			"displayType": "Art"
+		},
+		"Places/column": {
+			"description": "Jirrappre\u017centa kolonna f&#39;bini jew vapur",
+			"displayType": "Kolonna"
+		},
+		"Places/nearby": {
+			"description": "Kategorija g\u0127al affarijiet f&#39;\u010berta distanza ta&#39; geohash",
+			"displayType": "Qrib mill-postijiet"
+		},
+		"Places/interest": {
+			"description": "Kategorija g\u0127al affarijiet f&#39;\u010berta distanza ta&#39; geohash, li taqbel ma&#39; interess",
+			"displayType": "Postijiet ta&#39; interess"
+		}
+	},
+	"countries": {
+		"SelectCountry": "Ag\u0127\u017cel pajji\u017c"
+	}
 }

@@ -1,91 +1,91 @@
 {
-    "LatLng": "( {{1}} lat, {{2}} lng)",
-    "nearby": {
-        "PostcodeLabel": "{{1}} ( {{2}} )",
-        "Title": "dins del {{1}}"
-    },
-    "units": {
-        "meter": "metre",
-        "meters": "metres",
-        "kilometer": "quilòmetre",
-        "kilometers": "quiòmetres",
-        "km": "km",
-        "mile": "milla",
-        "miles": "milles",
-        "mi": "mi",
-        "foot": "peu",
-        "feet": "peus",
-        "inches": "polzades"
-    },
-    "location": {
-        "interested": "M&#39;interessen les coses que tenen lloc dins del {{select}} de",
-        "update": "Actualitza la meva ubicació",
-        "set": "Estableix la meva ubicació",
-        "prompt": "{{ClickOrTap}} aquí per<br> configura el teu<br> ubicació",
-        "myCurrentLocation": "La meva ubicació actual",
-        "enterAddress": "Introduïu una adreça",
-        "enterPostcode": "Introduïu el vostre codi postal\/codi postal",
-        "create": {
-            "action": "Afegeix una ubicació",
-            "title": "Nova Ubicació",
-            "nameYourLocation": "Anomena la teva ubicació"
-        },
-        "confirm": {
-            "title": "Vols desar aquesta ubicació?",
-            "message": "Teniu previst tornar a utilitzar aquesta ubicació en el futur?",
-            "ok": "Sí",
-            "cancel": "No"
-        },
-        "add": {
-            "title": "Anomena aquesta ubicació",
-            "placeholder": "Casa, Treball, etc.",
-            "ok": "Desa"
-        },
-        "dialog": {
-            "title": "Trieu Ubicació"
-        }
-    },
-    "areas": {
-        "filterPlaceholder": "Alguna zona dins d&#39;aquest lloc?",
-        "newArea": "Zona nova",
-        "promptTitle": "Introduïu un nom per a l&#39;àrea:",
-        "absent": "Si us plau, defineix l&#39;àrea",
-        "error": "Error",
-        "exist": "Zona ja existeix",
-        "addNewArea": "Afegeix una nova àrea",
-        "add": "Afegeix"
-    },
-    "types": {
-        "Places\/locations": {
-            "description": "una col·lecció d&#39;ubicacions",
-            "displayType": "Ubicacions"
-        },
-        "Places\/location": {
-            "description": "Representa un edifici, un local, un vaixell, un parc, etc.",
-            "displayType": "Ubicació"
-        },
-        "Places\/area": {
-            "description": "Representa una àrea dins d&#39;una ubicació, com ara una habitació o una suite",
-            "displayType": "Àrea"
-        },
-        "Places\/floor": {
-            "description": "Representa un pis d&#39;un edifici o nau",
-            "displayType": "Pis"
-        },
-        "Places\/column": {
-            "description": "Representa una columna en un edifici o vaixell",
-            "displayType": "Columna"
-        },
-        "Places\/nearby": {
-            "description": "Categoria per a coses dins d&#39;una distància determinada d&#39;un geohash",
-            "displayType": "Llocs propers"
-        },
-        "Places\/interest": {
-            "description": "Categoria per a coses dins d&#39;una distància determinada d&#39;un geohash, que coincideix amb un interès",
-            "displayType": "Llocs d&#39;interès"
-        }
-    },
-    "countries": {
-        "SelectCountry": "Seleccioneu un país"
-    }
+	"LatLng": "( {{1}} lat, {{2}} lng)",
+	"nearby": {
+		"PostcodeLabel": "{{1}} ( {{2}} )",
+		"Title": "dins del {{1}}"
+	},
+	"units": {
+		"meter": "metre",
+		"meters": "metres",
+		"kilometer": "quil\u00f2metre",
+		"kilometers": "qui\u00f2metres",
+		"km": "km",
+		"mile": "milla",
+		"miles": "milles",
+		"mi": "mi",
+		"foot": "peu",
+		"feet": "peus",
+		"inches": "polzades"
+	},
+	"location": {
+		"interested": "M&#39;interessen les coses que tenen lloc dins del {{select}} de",
+		"update": "Actualitza la meva ubicaci\u00f3",
+		"set": "Estableix la meva ubicaci\u00f3",
+		"prompt": "{{ClickOrTap}} aqu\u00ed per<br> configura el teu<br> ubicaci\u00f3",
+		"myCurrentLocation": "La meva ubicaci\u00f3 actual",
+		"enterAddress": "Introdu\u00efu una adre\u00e7a",
+		"enterPostcode": "Introdu\u00efu el vostre codi postal/codi postal",
+		"create": {
+			"action": "Afegeix una ubicaci\u00f3",
+			"title": "Nova Ubicaci\u00f3",
+			"nameYourLocation": "Anomena la teva ubicaci\u00f3"
+		},
+		"confirm": {
+			"title": "Vols desar aquesta ubicaci\u00f3?",
+			"message": "Teniu previst tornar a utilitzar aquesta ubicaci\u00f3 en el futur?",
+			"ok": "S\u00ed",
+			"cancel": "No"
+		},
+		"add": {
+			"title": "Anomena aquesta ubicaci\u00f3",
+			"placeholder": "Casa, Treball, etc.",
+			"ok": "Desa"
+		},
+		"dialog": {
+			"title": "Trieu Ubicaci\u00f3"
+		}
+	},
+	"areas": {
+		"filterPlaceholder": "Alguna zona dins d&#39;aquest lloc?",
+		"newArea": "Zona nova",
+		"promptTitle": "Introdu\u00efu un nom per a l&#39;\u00e0rea:",
+		"absent": "Si us plau, defineix l&#39;\u00e0rea",
+		"error": "Error",
+		"exist": "Zona ja existeix",
+		"addNewArea": "Afegeix una nova \u00e0rea",
+		"add": "Afegeix"
+	},
+	"types": {
+		"Places/locations": {
+			"description": "una col\u00b7lecci\u00f3 d&#39;ubicacions",
+			"displayType": "Ubicacions"
+		},
+		"Places/location": {
+			"description": "Representa un edifici, un local, un vaixell, un parc, etc.",
+			"displayType": "Ubicaci\u00f3"
+		},
+		"Places/area": {
+			"description": "Representa una \u00e0rea dins d&#39;una ubicaci\u00f3, com ara una habitaci\u00f3 o una suite",
+			"displayType": "\u00c0rea"
+		},
+		"Places/floor": {
+			"description": "Representa un pis d&#39;un edifici o nau",
+			"displayType": "Pis"
+		},
+		"Places/column": {
+			"description": "Representa una columna en un edifici o vaixell",
+			"displayType": "Columna"
+		},
+		"Places/nearby": {
+			"description": "Categoria per a coses dins d&#39;una dist\u00e0ncia determinada d&#39;un geohash",
+			"displayType": "Llocs propers"
+		},
+		"Places/interest": {
+			"description": "Categoria per a coses dins d&#39;una dist\u00e0ncia determinada d&#39;un geohash, que coincideix amb un inter\u00e8s",
+			"displayType": "Llocs d&#39;inter\u00e8s"
+		}
+	},
+	"countries": {
+		"SelectCountry": "Seleccioneu un pa\u00eds"
+	}
 }

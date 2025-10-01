@@ -1,91 +1,91 @@
 {
-    "LatLng": "( {{1}} lat, {{2}} lng)",
-    "nearby": {
-        "PostcodeLabel": "{{1}} ( {{2}} )",
-        "Title": "inden for {{1}}"
-    },
-    "units": {
-        "meter": "måler",
-        "meters": "meter",
-        "kilometer": "kilometer",
-        "kilometers": "kilometer",
-        "km": "km",
-        "mile": "mil",
-        "miles": "miles",
-        "mi": "mi",
-        "foot": "fod",
-        "feet": "fødder",
-        "inches": "tommer"
-    },
-    "location": {
-        "interested": "Jeg er interesseret i ting, der finder sted inden for {{select}} af",
-        "update": "Opdater min placering",
-        "set": "Indstil min placering",
-        "prompt": "{{ClickOrTap}} her til<br> sæt din<br> Beliggenhed",
-        "myCurrentLocation": "Min nuværende placering",
-        "enterAddress": "Indtast en adresse",
-        "enterPostcode": "Indtast venligst dit postnummer\/postnummer",
-        "create": {
-            "action": "Tilføj placering",
-            "title": "Ny placering",
-            "nameYourLocation": "Navngiv din placering"
-        },
-        "confirm": {
-            "title": "Vil du gemme denne placering?",
-            "message": "Planlægger du at bruge denne placering igen i fremtiden?",
-            "ok": "Ja",
-            "cancel": "Ingen"
-        },
-        "add": {
-            "title": "Navngiv denne placering",
-            "placeholder": "Hjem, arbejde osv.",
-            "ok": "Gemme"
-        },
-        "dialog": {
-            "title": "Vælg Placering"
-        }
-    },
-    "areas": {
-        "filterPlaceholder": "Noget område inden for dette sted?",
-        "newArea": "Nyt område",
-        "promptTitle": "Indtast et navn til området:",
-        "absent": "Indstil venligst område",
-        "error": "Fejl",
-        "exist": "Området findes allerede",
-        "addNewArea": "Tilføj nyt område",
-        "add": "Tilføje"
-    },
-    "types": {
-        "Places\/locations": {
-            "description": "en samling af lokationer",
-            "displayType": "Placeringer"
-        },
-        "Places\/location": {
-            "description": "Repræsenterer en bygning, mødested, skib, park osv.",
-            "displayType": "Beliggenhed"
-        },
-        "Places\/area": {
-            "description": "Repræsenterer et område inden for en placering, såsom et værelse eller en suite",
-            "displayType": "Areal"
-        },
-        "Places\/floor": {
-            "description": "Repræsenterer en etage i en bygning eller et skib",
-            "displayType": "Etage"
-        },
-        "Places\/column": {
-            "description": "Repræsenterer en søjle i en bygning eller et skib",
-            "displayType": "Kolonne"
-        },
-        "Places\/nearby": {
-            "description": "Kategori for ting inden for en vis afstand fra en geohash",
-            "displayType": "I nærheden af steder"
-        },
-        "Places\/interest": {
-            "description": "Kategori for ting inden for en vis afstand fra en geohash, der matcher en interesse",
-            "displayType": "Steder interesse"
-        }
-    },
-    "countries": {
-        "SelectCountry": "Vælg et land"
-    }
+	"LatLng": "( {{1}} lat, {{2}} lng)",
+	"nearby": {
+		"PostcodeLabel": "{{1}} ( {{2}} )",
+		"Title": "inden for {{1}}"
+	},
+	"units": {
+		"meter": "m\u00e5ler",
+		"meters": "meter",
+		"kilometer": "kilometer",
+		"kilometers": "kilometer",
+		"km": "km",
+		"mile": "mil",
+		"miles": "miles",
+		"mi": "mi",
+		"foot": "fod",
+		"feet": "f\u00f8dder",
+		"inches": "tommer"
+	},
+	"location": {
+		"interested": "Jeg er interesseret i ting, der finder sted inden for {{select}} af",
+		"update": "Opdater min placering",
+		"set": "Indstil min placering",
+		"prompt": "{{ClickOrTap}} her til<br> s\u00e6t din<br> Beliggenhed",
+		"myCurrentLocation": "Min nuv\u00e6rende placering",
+		"enterAddress": "Indtast en adresse",
+		"enterPostcode": "Indtast venligst dit postnummer/postnummer",
+		"create": {
+			"action": "Tilf\u00f8j placering",
+			"title": "Ny placering",
+			"nameYourLocation": "Navngiv din placering"
+		},
+		"confirm": {
+			"title": "Vil du gemme denne placering?",
+			"message": "Planl\u00e6gger du at bruge denne placering igen i fremtiden?",
+			"ok": "Ja",
+			"cancel": "Ingen"
+		},
+		"add": {
+			"title": "Navngiv denne placering",
+			"placeholder": "Hjem, arbejde osv.",
+			"ok": "Gemme"
+		},
+		"dialog": {
+			"title": "V\u00e6lg Placering"
+		}
+	},
+	"areas": {
+		"filterPlaceholder": "Noget omr\u00e5de inden for dette sted?",
+		"newArea": "Nyt omr\u00e5de",
+		"promptTitle": "Indtast et navn til omr\u00e5det:",
+		"absent": "Indstil venligst omr\u00e5de",
+		"error": "Fejl",
+		"exist": "Omr\u00e5det findes allerede",
+		"addNewArea": "Tilf\u00f8j nyt omr\u00e5de",
+		"add": "Tilf\u00f8je"
+	},
+	"types": {
+		"Places/locations": {
+			"description": "en samling af lokationer",
+			"displayType": "Placeringer"
+		},
+		"Places/location": {
+			"description": "Repr\u00e6senterer en bygning, m\u00f8dested, skib, park osv.",
+			"displayType": "Beliggenhed"
+		},
+		"Places/area": {
+			"description": "Repr\u00e6senterer et omr\u00e5de inden for en placering, s\u00e5som et v\u00e6relse eller en suite",
+			"displayType": "Areal"
+		},
+		"Places/floor": {
+			"description": "Repr\u00e6senterer en etage i en bygning eller et skib",
+			"displayType": "Etage"
+		},
+		"Places/column": {
+			"description": "Repr\u00e6senterer en s\u00f8jle i en bygning eller et skib",
+			"displayType": "Kolonne"
+		},
+		"Places/nearby": {
+			"description": "Kategori for ting inden for en vis afstand fra en geohash",
+			"displayType": "I n\u00e6rheden af steder"
+		},
+		"Places/interest": {
+			"description": "Kategori for ting inden for en vis afstand fra en geohash, der matcher en interesse",
+			"displayType": "Steder interesse"
+		}
+	},
+	"countries": {
+		"SelectCountry": "V\u00e6lg et land"
+	}
 }

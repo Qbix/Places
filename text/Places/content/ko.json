@@ -1,91 +1,91 @@
 {
-    "LatLng": "( {{1}} 위도, {{2}} lng)",
-    "nearby": {
-        "PostcodeLabel": "{{1}} ( {{2}} )",
-        "Title": "{{1}} 이내"
-    },
-    "units": {
-        "meter": "미터",
-        "meters": "미터",
-        "kilometer": "킬로미터",
-        "kilometers": "키오미터",
-        "km": "km",
-        "mile": "마일",
-        "miles": "마일",
-        "mi": "미",
-        "foot": "발",
-        "feet": "피트",
-        "inches": "신장"
-    },
-    "location": {
-        "interested": "나는 {{select}} 년 안에 일어나는 일들에 관심이 있다.",
-        "update": "내 위치 업데이트",
-        "set": "내 위치 설정",
-        "prompt": "{{ClickOrTap}} 여기<br> 설정<br> 위치",
-        "myCurrentLocation": "내 현재 위치",
-        "enterAddress": "주소를 입력하세요",
-        "enterPostcode": "우편번호를 입력하세요.",
-        "create": {
-            "action": "위치 추가",
-            "title": "새로운 위치",
-            "nameYourLocation": "위치 이름 지정"
-        },
-        "confirm": {
-            "title": "이 위치를 저장하시겠습니까?",
-            "message": "향후 이 위치를 다시 사용할 계획이 있습니까?",
-            "ok": "예",
-            "cancel": "아니요"
-        },
-        "add": {
-            "title": "이 위치 이름 지정",
-            "placeholder": "집, 직장 등",
-            "ok": "구하다"
-        },
-        "dialog": {
-            "title": "위치 선택"
-        }
-    },
-    "areas": {
-        "filterPlaceholder": "이 위치 안에 지역이 있습니까?",
-        "newArea": "새로운 지역",
-        "promptTitle": "영역 이름 입력:",
-        "absent": "지역을 설정해주세요",
-        "error": "오류",
-        "exist": "이미 존재하는 지역",
-        "addNewArea": "새 영역 추가",
-        "add": "추가하다"
-    },
-    "types": {
-        "Places\/locations": {
-            "description": "위치 모음",
-            "displayType": "위치"
-        },
-        "Places\/location": {
-            "description": "건물, 장소, 선박, 공원 등을 나타냅니다.",
-            "displayType": "위치"
-        },
-        "Places\/area": {
-            "description": "방이나 스위트와 같은 위치 내의 영역을 나타냅니다.",
-            "displayType": "영역"
-        },
-        "Places\/floor": {
-            "description": "건물이나 선박의 바닥을 나타냅니다.",
-            "displayType": "바닥"
-        },
-        "Places\/column": {
-            "description": "건물이나 선박의 기둥을 나타냅니다.",
-            "displayType": "열"
-        },
-        "Places\/nearby": {
-            "description": "geohash의 일정 거리 내에 있는 항목에 대한 범주",
-            "displayType": "주변 장소"
-        },
-        "Places\/interest": {
-            "description": "geohash의 특정 거리 내에 있는 사물에 대한 카테고리, 관심사 일치",
-            "displayType": "관심 장소"
-        }
-    },
-    "countries": {
-        "SelectCountry": "국가를 고르시 오"
-    }
+	"LatLng": "( {{1}} \uc704\ub3c4, {{2}} lng)",
+	"nearby": {
+		"PostcodeLabel": "{{1}} ( {{2}} )",
+		"Title": "{{1}} \uc774\ub0b4"
+	},
+	"units": {
+		"meter": "\ubbf8\ud130",
+		"meters": "\ubbf8\ud130",
+		"kilometer": "\ud0ac\ub85c\ubbf8\ud130",
+		"kilometers": "\ud0a4\uc624\ubbf8\ud130",
+		"km": "km",
+		"mile": "\ub9c8\uc77c",
+		"miles": "\ub9c8\uc77c",
+		"mi": "\ubbf8",
+		"foot": "\ubc1c",
+		"feet": "\ud53c\ud2b8",
+		"inches": "\uc2e0\uc7a5"
+	},
+	"location": {
+		"interested": "\ub098\ub294 {{select}} \ub144 \uc548\uc5d0 \uc77c\uc5b4\ub098\ub294 \uc77c\ub4e4\uc5d0 \uad00\uc2ec\uc774 \uc788\ub2e4.",
+		"update": "\ub0b4 \uc704\uce58 \uc5c5\ub370\uc774\ud2b8",
+		"set": "\ub0b4 \uc704\uce58 \uc124\uc815",
+		"prompt": "{{ClickOrTap}} \uc5ec\uae30<br> \uc124\uc815<br> \uc704\uce58",
+		"myCurrentLocation": "\ub0b4 \ud604\uc7ac \uc704\uce58",
+		"enterAddress": "\uc8fc\uc18c\ub97c \uc785\ub825\ud558\uc138\uc694",
+		"enterPostcode": "\uc6b0\ud3b8\ubc88\ud638\ub97c \uc785\ub825\ud558\uc138\uc694.",
+		"create": {
+			"action": "\uc704\uce58 \ucd94\uac00",
+			"title": "\uc0c8\ub85c\uc6b4 \uc704\uce58",
+			"nameYourLocation": "\uc704\uce58 \uc774\ub984 \uc9c0\uc815"
+		},
+		"confirm": {
+			"title": "\uc774 \uc704\uce58\ub97c \uc800\uc7a5\ud558\uc2dc\uaca0\uc2b5\ub2c8\uae4c?",
+			"message": "\ud5a5\ud6c4 \uc774 \uc704\uce58\ub97c \ub2e4\uc2dc \uc0ac\uc6a9\ud560 \uacc4\ud68d\uc774 \uc788\uc2b5\ub2c8\uae4c?",
+			"ok": "\uc608",
+			"cancel": "\uc544\ub2c8\uc694"
+		},
+		"add": {
+			"title": "\uc774 \uc704\uce58 \uc774\ub984 \uc9c0\uc815",
+			"placeholder": "\uc9d1, \uc9c1\uc7a5 \ub4f1",
+			"ok": "\uad6c\ud558\ub2e4"
+		},
+		"dialog": {
+			"title": "\uc704\uce58 \uc120\ud0dd"
+		}
+	},
+	"areas": {
+		"filterPlaceholder": "\uc774 \uc704\uce58 \uc548\uc5d0 \uc9c0\uc5ed\uc774 \uc788\uc2b5\ub2c8\uae4c?",
+		"newArea": "\uc0c8\ub85c\uc6b4 \uc9c0\uc5ed",
+		"promptTitle": "\uc601\uc5ed \uc774\ub984 \uc785\ub825:",
+		"absent": "\uc9c0\uc5ed\uc744 \uc124\uc815\ud574\uc8fc\uc138\uc694",
+		"error": "\uc624\ub958",
+		"exist": "\uc774\ubbf8 \uc874\uc7ac\ud558\ub294 \uc9c0\uc5ed",
+		"addNewArea": "\uc0c8 \uc601\uc5ed \ucd94\uac00",
+		"add": "\ucd94\uac00\ud558\ub2e4"
+	},
+	"types": {
+		"Places/locations": {
+			"description": "\uc704\uce58 \ubaa8\uc74c",
+			"displayType": "\uc704\uce58"
+		},
+		"Places/location": {
+			"description": "\uac74\ubb3c, \uc7a5\uc18c, \uc120\ubc15, \uacf5\uc6d0 \ub4f1\uc744 \ub098\ud0c0\ub0c5\ub2c8\ub2e4.",
+			"displayType": "\uc704\uce58"
+		},
+		"Places/area": {
+			"description": "\ubc29\uc774\ub098 \uc2a4\uc704\ud2b8\uc640 \uac19\uc740 \uc704\uce58 \ub0b4\uc758 \uc601\uc5ed\uc744 \ub098\ud0c0\ub0c5\ub2c8\ub2e4.",
+			"displayType": "\uc601\uc5ed"
+		},
+		"Places/floor": {
+			"description": "\uac74\ubb3c\uc774\ub098 \uc120\ubc15\uc758 \ubc14\ub2e5\uc744 \ub098\ud0c0\ub0c5\ub2c8\ub2e4.",
+			"displayType": "\ubc14\ub2e5"
+		},
+		"Places/column": {
+			"description": "\uac74\ubb3c\uc774\ub098 \uc120\ubc15\uc758 \uae30\ub465\uc744 \ub098\ud0c0\ub0c5\ub2c8\ub2e4.",
+			"displayType": "\uc5f4"
+		},
+		"Places/nearby": {
+			"description": "geohash\uc758 \uc77c\uc815 \uac70\ub9ac \ub0b4\uc5d0 \uc788\ub294 \ud56d\ubaa9\uc5d0 \ub300\ud55c \ubc94\uc8fc",
+			"displayType": "\uc8fc\ubcc0 \uc7a5\uc18c"
+		},
+		"Places/interest": {
+			"description": "geohash\uc758 \ud2b9\uc815 \uac70\ub9ac \ub0b4\uc5d0 \uc788\ub294 \uc0ac\ubb3c\uc5d0 \ub300\ud55c \uce74\ud14c\uace0\ub9ac, \uad00\uc2ec\uc0ac \uc77c\uce58",
+			"displayType": "\uad00\uc2ec \uc7a5\uc18c"
+		}
+	},
+	"countries": {
+		"SelectCountry": "\uad6d\uac00\ub97c \uace0\ub974\uc2dc \uc624"
+	}
 }

@@ -1,91 +1,91 @@
 {
-    "LatLng": "( {{1}} lat, {{2}} lng)",
-    "nearby": {
-        "PostcodeLabel": "{{1}} ( {{2}} )",
-        "Title": "în termen de {{1}}"
-    },
-    "units": {
-        "meter": "metru",
-        "meters": "metri",
-        "kilometer": "kilometru",
-        "kilometers": "kiometre",
-        "km": "km",
-        "mile": "milă",
-        "miles": "mile",
-        "mi": "mi",
-        "foot": "picior",
-        "feet": "picioarele",
-        "inches": "inci"
-    },
-    "location": {
-        "interested": "Sunt interesat de lucrurile care au loc în {{select}} de",
-        "update": "Actualizați locația mea",
-        "set": "Setați locația mea",
-        "prompt": "{{ClickOrTap}} aici pentru<br> setează-ți<br> Locație",
-        "myCurrentLocation": "Locația mea actuală",
-        "enterAddress": "Introduceți o adresă",
-        "enterPostcode": "Vă rugăm să introduceți codul poștal\/codul poștal",
-        "create": {
-            "action": "Adaugă locație",
-            "title": "Locație nouă",
-            "nameYourLocation": "Denumiți-vă locația"
-        },
-        "confirm": {
-            "title": "Salvați această locație?",
-            "message": "Intenționați să utilizați din nou această locație în viitor?",
-            "ok": "da",
-            "cancel": "Nu"
-        },
-        "add": {
-            "title": "Denumiți această locație",
-            "placeholder": "Acasă, serviciu etc.",
-            "ok": "Salvați"
-        },
-        "dialog": {
-            "title": "Alegeți Locație"
-        }
-    },
-    "areas": {
-        "filterPlaceholder": "Vreo zonă în această locație?",
-        "newArea": "Zona noua",
-        "promptTitle": "Introduceți un nume pentru zonă:",
-        "absent": "Vă rugăm să setați zona",
-        "error": "Eroare",
-        "exist": "Zona exista deja",
-        "addNewArea": "Adăugați o zonă nouă",
-        "add": "Adăuga"
-    },
-    "types": {
-        "Places\/locations": {
-            "description": "o colecție de locații",
-            "displayType": "Locații"
-        },
-        "Places\/location": {
-            "description": "Reprezintă o clădire, un loc, o navă, un parc etc.",
-            "displayType": "Locație"
-        },
-        "Places\/area": {
-            "description": "Reprezintă o zonă dintr-o locație, cum ar fi o cameră sau o suită",
-            "displayType": "Zonă"
-        },
-        "Places\/floor": {
-            "description": "Reprezintă un etaj într-o clădire sau navă",
-            "displayType": "Podea"
-        },
-        "Places\/column": {
-            "description": "Reprezintă o coloană într-o clădire sau navă",
-            "displayType": "Coloană"
-        },
-        "Places\/nearby": {
-            "description": "Categorie pentru lucruri aflate la o anumită distanță de un geohash",
-            "displayType": "Aproape de locuri"
-        },
-        "Places\/interest": {
-            "description": "Categorie pentru lucruri aflate la o anumită distanță de un geohash, care se potrivește cu un interes",
-            "displayType": "Locuri de interes"
-        }
-    },
-    "countries": {
-        "SelectCountry": "Selecteaza o tara"
-    }
+	"LatLng": "( {{1}} lat, {{2}} lng)",
+	"nearby": {
+		"PostcodeLabel": "{{1}} ( {{2}} )",
+		"Title": "\u00een termen de {{1}}"
+	},
+	"units": {
+		"meter": "metru",
+		"meters": "metri",
+		"kilometer": "kilometru",
+		"kilometers": "kiometre",
+		"km": "km",
+		"mile": "mil\u0103",
+		"miles": "mile",
+		"mi": "mi",
+		"foot": "picior",
+		"feet": "picioarele",
+		"inches": "inci"
+	},
+	"location": {
+		"interested": "Sunt interesat de lucrurile care au loc \u00een {{select}} de",
+		"update": "Actualiza\u021bi loca\u021bia mea",
+		"set": "Seta\u021bi loca\u021bia mea",
+		"prompt": "{{ClickOrTap}} aici pentru<br> seteaz\u0103-\u021bi<br> Loca\u021bie",
+		"myCurrentLocation": "Loca\u021bia mea actual\u0103",
+		"enterAddress": "Introduce\u021bi o adres\u0103",
+		"enterPostcode": "V\u0103 rug\u0103m s\u0103 introduce\u021bi codul po\u0219tal/codul po\u0219tal",
+		"create": {
+			"action": "Adaug\u0103 loca\u021bie",
+			"title": "Loca\u021bie nou\u0103",
+			"nameYourLocation": "Denumi\u021bi-v\u0103 loca\u021bia"
+		},
+		"confirm": {
+			"title": "Salva\u021bi aceast\u0103 loca\u021bie?",
+			"message": "Inten\u021biona\u021bi s\u0103 utiliza\u021bi din nou aceast\u0103 loca\u021bie \u00een viitor?",
+			"ok": "da",
+			"cancel": "Nu"
+		},
+		"add": {
+			"title": "Denumi\u021bi aceast\u0103 loca\u021bie",
+			"placeholder": "Acas\u0103, serviciu etc.",
+			"ok": "Salva\u021bi"
+		},
+		"dialog": {
+			"title": "Alege\u021bi Loca\u021bie"
+		}
+	},
+	"areas": {
+		"filterPlaceholder": "Vreo zon\u0103 \u00een aceast\u0103 loca\u021bie?",
+		"newArea": "Zona noua",
+		"promptTitle": "Introduce\u021bi un nume pentru zon\u0103:",
+		"absent": "V\u0103 rug\u0103m s\u0103 seta\u021bi zona",
+		"error": "Eroare",
+		"exist": "Zona exista deja",
+		"addNewArea": "Ad\u0103uga\u021bi o zon\u0103 nou\u0103",
+		"add": "Ad\u0103uga"
+	},
+	"types": {
+		"Places/locations": {
+			"description": "o colec\u021bie de loca\u021bii",
+			"displayType": "Loca\u021bii"
+		},
+		"Places/location": {
+			"description": "Reprezint\u0103 o cl\u0103dire, un loc, o nav\u0103, un parc etc.",
+			"displayType": "Loca\u021bie"
+		},
+		"Places/area": {
+			"description": "Reprezint\u0103 o zon\u0103 dintr-o loca\u021bie, cum ar fi o camer\u0103 sau o suit\u0103",
+			"displayType": "Zon\u0103"
+		},
+		"Places/floor": {
+			"description": "Reprezint\u0103 un etaj \u00eentr-o cl\u0103dire sau nav\u0103",
+			"displayType": "Podea"
+		},
+		"Places/column": {
+			"description": "Reprezint\u0103 o coloan\u0103 \u00eentr-o cl\u0103dire sau nav\u0103",
+			"displayType": "Coloan\u0103"
+		},
+		"Places/nearby": {
+			"description": "Categorie pentru lucruri aflate la o anumit\u0103 distan\u021b\u0103 de un geohash",
+			"displayType": "Aproape de locuri"
+		},
+		"Places/interest": {
+			"description": "Categorie pentru lucruri aflate la o anumit\u0103 distan\u021b\u0103 de un geohash, care se potrive\u0219te cu un interes",
+			"displayType": "Locuri de interes"
+		}
+	},
+	"countries": {
+		"SelectCountry": "Selecteaza o tara"
+	}
 }

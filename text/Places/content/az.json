@@ -1,91 +1,91 @@
 {
-    "LatLng": "( {{1}} lat, {{2}} lng)",
-    "nearby": {
-        "PostcodeLabel": "{{1}} ( {{2}} )",
-        "Title": "{{1}} daxilində"
-    },
-    "units": {
-        "meter": "metr",
-        "meters": "metr",
-        "kilometer": "kilometr",
-        "kilometers": "kilometr",
-        "km": "km",
-        "mile": "mil",
-        "miles": "mil",
-        "mi": "mi",
-        "foot": "ayaq",
-        "feet": "ayaq",
-        "inches": "düym"
-    },
-    "location": {
-        "interested": "{{select}} -cu ildə baş verənlərlə maraqlanıram",
-        "update": "Məkanımı Yeniləyin",
-        "set": "Yerimi təyin edin",
-        "prompt": "{{ClickOrTap}} burada<br> təyin edin<br> yer",
-        "myCurrentLocation": "Mənim cari yerim",
-        "enterAddress": "Ünvan daxil edin",
-        "enterPostcode": "Zəhmət olmasa poçt indeksinizi \/ poçt indeksinizi daxil edin",
-        "create": {
-            "action": "Məkan əlavə edin",
-            "title": "Yeni Məkan",
-            "nameYourLocation": "Yerinizi adlandırın"
-        },
-        "confirm": {
-            "title": "Bu məkan yadda saxlansın?",
-            "message": "Gələcəkdə bu məkandan yenidən istifadə etməyi planlaşdırırsınız?",
-            "ok": "Bəli",
-            "cancel": "Yox"
-        },
-        "add": {
-            "title": "Bu yeri adlandırın",
-            "placeholder": "Ev, İş və s.",
-            "ok": "Yadda saxla"
-        },
-        "dialog": {
-            "title": "Məkanı seçin"
-        }
-    },
-    "areas": {
-        "filterPlaceholder": "Bu məkanda hər hansı bir sahə varmı?",
-        "newArea": "Yeni ərazi",
-        "promptTitle": "Ərazi üçün ad daxil edin:",
-        "absent": "Zəhmət olmasa ərazini təyin edin",
-        "error": "Xəta",
-        "exist": "Ərazi artıq mövcuddur",
-        "addNewArea": "Yeni sahə əlavə edin",
-        "add": "əlavə et"
-    },
-    "types": {
-        "Places\/locations": {
-            "description": "yerlərin toplusu",
-            "displayType": "Məkanlar"
-        },
-        "Places\/location": {
-            "description": "Binanı, məkanı, gəmini, parkı və s.",
-            "displayType": "Məkan"
-        },
-        "Places\/area": {
-            "description": "Otaq və ya suite kimi məkan daxilində ərazini təmsil edir",
-            "displayType": "Ərazi"
-        },
-        "Places\/floor": {
-            "description": "Bina və ya gəmidəki mərtəbəni təmsil edir",
-            "displayType": "Mərtəbə"
-        },
-        "Places\/column": {
-            "description": "Bina və ya gəmidəki sütunu təmsil edir",
-            "displayType": "Sütun"
-        },
-        "Places\/nearby": {
-            "description": "Geohaşdan müəyyən məsafədə olan şeylər üçün kateqoriya",
-            "displayType": "Yerlərə yaxın"
-        },
-        "Places\/interest": {
-            "description": "Geohashdan müəyyən məsafədə olan, maraqlara uyğun olan şeylər üçün kateqoriya",
-            "displayType": "Maraqlı yerlər"
-        }
-    },
-    "countries": {
-        "SelectCountry": "Ölkə seçin"
-    }
+	"LatLng": "( {{1}} lat, {{2}} lng)",
+	"nearby": {
+		"PostcodeLabel": "{{1}} ( {{2}} )",
+		"Title": "{{1}} daxilind\u0259"
+	},
+	"units": {
+		"meter": "metr",
+		"meters": "metr",
+		"kilometer": "kilometr",
+		"kilometers": "kilometr",
+		"km": "km",
+		"mile": "mil",
+		"miles": "mil",
+		"mi": "mi",
+		"foot": "ayaq",
+		"feet": "ayaq",
+		"inches": "d\u00fcym"
+	},
+	"location": {
+		"interested": "{{select}} -cu ild\u0259 ba\u015f ver\u0259nl\u0259rl\u0259 maraqlan\u0131ram",
+		"update": "M\u0259kan\u0131m\u0131 Yenil\u0259yin",
+		"set": "Yerimi t\u0259yin edin",
+		"prompt": "{{ClickOrTap}} burada<br> t\u0259yin edin<br> yer",
+		"myCurrentLocation": "M\u0259nim cari yerim",
+		"enterAddress": "\u00dcnvan daxil edin",
+		"enterPostcode": "Z\u0259hm\u0259t olmasa po\u00e7t indeksinizi / po\u00e7t indeksinizi daxil edin",
+		"create": {
+			"action": "M\u0259kan \u0259lav\u0259 edin",
+			"title": "Yeni M\u0259kan",
+			"nameYourLocation": "Yerinizi adland\u0131r\u0131n"
+		},
+		"confirm": {
+			"title": "Bu m\u0259kan yadda saxlans\u0131n?",
+			"message": "G\u0259l\u0259c\u0259kd\u0259 bu m\u0259kandan yenid\u0259n istifad\u0259 etm\u0259yi planla\u015fd\u0131r\u0131rs\u0131n\u0131z?",
+			"ok": "B\u0259li",
+			"cancel": "Yox"
+		},
+		"add": {
+			"title": "Bu yeri adland\u0131r\u0131n",
+			"placeholder": "Ev, \u0130\u015f v\u0259 s.",
+			"ok": "Yadda saxla"
+		},
+		"dialog": {
+			"title": "M\u0259kan\u0131 se\u00e7in"
+		}
+	},
+	"areas": {
+		"filterPlaceholder": "Bu m\u0259kanda h\u0259r hans\u0131 bir sah\u0259 varm\u0131?",
+		"newArea": "Yeni \u0259razi",
+		"promptTitle": "\u018frazi \u00fc\u00e7\u00fcn ad daxil edin:",
+		"absent": "Z\u0259hm\u0259t olmasa \u0259razini t\u0259yin edin",
+		"error": "X\u0259ta",
+		"exist": "\u018frazi art\u0131q m\u00f6vcuddur",
+		"addNewArea": "Yeni sah\u0259 \u0259lav\u0259 edin",
+		"add": "\u0259lav\u0259 et"
+	},
+	"types": {
+		"Places/locations": {
+			"description": "yerl\u0259rin toplusu",
+			"displayType": "M\u0259kanlar"
+		},
+		"Places/location": {
+			"description": "Binan\u0131, m\u0259kan\u0131, g\u0259mini, park\u0131 v\u0259 s.",
+			"displayType": "M\u0259kan"
+		},
+		"Places/area": {
+			"description": "Otaq v\u0259 ya suite kimi m\u0259kan daxilind\u0259 \u0259razini t\u0259msil edir",
+			"displayType": "\u018frazi"
+		},
+		"Places/floor": {
+			"description": "Bina v\u0259 ya g\u0259mid\u0259ki m\u0259rt\u0259b\u0259ni t\u0259msil edir",
+			"displayType": "M\u0259rt\u0259b\u0259"
+		},
+		"Places/column": {
+			"description": "Bina v\u0259 ya g\u0259mid\u0259ki s\u00fctunu t\u0259msil edir",
+			"displayType": "S\u00fctun"
+		},
+		"Places/nearby": {
+			"description": "Geoha\u015fdan m\u00fc\u0259yy\u0259n m\u0259saf\u0259d\u0259 olan \u015feyl\u0259r \u00fc\u00e7\u00fcn kateqoriya",
+			"displayType": "Yerl\u0259r\u0259 yax\u0131n"
+		},
+		"Places/interest": {
+			"description": "Geohashdan m\u00fc\u0259yy\u0259n m\u0259saf\u0259d\u0259 olan, maraqlara uy\u011fun olan \u015feyl\u0259r \u00fc\u00e7\u00fcn kateqoriya",
+			"displayType": "Maraql\u0131 yerl\u0259r"
+		}
+	},
+	"countries": {
+		"SelectCountry": "\u00d6lk\u0259 se\u00e7in"
+	}
 }

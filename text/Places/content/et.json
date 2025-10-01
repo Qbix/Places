@@ -1,91 +1,91 @@
 {
-    "LatLng": "( {{1}} latti, {{2}} lng)",
-    "nearby": {
-        "PostcodeLabel": "{{1}} ( {{2}} )",
-        "Title": "{{1}} piires"
-    },
-    "units": {
-        "meter": "meeter",
-        "meters": "meetrit",
-        "kilometer": "kilomeetrit",
-        "kilometers": "kilomeetrit",
-        "km": "km",
-        "mile": "miil",
-        "miles": "miili",
-        "mi": "mi",
-        "foot": "jalg",
-        "feet": "jalad",
-        "inches": "tolli"
-    },
-    "location": {
-        "interested": "Mind huvitavad asjad, mis toimuvad {{select}} raadiuses",
-        "update": "Värskenda Minu asukohta",
-        "set": "Määra Minu asukoht",
-        "prompt": "{{ClickOrTap}} siia<br> määra oma<br> asukoht",
-        "myCurrentLocation": "Minu praegune asukoht",
-        "enterAddress": "Sisestage aadress",
-        "enterPostcode": "Palun sisestage oma sihtnumber",
-        "create": {
-            "action": "Lisa asukoht",
-            "title": "Uus Asukoht",
-            "nameYourLocation": "Nimetage oma asukoht"
-        },
-        "confirm": {
-            "title": "Kas salvestada see asukoht?",
-            "message": "Kas kavatsete seda asukohta tulevikus uuesti kasutada?",
-            "ok": "Jah",
-            "cancel": "Ei"
-        },
-        "add": {
-            "title": "Nimetage see asukoht",
-            "placeholder": "Kodu, töö jne.",
-            "ok": "Salvesta"
-        },
-        "dialog": {
-            "title": "Valige Asukoht"
-        }
-    },
-    "areas": {
-        "filterPlaceholder": "Kas selles asukohas on mõni piirkond?",
-        "newArea": "Uus piirkond",
-        "promptTitle": "Sisestage piirkonna nimi:",
-        "absent": "Palun määra ala",
-        "error": "Viga",
-        "exist": "Piirkond on juba olemas",
-        "addNewArea": "Lisa uus piirkond",
-        "add": "Lisama"
-    },
-    "types": {
-        "Places\/locations": {
-            "description": "asukohtade kogum",
-            "displayType": "Asukohad"
-        },
-        "Places\/location": {
-            "description": "Esindab hoonet, toimumiskohta, laeva, parki jne.",
-            "displayType": "Asukoht"
-        },
-        "Places\/area": {
-            "description": "Esindab piirkonda asukohas, näiteks tuba või sviiti",
-            "displayType": "Piirkond"
-        },
-        "Places\/floor": {
-            "description": "Esindab hoone või laeva korrust",
-            "displayType": "Põrand"
-        },
-        "Places\/column": {
-            "description": "Esindab veergu hoones või laevas",
-            "displayType": "Veerg"
-        },
-        "Places\/nearby": {
-            "description": "Kategooria asjade jaoks, mis asuvad geohašist teatud kaugusel",
-            "displayType": "Lähedal asuvad kohad"
-        },
-        "Places\/interest": {
-            "description": "Kategooria asjadele, mis asuvad geohašist teatud kaugusel, mis vastab huvidele",
-            "displayType": "Huvipakkuvad kohad"
-        }
-    },
-    "countries": {
-        "SelectCountry": "Valige riik"
-    }
+	"LatLng": "( {{1}} latti, {{2}} lng)",
+	"nearby": {
+		"PostcodeLabel": "{{1}} ( {{2}} )",
+		"Title": "{{1}} piires"
+	},
+	"units": {
+		"meter": "meeter",
+		"meters": "meetrit",
+		"kilometer": "kilomeetrit",
+		"kilometers": "kilomeetrit",
+		"km": "km",
+		"mile": "miil",
+		"miles": "miili",
+		"mi": "mi",
+		"foot": "jalg",
+		"feet": "jalad",
+		"inches": "tolli"
+	},
+	"location": {
+		"interested": "Mind huvitavad asjad, mis toimuvad {{select}} raadiuses",
+		"update": "V\u00e4rskenda Minu asukohta",
+		"set": "M\u00e4\u00e4ra Minu asukoht",
+		"prompt": "{{ClickOrTap}} siia<br> m\u00e4\u00e4ra oma<br> asukoht",
+		"myCurrentLocation": "Minu praegune asukoht",
+		"enterAddress": "Sisestage aadress",
+		"enterPostcode": "Palun sisestage oma sihtnumber",
+		"create": {
+			"action": "Lisa asukoht",
+			"title": "Uus Asukoht",
+			"nameYourLocation": "Nimetage oma asukoht"
+		},
+		"confirm": {
+			"title": "Kas salvestada see asukoht?",
+			"message": "Kas kavatsete seda asukohta tulevikus uuesti kasutada?",
+			"ok": "Jah",
+			"cancel": "Ei"
+		},
+		"add": {
+			"title": "Nimetage see asukoht",
+			"placeholder": "Kodu, t\u00f6\u00f6 jne.",
+			"ok": "Salvesta"
+		},
+		"dialog": {
+			"title": "Valige Asukoht"
+		}
+	},
+	"areas": {
+		"filterPlaceholder": "Kas selles asukohas on m\u00f5ni piirkond?",
+		"newArea": "Uus piirkond",
+		"promptTitle": "Sisestage piirkonna nimi:",
+		"absent": "Palun m\u00e4\u00e4ra ala",
+		"error": "Viga",
+		"exist": "Piirkond on juba olemas",
+		"addNewArea": "Lisa uus piirkond",
+		"add": "Lisama"
+	},
+	"types": {
+		"Places/locations": {
+			"description": "asukohtade kogum",
+			"displayType": "Asukohad"
+		},
+		"Places/location": {
+			"description": "Esindab hoonet, toimumiskohta, laeva, parki jne.",
+			"displayType": "Asukoht"
+		},
+		"Places/area": {
+			"description": "Esindab piirkonda asukohas, n\u00e4iteks tuba v\u00f5i sviiti",
+			"displayType": "Piirkond"
+		},
+		"Places/floor": {
+			"description": "Esindab hoone v\u00f5i laeva korrust",
+			"displayType": "P\u00f5rand"
+		},
+		"Places/column": {
+			"description": "Esindab veergu hoones v\u00f5i laevas",
+			"displayType": "Veerg"
+		},
+		"Places/nearby": {
+			"description": "Kategooria asjade jaoks, mis asuvad geoha\u0161ist teatud kaugusel",
+			"displayType": "L\u00e4hedal asuvad kohad"
+		},
+		"Places/interest": {
+			"description": "Kategooria asjadele, mis asuvad geoha\u0161ist teatud kaugusel, mis vastab huvidele",
+			"displayType": "Huvipakkuvad kohad"
+		}
+	},
+	"countries": {
+		"SelectCountry": "Valige riik"
+	}
 }

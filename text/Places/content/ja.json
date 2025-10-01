@@ -1,91 +1,91 @@
 {
-    "LatLng": "(緯度{{1}} 、経度{{2}} )",
-    "nearby": {
-        "PostcodeLabel": "{{1}} ( {{2}} )",
-        "Title": "{{1}}以内"
-    },
-    "units": {
-        "meter": "メーター",
-        "meters": "メートル",
-        "kilometer": "キロメートル",
-        "kilometers": "キロメートル",
-        "km": "km",
-        "mile": "マイル",
-        "miles": "マイル",
-        "mi": "マイル",
-        "foot": "フット",
-        "feet": "フィート",
-        "inches": "インチ"
-    },
-    "location": {
-        "interested": "{{select}}年以内に起こっていることに興味があります",
-        "update": "現在地を更新",
-        "set": "現在地を設定",
-        "prompt": "{{ClickOrTap}}ここまで<br>あなたの設定<br>位置",
-        "myCurrentLocation": "現在地",
-        "enterAddress": "住所を入力してください",
-        "enterPostcode": "郵便番号を入力してください",
-        "create": {
-            "action": "場所を追加",
-            "title": "新しい場所",
-            "nameYourLocation": "あなたの場所に名前を付ける"
-        },
-        "confirm": {
-            "title": "この場所を保存しますか?",
-            "message": "今後、この場所を再び使用する予定はありますか?",
-            "ok": "はい",
-            "cancel": "いいえ"
-        },
-        "add": {
-            "title": "この場所に名前を付ける",
-            "placeholder": "自宅、職場など",
-            "ok": "保存"
-        },
-        "dialog": {
-            "title": "場所を選択"
-        }
-    },
-    "areas": {
-        "filterPlaceholder": "この場所の中にエリアはありますか?",
-        "newArea": "新エリア",
-        "promptTitle": "エリアの名前を入力してください:",
-        "absent": "エリアを設定してください",
-        "error": "エラー",
-        "exist": "エリアは既に存在します",
-        "addNewArea": "新しいエリアを追加",
-        "add": "追加"
-    },
-    "types": {
-        "Places\/locations": {
-            "description": "ロケーションのコレクション",
-            "displayType": "場所"
-        },
-        "Places\/location": {
-            "description": "建物、会場、船、公園などを表します。",
-            "displayType": "位置"
-        },
-        "Places\/area": {
-            "description": "部屋やスイートなど、場所内の領域を表します",
-            "displayType": "エリア"
-        },
-        "Places\/floor": {
-            "description": "建物や船のフロアを表す",
-            "displayType": "床"
-        },
-        "Places\/column": {
-            "description": "建物または船の柱を表します",
-            "displayType": "桁"
-        },
-        "Places\/nearby": {
-            "description": "ジオハッシュから一定の距離内にあるもののカテゴリ",
-            "displayType": "近くの場所"
-        },
-        "Places\/interest": {
-            "description": "関心に一致する、ジオハッシュから一定の距離内にあるもののカテゴリ",
-            "displayType": "興味のある場所"
-        }
-    },
-    "countries": {
-        "SelectCountry": "国を選択"
-    }
+	"LatLng": "(\u7def\u5ea6{{1}} \u3001\u7d4c\u5ea6{{2}} )",
+	"nearby": {
+		"PostcodeLabel": "{{1}} ( {{2}} )",
+		"Title": "{{1}}\u4ee5\u5185"
+	},
+	"units": {
+		"meter": "\u30e1\u30fc\u30bf\u30fc",
+		"meters": "\u30e1\u30fc\u30c8\u30eb",
+		"kilometer": "\u30ad\u30ed\u30e1\u30fc\u30c8\u30eb",
+		"kilometers": "\u30ad\u30ed\u30e1\u30fc\u30c8\u30eb",
+		"km": "km",
+		"mile": "\u30de\u30a4\u30eb",
+		"miles": "\u30de\u30a4\u30eb",
+		"mi": "\u30de\u30a4\u30eb",
+		"foot": "\u30d5\u30c3\u30c8",
+		"feet": "\u30d5\u30a3\u30fc\u30c8",
+		"inches": "\u30a4\u30f3\u30c1"
+	},
+	"location": {
+		"interested": "{{select}}\u5e74\u4ee5\u5185\u306b\u8d77\u3053\u3063\u3066\u3044\u308b\u3053\u3068\u306b\u8208\u5473\u304c\u3042\u308a\u307e\u3059",
+		"update": "\u73fe\u5728\u5730\u3092\u66f4\u65b0",
+		"set": "\u73fe\u5728\u5730\u3092\u8a2d\u5b9a",
+		"prompt": "{{ClickOrTap}}\u3053\u3053\u307e\u3067<br>\u3042\u306a\u305f\u306e\u8a2d\u5b9a<br>\u4f4d\u7f6e",
+		"myCurrentLocation": "\u73fe\u5728\u5730",
+		"enterAddress": "\u4f4f\u6240\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044",
+		"enterPostcode": "\u90f5\u4fbf\u756a\u53f7\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044",
+		"create": {
+			"action": "\u5834\u6240\u3092\u8ffd\u52a0",
+			"title": "\u65b0\u3057\u3044\u5834\u6240",
+			"nameYourLocation": "\u3042\u306a\u305f\u306e\u5834\u6240\u306b\u540d\u524d\u3092\u4ed8\u3051\u308b"
+		},
+		"confirm": {
+			"title": "\u3053\u306e\u5834\u6240\u3092\u4fdd\u5b58\u3057\u307e\u3059\u304b?",
+			"message": "\u4eca\u5f8c\u3001\u3053\u306e\u5834\u6240\u3092\u518d\u3073\u4f7f\u7528\u3059\u308b\u4e88\u5b9a\u306f\u3042\u308a\u307e\u3059\u304b?",
+			"ok": "\u306f\u3044",
+			"cancel": "\u3044\u3044\u3048"
+		},
+		"add": {
+			"title": "\u3053\u306e\u5834\u6240\u306b\u540d\u524d\u3092\u4ed8\u3051\u308b",
+			"placeholder": "\u81ea\u5b85\u3001\u8077\u5834\u306a\u3069",
+			"ok": "\u4fdd\u5b58"
+		},
+		"dialog": {
+			"title": "\u5834\u6240\u3092\u9078\u629e"
+		}
+	},
+	"areas": {
+		"filterPlaceholder": "\u3053\u306e\u5834\u6240\u306e\u4e2d\u306b\u30a8\u30ea\u30a2\u306f\u3042\u308a\u307e\u3059\u304b?",
+		"newArea": "\u65b0\u30a8\u30ea\u30a2",
+		"promptTitle": "\u30a8\u30ea\u30a2\u306e\u540d\u524d\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044:",
+		"absent": "\u30a8\u30ea\u30a2\u3092\u8a2d\u5b9a\u3057\u3066\u304f\u3060\u3055\u3044",
+		"error": "\u30a8\u30e9\u30fc",
+		"exist": "\u30a8\u30ea\u30a2\u306f\u65e2\u306b\u5b58\u5728\u3057\u307e\u3059",
+		"addNewArea": "\u65b0\u3057\u3044\u30a8\u30ea\u30a2\u3092\u8ffd\u52a0",
+		"add": "\u8ffd\u52a0"
+	},
+	"types": {
+		"Places/locations": {
+			"description": "\u30ed\u30b1\u30fc\u30b7\u30e7\u30f3\u306e\u30b3\u30ec\u30af\u30b7\u30e7\u30f3",
+			"displayType": "\u5834\u6240"
+		},
+		"Places/location": {
+			"description": "\u5efa\u7269\u3001\u4f1a\u5834\u3001\u8239\u3001\u516c\u5712\u306a\u3069\u3092\u8868\u3057\u307e\u3059\u3002",
+			"displayType": "\u4f4d\u7f6e"
+		},
+		"Places/area": {
+			"description": "\u90e8\u5c4b\u3084\u30b9\u30a4\u30fc\u30c8\u306a\u3069\u3001\u5834\u6240\u5185\u306e\u9818\u57df\u3092\u8868\u3057\u307e\u3059",
+			"displayType": "\u30a8\u30ea\u30a2"
+		},
+		"Places/floor": {
+			"description": "\u5efa\u7269\u3084\u8239\u306e\u30d5\u30ed\u30a2\u3092\u8868\u3059",
+			"displayType": "\u5e8a"
+		},
+		"Places/column": {
+			"description": "\u5efa\u7269\u307e\u305f\u306f\u8239\u306e\u67f1\u3092\u8868\u3057\u307e\u3059",
+			"displayType": "\u6841"
+		},
+		"Places/nearby": {
+			"description": "\u30b8\u30aa\u30cf\u30c3\u30b7\u30e5\u304b\u3089\u4e00\u5b9a\u306e\u8ddd\u96e2\u5185\u306b\u3042\u308b\u3082\u306e\u306e\u30ab\u30c6\u30b4\u30ea",
+			"displayType": "\u8fd1\u304f\u306e\u5834\u6240"
+		},
+		"Places/interest": {
+			"description": "\u95a2\u5fc3\u306b\u4e00\u81f4\u3059\u308b\u3001\u30b8\u30aa\u30cf\u30c3\u30b7\u30e5\u304b\u3089\u4e00\u5b9a\u306e\u8ddd\u96e2\u5185\u306b\u3042\u308b\u3082\u306e\u306e\u30ab\u30c6\u30b4\u30ea",
+			"displayType": "\u8208\u5473\u306e\u3042\u308b\u5834\u6240"
+		}
+	},
+	"countries": {
+		"SelectCountry": "\u56fd\u3092\u9078\u629e"
+	}
 }

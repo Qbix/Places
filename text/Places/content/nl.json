@@ -1,91 +1,91 @@
 {
-    "LatLng": "( {{1}} lat, {{2}} lng)",
-    "nearby": {
-        "PostcodeLabel": "{{1}} ( {{2}} )",
-        "Title": "binnen {{1}}"
-    },
-    "units": {
-        "meter": "meter",
-        "meters": "meter",
-        "kilometer": "kilometer",
-        "kilometers": "kilometer",
-        "km": "km",
-        "mile": "mijl",
-        "miles": "mijl",
-        "mi": "mi",
-        "foot": "voet",
-        "feet": "voeten",
-        "inches": "inches"
-    },
-    "location": {
-        "interested": "Ik ben geïnteresseerd in dingen die plaatsvinden binnen {{select}} van",
-        "update": "Update Mijn locatie",
-        "set": "Stel Mijn locatie in",
-        "prompt": "{{ClickOrTap}} hier naar<br> Stel je<br> plaats",
-        "myCurrentLocation": "Mijn huidige locatie",
-        "enterAddress": "Geef een adres in",
-        "enterPostcode": "Vul a.u.b. uw postcode\/postcode in",
-        "create": {
-            "action": "Voeg locatie toe",
-            "title": "Nieuwe locatie",
-            "nameYourLocation": "Geef uw locatie een naam"
-        },
-        "confirm": {
-            "title": "Deze locatie opslaan?",
-            "message": "Ben je van plan om in de toekomst weer gebruik te maken van deze locatie?",
-            "ok": "Ja",
-            "cancel": "Nee"
-        },
-        "add": {
-            "title": "Geef deze locatie een naam",
-            "placeholder": "Thuis, werk enz.",
-            "ok": "Redden"
-        },
-        "dialog": {
-            "title": "Kies locatie"
-        }
-    },
-    "areas": {
-        "filterPlaceholder": "Elk gebied binnen deze locatie?",
-        "newArea": "Nieuw gebied",
-        "promptTitle": "Voer een naam in voor het gebied:",
-        "absent": "Stel het gebied in",
-        "error": "Fout",
-        "exist": "Gebied bestaat al",
-        "addNewArea": "Nieuw gebied toevoegen",
-        "add": "Toevoegen"
-    },
-    "types": {
-        "Places\/locations": {
-            "description": "een verzameling locaties",
-            "displayType": "Locaties"
-        },
-        "Places\/location": {
-            "description": "Vertegenwoordigt een gebouw, locatie, schip, park, enz.",
-            "displayType": "Plaats"
-        },
-        "Places\/area": {
-            "description": "Vertegenwoordigt een gebied binnen een locatie, zoals een kamer of suite",
-            "displayType": "Gebied"
-        },
-        "Places\/floor": {
-            "description": "Vertegenwoordigt een verdieping in een gebouw of schip",
-            "displayType": "Vloer"
-        },
-        "Places\/column": {
-            "description": "Vertegenwoordigt een kolom in een gebouw of schip",
-            "displayType": "Kolom"
-        },
-        "Places\/nearby": {
-            "description": "Categorie voor dingen binnen een bepaalde afstand van een geohash",
-            "displayType": "Plaatsen in de buurt"
-        },
-        "Places\/interest": {
-            "description": "Categorie voor dingen binnen een bepaalde afstand van een geohash, overeenkomend met een interesse",
-            "displayType": "Plaatst interesse"
-        }
-    },
-    "countries": {
-        "SelectCountry": "Selecteer een land"
-    }
+	"LatLng": "( {{1}} lat, {{2}} lng)",
+	"nearby": {
+		"PostcodeLabel": "{{1}} ( {{2}} )",
+		"Title": "binnen {{1}}"
+	},
+	"units": {
+		"meter": "meter",
+		"meters": "meter",
+		"kilometer": "kilometer",
+		"kilometers": "kilometer",
+		"km": "km",
+		"mile": "mijl",
+		"miles": "mijl",
+		"mi": "mi",
+		"foot": "voet",
+		"feet": "voeten",
+		"inches": "inches"
+	},
+	"location": {
+		"interested": "Ik ben ge\u00efnteresseerd in dingen die plaatsvinden binnen {{select}} van",
+		"update": "Update Mijn locatie",
+		"set": "Stel Mijn locatie in",
+		"prompt": "{{ClickOrTap}} hier naar<br> Stel je<br> plaats",
+		"myCurrentLocation": "Mijn huidige locatie",
+		"enterAddress": "Geef een adres in",
+		"enterPostcode": "Vul a.u.b. uw postcode/postcode in",
+		"create": {
+			"action": "Voeg locatie toe",
+			"title": "Nieuwe locatie",
+			"nameYourLocation": "Geef uw locatie een naam"
+		},
+		"confirm": {
+			"title": "Deze locatie opslaan?",
+			"message": "Ben je van plan om in de toekomst weer gebruik te maken van deze locatie?",
+			"ok": "Ja",
+			"cancel": "Nee"
+		},
+		"add": {
+			"title": "Geef deze locatie een naam",
+			"placeholder": "Thuis, werk enz.",
+			"ok": "Redden"
+		},
+		"dialog": {
+			"title": "Kies locatie"
+		}
+	},
+	"areas": {
+		"filterPlaceholder": "Elk gebied binnen deze locatie?",
+		"newArea": "Nieuw gebied",
+		"promptTitle": "Voer een naam in voor het gebied:",
+		"absent": "Stel het gebied in",
+		"error": "Fout",
+		"exist": "Gebied bestaat al",
+		"addNewArea": "Nieuw gebied toevoegen",
+		"add": "Toevoegen"
+	},
+	"types": {
+		"Places/locations": {
+			"description": "een verzameling locaties",
+			"displayType": "Locaties"
+		},
+		"Places/location": {
+			"description": "Vertegenwoordigt een gebouw, locatie, schip, park, enz.",
+			"displayType": "Plaats"
+		},
+		"Places/area": {
+			"description": "Vertegenwoordigt een gebied binnen een locatie, zoals een kamer of suite",
+			"displayType": "Gebied"
+		},
+		"Places/floor": {
+			"description": "Vertegenwoordigt een verdieping in een gebouw of schip",
+			"displayType": "Vloer"
+		},
+		"Places/column": {
+			"description": "Vertegenwoordigt een kolom in een gebouw of schip",
+			"displayType": "Kolom"
+		},
+		"Places/nearby": {
+			"description": "Categorie voor dingen binnen een bepaalde afstand van een geohash",
+			"displayType": "Plaatsen in de buurt"
+		},
+		"Places/interest": {
+			"description": "Categorie voor dingen binnen een bepaalde afstand van een geohash, overeenkomend met een interesse",
+			"displayType": "Plaatst interesse"
+		}
+	},
+	"countries": {
+		"SelectCountry": "Selecteer een land"
+	}
 }

@@ -40,9 +40,61 @@ var Places = Q.Places = Q.plugins.Places = {
 	 * Use this to load country data into Q.Places.countries and Q.Places.topo
 	 * @param {Function} callback Once the callback is called, 
 	 *   Q.Places.countries and Q.Places.countries is accessible
+	 * @param {Object} [options] Options to pass to Q.Text.get()
+	 * @param {Boolean} [options.localized] each country in its own language
+	 * @param {Boolean} [options.language] specify one language for all countries
 	 */
-	loadCountries: function (callback) {
-		Q.ensure('Q.Places.countries', callback);
+	loadCountries: function (callback, options) {
+		setTimeout(function () {
+			Q.Text.get('Places/countries', function (err, base) {
+				if (err) return callback && callback(err);
+
+				function proceed(extra) {
+					var langPref = null;
+
+					if (options && options.language) {
+						langPref = [options.language.toLowerCase()];
+					} else if (Q.Text.language) {
+						langPref = [Q.Text.language.toLowerCase()];
+					} else {
+						langPref = [];
+					}
+
+					for (var code in base) {
+						if (!base.hasOwnProperty(code)) continue;
+						var arr = base[code];
+						var name = arr[0]; // default
+
+						if (extra && extra[code]) {
+							// explicit language
+							if (langPref.length && extra[code][langPref[0]]) {
+								name = extra[code][langPref[0]];
+							}
+							// localized endonym fallback
+							else if (options && options.localized) {
+								var langs = Object.keys(extra[code]);
+								if (langs.length) {
+									name = extra[code][langs[0]];
+								}
+							}
+						}
+
+						arr[0] = name;
+					}
+
+					Q.Places.countries = base;
+					callback && callback(null, base);
+				}
+
+				if (options && options.localized) {
+					Q.ensure('Q.Places.countriesLocalize', function () {
+						proceed(Places.countriesLocalize);
+					});
+				} else {
+					proceed(null);
+				}
+			}, options);
+		}, 0);
 	},
 	
 	/**
@@ -629,7 +681,9 @@ Q.beforeInit.set(function () {
 		+ '&callback=Q.Places.loadGoogleMaps.loaded';
 }, 'Places');
 
-Q.ensure.loaders['Q.Places.countries'] = '{{Places}}/js/lib/countries.json';
+Q.ensure.loaders['Q.Places.countriesLocalize'] = Q.url(
+	Q.Text.dir + '/Places/countries/localize.json'
+);
 
 Places.loadGoogleMaps.waitingCallbacks = [];
 Places.loadGoogleMaps.loaded = function _PLaces_loadGoogleMaps_loaded () {

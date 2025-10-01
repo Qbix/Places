@@ -1,91 +1,91 @@
 {
-    "LatLng": "( {{1}} lat, {{2}} lng)",
-    "nearby": {
-        "PostcodeLabel": "{{1}} ( {{2}} )",
-        "Title": "innan {{1}}"
-    },
-    "units": {
-        "meter": "metra",
-        "meters": "metra",
-        "kilometer": "kílómetra",
-        "kilometers": "kílómetrar",
-        "km": "km",
-        "mile": "Míla",
-        "miles": "mílur",
-        "mi": "mí",
-        "foot": "fótur",
-        "feet": "fótum",
-        "inches": "tommur"
-    },
-    "location": {
-        "interested": "Ég hef áhuga á að hlutirnir eigi sér stað innan {{select}}",
-        "update": "Uppfærðu staðsetningu mína",
-        "set": "Stilltu staðsetningu mína",
-        "prompt": "{{ClickOrTap}} hingað til<br> stilltu þinn<br> staðsetningu",
-        "myCurrentLocation": "Núverandi staðsetning mín",
-        "enterAddress": "Sláðu inn heimilisfang",
-        "enterPostcode": "Vinsamlegast sláðu inn póstnúmer\/póstnúmer",
-        "create": {
-            "action": "Bæta við staðsetningu",
-            "title": "Ný staðsetning",
-            "nameYourLocation": "Nefndu staðsetningu þína"
-        },
-        "confirm": {
-            "title": "Vista þessa staðsetningu?",
-            "message": "Ætlarðu að nota þennan stað aftur í framtíðinni?",
-            "ok": "Já",
-            "cancel": "Nei"
-        },
-        "add": {
-            "title": "Nefndu þessa staðsetningu",
-            "placeholder": "Heimili, vinna o.s.frv.",
-            "ok": "Vista"
-        },
-        "dialog": {
-            "title": "Veldu staðsetningu"
-        }
-    },
-    "areas": {
-        "filterPlaceholder": "Einhver svæði inni á þessum stað?",
-        "newArea": "Nýtt svæði",
-        "promptTitle": "Sláðu inn nafn fyrir svæðið:",
-        "absent": "Vinsamlegast stilltu svæði",
-        "error": "Villa",
-        "exist": "Svæði er þegar til",
-        "addNewArea": "Bæta við nýju svæði",
-        "add": "Bæta við"
-    },
-    "types": {
-        "Places\/locations": {
-            "description": "safn af stöðum",
-            "displayType": "Staðsetningar"
-        },
-        "Places\/location": {
-            "description": "Táknar byggingu, vettvang, skip, garður osfrv.",
-            "displayType": "Staðsetning"
-        },
-        "Places\/area": {
-            "description": "Táknar svæði innan staðsetningar, eins og herbergi eða svíta",
-            "displayType": "Svæði"
-        },
-        "Places\/floor": {
-            "description": "Táknar hæð í byggingu eða skipi",
-            "displayType": "Gólf"
-        },
-        "Places\/column": {
-            "description": "Táknar súlu í byggingu eða skipi",
-            "displayType": "Dálkur"
-        },
-        "Places\/nearby": {
-            "description": "Flokkur fyrir hluti í ákveðinni fjarlægð frá jarðhöggi",
-            "displayType": "Nálægt stöðum"
-        },
-        "Places\/interest": {
-            "description": "Flokkur fyrir hluti sem eru innan ákveðinnar fjarlægðar frá geohash, sem passa við áhugamál",
-            "displayType": "Áhugi á stöðum"
-        }
-    },
-    "countries": {
-        "SelectCountry": "Veldu land"
-    }
+	"LatLng": "( {{1}} lat, {{2}} lng)",
+	"nearby": {
+		"PostcodeLabel": "{{1}} ( {{2}} )",
+		"Title": "innan {{1}}"
+	},
+	"units": {
+		"meter": "metra",
+		"meters": "metra",
+		"kilometer": "k\u00edl\u00f3metra",
+		"kilometers": "k\u00edl\u00f3metrar",
+		"km": "km",
+		"mile": "M\u00edla",
+		"miles": "m\u00edlur",
+		"mi": "m\u00ed",
+		"foot": "f\u00f3tur",
+		"feet": "f\u00f3tum",
+		"inches": "tommur"
+	},
+	"location": {
+		"interested": "\u00c9g hef \u00e1huga \u00e1 a\u00f0 hlutirnir eigi s\u00e9r sta\u00f0 innan {{select}}",
+		"update": "Uppf\u00e6r\u00f0u sta\u00f0setningu m\u00edna",
+		"set": "Stilltu sta\u00f0setningu m\u00edna",
+		"prompt": "{{ClickOrTap}} hinga\u00f0 til<br> stilltu \u00feinn<br> sta\u00f0setningu",
+		"myCurrentLocation": "N\u00faverandi sta\u00f0setning m\u00edn",
+		"enterAddress": "Sl\u00e1\u00f0u inn heimilisfang",
+		"enterPostcode": "Vinsamlegast sl\u00e1\u00f0u inn p\u00f3stn\u00famer/p\u00f3stn\u00famer",
+		"create": {
+			"action": "B\u00e6ta vi\u00f0 sta\u00f0setningu",
+			"title": "N\u00fd sta\u00f0setning",
+			"nameYourLocation": "Nefndu sta\u00f0setningu \u00fe\u00edna"
+		},
+		"confirm": {
+			"title": "Vista \u00feessa sta\u00f0setningu?",
+			"message": "\u00c6tlar\u00f0u a\u00f0 nota \u00feennan sta\u00f0 aftur \u00ed framt\u00ed\u00f0inni?",
+			"ok": "J\u00e1",
+			"cancel": "Nei"
+		},
+		"add": {
+			"title": "Nefndu \u00feessa sta\u00f0setningu",
+			"placeholder": "Heimili, vinna o.s.frv.",
+			"ok": "Vista"
+		},
+		"dialog": {
+			"title": "Veldu sta\u00f0setningu"
+		}
+	},
+	"areas": {
+		"filterPlaceholder": "Einhver sv\u00e6\u00f0i inni \u00e1 \u00feessum sta\u00f0?",
+		"newArea": "N\u00fdtt sv\u00e6\u00f0i",
+		"promptTitle": "Sl\u00e1\u00f0u inn nafn fyrir sv\u00e6\u00f0i\u00f0:",
+		"absent": "Vinsamlegast stilltu sv\u00e6\u00f0i",
+		"error": "Villa",
+		"exist": "Sv\u00e6\u00f0i er \u00feegar til",
+		"addNewArea": "B\u00e6ta vi\u00f0 n\u00fdju sv\u00e6\u00f0i",
+		"add": "B\u00e6ta vi\u00f0"
+	},
+	"types": {
+		"Places/locations": {
+			"description": "safn af st\u00f6\u00f0um",
+			"displayType": "Sta\u00f0setningar"
+		},
+		"Places/location": {
+			"description": "T\u00e1knar byggingu, vettvang, skip, gar\u00f0ur osfrv.",
+			"displayType": "Sta\u00f0setning"
+		},
+		"Places/area": {
+			"description": "T\u00e1knar sv\u00e6\u00f0i innan sta\u00f0setningar, eins og herbergi e\u00f0a sv\u00edta",
+			"displayType": "Sv\u00e6\u00f0i"
+		},
+		"Places/floor": {
+			"description": "T\u00e1knar h\u00e6\u00f0 \u00ed byggingu e\u00f0a skipi",
+			"displayType": "G\u00f3lf"
+		},
+		"Places/column": {
+			"description": "T\u00e1knar s\u00falu \u00ed byggingu e\u00f0a skipi",
+			"displayType": "D\u00e1lkur"
+		},
+		"Places/nearby": {
+			"description": "Flokkur fyrir hluti \u00ed \u00e1kve\u00f0inni fjarl\u00e6g\u00f0 fr\u00e1 jar\u00f0h\u00f6ggi",
+			"displayType": "N\u00e1l\u00e6gt st\u00f6\u00f0um"
+		},
+		"Places/interest": {
+			"description": "Flokkur fyrir hluti sem eru innan \u00e1kve\u00f0innar fjarl\u00e6g\u00f0ar fr\u00e1 geohash, sem passa vi\u00f0 \u00e1hugam\u00e1l",
+			"displayType": "\u00c1hugi \u00e1 st\u00f6\u00f0um"
+		}
+	},
+	"countries": {
+		"SelectCountry": "Veldu land"
+	}
 }

@@ -1,91 +1,91 @@
 {
-    "LatLng": "( {{1}} Lat, {{2}} Ing)",
-    "nearby": {
-        "PostcodeLabel": "{{1}} ( {{2}} )",
-        "Title": "innerhalb von {{1}}"
-    },
-    "units": {
-        "meter": "Meter",
-        "meters": "Meter",
-        "kilometer": "Kilometer",
-        "kilometers": "Kilometer",
-        "km": "km",
-        "mile": "Meile",
-        "miles": "Meilen",
-        "mi": "mi",
-        "foot": "Fuß",
-        "feet": "Füße",
-        "inches": "Zoll"
-    },
-    "location": {
-        "interested": "Ich interessiere mich für Dinge, die innerhalb von {{select}} von stattfinden",
-        "update": "Meinen Standort aktualisieren",
-        "set": "Meinen Standort festlegen",
-        "prompt": "{{ClickOrTap}} hier an<br> setze deine<br> Standort",
-        "myCurrentLocation": "Mein aktueller Standort",
-        "enterAddress": "Gib eine Adresse ein",
-        "enterPostcode": "Bitte geben Sie Ihre Postleitzahl \/ Postleitzahl ein",
-        "create": {
-            "action": "Ort hinzufügen",
-            "title": "Neuen Ort",
-            "nameYourLocation": "Nennen Sie Ihren Standort"
-        },
-        "confirm": {
-            "title": "Diesen Ort speichern?",
-            "message": "Planen Sie, diesen Standort in Zukunft wieder zu nutzen?",
-            "ok": "Ja",
-            "cancel": "NEIN"
-        },
-        "add": {
-            "title": "Benennen Sie diesen Ort",
-            "placeholder": "Zuhause, Arbeit usw.",
-            "ok": "Speichern"
-        },
-        "dialog": {
-            "title": "Ort wählen"
-        }
-    },
-    "areas": {
-        "filterPlaceholder": "Irgendein Bereich innerhalb dieses Ortes?",
-        "newArea": "Neues Gebiet",
-        "promptTitle": "Geben Sie einen Namen für den Bereich ein:",
-        "absent": "Bitte Bereich festlegen",
-        "error": "Fehler",
-        "exist": "Bereich bereits vorhanden",
-        "addNewArea": "Neuen Bereich hinzufügen",
-        "add": "Hinzufügen"
-    },
-    "types": {
-        "Places\/locations": {
-            "description": "eine Sammlung von Orten",
-            "displayType": "Standorte"
-        },
-        "Places\/location": {
-            "description": "Repräsentiert ein Gebäude, einen Veranstaltungsort, ein Schiff, einen Park usw.",
-            "displayType": "Standort"
-        },
-        "Places\/area": {
-            "description": "Stellt einen Bereich innerhalb eines Standorts dar, z. B. ein Zimmer oder eine Suite",
-            "displayType": "Bereich"
-        },
-        "Places\/floor": {
-            "description": "Stellt eine Etage in einem Gebäude oder Schiff dar",
-            "displayType": "Boden"
-        },
-        "Places\/column": {
-            "description": "Stellt eine Säule in einem Gebäude oder Schiff dar",
-            "displayType": "Spalte"
-        },
-        "Places\/nearby": {
-            "description": "Kategorie für Dinge innerhalb einer bestimmten Entfernung von einem Geohash",
-            "displayType": "Orte in der Nähe"
-        },
-        "Places\/interest": {
-            "description": "Kategorie für Dinge innerhalb einer bestimmten Entfernung von einem Geohash, die einem Interesse entsprechen",
-            "displayType": "Orte von Interesse"
-        }
-    },
-    "countries": {
-        "SelectCountry": "Wähle ein Land"
-    }
+	"LatLng": "( {{1}} Lat, {{2}} Ing)",
+	"nearby": {
+		"PostcodeLabel": "{{1}} ( {{2}} )",
+		"Title": "innerhalb von {{1}}"
+	},
+	"units": {
+		"meter": "Meter",
+		"meters": "Meter",
+		"kilometer": "Kilometer",
+		"kilometers": "Kilometer",
+		"km": "km",
+		"mile": "Meile",
+		"miles": "Meilen",
+		"mi": "mi",
+		"foot": "Fu\u00df",
+		"feet": "F\u00fc\u00dfe",
+		"inches": "Zoll"
+	},
+	"location": {
+		"interested": "Ich interessiere mich f\u00fcr Dinge, die innerhalb von {{select}} von stattfinden",
+		"update": "Meinen Standort aktualisieren",
+		"set": "Meinen Standort festlegen",
+		"prompt": "{{ClickOrTap}} hier an<br> setze deine<br> Standort",
+		"myCurrentLocation": "Mein aktueller Standort",
+		"enterAddress": "Gib eine Adresse ein",
+		"enterPostcode": "Bitte geben Sie Ihre Postleitzahl / Postleitzahl ein",
+		"create": {
+			"action": "Ort hinzuf\u00fcgen",
+			"title": "Neuen Ort",
+			"nameYourLocation": "Nennen Sie Ihren Standort"
+		},
+		"confirm": {
+			"title": "Diesen Ort speichern?",
+			"message": "Planen Sie, diesen Standort in Zukunft wieder zu nutzen?",
+			"ok": "Ja",
+			"cancel": "NEIN"
+		},
+		"add": {
+			"title": "Benennen Sie diesen Ort",
+			"placeholder": "Zuhause, Arbeit usw.",
+			"ok": "Speichern"
+		},
+		"dialog": {
+			"title": "Ort w\u00e4hlen"
+		}
+	},
+	"areas": {
+		"filterPlaceholder": "Irgendein Bereich innerhalb dieses Ortes?",
+		"newArea": "Neues Gebiet",
+		"promptTitle": "Geben Sie einen Namen f\u00fcr den Bereich ein:",
+		"absent": "Bitte Bereich festlegen",
+		"error": "Fehler",
+		"exist": "Bereich bereits vorhanden",
+		"addNewArea": "Neuen Bereich hinzuf\u00fcgen",
+		"add": "Hinzuf\u00fcgen"
+	},
+	"types": {
+		"Places/locations": {
+			"description": "eine Sammlung von Orten",
+			"displayType": "Standorte"
+		},
+		"Places/location": {
+			"description": "Repr\u00e4sentiert ein Geb\u00e4ude, einen Veranstaltungsort, ein Schiff, einen Park usw.",
+			"displayType": "Standort"
+		},
+		"Places/area": {
+			"description": "Stellt einen Bereich innerhalb eines Standorts dar, z. B. ein Zimmer oder eine Suite",
+			"displayType": "Bereich"
+		},
+		"Places/floor": {
+			"description": "Stellt eine Etage in einem Geb\u00e4ude oder Schiff dar",
+			"displayType": "Boden"
+		},
+		"Places/column": {
+			"description": "Stellt eine S\u00e4ule in einem Geb\u00e4ude oder Schiff dar",
+			"displayType": "Spalte"
+		},
+		"Places/nearby": {
+			"description": "Kategorie f\u00fcr Dinge innerhalb einer bestimmten Entfernung von einem Geohash",
+			"displayType": "Orte in der N\u00e4he"
+		},
+		"Places/interest": {
+			"description": "Kategorie f\u00fcr Dinge innerhalb einer bestimmten Entfernung von einem Geohash, die einem Interesse entsprechen",
+			"displayType": "Orte von Interesse"
+		}
+	},
+	"countries": {
+		"SelectCountry": "W\u00e4hle ein Land"
+	}
 }

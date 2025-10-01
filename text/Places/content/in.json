@@ -1,91 +1,91 @@
 {
-    "LatLng": "( {{1}} lat, {{2}} lng)",
-    "nearby": {
-        "PostcodeLabel": "{{1}} ( {{2}} )",
-        "Title": "dalam {{1}}"
-    },
-    "units": {
-        "meter": "meter",
-        "meters": "meter",
-        "kilometer": "kilometer",
-        "kilometers": "kiometer",
-        "km": "km",
-        "mile": "mil",
-        "miles": "mil",
-        "mi": "mi",
-        "foot": "kaki",
-        "feet": "kaki",
-        "inches": "inci"
-    },
-    "location": {
-        "interested": "Saya tertarik pada hal-hal yang terjadi dalam {{select}} dari",
-        "update": "Perbarui Lokasiku",
-        "set": "Tetapkan Lokasiku",
-        "prompt": "{{ClickOrTap}} di sini untuk<br> mengatur Anda<br> lokasi",
-        "myCurrentLocation": "Lokasi saya saat ini",
-        "enterAddress": "Masukkan alamat",
-        "enterPostcode": "Silakan masukkan kode pos\/kode pos Anda",
-        "create": {
-            "action": "Menambahkan lokasi",
-            "title": "Lokasi baru",
-            "nameYourLocation": "Beri nama lokasi Anda"
-        },
-        "confirm": {
-            "title": "Simpan lokasi ini?",
-            "message": "Apakah Anda berencana menggunakan lokasi ini lagi di masa mendatang?",
-            "ok": "Ya",
-            "cancel": "TIDAK"
-        },
-        "add": {
-            "title": "Beri nama lokasi ini",
-            "placeholder": "Rumah, Pekerjaan dll.",
-            "ok": "Menyimpan"
-        },
-        "dialog": {
-            "title": "Pilih Lokasi"
-        }
-    },
-    "areas": {
-        "filterPlaceholder": "Ada area di dalam lokasi ini?",
-        "newArea": "Daerah baru",
-        "promptTitle": "Masukkan nama untuk area:",
-        "absent": "Silakan atur luasnya",
-        "error": "Kesalahan",
-        "exist": "Daerah sudah ada",
-        "addNewArea": "Tambahkan area baru",
-        "add": "Menambahkan"
-    },
-    "types": {
-        "Places\/locations": {
-            "description": "kumpulan lokasi",
-            "displayType": "Lokasi"
-        },
-        "Places\/location": {
-            "description": "Merupakan bangunan, tempat, kapal, taman, dll.",
-            "displayType": "Lokasi"
-        },
-        "Places\/area": {
-            "description": "Mewakili area di dalam lokasi, seperti kamar atau suite",
-            "displayType": "Daerah"
-        },
-        "Places\/floor": {
-            "description": "Merupakan lantai di gedung atau kapal",
-            "displayType": "Lantai"
-        },
-        "Places\/column": {
-            "description": "Merupakan kolom di gedung atau kapal",
-            "displayType": "Kolom"
-        },
-        "Places\/nearby": {
-            "description": "Kategori untuk hal-hal dalam jarak tertentu dari geohash",
-            "displayType": "Tempat terdekat"
-        },
-        "Places\/interest": {
-            "description": "Kategori untuk hal-hal dalam jarak tertentu dari geohash, cocok dengan minat",
-            "displayType": "Tempat menarik"
-        }
-    },
-    "countries": {
-        "SelectCountry": "Pilih negara"
-    }
+	"LatLng": "( {{1}} lat, {{2}} lng)",
+	"nearby": {
+		"PostcodeLabel": "{{1}} ( {{2}} )",
+		"Title": "dalam {{1}}"
+	},
+	"units": {
+		"meter": "meter",
+		"meters": "meter",
+		"kilometer": "kilometer",
+		"kilometers": "kiometer",
+		"km": "km",
+		"mile": "mil",
+		"miles": "mil",
+		"mi": "mi",
+		"foot": "kaki",
+		"feet": "kaki",
+		"inches": "inci"
+	},
+	"location": {
+		"interested": "Saya tertarik pada hal-hal yang terjadi dalam {{select}} dari",
+		"update": "Perbarui Lokasiku",
+		"set": "Tetapkan Lokasiku",
+		"prompt": "{{ClickOrTap}} di sini untuk<br> mengatur Anda<br> lokasi",
+		"myCurrentLocation": "Lokasi saya saat ini",
+		"enterAddress": "Masukkan alamat",
+		"enterPostcode": "Silakan masukkan kode pos/kode pos Anda",
+		"create": {
+			"action": "Menambahkan lokasi",
+			"title": "Lokasi baru",
+			"nameYourLocation": "Beri nama lokasi Anda"
+		},
+		"confirm": {
+			"title": "Simpan lokasi ini?",
+			"message": "Apakah Anda berencana menggunakan lokasi ini lagi di masa mendatang?",
+			"ok": "Ya",
+			"cancel": "TIDAK"
+		},
+		"add": {
+			"title": "Beri nama lokasi ini",
+			"placeholder": "Rumah, Pekerjaan dll.",
+			"ok": "Menyimpan"
+		},
+		"dialog": {
+			"title": "Pilih Lokasi"
+		}
+	},
+	"areas": {
+		"filterPlaceholder": "Ada area di dalam lokasi ini?",
+		"newArea": "Daerah baru",
+		"promptTitle": "Masukkan nama untuk area:",
+		"absent": "Silakan atur luasnya",
+		"error": "Kesalahan",
+		"exist": "Daerah sudah ada",
+		"addNewArea": "Tambahkan area baru",
+		"add": "Menambahkan"
+	},
+	"types": {
+		"Places/locations": {
+			"description": "kumpulan lokasi",
+			"displayType": "Lokasi"
+		},
+		"Places/location": {
+			"description": "Merupakan bangunan, tempat, kapal, taman, dll.",
+			"displayType": "Lokasi"
+		},
+		"Places/area": {
+			"description": "Mewakili area di dalam lokasi, seperti kamar atau suite",
+			"displayType": "Daerah"
+		},
+		"Places/floor": {
+			"description": "Merupakan lantai di gedung atau kapal",
+			"displayType": "Lantai"
+		},
+		"Places/column": {
+			"description": "Merupakan kolom di gedung atau kapal",
+			"displayType": "Kolom"
+		},
+		"Places/nearby": {
+			"description": "Kategori untuk hal-hal dalam jarak tertentu dari geohash",
+			"displayType": "Tempat terdekat"
+		},
+		"Places/interest": {
+			"description": "Kategori untuk hal-hal dalam jarak tertentu dari geohash, cocok dengan minat",
+			"displayType": "Tempat menarik"
+		}
+	},
+	"countries": {
+		"SelectCountry": "Pilih negara"
+	}
 }

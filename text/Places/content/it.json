@@ -1,91 +1,91 @@
 {
-    "LatLng": "( {{1}} lat, {{2}} lng)",
-    "nearby": {
-        "PostcodeLabel": "{{1}} ( {{2}} )",
-        "Title": "entro {{1}}"
-    },
-    "units": {
-        "meter": "metro",
-        "meters": "metri",
-        "kilometer": "chilometro",
-        "kilometers": "chilometri",
-        "km": "km",
-        "mile": "miglio",
-        "miles": "miglia",
-        "mi": "mi",
-        "foot": "piede",
-        "feet": "piedi",
-        "inches": "pollici"
-    },
-    "location": {
-        "interested": "Mi interessano le cose che accadono entro {{select}} di",
-        "update": "Aggiorna la mia posizione",
-        "set": "Imposta la mia posizione",
-        "prompt": "{{ClickOrTap}} qui a<br> imposta il tuo<br> posizione",
-        "myCurrentLocation": "La mia posizione attuale",
-        "enterAddress": "Inserisci un indirizzo",
-        "enterPostcode": "Inserisci il tuo codice postale \/ codice postale",
-        "create": {
-            "action": "Aggiungi luogo",
-            "title": "Nuova sede",
-            "nameYourLocation": "Assegna un nome alla tua posizione"
-        },
-        "confirm": {
-            "title": "Salvare questa posizione?",
-            "message": "Prevedi di utilizzare nuovamente questo luogo in futuro?",
-            "ok": "SÌ",
-            "cancel": "NO"
-        },
-        "add": {
-            "title": "Assegna un nome a questa posizione",
-            "placeholder": "Casa, Lavoro ecc.",
-            "ok": "Salva"
-        },
-        "dialog": {
-            "title": "Scegli Posizione"
-        }
-    },
-    "areas": {
-        "filterPlaceholder": "Qualsiasi area all&#39;interno di questa posizione?",
-        "newArea": "Nuova zona",
-        "promptTitle": "Inserisci un nome per l&#39;area:",
-        "absent": "Si prega di impostare l&#39;area",
-        "error": "Errore",
-        "exist": "Area già esistente",
-        "addNewArea": "Aggiungi nuova zona",
-        "add": "Aggiungere"
-    },
-    "types": {
-        "Places\/locations": {
-            "description": "una raccolta di luoghi",
-            "displayType": "Luoghi"
-        },
-        "Places\/location": {
-            "description": "Rappresenta un edificio, un luogo, una nave, un parco, ecc.",
-            "displayType": "Posizione"
-        },
-        "Places\/area": {
-            "description": "Rappresenta un&#39;area all&#39;interno di una posizione, ad esempio una camera o una suite",
-            "displayType": "La zona"
-        },
-        "Places\/floor": {
-            "description": "Rappresenta un piano in un edificio o in una nave",
-            "displayType": "Pavimento"
-        },
-        "Places\/column": {
-            "description": "Rappresenta una colonna in un edificio o in una nave",
-            "displayType": "Colonna"
-        },
-        "Places\/nearby": {
-            "description": "Categoria per cose entro una certa distanza da un geohash",
-            "displayType": "Luoghi vicini"
-        },
-        "Places\/interest": {
-            "description": "Categoria per cose entro una certa distanza da un geohash, corrispondente a un interesse",
-            "displayType": "Luoghi di interesse"
-        }
-    },
-    "countries": {
-        "SelectCountry": "Seleziona un Paese"
-    }
+	"LatLng": "( {{1}} lat, {{2}} lng)",
+	"nearby": {
+		"PostcodeLabel": "{{1}} ( {{2}} )",
+		"Title": "entro {{1}}"
+	},
+	"units": {
+		"meter": "metro",
+		"meters": "metri",
+		"kilometer": "chilometro",
+		"kilometers": "chilometri",
+		"km": "km",
+		"mile": "miglio",
+		"miles": "miglia",
+		"mi": "mi",
+		"foot": "piede",
+		"feet": "piedi",
+		"inches": "pollici"
+	},
+	"location": {
+		"interested": "Mi interessano le cose che accadono entro {{select}} di",
+		"update": "Aggiorna la mia posizione",
+		"set": "Imposta la mia posizione",
+		"prompt": "{{ClickOrTap}} qui a<br> imposta il tuo<br> posizione",
+		"myCurrentLocation": "La mia posizione attuale",
+		"enterAddress": "Inserisci un indirizzo",
+		"enterPostcode": "Inserisci il tuo codice postale / codice postale",
+		"create": {
+			"action": "Aggiungi luogo",
+			"title": "Nuova sede",
+			"nameYourLocation": "Assegna un nome alla tua posizione"
+		},
+		"confirm": {
+			"title": "Salvare questa posizione?",
+			"message": "Prevedi di utilizzare nuovamente questo luogo in futuro?",
+			"ok": "S\u00cc",
+			"cancel": "NO"
+		},
+		"add": {
+			"title": "Assegna un nome a questa posizione",
+			"placeholder": "Casa, Lavoro ecc.",
+			"ok": "Salva"
+		},
+		"dialog": {
+			"title": "Scegli Posizione"
+		}
+	},
+	"areas": {
+		"filterPlaceholder": "Qualsiasi area all&#39;interno di questa posizione?",
+		"newArea": "Nuova zona",
+		"promptTitle": "Inserisci un nome per l&#39;area:",
+		"absent": "Si prega di impostare l&#39;area",
+		"error": "Errore",
+		"exist": "Area gi\u00e0 esistente",
+		"addNewArea": "Aggiungi nuova zona",
+		"add": "Aggiungere"
+	},
+	"types": {
+		"Places/locations": {
+			"description": "una raccolta di luoghi",
+			"displayType": "Luoghi"
+		},
+		"Places/location": {
+			"description": "Rappresenta un edificio, un luogo, una nave, un parco, ecc.",
+			"displayType": "Posizione"
+		},
+		"Places/area": {
+			"description": "Rappresenta un&#39;area all&#39;interno di una posizione, ad esempio una camera o una suite",
+			"displayType": "La zona"
+		},
+		"Places/floor": {
+			"description": "Rappresenta un piano in un edificio o in una nave",
+			"displayType": "Pavimento"
+		},
+		"Places/column": {
+			"description": "Rappresenta una colonna in un edificio o in una nave",
+			"displayType": "Colonna"
+		},
+		"Places/nearby": {
+			"description": "Categoria per cose entro una certa distanza da un geohash",
+			"displayType": "Luoghi vicini"
+		},
+		"Places/interest": {
+			"description": "Categoria per cose entro una certa distanza da un geohash, corrispondente a un interesse",
+			"displayType": "Luoghi di interesse"
+		}
+	},
+	"countries": {
+		"SelectCountry": "Seleziona un Paese"
+	}
 }

@@ -1,91 +1,91 @@
 {
-    "LatLng": "( {{1}} lat, {{2}} lng)",
-    "nearby": {
-        "PostcodeLabel": "{{1}} ( {{2}} )",
-        "Title": "dentro de {{1}}"
-    },
-    "units": {
-        "meter": "metro",
-        "meters": "metros",
-        "kilometer": "quilómetro",
-        "kilometers": "quiómetros",
-        "km": "km",
-        "mile": "milla",
-        "miles": "millas",
-        "mi": "mi",
-        "foot": "pé",
-        "feet": "pés",
-        "inches": "polgadas"
-    },
-    "location": {
-        "interested": "Estou interesado en cousas que teñan lugar dentro de {{select}} de",
-        "update": "Actualizar a miña localización",
-        "set": "Establecer a miña localización",
-        "prompt": "{{ClickOrTap}} aquí para<br> configura o teu<br> localización",
-        "myCurrentLocation": "A miña localización actual",
-        "enterAddress": "Introduza un enderezo",
-        "enterPostcode": "Introduce o teu código postal \/ código postal",
-        "create": {
-            "action": "Engadir localización",
-            "title": "Nova localización",
-            "nameYourLocation": "Nomea a túa localización"
-        },
-        "confirm": {
-            "title": "Queres gardar esta localización?",
-            "message": "Pensas volver utilizar esta localización no futuro?",
-            "ok": "Si",
-            "cancel": "Non"
-        },
-        "add": {
-            "title": "Ponlle un nome a esta localización",
-            "placeholder": "Fogar, Traballo, etc.",
-            "ok": "Gardar"
-        },
-        "dialog": {
-            "title": "Escolla Localización"
-        }
-    },
-    "areas": {
-        "filterPlaceholder": "Algunha zona dentro deste lugar?",
-        "newArea": "Zona nova",
-        "promptTitle": "Introduza un nome para a zona:",
-        "absent": "Establece a área",
-        "error": "Erro",
-        "exist": "Zona xa existe",
-        "addNewArea": "Engadir nova área",
-        "add": "Engadir"
-    },
-    "types": {
-        "Places\/locations": {
-            "description": "unha colección de localizacións",
-            "displayType": "Localizacións"
-        },
-        "Places\/location": {
-            "description": "Representa un edificio, local, barco, parque, etc.",
-            "displayType": "Localización"
-        },
-        "Places\/area": {
-            "description": "Representa unha área dentro dunha localización, como unha habitación ou suite",
-            "displayType": "Área"
-        },
-        "Places\/floor": {
-            "description": "Representa un piso dun edificio ou dun barco",
-            "displayType": "Piso"
-        },
-        "Places\/column": {
-            "description": "Representa unha columna nun edificio ou barco",
-            "displayType": "Columna"
-        },
-        "Places\/nearby": {
-            "description": "Categoría para cousas a unha certa distancia dun xeohash",
-            "displayType": "Lugares próximos"
-        },
-        "Places\/interest": {
-            "description": "Categoría para cousas a unha certa distancia dun xeohash, que coincide cun interese",
-            "displayType": "Lugares de interese"
-        }
-    },
-    "countries": {
-        "SelectCountry": "Seleccione un país"
-    }
+	"LatLng": "( {{1}} lat, {{2}} lng)",
+	"nearby": {
+		"PostcodeLabel": "{{1}} ( {{2}} )",
+		"Title": "dentro de {{1}}"
+	},
+	"units": {
+		"meter": "metro",
+		"meters": "metros",
+		"kilometer": "quil\u00f3metro",
+		"kilometers": "qui\u00f3metros",
+		"km": "km",
+		"mile": "milla",
+		"miles": "millas",
+		"mi": "mi",
+		"foot": "p\u00e9",
+		"feet": "p\u00e9s",
+		"inches": "polgadas"
+	},
+	"location": {
+		"interested": "Estou interesado en cousas que te\u00f1an lugar dentro de {{select}} de",
+		"update": "Actualizar a mi\u00f1a localizaci\u00f3n",
+		"set": "Establecer a mi\u00f1a localizaci\u00f3n",
+		"prompt": "{{ClickOrTap}} aqu\u00ed para<br> configura o teu<br> localizaci\u00f3n",
+		"myCurrentLocation": "A mi\u00f1a localizaci\u00f3n actual",
+		"enterAddress": "Introduza un enderezo",
+		"enterPostcode": "Introduce o teu c\u00f3digo postal / c\u00f3digo postal",
+		"create": {
+			"action": "Engadir localizaci\u00f3n",
+			"title": "Nova localizaci\u00f3n",
+			"nameYourLocation": "Nomea a t\u00faa localizaci\u00f3n"
+		},
+		"confirm": {
+			"title": "Queres gardar esta localizaci\u00f3n?",
+			"message": "Pensas volver utilizar esta localizaci\u00f3n no futuro?",
+			"ok": "Si",
+			"cancel": "Non"
+		},
+		"add": {
+			"title": "Ponlle un nome a esta localizaci\u00f3n",
+			"placeholder": "Fogar, Traballo, etc.",
+			"ok": "Gardar"
+		},
+		"dialog": {
+			"title": "Escolla Localizaci\u00f3n"
+		}
+	},
+	"areas": {
+		"filterPlaceholder": "Algunha zona dentro deste lugar?",
+		"newArea": "Zona nova",
+		"promptTitle": "Introduza un nome para a zona:",
+		"absent": "Establece a \u00e1rea",
+		"error": "Erro",
+		"exist": "Zona xa existe",
+		"addNewArea": "Engadir nova \u00e1rea",
+		"add": "Engadir"
+	},
+	"types": {
+		"Places/locations": {
+			"description": "unha colecci\u00f3n de localizaci\u00f3ns",
+			"displayType": "Localizaci\u00f3ns"
+		},
+		"Places/location": {
+			"description": "Representa un edificio, local, barco, parque, etc.",
+			"displayType": "Localizaci\u00f3n"
+		},
+		"Places/area": {
+			"description": "Representa unha \u00e1rea dentro dunha localizaci\u00f3n, como unha habitaci\u00f3n ou suite",
+			"displayType": "\u00c1rea"
+		},
+		"Places/floor": {
+			"description": "Representa un piso dun edificio ou dun barco",
+			"displayType": "Piso"
+		},
+		"Places/column": {
+			"description": "Representa unha columna nun edificio ou barco",
+			"displayType": "Columna"
+		},
+		"Places/nearby": {
+			"description": "Categor\u00eda para cousas a unha certa distancia dun xeohash",
+			"displayType": "Lugares pr\u00f3ximos"
+		},
+		"Places/interest": {
+			"description": "Categor\u00eda para cousas a unha certa distancia dun xeohash, que coincide cun interese",
+			"displayType": "Lugares de interese"
+		}
+	},
+	"countries": {
+		"SelectCountry": "Seleccione un pa\u00eds"
+	}
 }
