@@ -186,6 +186,10 @@
 			"default": {
 				"latitude": 40.7537,
 				"longitude": -73.9992
+			},
+			"ip": {
+				"changed": 1,
+				"meters": 1000
 			}
 		}
 	}
