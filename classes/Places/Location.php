@@ -375,11 +375,13 @@ class Places_Location extends Base_Places_Location
 		// Ensure meters
 		$attributes['meters'] = floatval(Q::ifset(
 			$attributes, 'meters',
-			$oldMeters ?: Q_Config::expect('Places','nearby','defaultMeters')
+			$oldMeters ? $oldMeters : Q_Config::expect('Places','nearby','defaultMeters')
 		));
 
 		// Auto-fill postcode/placeName if missing but lat/lon exists
-		if (empty($attributes['postcode']) && isset($attributes['latitude'])) {
+		if (empty($attributes['postcode'])
+		&& isset($attributes['latitude'])
+		&& isset($attributes['longitude'])) {
 			$postcodes = Places_Postcode::nearby(
 				$attributes['latitude'],
 				$attributes['longitude'],
@@ -388,8 +390,6 @@ class Places_Location extends Base_Places_Location
 			);
 			if ($postcode = $postcodes ? reset($postcodes) : null) {
 				$attributes['postcode']  = $postcode->postcode;
-				$attributes['placeName'] = $postcode->placeName;
-				$attributes['state']     = $postcode->state;
 				$attributes['country']   = $postcode->countryCode;
 			}
 		}
