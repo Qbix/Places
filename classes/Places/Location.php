@@ -275,7 +275,7 @@ class Places_Location extends Base_Places_Location
 		// old approach
 		return array();
 	}
-	
+
 	/**
 	 * Common logic for when a user's location changes.
 	 * Called from HTTP handler (source = "geolocation") and from session hook (source = "ip").
@@ -323,9 +323,30 @@ class Places_Location extends Base_Places_Location
 
 		// Collect attributes to set
 		$fields = array(
-			'accuracy','altitude','altitudeAccuracy','heading',
-			'latitude','longitude','speed','meters','postcode',
-			'timezone','placeName','state','country'
+			// Raw geo IDs / codes
+			'geonameId',      // GeoNames city/placemark ID
+			'countryCode',    // ISO 3166-1 alpha-2
+			'regionCode',     // ADM1 region code
+			'districtCode',   // ADM2 district code (if available)
+
+			// Human-readable fields
+			'placeName',
+			'state',
+			'country',        // often same as countryCode, but kept for clarity
+			'postcode',
+
+			// Coordinates
+			'latitude',
+			'longitude',
+			'meters',
+
+			// Extra info
+			'accuracy',
+			'altitude',
+			'altitudeAccuracy',
+			'heading',
+			'speed',
+			'timezone'
 		);
 		$attributes = array_intersect_key($params, array_flip($fields));
 
@@ -375,6 +396,30 @@ class Places_Location extends Base_Places_Location
 
 		// Always store the update source
 		$attributes['source'] = $source;
+
+		// Special handling for IP source
+		if ($source === 'ip') {
+			$config = Q_Config::get('Places','location','ip','changed', false);
+
+			if ($config === false) {
+				// do not update main stream at all
+				return;
+			}
+
+			if ($config !== true) {
+				// treat config as max number of allowed IP changes
+				$maxIpChanges = intval($config);
+				$currentCount = intval($stream->getAttribute('ipLocationChangeCount', 0));
+
+				if ($currentCount >= $maxIpChanges) {
+					// already reached the limit, skip updating
+					return;
+				}
+
+				// increment and store
+				$attributes['ipLocationChangeCount'] = $currentCount + 1;
+			}
+		}
 
 		// Save to user stream
 		$stream->setAttribute($attributes);
