@@ -35,8 +35,9 @@ function Places_after_Q_session_write($params)
 			$data = array_merge(
 				$data,
 				$lookup->fields,
-				$postcode ? $postcode->fields : []
+				$postcode ? $postcode->fields : array()
 			);
+			unset($data['geohash']);
 			$data['Places/geohash'] = Places_Geohash::encode(
 				$lookup->fields['latitude'],
 				$lookup->fields['longitude']
@@ -58,6 +59,8 @@ function Places_after_Q_session_write($params)
 	$stream->changed();
 
 	// Fire geohash event for listeners
+	$config = Q_Config::get('Places','location','ip','changed', false);
+	$meters = Q_Config::get('Places','location','ip','meters', null);
 	if (!empty($data['Places/geohash'])) {
 		Q::event(
 			'Places/session/ip/geohash',
@@ -65,15 +68,12 @@ function Places_after_Q_session_write($params)
 				'geohash'   => $data['Places/geohash'],
 				'latitude'  => Q::ifset($data, 'latitude', null),
 				'longitude' => Q::ifset($data, 'longitude', null),
-				'meters'    => Q_Config::get('Places','nearby','subscribe','ip','radius',null),
+				'meters'    => $meters,
 				'userId'    => $user->id
 			],
 			'after'
 		);
 	}
-
-	$config = Q_Config::get('Places','location','ip','changed', false);
-	$meters = Q_Config::get('Places','location','ip','meters', null);
 	if ($config && !empty($data['latitude']) && !empty($data['longitude'])) {
 		$shouldUpdate = false;
 		if ($config === true) {

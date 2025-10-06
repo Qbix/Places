@@ -6,7 +6,6 @@ CREATE TABLE {{prefix}}region (
 	localName VARCHAR(180) DEFAULT NULL COMMENT 'Optional native-language name, to be filled later from alternateNamesV2',
 	PRIMARY KEY (geonameId),
 	UNIQUE KEY byCountryRegion (countryCode, regionCode),
-	KEY byCountry (countryGeonameId),
 	KEY byCountryName (countryCode, englishName)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -19,7 +18,6 @@ CREATE TABLE {{prefix}}district (
 	localName VARCHAR(180) DEFAULT NULL COMMENT 'Optional native-language name, to be filled later from alternateNamesV2',
 	PRIMARY KEY (geonameId),
 	UNIQUE KEY byCountryRegionDistrict (countryCode, regionCode, districtCode),
-	KEY byCountry (countryGeonameId),
 	KEY byCountryName (countryCode, englishName),
 	KEY byRegion (regionCode)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
