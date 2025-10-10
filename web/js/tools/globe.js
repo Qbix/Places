@@ -71,7 +71,6 @@ Q.Tool.define("Places/globe", function _Places_globe(options) {
 			});
 		}
 		
-		
 		if (!state.radius) {
 			state.radius = 0.9;
 		}
@@ -79,7 +78,14 @@ Q.Tool.define("Places/globe", function _Places_globe(options) {
 		var globe = tool.globe = planetaryjs.planet();
 		
 		globe.onInit(function () {
-			Q.handle(state.onReady, tool);
+			(function waitForTopojson() {
+				var tj = globe.plugins.topojson;
+				if (tj && tj.world) {
+					Q.handle(state.onReady, tool);
+				} else {
+					setTimeout(waitForTopojson, 100);
+				}
+			})();
 		});
 		
 		// The `earth` plugin draws the oceans and the land; it's actually
@@ -287,7 +293,6 @@ Q.Tool.define("Places/globe", function _Places_globe(options) {
 		return true;
 	}),
 
-
 	getCoordinates: function Places_globe_getCoordinates(event) {
 		var rect = event.target.getBoundingClientRect();
 		var x = Q.Pointer.getX(event) - rect.left;
@@ -355,6 +360,113 @@ Q.Tool.define("Places/globe", function _Places_globe(options) {
 		}, duration, ease || "smooth");
 	},
 	
+	/**
+	 * Adds random pings distributed among given countries, using actual
+	 * TopoJSON country features from the Places.countries dataset.
+	 *
+	 * @method addRandomPings
+	 * @param {Object} [options]
+	 * @param {String[]} [options.countries] List of ISO country codes (default: all)
+	 * @param {Number} [options.count=1000000] Number of pings (roughly “keep going”)
+	 * @param {Number} [options.minDelay=100] Minimum delay between pings (ms)
+	 * @param {Number} [options.maxDelay=600] Maximum delay between pings (ms)
+	 * @param {Boolean|Number} [options.rotate=true] Whether to rotate toward each ping, and how fast
+	 * @param {Boolean} [options.stopOnPointer=true] Stop rotation on pointer interaction
+	 * @param {Function} [options.filter] Optional callback(countryCode, feature) => bool
+	 * @param {Object} [options.prioritizeCountries] Map of countryCode → weight (0–10)
+	 * @param {String} [options.initialCountry] Country code to show first ping in
+	 */
+	addRandomPings: function (options) {
+		var o = Q.extend({
+			countries: Object.keys(Places.countries || {}),
+			count: 1000000,
+			minDelay: 100,
+			maxDelay: 600,
+			rotate: false,
+			stopOnPointer: true,
+			filter: null,
+			prioritizeCountries: {
+				"initialCountry": 3
+			},
+			initialCountry: null
+		}, options);
+
+		var tool = this;
+		tool.state.onReady.addOnce(function () {
+			var globe = tool.globe;
+			var ri = null;
+			var features = {};
+
+			// Pre-resolve valid features for faster sampling
+			o.countries.forEach(function (code) {
+				var f = _getFeature(globe, code);
+				if (f && (!o.filter || o.filter(code, f))) {
+					features[code] = f;
+				}
+			});
+
+			var validCodes = Object.keys(features);
+			if (!validCodes.length) return;
+			
+			if (o.prioritizeCountries && o.prioritizeCountries.initialCountry) {
+				o.prioritizeCountries = o.prioritizeCountries || {};
+				o.prioritizeCountries[o.initialCountry] = o.prioritizeCountries.initialCountry;
+			}
+
+			// Weighted sampling array
+			var weightedCodes = [];
+			validCodes.forEach(code => {
+				var code2 = (code === 'initialCountry') ? o.initialCountry : code;
+				var weight = Math.max(0, o.prioritizeCountries[code2] || 1);
+				var repeat = Math.round(weight * 10); // scaling factor
+				for (var i = 0; i < repeat; i++) weightedCodes.push(code);
+			});
+			if (!weightedCodes.length) weightedCodes.push(...validCodes);
+
+			var remaining = o.count;
+
+			function addPingInCountry(code) {
+				var feature = features[code];
+				if (!feature) return;
+				var [lat, lon] = _randomPointInPolygon(feature);
+				tool.addPing(lat, lon);
+
+				// optional: rotate toward new ping
+				if (o.rotate) {
+					if (ri) clearInterval(ri);
+					var speed = (o.rotate === true) ? 1 : o.rotate;
+					ri = setInterval(function () {
+						tool.rotateTo(lat, lon, minDelay / o.rotate);
+					}, minDelay);
+				}
+			}
+
+			// Initial ping, if requested
+			if (o.initialCountry && features[o.initialCountry]) {
+				addPingInCountry(o.initialCountry);
+				remaining--;
+			}
+
+			// Continuous ping loop
+			(function pingLoop() {
+				if (!remaining--) return;
+				var code = weightedCodes[Math.floor(Math.random() * weightedCodes.length)];
+				addPingInCountry(code);
+				setTimeout(
+					pingLoop,
+					Math.random() * (o.maxDelay - o.minDelay) + o.minDelay
+				);
+			})();
+
+			// Stop rotation when user interacts
+			if (o.stopOnPointer) {
+				Q.addEventListener(tool.element, Q.Pointer.start, function () {
+					if (ri) clearInterval(ri);
+				});
+			}
+		});
+	},
+
 	Q: {
 		beforeRemove: function () {
 			clearInterval(this.rotationInterval);
@@ -427,18 +539,55 @@ function _getFeature(planet, countryCode) {
 	return feature;
 }
 
-function geoContains(feature, point) {
+// helper: sample uniformly within polygon (simple bounding-box rejection)
+function _randomPointInPolygon(feature) {
+	var lonMin = Infinity, lonMax = -Infinity;
+	var latMin = Infinity, latMax = -Infinity;
+
+	// Compute bounding box manually
+	var coords = feature.geometry.coordinates;
+	var geomType = feature.geometry.type;
+
+	function scanCoords(arr) {
+		for (var i = 0; i < arr.length; i++) {
+			var val = arr[i];
+			if (Array.isArray(val[0])) {
+				scanCoords(val); // recurse
+			} else {
+				var [lon, lat] = val;
+				if (lon < lonMin) lonMin = lon;
+				if (lon > lonMax) lonMax = lon;
+				if (lat < latMin) latMin = lat;
+				if (lat > latMax) latMax = lat;
+			}
+		}
+	}
+
+	scanCoords(coords);
+
+	// Sample random point until inside polygon
+	var lat, lon;
+	do {
+		lon = Math.random() * (lonMax - lonMin) + lonMin;
+		lat = Math.random() * (latMax - latMin) + latMin;
+	} while (!_geoContains(feature, [lon, lat]));
+
+	return [lat, lon];
+}
+
+
+function _geoContains(feature, point) {
   switch (feature.type) {
     case "Feature":
-      return geoContains(feature.geometry, point);
+      return _geoContains(feature.geometry, point);
     case "FeatureCollection":
       for (var i = 0; i < feature.features.length; i++) {
-        if (geoContains(feature.features[i].geometry, point)) return true;
+        if (_geoContains(feature.features[i].geometry, point)) return true;
       }
       return false;
     case "GeometryCollection":
       for (var i = 0; i < feature.geometries.length; i++) {
-        if (geoContains(feature.geometries[i], point)) return true;
+        if (_geoContains(feature.geometries[i], point)) return true;
       }
       return false;
     case "Polygon":
@@ -488,7 +637,7 @@ function _latLngToCountryCode(lat, lng, globe, topoIdToAlpha2) {
 	if (!tj || !tj.world) return null;
 	var features = topojson.feature(tj.world, tj.world.objects.countries).features;
 	for (var i = 0; i < features.length; i++) {
-		if (geoContains(features[i], [lng, lat])) {
+		if (_geoContains(features[i], [lng, lat])) {
 			return topoIdToAlpha2[features[i].id] || null;
 		}
 	}
