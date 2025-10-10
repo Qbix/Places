@@ -350,6 +350,14 @@ class Places_Location extends Base_Places_Location
 		);
 		$attributes = array_intersect_key($params, array_flip($fields));
 
+		if (isset($attributes['latitude']) && isset($attributes['longitude'])) {
+			// NOTE: this will cause syncRelations to add a relation to Streams/search/all
+			$attributes['Places/geohash'] = Places_Geohash::encode(
+				$attributes['latitude'],
+				$attributes['longitude']
+			);
+		}
+
 		// Normalize timezone
 		if (isset($attributes['timezone'])) {
 			$attributes['timezone'] = floatval($attributes['timezone']);

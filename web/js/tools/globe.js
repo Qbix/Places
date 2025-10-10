@@ -427,12 +427,68 @@ function _getFeature(planet, countryCode) {
 	return feature;
 }
 
+function geoContains(feature, point) {
+  switch (feature.type) {
+    case "Feature":
+      return geoContains(feature.geometry, point);
+    case "FeatureCollection":
+      for (var i = 0; i < feature.features.length; i++) {
+        if (geoContains(feature.features[i].geometry, point)) return true;
+      }
+      return false;
+    case "GeometryCollection":
+      for (var i = 0; i < feature.geometries.length; i++) {
+        if (geoContains(feature.geometries[i], point)) return true;
+      }
+      return false;
+    case "Polygon":
+      return polygonContains(feature.coordinates, point);
+    case "MultiPolygon":
+      for (var i = 0; i < feature.coordinates.length; i++) {
+        if (polygonContains(feature.coordinates[i], point)) return true;
+      }
+      return false;
+    default:
+      return false;
+  }
+}
+
+function polygonContains(polygon, point) {
+  var inside = ringContains(polygon[0], point);
+  for (var i = 1; i < polygon.length; ++i) {
+    if (ringContains(polygon[i], point)) inside = !inside;
+  }
+  return inside;
+}
+
+function ringContains(ring, point) {
+  var lambda = point[0] * Math.PI / 180;
+  var phi = point[1] * Math.PI / 180;
+  var inside = false;
+
+  for (var i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+    var lambda_i = ring[i][0] * Math.PI / 180;
+    var phi_i = ring[i][1] * Math.PI / 180;
+    var lambda_j = ring[j][0] * Math.PI / 180;
+    var phi_j = ring[j][1] * Math.PI / 180;
+
+    // test if the segment crosses the parallel at phi
+    if ((phi_i > phi) !== (phi_j > phi)) {
+      var intersect =
+        (lambda_j - lambda_i) * (phi - phi_i) / (phi_j - phi_i) + lambda_i;
+      if (intersect > lambda) inside = !inside;
+    }
+  }
+
+  return inside;
+}
+
 function _latLngToCountryCode(lat, lng, globe, topoIdToAlpha2) {
 	var tj = globe.plugins.topojson;
 	if (!tj || !tj.world) return null;
 	var features = topojson.feature(tj.world, tj.world.objects.countries).features;
-	for (var i=0; i<features.length; i++) {
-		if (d3.geoContains(features[i], [lng, lat])) {
+	for (var i = 0; i < features.length; i++) {
+		if (geoContains(features[i], [lng, lat])) {
 			return topoIdToAlpha2[features[i].id] || null;
 		}
 	}
@@ -444,6 +500,7 @@ var fallbackCoords = {
   "AG": { latitude: 17.0608, longitude: -61.7964 },  // Antigua and Barbuda
   "AI": { latitude: 18.2206, longitude: -63.0686 },  // Anguilla
   "AW": { latitude: 12.5211, longitude: -69.9683 },  // Aruba
+  "AX": { latitude: 60.1785, longitude: 19.9156 },   // Aland Islands
   "BB": { latitude: 13.1939, longitude: -59.5432 },  // Barbados
   "BH": { latitude: 26.0667, longitude: 50.5577 },   // Bahrain
   "BM": { latitude: 32.3078, longitude: -64.7505 },  // Bermuda
@@ -502,6 +559,7 @@ var fallbackCoords = {
   "VC": { latitude: 12.9843, longitude: -61.2872 },  // Saint Vincent and the Grenadines
   "WF": { latitude: -13.7688, longitude: -177.1561 },// Wallis & Futuna
   "WS": { latitude: -13.7590, longitude: -172.1046 },// Samoa
+  "AS": { latitude: -14.2710, longitude: -170.1322 },// American Samoa
   "YT": { latitude: -12.8275, longitude: 45.1662 },  // Mayotte
   "BL": { latitude: 17.9000, longitude: -62.8333 },  // Saint Barthélemy
   "MF": { latitude: 18.0708, longitude: -63.0501 },  // Saint Martin (French)

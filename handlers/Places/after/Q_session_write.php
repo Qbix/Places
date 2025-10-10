@@ -87,14 +87,14 @@ function Places_after_Q_session_write($params)
 			}
 		}
 		if ($shouldUpdate) {
-			Places_Location::changed([
+			Places_Location::changed(array(
 				'user'      => $user,
 				'source'    => 'ip',
 				'latitude'  => $data['latitude'],
 				'longitude' => $data['longitude'],
 				'meters'    => $meters,
 				'joinNearby'=> 2
-			]);
+			));
 		}
 	}
 }
