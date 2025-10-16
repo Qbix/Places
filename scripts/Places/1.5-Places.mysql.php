@@ -2,7 +2,7 @@
 
 function Places_1_4_Places()
 {
-	$countriesFile = PLACES_PLUGIN_WEB_DIR . DS . 'js' . DS . 'lib' . DS . 'countries.json';
+	$countriesFile = PLACES_PLUGIN_TEXT_DIR . DS . 'Places' . DS . 'countries' . DS . 'localize.json';
 	$countries = json_decode(file_get_contents($countriesFile), true);
 	if (!$countries) {
 		throw new RuntimeException("Could not load countries.json");
