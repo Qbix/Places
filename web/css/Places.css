@@ -200,6 +200,6 @@
 
 @media (prefers-color-scheme: dark) {
 	.Places_globe_shadow {
-		filter: brightness(0.3);
+		filter: brightness(0.2);
 	}
 }
