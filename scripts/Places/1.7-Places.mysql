@@ -7,7 +7,7 @@ CREATE TABLE {{prefix}}region (
 	PRIMARY KEY (geonameId),
 	UNIQUE KEY byCountryRegion (countryCode, regionCode),
 	KEY byCountryName (countryCode, englishName)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE {{prefix}}district (
 	geonameId INT NOT NULL COMMENT 'Unique GeoNames ID for the ADM2 district',
@@ -20,7 +20,7 @@ CREATE TABLE {{prefix}}district (
 	UNIQUE KEY byCountryRegionDistrict (countryCode, regionCode, districtCode),
 	KEY byCountryName (countryCode, englishName),
 	KEY byRegion (regionCode)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 ALTER TABLE {{prefix}}city
 	ADD COLUMN regionGeonameId INT DEFAULT NULL COMMENT 'FK to places_region.geonameId (ADM1)',
