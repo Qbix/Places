@@ -157,8 +157,8 @@ class Places_Geohash
      * @static
      * @param {Db_Query} $query A database query, generated with Table_Class::select(),
      *  to extend and run fetchDbRows() on
-     * @param {string} $field The name of the field to test
-     * @param {string} $center A geohash that represents the center point
+     * @param {string} $field The name of the field containing geohash values
+     * @param {string} $center The geohash representing the center point
      * @param {integer} $limit The number of items to return, at most
      * @param {boolean} $skipDecoding If true, the distance will not be calculated
      *  using the haversine formula, instead the geohashes themselves will be compared.
@@ -167,85 +167,91 @@ class Places_Geohash
      */
     static function fetchByDistance($query, $field, $center, $limit, $skipDecoding = false)
     {
+        // Get rows above and below the center geohash lexicographically
         $above = clone $query;
-        $above = $above->where(array(
+        $above = $above->where([
             $field => new Db_Range($center, true, false, null)
-        ))->orderBy($field, true)->fetchAll();
+        ])->orderBy($field, true)->fetchAll();
 
         $below = clone $query;
-        $below = $below->where(array(
+        $below = $below->where([
             $field => new Db_Range(null, false, false, $center)
-        ))->orderBy($field, false)->fetchAll();
+        ])->orderBy($field, false)->fetchAll();
 
-        $result = array();
-        $i = $j = $k = 0;
+        $result = [];
+        $i = $j = 0;
         $a = count($above);
         $b = count($below);
 
-        // merge rows until limit reached
-        while ($k < $limit && $i < $a && $j < $b) {
-            if (self::closer($center, $above[$i], $below[$j])) {
+        // === Phase 1: Rough merge using geohash numeric proximity
+        while (count($result) < $limit && $i < $a && $j < $b) {
+            if (self::closer($center, $above[$i]->get($field), $below[$j]->get($field))) {
                 $result[] = $above[$i++];
             } else {
                 $result[] = $below[$j++];
             }
-            ++$k;
         }
-        while ($k < $limit && $i < $a) {
-            $result[] = $above[$i++];
-            ++$k;
-        }
-        while ($k < $limit && $j < $b) {
-            $result[] = $below[$j++];
-            ++$k;
-        }
+        while (count($result) < $limit && $i < $a) $result[] = $above[$i++];
+        while (count($result) < $limit && $j < $b) $result[] = $below[$j++];
 
+        // === Phase 2: Optional high-accuracy sort using Haversine
         if (!$skipDecoding) {
-            // decode center geohash
-            list($lat0, $lon0) = Places_Geohash::decode($center);
+            $decodedCenter = self::decode($center);
+            $lat0 = $decodedCenter['latitude'];
+            $lon0 = $decodedCenter['longitude'];
 
-            // annotate rows with haversine distance
             foreach ($result as $row) {
-                list($lat1, $lon1) = Places_Geohash::decode($row->geohash);
+                $decoded = self::decode($row->get($field));
+                $lat1 = $decoded['latitude'];
+                $lon1 = $decoded['longitude'];
                 $dist = Places::distance($lat0, $lon0, $lat1, $lon1);
                 $row->set('Places/distance', $dist);
             }
 
-            // sort rows by annotated distance
-            usort($result, array('Places_City', 'compareByDistance'));
+            usort($result, fn($a, $b) =>
+                $a->get('Places/distance') <=> $b->get('Places/distance')
+            );
         }
 
         return array_slice($result, 0, $limit);
     }
 
+    /**
+     * Compare two rows by precomputed distance
+     */
     private static function compareByDistance($a, $b)
     {
         $da = $a->get('Places/distance');
         $db = $b->get('Places/distance');
-        if ($da == $db) return 0;
+        if ($da === $db) return 0;
         return ($da < $db) ? -1 : 1;
     }
 
-
-    private static function closer($center, $a, $b) {
-    	$cn = self::alpha2num($center);
-    	$an = self::alpha2num($a);
-    	$bn = self::alpha2num($b);
-    	return abs($an - $cn) < abs($bn - $cn);
+    /**
+     * Determine which of two geohashes is closer to a given center geohash.
+     * Fast, approximate comparison in base-32 numeric space.
+     */
+    private static function closer(string $center, string $a, string $b): bool
+    {
+        $cn = self::alpha2num($center);
+        $an = self::alpha2num($a);
+        $bn = self::alpha2num($b);
+        return abs($an - $cn) < abs($bn - $cn);
     }
 
-	/**
-	 * Converts an alphabetic string into an integer.
-	 * @param int $n This is the number to convert.
-	 * @return string The converted number.
-	 * @author Theriault
-	 */
-	private static function alpha2num($a) {
-		$r = 0;
-		$l = strlen($a);
-		for ($i = 0; $i < $l; $i++) {
-			$r += pow(26, $i) * (ord($a[$l - $i - 1]) - 0x30);
-		}
-		return $r;
-	}
+    /**
+     * Convert a geohash string into a base-32 integer value
+     * suitable for approximate numeric comparisons.
+     */
+    private static function alpha2num(string $hash): int
+    {
+        $val = 0;
+        for ($i = 0, $len = strlen($hash); $i < $len; $i++) {
+            $digit = strpos(self::$base32, $hash[$i]);
+            if ($digit === false) $digit = 0;
+            $val = ($val << 5) | $digit; // multiply by 32
+        }
+        return $val;
+    }
+
 }
