@@ -511,6 +511,9 @@ Q.onInit.add(function () {
 		}
 		Places.units = text.units;
 	});
+	Q.ensure.loaders['Q.Places.countriesLocalize'] = Q.url(
+		Q.Text.dir + '/Places/countries/localize.json'
+	);
 }, 'Q.Places');
 
 var Cp = Places.Coordinates.prototype;
@@ -681,12 +684,8 @@ Q.beforeInit.set(function () {
 		+ '&callback=Q.Places.loadGoogleMaps.loaded';
 }, 'Places');
 
-Q.ensure.loaders['Q.Places.countriesLocalize'] = Q.url(
-	Q.Text.dir + '/Places/countries/localize.json'
-);
-
 Places.loadGoogleMaps.waitingCallbacks = [];
-Places.loadGoogleMaps.loaded = function _PLaces_loadGoogleMaps_loaded () {
+Places.loadGoogleMaps.loaded = function _Places_loadGoogleMaps_loaded () {
 	Q.handle(Places.loadGoogleMaps.waitingCallbacks);
 };
 
