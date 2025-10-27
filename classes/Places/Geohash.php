@@ -171,12 +171,12 @@ class Places_Geohash
         $above = clone $query;
         $above = $above->where([
             $field => new Db_Range($center, true, false, null)
-        ])->orderBy($field, true)->fetchAll();
+        ])->orderBy($field, true)->fetchDbRows();
 
         $below = clone $query;
         $below = $below->where([
             $field => new Db_Range(null, false, false, $center)
-        ])->orderBy($field, false)->fetchAll();
+        ])->orderBy($field, false)->fetchDbRows();
 
         $result = [];
         $i = $j = 0;
@@ -185,7 +185,7 @@ class Places_Geohash
 
         // === Phase 1: Rough merge using geohash numeric proximity
         while (count($result) < $limit && $i < $a && $j < $b) {
-            if (self::closer($center, $above[$i]->get($field), $below[$j]->get($field))) {
+            if (self::closer($center, $above[$i]->$field, $below[$j]->$field)) {
                 $result[] = $above[$i++];
             } else {
                 $result[] = $below[$j++];
@@ -201,7 +201,7 @@ class Places_Geohash
             $lon0 = $decodedCenter['longitude'];
 
             foreach ($result as $row) {
-                $decoded = self::decode($row->get($field));
+                $decoded = self::decode($row->$field);
                 $lat1 = $decoded['latitude'];
                 $lon1 = $decoded['longitude'];
                 $dist = Places::distance($lat0, $lon0, $lat1, $lon1);
