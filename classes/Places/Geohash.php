@@ -27,105 +27,98 @@ class Places_Geohash
         'right' => array('even' => 'prxz'),
         'left' => array('even' => '028b'),
     );
-    
-    /**
-     * Call this function to calculate a hash from latitude, longitude
-     * @method encode
-     * @static
-	 * @param {float} $latitude
-	 * @param {float} $longitude
-	 * @param {integer} [$length] Optional length of the resulting geohash.
-     *  Defaults to the length needed to encode the non-decimal part of lat, long.
-	 * @return {string}
-     */
-    static public function encode($latitude, $longtitude, $length = null){
-        /***
-            eq('xpssc0', Places_Geohash::encode(43.025, 141.377));
-            eq('xn76urx4dzxy', Places_Geohash::encode(35.6813177190391, 139.7668218612671));
-        */
-        $is_even = true;
-        $bit = 0;
-        $ch = 0;
-		if (!isset($length)) {
-			$lenLat = strlen(strstr($latitude, '.'));
-			$lenLong = strlen(strstr($longtitude, '.'));
-			$length = min(12, (max($lenLat, $lenLong) - 1) * 2);
+
+	/**
+	 * Encode latitude and longitude into a geohash.
+	 * @param float $latitude
+	 * @param float $longitude
+	 * @param int|null $length Length of hash (default 12)
+	 * @return string
+	 */
+	static public function encode(float $latitude, float $longitude, ?int $length = 12): string
+	{
+		$lat_interval = [-90.0, 90.0];
+		$lon_interval = [-180.0, 180.0];
+		$is_even = true;
+		$bit = 0;
+		$ch = 0;
+		$geohash = '';
+
+		while (strlen($geohash) < $length) {
+			if ($is_even) {
+				$mid = ($lon_interval[0] + $lon_interval[1]) / 2;
+				if ($longitude > $mid) {
+					$ch |= self::$bits[$bit];
+					$lon_interval[0] = $mid;
+				} else {
+					$lon_interval[1] = $mid;
+				}
+			} else {
+				$mid = ($lat_interval[0] + $lat_interval[1]) / 2;
+				if ($latitude > $mid) {
+					$ch |= self::$bits[$bit];
+					$lat_interval[0] = $mid;
+				} else {
+					$lat_interval[1] = $mid;
+				}
+			}
+
+			$is_even = !$is_even;
+
+			if ($bit < 4) {
+				$bit++;
+			} else {
+				$geohash .= self::$base32[$ch];
+				$bit = 0;
+				$ch = 0;
+			}
 		}
-        $geohash = '';
-        
-        $lat = array(-90.0, 90.0);
-        $lon = array(-180.0, 180.0);
-        
-        while(strlen($geohash) < $length){
-            if($is_even){
-                $mid = array_sum($lon) / 2;
-                if($longtitude > $mid){
-                    $ch |= self::$bits[$bit];
-                    $lon[0] = $mid;
-                } else {
-                    $lon[1] = $mid;
-                }
-            } else {
-                $mid = array_sum($lat) / 2;
-                if($latitude > $mid){
-                    $ch |= self::$bits[$bit];
-                    $lat[0] = $mid;
-                } else {
-                    $lat[1] = $mid;
-                }
-            }
-            $is_even = !$is_even;
-            if($bit < 4){
-                $bit++;
-            } else {
-                $geohash .= self::$base32[$ch];
-                $bit = 0;
-                $ch = 0;
-            }
-        }
-        return $geohash;
-    }
-    
-    /**
-     * Call this function to decode hashes
-     * @method decode
-     * @static
-	 * @param {string} $geohash the hash to decode
-	 * @return {array}
-     */
-    static public function decode($geohash){
-        /***
-            list($latitude, $longtitude) = Places_Geohash::decode('xpssc0');
-            eq(array(43.0224609375, 43.027954101562, 43.025207519531), $latitude);
-            eq(array(141.3720703125, 141.38305664062, 141.37756347656), $longtitude);
-        */
-        $is_even = true;
-        $lat = array(-90.0, 90.0);
-        $lon = array(-180.0, 180.0);
-        $lat_err = 90.0;
-        $lon_err = 180.0;
-		$len = strlen($geohash);
-        for($i=0; $i<$len; $i++){
-            $c = $geohash[$i];
-            $cd = stripos(self::$base32, $c);
-            for($j=0; $j<5; $j++){
-                $mask = self::$bits[$j];
-                if($is_even){
-                    $lon_err /= 2;
-                    self::refine_interval($lon, $cd, $mask);
-                } else {
-                    $lat_err /= 2;
-                    self::refine_interval($lat, $cd, $mask);
-                }
-                $is_even = !$is_even;
-            }
-        }
-        $lat[2] = ($lat[0] + $lat[1]) / 2;
-        $lon[2] = ($lon[0] + $lon[1]) / 2;
-        
-        return array($lat, $lon);
-    }
-    
+		return $geohash;
+	}
+
+	/**
+	 * Decode a geohash into latitude/longitude (center + error).
+	 * @param string $geohash
+	 * @return array ['latitude' => float, 'longitude' => float, 'error' => ['lat' => float, 'lon' => float]]
+	 */
+	static public function decode(string $geohash): array
+	{
+		$lat_interval = [-90.0, 90.0];
+		$lon_interval = [-180.0, 180.0];
+		$is_even = true;
+
+		foreach (str_split($geohash) as $char) {
+			$cd = strpos(self::$base32, $char);
+			for ($mask = 16; $mask >= 1; $mask /= 2) {
+				if ($is_even) {
+					$mid = ($lon_interval[0] + $lon_interval[1]) / 2;
+					if ($cd & $mask) {
+						$lon_interval[0] = $mid;
+					} else {
+						$lon_interval[1] = $mid;
+					}
+				} else {
+					$mid = ($lat_interval[0] + $lat_interval[1]) / 2;
+					if ($cd & $mask) {
+						$lat_interval[0] = $mid;
+					} else {
+						$lat_interval[1] = $mid;
+					}
+				}
+				$is_even = !$is_even;
+			}
+		}
+
+		$latitude = ($lat_interval[0] + $lat_interval[1]) / 2;
+		$longitude = ($lon_interval[0] + $lon_interval[1]) / 2;
+		$error = [
+			'lat' => ($lat_interval[1] - $lat_interval[0]) / 2,
+			'lon' => ($lon_interval[1] - $lon_interval[0]) / 2
+		];
+
+		return ['latitude' => $latitude, 'longitude' => $longitude, 'error' => $error];
+	}
+
     /**
      * Call this function to find adjacent hashes
      * @method adjacent
@@ -213,9 +206,8 @@ class Places_Geohash
 
             // annotate rows with haversine distance
             foreach ($result as $row) {
-                $lat = $row->get('latitude');
-                $lon = $row->get('longitude');
-                $dist = Places::distance($lat0, $lon0, $lat, $lon);
+                list($lat1, $lon1) = Places_Geohash::decode($row->geohash);
+                $dist = Places::distance($lat0, $lon0, $lat1, $lon1);
                 $row->set('Places/distance', $dist);
             }
 
