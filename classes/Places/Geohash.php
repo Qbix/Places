@@ -169,17 +169,18 @@ class Places_Geohash
     {
         // Get rows above and below the center geohash lexicographically
         $above = clone $query;
-        $above = $above->where([
+        $above = $above->where(array(
             $field => new Db_Range($center, true, false, null)
-        ])->orderBy($field, true)->fetchDbRows();
+        ))->orderBy($field, true)->fetchDbRows();
 
         $below = clone $query;
-        $below = $below->where([
+        $below = $below->where(array(
             $field => new Db_Range(null, false, false, $center)
-        ])->orderBy($field, false)->fetchDbRows();
+        ))->orderBy($field, false)->fetchDbRows();
 
-        $result = [];
-        $i = $j = 0;
+        $result = array();
+        $i = 0;
+        $j = 0;
         $a = count($above);
         $b = count($below);
 
@@ -208,9 +209,12 @@ class Places_Geohash
                 $row->set('Places/distance', $dist);
             }
 
-            usort($result, fn($a, $b) =>
-                $a->get('Places/distance') <=> $b->get('Places/distance')
-            );
+            usort($result, create_function('$a, $b', '
+                $da = $a->get("Places/distance");
+                $db = $b->get("Places/distance");
+                if ($da == $db) return 0;
+                return ($da < $db) ? -1 : 1;
+            '));
         }
 
         return array_slice($result, 0, $limit);
@@ -231,7 +235,7 @@ class Places_Geohash
      * Determine which of two geohashes is closer to a given center geohash.
      * Fast, approximate comparison in base-32 numeric space.
      */
-    private static function closer(string $center, string $a, string $b): bool
+    private static function closer($center, $a, $b)
     {
         $cn = self::alpha2num($center);
         $an = self::alpha2num($a);
@@ -243,7 +247,7 @@ class Places_Geohash
      * Convert a geohash string into a base-32 integer value
      * suitable for approximate numeric comparisons.
      */
-    private static function alpha2num(string $hash): int
+    private static function alpha2num($hash)
     {
         $val = 0;
         for ($i = 0, $len = strlen($hash); $i < $len; $i++) {
@@ -253,5 +257,6 @@ class Places_Geohash
         }
         return $val;
     }
+
 
 }
