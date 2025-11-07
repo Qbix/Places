@@ -489,7 +489,7 @@ Base.prototype.maxSize_countryCode = function () {
 	 */
 Base.column_countryCode = function () {
 
-return [["varchar","2","",false],true,"",null];
+return [["varchar","2","",false],true,"MUL",null];
 };
 
 /**

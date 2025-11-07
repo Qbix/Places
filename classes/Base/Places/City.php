@@ -21,10 +21,6 @@
  * @param {string} [$fields.normalizedName] defaults to ""
  * @param {string} [$fields.englishName] defaults to ""
  * @param {string} [$fields.localName] defaults to ""
- * @param {string} [$fields.stateName] defaults to null
- * @param {string} [$fields.stateCode] defaults to null
- * @param {string} [$fields.regionName] defaults to null
- * @param {string} [$fields.regionCode] defaults to null
  * @param {float} [$fields.latitude] defaults to 0
  * @param {float} [$fields.longitude] defaults to 0
  * @param {string} [$fields.geohash] defaults to ""
@@ -64,30 +60,6 @@ abstract class Base_Places_City extends Db_Row
 	 * @property $localName
 	 * @type string
 	 * @default ""
-	 * 
-	 */
-	/**
-	 * @property $stateName
-	 * @type string
-	 * @default null
-	 * 
-	 */
-	/**
-	 * @property $stateCode
-	 * @type string
-	 * @default null
-	 * 
-	 */
-	/**
-	 * @property $regionName
-	 * @type string
-	 * @default null
-	 * 
-	 */
-	/**
-	 * @property $regionCode
-	 * @type string
-	 * @default null
 	 * 
 	 */
 	/**
@@ -621,227 +593,7 @@ return array (
     3 => false,
   ),
   1 => false,
-  2 => '',
-  3 => NULL,
-);			
-	}
-
-	/**
-	 * Method is called before setting the field and verifies if value is string of length within acceptable limit.
-	 * Optionally accept numeric value which is converted to string
-	 * @method beforeSet_stateName
-	 * @param {string} $value
-	 * @return {array} An array of field name and value
-	 * @throws {Exception} An exception is thrown if $value is not string or is exceedingly long
-	 */
-	function beforeSet_stateName($value)
-	{
-		if (!isset($value)) {
-			return array('stateName', $value);
-		}
-		if ($value instanceof Db_Expression
-               or $value instanceof Db_Range) {
-			return array('stateName', $value);
-		}
-		if (!is_string($value) and !is_numeric($value))
-			throw new Exception('Must pass a string to '.$this->getTable().".stateName");
-		if (strlen($value) > 100)
-			throw new Exception('Exceedingly long value being assigned to '.$this->getTable().".stateName");
-		return array('stateName', $value);			
-	}
-
-	/**
-	 * Returns the maximum string length that can be assigned to the stateName field
-	 * @return {integer}
-	 */
-	function maxSize_stateName()
-	{
-
-		return 100;			
-	}
-
-	/**
-	 * Returns schema information for stateName column
-	 * @return {array} [[typeName, displayRange, modifiers, unsigned], isNull, key, default]
-	 */
-	static function column_stateName()
-	{
-
-return array (
-  0 => 
-  array (
-    0 => 'varchar',
-    1 => '100',
-    2 => '',
-    3 => false,
-  ),
-  1 => true,
-  2 => '',
-  3 => NULL,
-);			
-	}
-
-	/**
-	 * Method is called before setting the field and verifies if value is string of length within acceptable limit.
-	 * Optionally accept numeric value which is converted to string
-	 * @method beforeSet_stateCode
-	 * @param {string} $value
-	 * @return {array} An array of field name and value
-	 * @throws {Exception} An exception is thrown if $value is not string or is exceedingly long
-	 */
-	function beforeSet_stateCode($value)
-	{
-		if (!isset($value)) {
-			return array('stateCode', $value);
-		}
-		if ($value instanceof Db_Expression
-               or $value instanceof Db_Range) {
-			return array('stateCode', $value);
-		}
-		if (!is_string($value) and !is_numeric($value))
-			throw new Exception('Must pass a string to '.$this->getTable().".stateCode");
-		if (strlen($value) > 20)
-			throw new Exception('Exceedingly long value being assigned to '.$this->getTable().".stateCode");
-		return array('stateCode', $value);			
-	}
-
-	/**
-	 * Returns the maximum string length that can be assigned to the stateCode field
-	 * @return {integer}
-	 */
-	function maxSize_stateCode()
-	{
-
-		return 20;			
-	}
-
-	/**
-	 * Returns schema information for stateCode column
-	 * @return {array} [[typeName, displayRange, modifiers, unsigned], isNull, key, default]
-	 */
-	static function column_stateCode()
-	{
-
-return array (
-  0 => 
-  array (
-    0 => 'varchar',
-    1 => '20',
-    2 => '',
-    3 => false,
-  ),
-  1 => true,
-  2 => '',
-  3 => NULL,
-);			
-	}
-
-	/**
-	 * Method is called before setting the field and verifies if value is string of length within acceptable limit.
-	 * Optionally accept numeric value which is converted to string
-	 * @method beforeSet_regionName
-	 * @param {string} $value
-	 * @return {array} An array of field name and value
-	 * @throws {Exception} An exception is thrown if $value is not string or is exceedingly long
-	 */
-	function beforeSet_regionName($value)
-	{
-		if (!isset($value)) {
-			return array('regionName', $value);
-		}
-		if ($value instanceof Db_Expression
-               or $value instanceof Db_Range) {
-			return array('regionName', $value);
-		}
-		if (!is_string($value) and !is_numeric($value))
-			throw new Exception('Must pass a string to '.$this->getTable().".regionName");
-		if (strlen($value) > 100)
-			throw new Exception('Exceedingly long value being assigned to '.$this->getTable().".regionName");
-		return array('regionName', $value);			
-	}
-
-	/**
-	 * Returns the maximum string length that can be assigned to the regionName field
-	 * @return {integer}
-	 */
-	function maxSize_regionName()
-	{
-
-		return 100;			
-	}
-
-	/**
-	 * Returns schema information for regionName column
-	 * @return {array} [[typeName, displayRange, modifiers, unsigned], isNull, key, default]
-	 */
-	static function column_regionName()
-	{
-
-return array (
-  0 => 
-  array (
-    0 => 'varchar',
-    1 => '100',
-    2 => '',
-    3 => false,
-  ),
-  1 => true,
-  2 => '',
-  3 => NULL,
-);			
-	}
-
-	/**
-	 * Method is called before setting the field and verifies if value is string of length within acceptable limit.
-	 * Optionally accept numeric value which is converted to string
-	 * @method beforeSet_regionCode
-	 * @param {string} $value
-	 * @return {array} An array of field name and value
-	 * @throws {Exception} An exception is thrown if $value is not string or is exceedingly long
-	 */
-	function beforeSet_regionCode($value)
-	{
-		if (!isset($value)) {
-			return array('regionCode', $value);
-		}
-		if ($value instanceof Db_Expression
-               or $value instanceof Db_Range) {
-			return array('regionCode', $value);
-		}
-		if (!is_string($value) and !is_numeric($value))
-			throw new Exception('Must pass a string to '.$this->getTable().".regionCode");
-		if (strlen($value) > 20)
-			throw new Exception('Exceedingly long value being assigned to '.$this->getTable().".regionCode");
-		return array('regionCode', $value);			
-	}
-
-	/**
-	 * Returns the maximum string length that can be assigned to the regionCode field
-	 * @return {integer}
-	 */
-	function maxSize_regionCode()
-	{
-
-		return 20;			
-	}
-
-	/**
-	 * Returns schema information for regionCode column
-	 * @return {array} [[typeName, displayRange, modifiers, unsigned], isNull, key, default]
-	 */
-	static function column_regionCode()
-	{
-
-return array (
-  0 => 
-  array (
-    0 => 'varchar',
-    1 => '20',
-    2 => '',
-    3 => false,
-  ),
-  1 => true,
-  2 => '',
+  2 => 'MUL',
   3 => NULL,
 );			
 	}
@@ -962,7 +714,7 @@ return array (
     3 => false,
   ),
   1 => false,
-  2 => '',
+  2 => 'MUL',
   3 => NULL,
 );			
 	}
@@ -1188,7 +940,7 @@ return array (
     3 => NULL,
   ),
   1 => true,
-  2 => '',
+  2 => 'MUL',
   3 => NULL,
 );			
 	}
@@ -1246,7 +998,7 @@ return array (
     3 => NULL,
   ),
   1 => true,
-  2 => '',
+  2 => 'MUL',
   3 => NULL,
 );			
 	}
@@ -1298,7 +1050,7 @@ return array (
 	 */
 	static function fieldNames($table_alias = null, $field_alias_prefix = null)
 	{
-		$field_names = array('geonameId', 'countryCode', 'normalizedName', 'englishName', 'localName', 'stateName', 'stateCode', 'regionName', 'regionCode', 'latitude', 'longitude', 'geohash', 'timeZone', 'population', 'featureCode', 'regionGeonameId', 'districtGeonameId');
+		$field_names = array('geonameId', 'countryCode', 'normalizedName', 'englishName', 'localName', 'latitude', 'longitude', 'geohash', 'timeZone', 'population', 'featureCode', 'regionGeonameId', 'districtGeonameId');
 		$result = $field_names;
 		if (!empty($table_alias)) {
 			$temp = array();
